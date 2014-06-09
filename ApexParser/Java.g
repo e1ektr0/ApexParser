@@ -187,6 +187,8 @@ tokens {
     VAR_DECLARATOR_LIST;
     VOID_METHOD_DECL;
     PROPERTY_DECL;
+    BROKEN_EXPRESSION;
+    BROKEN_DECLARATION;
 }
 
 @header {
@@ -382,6 +384,8 @@ classScopeDeclarations
             )
         |   type classFieldDeclaratorList SEMI
             ->  ^(VAR_DECLARATION modifierList type classFieldDeclaratorList)
+       	|   type classFieldDeclaratorList DOT? SEMI?
+            ->  ^(BROKEN_DECLARATION modifierList type classFieldDeclaratorList)
         )
     |   typeDeclaration
     |   SEMI!
@@ -429,6 +433,7 @@ variableDeclaratorId
 variableInitializer
     :   arrayInitializer
     |   expression
+    |   brokenExpression -> ^(BROKEN_EXPRESSION brokenExpression)
     ;
     
 arrayDeclarator
@@ -669,7 +674,12 @@ blockStatement
     :   localVariableDeclaration SEMI!
     |   typeDeclaration
     |   statement
+    | 	brokenExpression -> ^(BROKEN_EXPRESSION brokenExpression)
     ;
+brokenExpression
+:
+LPAREN* expression DOT? SEMI?
+;
 dmlOperation
 :
    dmlOperator expression SEMI

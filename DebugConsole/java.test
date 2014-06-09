@@ -1,10 +1,13 @@
 ﻿public class H_C_CustomSettings
 {
-  
- 
+	public string x = ident().
     public static Boolean triggersEnabled()
     {
-		x = x<String, String>.class;
+		var z = 1+1;
+		var x = Ident().
+		var z = 1+1;
+		var x = Ident().d
+		var z = 1+1;
+		var x = (1+Ident()).d
     }
-    //
 }
