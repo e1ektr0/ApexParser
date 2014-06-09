@@ -1,0 +1,10 @@
+﻿public class H_C_CustomSettings
+{
+  
+ 
+    public static Boolean triggersEnabled()
+    {
+		x = x<String, String>.class;
+    }
+    //
+}
