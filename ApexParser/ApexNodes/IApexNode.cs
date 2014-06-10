@@ -2,6 +2,7 @@
 
 namespace ApexParser.ApexNodes
 {
+
     public class ApexScope
     {
         private ApexType Resolve(string inden)
@@ -18,6 +19,19 @@ namespace ApexParser.ApexNodes
     public class ApexType
     {
 
+    }
+
+    internal enum Modifier
+    {
+        Public,
+        Protected,
+        Private,
+        Static,
+        Abstract,
+        Override,
+        Virtual,
+        Global,
+        TestMethod
     }
 
     public class ApexClassNode : IApexNode

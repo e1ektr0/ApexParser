@@ -59,7 +59,7 @@ importDeclaration
     ;
     
 typeDeclaration returns [IApexNode node]
-    :   ^(CLASS modifierList IDENT genericTypeParameterList? extendsClause? implementsClause? classTopLevelScope) {node = $classTopLevelScope.node;}
+    :   ^(CLASS  IDENT genericTypeParameterList? extendsClause? implementsClause? classTopLevelScope) {node = $classTopLevelScope.node;}
     |   ^(INTERFACE modifierList IDENT genericTypeParameterList? extendsClause? interfaceTopLevelScope)
     |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope)
     |   ^(AT modifierList IDENT annotationTopLevelScope)
@@ -97,7 +97,6 @@ enumConstant
     
 classTopLevelScope returns [IApexNode node]
     :
-    
        ^(CLASS_TOP_LEVEL_SCOPE {
 	 	node = new ApexClassNode(); 
 	} (classScopeDeclarations {((ApexClassNode)node).Add($classScopeDeclarations.node);})*)  
@@ -106,11 +105,11 @@ classTopLevelScope returns [IApexNode node]
 classScopeDeclarations returns [IApexNode node]
     :   ^(CLASS_INSTANCE_INITIALIZER block) {node = null;}
     |   ^(CLASS_STATIC_INITIALIZER block){node = null;}
-    |   ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? block?){node = new ApexMethod($IDENT.Text);}
-    |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?){node = new ApexMethod($IDENT.Text);}
-    |   ^(VAR_DECLARATION modifierList type variableDeclaratorList){node = new ApexField();}
-    |   ^(CONSTRUCTOR_DECL modifierList genericTypeParameterList? formalParameterList throwsClause? block){node = new ApexConstructor();}
-    |   ^(PROPERTY_DECL propertyDeclaration ){node = new ApexConstructor();}
+    |   ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? block?){node = new ApexMethod($IDENT.Text, $modifierList.modifierList);}
+    |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?){node = new ApexMethod($IDENT.Text, $modifierList.modifierList);}
+    |   ^(VAR_DECLARATION modifierList type variableDeclaratorList){node = new ApexField($modifierList.modifierList);}
+    |   ^(CONSTRUCTOR_DECL modifierList genericTypeParameterList? formalParameterList throwsClause? block){node = new ApexConstructor($modifierList.modifierList);}
+    |   ^(PROPERTY_DECL modifierList propertyDeclaration ){node = new ApexProperty($modifierList.modifierList);}
     |   typeDeclaration {node = $typeDeclaration.node;}
     ;
 
@@ -177,22 +176,32 @@ throwsClause
     :   ^(THROWS_CLAUSE qualifiedIdentifier+)
     ;
 
-modifierList
-    :   ^(MODIFIER_LIST modifier*)
+modifierList  returns [List<Modifier> modifierList]
+    :   
+       {modifierList = new List<Modifier>();}
+    ^(MODIFIER_LIST (modifier {modifierList.Add($modifier.modifier);})*)
     ;
 
-modifier
-    :   PUBLIC
-    |   PROTECTED
-    |   PRIVATE
-    |   STATIC
-    |   ABSTRACT
+modifier returns [Modifier modifier]
+    :   
+  
+    	(PUBLIC {modifier = Modifier.Public;}
+    |   OVERRIDE {modifier = Modifier.Override;}
+    |   VIRTUAL {modifier = Modifier.Virtual;}
+    |   WITH_SHARING 
+    |	WITHOUT_SHARING
+    |   PROTECTED {modifier = Modifier.Protected;}
+    |   PRIVATE {modifier = Modifier.Private;}
+    |   STATIC {modifier = Modifier.Static;}
+    |   ABSTRACT {modifier = Modifier.Abstract;}
     |   NATIVE
     |   SYNCHRONIZED
     |   TRANSIENT
     |   VOLATILE
     |   STRICTFP
-    |   localModifier
+    |	GLOBAL {modifier = Modifier.Global;}
+    |   TEST_METHOD {modifier = Modifier.TestMethod;}
+    |   localModifier)
     ;
 
 localModifierList
