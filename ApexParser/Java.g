@@ -372,7 +372,9 @@ classScopeDeclarations
     :   block           ->  ^(CLASS_INSTANCE_INITIALIZER block)
     |   STATIC block    ->  ^(CLASS_STATIC_INITIALIZER[$STATIC, "CLASS_STATIC_INITIALIZER"] block)
     |   modifierList
-        (   genericTypeParameterList?
+        ( 
+        	type IDENT propertyDeclaration -> ^(PROPERTY_DECL type IDENT propertyDeclaration)
+	|    genericTypeParameterList?
             (   
             	type IDENT formalParameterList arrayDeclaratorList? throwsClause? (block | SEMI)
                 ->  ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? block?)
@@ -381,7 +383,7 @@ classScopeDeclarations
             |   ident=IDENT formalParameterList throwsClause? block
                 ->  ^(CONSTRUCTOR_DECL[$ident, "CONSTRUCTOR_DECL"] modifierList genericTypeParameterList? formalParameterList throwsClause? block)
             )
-	|   type IDENT propertyDeclaration -> ^(PROPERTY_DECL propertyDeclaration)
+	
         |   type classFieldDeclaratorList SEMI
             ->  ^(VAR_DECLARATION modifierList type classFieldDeclaratorList)
        	|   type classFieldDeclaratorList DOT? SEMI?

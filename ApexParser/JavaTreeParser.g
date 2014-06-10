@@ -59,7 +59,7 @@ importDeclaration
     ;
     
 typeDeclaration returns [IApexNode node]
-    :   ^(CLASS  IDENT genericTypeParameterList? extendsClause? implementsClause? classTopLevelScope) {node = $classTopLevelScope.node;}
+    :   ^(CLASS modifierList IDENT genericTypeParameterList? extendsClause? implementsClause? classTopLevelScope) {node = $classTopLevelScope.node;}
     |   ^(INTERFACE modifierList IDENT genericTypeParameterList? extendsClause? interfaceTopLevelScope)
     |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope)
     |   ^(AT modifierList IDENT annotationTopLevelScope)
@@ -109,15 +109,14 @@ classScopeDeclarations returns [IApexNode node]
     |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?){node = new ApexMethod($IDENT.Text, $modifierList.modifierList);}
     |   ^(VAR_DECLARATION modifierList type variableDeclaratorList){node = new ApexFieldList($type.type, $modifierList.modifierList, $variableDeclaratorList.fields);}
     |   ^(CONSTRUCTOR_DECL modifierList genericTypeParameterList? formalParameterList throwsClause? block){node = new ApexConstructor($modifierList.modifierList);}
-    |   ^(PROPERTY_DECL modifierList type propertyDeclaration ){node = new ApexProperty($type.type, $modifierList.modifierList);}
+    |   ^(PROPERTY_DECL modifierList type IDENT propertyDeclaration ){node = new ApexProperty($type.type, $modifierList.modifierList);}
     |   typeDeclaration {node = $typeDeclaration.node;}
     ;
 
-propertyDeclaration
+propertyDeclaration 
 :
  ('{' modifier? getRule (SEMI|block) (modifier? setRule (SEMI|block))? '}')
  | ('{' modifier? setRule (SEMI|block) (modifier? getRule (SEMI|block))?  '}')
- //todo:add ovverite after debug this shit!
 ;
 getRule
 :

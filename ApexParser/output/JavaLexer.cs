@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.5.1 C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g 2014-06-09 22:43:33
+// $ANTLR 3.5.1 C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g 2014-06-10 17:48:00
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -255,7 +255,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 		OnCreated();
 	}
-	public override string GrammarFileName { get { return "C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g"; } }
+	public override string GrammarFileName { get { return "C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g"; } }
 
 
 	partial void OnCreated();
@@ -276,9 +276,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ABSTRACT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:23:10: ( 'abstract' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:23:10: ( 'abstract' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:23:12: 'abstract'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:23:12: 'abstract'
 			{
 			DebugLocation(23, 12);
 			Match("abstract"); 
@@ -312,9 +312,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = AND;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:24:5: ( '&' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:24:5: ( '&' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:24:7: '&'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:24:7: '&'
 			{
 			DebugLocation(24, 7);
 			Match('&'); 
@@ -347,9 +347,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = AND_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:25:12: ( '&=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:25:12: ( '&=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:25:14: '&='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:25:14: '&='
 			{
 			DebugLocation(25, 14);
 			Match("&="); 
@@ -383,9 +383,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:26:8: ( '=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:26:8: ( '=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:26:10: '='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:26:10: '='
 			{
 			DebugLocation(26, 10);
 			Match('='); 
@@ -418,9 +418,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = AT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:27:4: ( '@' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:27:4: ( '@' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:27:6: '@'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:27:6: '@'
 			{
 			DebugLocation(27, 6);
 			Match('@'); 
@@ -453,9 +453,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = BIT_SHIFT_RIGHT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:28:17: ( '>>>' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:28:17: ( '>>>' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:28:19: '>>>'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:28:19: '>>>'
 			{
 			DebugLocation(28, 19);
 			Match(">>>"); 
@@ -489,9 +489,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = BIT_SHIFT_RIGHT_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:29:24: ( '>>>=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:29:24: ( '>>>=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:29:26: '>>>='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:29:26: '>>>='
 			{
 			DebugLocation(29, 26);
 			Match(">>>="); 
@@ -525,9 +525,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = BOOLEAN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:30:9: ( 'boolean#' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:30:9: ( 'boolean#' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:30:11: 'boolean#'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:30:11: 'boolean#'
 			{
 			DebugLocation(30, 11);
 			Match("boolean#"); 
@@ -561,9 +561,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = BREAK;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:31:7: ( 'break' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:31:7: ( 'break' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:31:9: 'break'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:31:9: 'break'
 			{
 			DebugLocation(31, 9);
 			Match("break"); 
@@ -597,9 +597,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = BYTE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:32:6: ( 'byte#' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:32:6: ( 'byte#' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:32:8: 'byte#'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:32:8: 'byte#'
 			{
 			DebugLocation(32, 8);
 			Match("byte#"); 
@@ -633,9 +633,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = CASE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:33:6: ( 'case' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:33:6: ( 'case' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:33:8: 'case'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:33:8: 'case'
 			{
 			DebugLocation(33, 8);
 			Match("case"); 
@@ -669,9 +669,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = CATCH;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:34:7: ( 'catch' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:34:7: ( 'catch' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:34:9: 'catch'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:34:9: 'catch'
 			{
 			DebugLocation(34, 9);
 			Match("catch"); 
@@ -705,9 +705,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = CHAR;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:35:6: ( 'char#' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:35:6: ( 'char#' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:35:8: 'char#'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:35:8: 'char#'
 			{
 			DebugLocation(35, 8);
 			Match("char#"); 
@@ -741,9 +741,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = CLASS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:36:7: ( 'class' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:36:7: ( 'class' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:36:9: 'class'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:36:9: 'class'
 			{
 			DebugLocation(36, 9);
 			Match("class"); 
@@ -777,9 +777,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = COLON;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:37:7: ( ':' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:37:7: ( ':' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:37:9: ':'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:37:9: ':'
 			{
 			DebugLocation(37, 9);
 			Match(':'); 
@@ -812,9 +812,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = COMMA;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:38:7: ( ',' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:38:7: ( ',' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:38:9: ','
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:38:9: ','
 			{
 			DebugLocation(38, 9);
 			Match(','); 
@@ -847,9 +847,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = CONTINUE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:39:10: ( 'continue' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:39:10: ( 'continue' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:39:12: 'continue'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:39:12: 'continue'
 			{
 			DebugLocation(39, 12);
 			Match("continue"); 
@@ -883,9 +883,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DEC;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:40:5: ( '--' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:40:5: ( '--' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:40:7: '--'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:40:7: '--'
 			{
 			DebugLocation(40, 7);
 			Match("--"); 
@@ -919,9 +919,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DEFAULT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:41:9: ( 'default' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:41:9: ( 'default' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:41:11: 'default'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:41:11: 'default'
 			{
 			DebugLocation(41, 11);
 			Match("default"); 
@@ -955,9 +955,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DIV;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:42:5: ( '/' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:42:5: ( '/' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:42:7: '/'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:42:7: '/'
 			{
 			DebugLocation(42, 7);
 			Match('/'); 
@@ -990,9 +990,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DIV_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:43:12: ( '/=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:43:12: ( '/=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:43:14: '/='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:43:14: '/='
 			{
 			DebugLocation(43, 14);
 			Match("/="); 
@@ -1026,9 +1026,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DO;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:44:4: ( 'do' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:44:4: ( 'do' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:44:6: 'do'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:44:6: 'do'
 			{
 			DebugLocation(44, 6);
 			Match("do"); 
@@ -1062,9 +1062,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DOT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:45:5: ( '.' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:45:5: ( '.' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:45:7: '.'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:45:7: '.'
 			{
 			DebugLocation(45, 7);
 			Match('.'); 
@@ -1097,9 +1097,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DOTSTAR;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:46:9: ( '.*' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:46:9: ( '.*' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:46:11: '.*'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:46:11: '.*'
 			{
 			DebugLocation(46, 11);
 			Match(".*"); 
@@ -1133,9 +1133,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DOUBLE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:47:8: ( 'double#' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:47:8: ( 'double#' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:47:10: 'double#'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:47:10: 'double#'
 			{
 			DebugLocation(47, 10);
 			Match("double#"); 
@@ -1169,9 +1169,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ELLIPSIS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:48:10: ( '...' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:48:10: ( '...' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:48:12: '...'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:48:12: '...'
 			{
 			DebugLocation(48, 12);
 			Match("..."); 
@@ -1205,9 +1205,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ELSE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:49:6: ( 'else' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:49:6: ( 'else' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:49:8: 'else'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:49:8: 'else'
 			{
 			DebugLocation(49, 8);
 			Match("else"); 
@@ -1241,9 +1241,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ENUM;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:50:6: ( 'enum' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:50:6: ( 'enum' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:50:8: 'enum'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:50:8: 'enum'
 			{
 			DebugLocation(50, 8);
 			Match("enum"); 
@@ -1277,9 +1277,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = EQUAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:51:7: ( '==' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:51:7: ( '==' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:51:9: '=='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:51:9: '=='
 			{
 			DebugLocation(51, 9);
 			Match("=="); 
@@ -1313,9 +1313,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = EXTENDS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:52:9: ( 'extends' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:52:9: ( 'extends' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:52:11: 'extends'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:52:11: 'extends'
 			{
 			DebugLocation(52, 11);
 			Match("extends"); 
@@ -1349,9 +1349,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = FALSE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:53:7: ( 'false' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:53:7: ( 'false' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:53:9: 'false'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:53:9: 'false'
 			{
 			DebugLocation(53, 9);
 			Match("false"); 
@@ -1385,9 +1385,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = FINAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:54:7: ( 'final' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:54:7: ( 'final' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:54:9: 'final'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:54:9: 'final'
 			{
 			DebugLocation(54, 9);
 			Match("final"); 
@@ -1421,9 +1421,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = FINALLY;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:55:9: ( 'finally' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:55:9: ( 'finally' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:55:11: 'finally'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:55:11: 'finally'
 			{
 			DebugLocation(55, 11);
 			Match("finally"); 
@@ -1457,9 +1457,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = FLOAT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:56:7: ( 'float#' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:56:7: ( 'float#' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:56:9: 'float#'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:56:9: 'float#'
 			{
 			DebugLocation(56, 9);
 			Match("float#"); 
@@ -1493,9 +1493,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = FOR;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:57:5: ( 'for' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:57:5: ( 'for' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:57:7: 'for'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:57:7: 'for'
 			{
 			DebugLocation(57, 7);
 			Match("for"); 
@@ -1529,9 +1529,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = GLOBAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:58:8: ( 'global' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:58:8: ( 'global' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:58:10: 'global'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:58:10: 'global'
 			{
 			DebugLocation(58, 10);
 			Match("global"); 
@@ -1565,9 +1565,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = GREATER_OR_EQUAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:59:18: ( '>=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:59:18: ( '>=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:59:20: '>='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:59:20: '>='
 			{
 			DebugLocation(59, 20);
 			Match(">="); 
@@ -1601,9 +1601,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = GREATER_THAN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:60:14: ( '>' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:60:14: ( '>' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:60:16: '>'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:60:16: '>'
 			{
 			DebugLocation(60, 16);
 			Match('>'); 
@@ -1636,9 +1636,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = IF;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:61:4: ( 'if' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:61:4: ( 'if' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:61:6: 'if'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:61:6: 'if'
 			{
 			DebugLocation(61, 6);
 			Match("if"); 
@@ -1672,9 +1672,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = IMPLEMENTS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:62:12: ( 'implements' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:62:12: ( 'implements' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:62:14: 'implements'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:62:14: 'implements'
 			{
 			DebugLocation(62, 14);
 			Match("implements"); 
@@ -1708,9 +1708,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = IMPORT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:63:8: ( 'import' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:63:8: ( 'import' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:63:10: 'import'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:63:10: 'import'
 			{
 			DebugLocation(63, 10);
 			Match("import"); 
@@ -1744,9 +1744,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = INC;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:64:5: ( '++' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:64:5: ( '++' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:64:7: '++'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:64:7: '++'
 			{
 			DebugLocation(64, 7);
 			Match("++"); 
@@ -1780,9 +1780,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = INSTANCEOF;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:65:12: ( 'instanceof' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:65:12: ( 'instanceof' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:65:14: 'instanceof'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:65:14: 'instanceof'
 			{
 			DebugLocation(65, 14);
 			Match("instanceof"); 
@@ -1816,9 +1816,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = INT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:66:5: ( 'int#' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:66:5: ( 'int#' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:66:7: 'int#'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:66:7: 'int#'
 			{
 			DebugLocation(66, 7);
 			Match("int#"); 
@@ -1852,9 +1852,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = INTERFACE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:67:11: ( 'interface' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:67:11: ( 'interface' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:67:13: 'interface'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:67:13: 'interface'
 			{
 			DebugLocation(67, 13);
 			Match("interface"); 
@@ -1888,9 +1888,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LBRACK;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:68:8: ( '[' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:68:8: ( '[' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:68:10: '['
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:68:10: '['
 			{
 			DebugLocation(68, 10);
 			Match('['); 
@@ -1923,9 +1923,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LCURLY;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:69:8: ( '{' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:69:8: ( '{' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:69:10: '{'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:69:10: '{'
 			{
 			DebugLocation(69, 10);
 			Match('{'); 
@@ -1958,9 +1958,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LESS_OR_EQUAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:70:15: ( '<=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:70:15: ( '<=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:70:17: '<='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:70:17: '<='
 			{
 			DebugLocation(70, 17);
 			Match("<="); 
@@ -1994,9 +1994,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LESS_THAN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:71:11: ( '<' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:71:11: ( '<' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:71:13: '<'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:71:13: '<'
 			{
 			DebugLocation(71, 13);
 			Match('<'); 
@@ -2029,9 +2029,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LOGICAL_AND;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:72:13: ( '&&' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:72:13: ( '&&' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:72:15: '&&'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:72:15: '&&'
 			{
 			DebugLocation(72, 15);
 			Match("&&"); 
@@ -2065,9 +2065,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LOGICAL_NOT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:73:13: ( '!' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:73:13: ( '!' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:73:15: '!'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:73:15: '!'
 			{
 			DebugLocation(73, 15);
 			Match('!'); 
@@ -2100,9 +2100,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LOGICAL_OR;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:74:12: ( '||' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:74:12: ( '||' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:74:14: '||'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:74:14: '||'
 			{
 			DebugLocation(74, 14);
 			Match("||"); 
@@ -2136,9 +2136,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LONG;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:75:6: ( 'long#' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:75:6: ( 'long#' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:75:8: 'long#'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:75:8: 'long#'
 			{
 			DebugLocation(75, 8);
 			Match("long#"); 
@@ -2172,9 +2172,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LPAREN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:76:8: ( '(' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:76:8: ( '(' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:76:10: '('
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:76:10: '('
 			{
 			DebugLocation(76, 10);
 			Match('('); 
@@ -2207,9 +2207,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MINUS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:77:7: ( '-' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:77:7: ( '-' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:77:9: '-'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:77:9: '-'
 			{
 			DebugLocation(77, 9);
 			Match('-'); 
@@ -2242,9 +2242,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MINUS_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:78:14: ( '-=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:78:14: ( '-=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:78:16: '-='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:78:16: '-='
 			{
 			DebugLocation(78, 16);
 			Match("-="); 
@@ -2278,9 +2278,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MOD;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:79:5: ( '%' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:79:5: ( '%' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:79:7: '%'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:79:7: '%'
 			{
 			DebugLocation(79, 7);
 			Match('%'); 
@@ -2313,9 +2313,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MOD_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:80:12: ( '%=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:80:12: ( '%=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:80:14: '%='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:80:14: '%='
 			{
 			DebugLocation(80, 14);
 			Match("%="); 
@@ -2349,9 +2349,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NATIVE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:81:8: ( 'native' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:81:8: ( 'native' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:81:10: 'native'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:81:10: 'native'
 			{
 			DebugLocation(81, 10);
 			Match("native"); 
@@ -2385,9 +2385,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NEW;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:82:5: ( 'new' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:82:5: ( 'new' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:82:7: 'new'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:82:7: 'new'
 			{
 			DebugLocation(82, 7);
 			Match("new"); 
@@ -2421,9 +2421,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NOT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:83:5: ( '~' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:83:5: ( '~' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:83:7: '~'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:83:7: '~'
 			{
 			DebugLocation(83, 7);
 			Match('~'); 
@@ -2456,9 +2456,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NOT_EQUAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:84:11: ( '!=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:84:11: ( '!=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:84:13: '!='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:84:13: '!='
 			{
 			DebugLocation(84, 13);
 			Match("!="); 
@@ -2492,9 +2492,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NULL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:85:6: ( 'null' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:85:6: ( 'null' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:85:8: 'null'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:85:8: 'null'
 			{
 			DebugLocation(85, 8);
 			Match("null"); 
@@ -2528,9 +2528,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = OR;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:86:4: ( '|' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:86:4: ( '|' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:86:6: '|'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:86:6: '|'
 			{
 			DebugLocation(86, 6);
 			Match('|'); 
@@ -2563,9 +2563,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = OR_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:87:11: ( '|=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:87:11: ( '|=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:87:13: '|='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:87:13: '|='
 			{
 			DebugLocation(87, 13);
 			Match("|="); 
@@ -2599,9 +2599,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = OVERRIDE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:88:10: ( 'override' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:88:10: ( 'override' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:88:12: 'override'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:88:12: 'override'
 			{
 			DebugLocation(88, 12);
 			Match("override"); 
@@ -2635,9 +2635,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = PACKAGE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:89:9: ( 'package' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:89:9: ( 'package' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:89:11: 'package'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:89:11: 'package'
 			{
 			DebugLocation(89, 11);
 			Match("package"); 
@@ -2671,9 +2671,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = PLUS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:90:6: ( '+' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:90:6: ( '+' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:90:8: '+'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:90:8: '+'
 			{
 			DebugLocation(90, 8);
 			Match('+'); 
@@ -2706,9 +2706,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = PLUS_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:91:13: ( '+=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:91:13: ( '+=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:91:15: '+='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:91:15: '+='
 			{
 			DebugLocation(91, 15);
 			Match("+="); 
@@ -2742,9 +2742,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = PRIVATE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:92:9: ( 'private' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:92:9: ( 'private' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:92:11: 'private'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:92:11: 'private'
 			{
 			DebugLocation(92, 11);
 			Match("private"); 
@@ -2778,9 +2778,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = PROTECTED;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:93:11: ( 'protected' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:93:11: ( 'protected' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:93:13: 'protected'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:93:13: 'protected'
 			{
 			DebugLocation(93, 13);
 			Match("protected"); 
@@ -2814,9 +2814,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = PUBLIC;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:94:8: ( 'public' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:94:8: ( 'public' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:94:10: 'public'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:94:10: 'public'
 			{
 			DebugLocation(94, 10);
 			Match("public"); 
@@ -2850,9 +2850,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = QUESTION;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:95:10: ( '?' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:95:10: ( '?' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:95:12: '?'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:95:12: '?'
 			{
 			DebugLocation(95, 12);
 			Match('?'); 
@@ -2885,9 +2885,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = RBRACK;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:96:8: ( ']' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:96:8: ( ']' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:96:10: ']'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:96:10: ']'
 			{
 			DebugLocation(96, 10);
 			Match(']'); 
@@ -2920,9 +2920,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = RCURLY;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:97:8: ( '}' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:97:8: ( '}' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:97:10: '}'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:97:10: '}'
 			{
 			DebugLocation(97, 10);
 			Match('}'); 
@@ -2955,9 +2955,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = RETURN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:98:8: ( 'return' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:98:8: ( 'return' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:98:10: 'return'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:98:10: 'return'
 			{
 			DebugLocation(98, 10);
 			Match("return"); 
@@ -2991,9 +2991,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = RPAREN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:99:8: ( ')' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:99:8: ( ')' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:99:10: ')'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:99:10: ')'
 			{
 			DebugLocation(99, 10);
 			Match(')'); 
@@ -3026,9 +3026,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SEMI;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:100:6: ( ';' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:100:6: ( ';' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:100:8: ';'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:100:8: ';'
 			{
 			DebugLocation(100, 8);
 			Match(';'); 
@@ -3061,9 +3061,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SHIFT_LEFT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:101:12: ( '<<' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:101:12: ( '<<' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:101:14: '<<'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:101:14: '<<'
 			{
 			DebugLocation(101, 14);
 			Match("<<"); 
@@ -3097,9 +3097,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SHIFT_LEFT_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:102:19: ( '<<=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:102:19: ( '<<=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:102:21: '<<='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:102:21: '<<='
 			{
 			DebugLocation(102, 21);
 			Match("<<="); 
@@ -3133,9 +3133,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SHIFT_RIGHT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:103:13: ( '>>' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:103:13: ( '>>' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:103:15: '>>'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:103:15: '>>'
 			{
 			DebugLocation(103, 15);
 			Match(">>"); 
@@ -3169,9 +3169,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SHIFT_RIGHT_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:104:20: ( '>>=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:104:20: ( '>>=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:104:22: '>>='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:104:22: '>>='
 			{
 			DebugLocation(104, 22);
 			Match(">>="); 
@@ -3205,9 +3205,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SHORT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:105:7: ( 'short#' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:105:7: ( 'short#' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:105:9: 'short#'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:105:9: 'short#'
 			{
 			DebugLocation(105, 9);
 			Match("short#"); 
@@ -3241,9 +3241,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = STAR;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:106:6: ( '*' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:106:6: ( '*' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:106:8: '*'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:106:8: '*'
 			{
 			DebugLocation(106, 8);
 			Match('*'); 
@@ -3276,9 +3276,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = STAR_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:107:13: ( '*=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:107:13: ( '*=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:107:15: '*='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:107:15: '*='
 			{
 			DebugLocation(107, 15);
 			Match("*="); 
@@ -3312,9 +3312,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = STATIC;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:108:8: ( 'static' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:108:8: ( 'static' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:108:10: 'static'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:108:10: 'static'
 			{
 			DebugLocation(108, 10);
 			Match("static"); 
@@ -3348,9 +3348,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = STRICTFP;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:109:10: ( 'strictfp' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:109:10: ( 'strictfp' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:109:12: 'strictfp'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:109:12: 'strictfp'
 			{
 			DebugLocation(109, 12);
 			Match("strictfp"); 
@@ -3384,9 +3384,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SUPER;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:110:7: ( 'super' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:110:7: ( 'super' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:110:9: 'super'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:110:9: 'super'
 			{
 			DebugLocation(110, 9);
 			Match("super"); 
@@ -3420,9 +3420,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SWITCH;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:111:8: ( 'switch' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:111:8: ( 'switch' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:111:10: 'switch'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:111:10: 'switch'
 			{
 			DebugLocation(111, 10);
 			Match("switch"); 
@@ -3456,9 +3456,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SYNCHRONIZED;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:112:14: ( 'synchronized' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:112:14: ( 'synchronized' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:112:16: 'synchronized'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:112:16: 'synchronized'
 			{
 			DebugLocation(112, 16);
 			Match("synchronized"); 
@@ -3492,9 +3492,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = TEST_METHOD;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:113:13: ( 'testmethod' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:113:13: ( 'testmethod' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:113:15: 'testmethod'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:113:15: 'testmethod'
 			{
 			DebugLocation(113, 15);
 			Match("testmethod"); 
@@ -3528,9 +3528,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = THIS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:114:6: ( 'this' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:114:6: ( 'this' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:114:8: 'this'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:114:8: 'this'
 			{
 			DebugLocation(114, 8);
 			Match("this"); 
@@ -3564,9 +3564,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = THROW;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:115:7: ( 'throw' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:115:7: ( 'throw' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:115:9: 'throw'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:115:9: 'throw'
 			{
 			DebugLocation(115, 9);
 			Match("throw"); 
@@ -3600,9 +3600,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = THROWS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:116:8: ( 'throws' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:116:8: ( 'throws' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:116:10: 'throws'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:116:10: 'throws'
 			{
 			DebugLocation(116, 10);
 			Match("throws"); 
@@ -3636,9 +3636,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = TRANSIENT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:117:11: ( 'transient' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:117:11: ( 'transient' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:117:13: 'transient'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:117:13: 'transient'
 			{
 			DebugLocation(117, 13);
 			Match("transient"); 
@@ -3672,9 +3672,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = TRUE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:118:6: ( 'true' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:118:6: ( 'true' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:118:8: 'true'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:118:8: 'true'
 			{
 			DebugLocation(118, 8);
 			Match("true"); 
@@ -3708,9 +3708,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = TRY;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:119:5: ( 'try' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:119:5: ( 'try' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:119:7: 'try'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:119:7: 'try'
 			{
 			DebugLocation(119, 7);
 			Match("try"); 
@@ -3744,9 +3744,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = VIRTUAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:120:9: ( 'virtual' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:120:9: ( 'virtual' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:120:11: 'virtual'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:120:11: 'virtual'
 			{
 			DebugLocation(120, 11);
 			Match("virtual"); 
@@ -3780,9 +3780,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = VOID;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:121:6: ( 'void' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:121:6: ( 'void' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:121:8: 'void'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:121:8: 'void'
 			{
 			DebugLocation(121, 8);
 			Match("void"); 
@@ -3816,9 +3816,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = VOLATILE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:122:10: ( 'volatile' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:122:10: ( 'volatile' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:122:12: 'volatile'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:122:12: 'volatile'
 			{
 			DebugLocation(122, 12);
 			Match("volatile"); 
@@ -3852,9 +3852,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = WHILE;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:123:7: ( 'while' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:123:7: ( 'while' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:123:9: 'while'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:123:9: 'while'
 			{
 			DebugLocation(123, 9);
 			Match("while"); 
@@ -3888,9 +3888,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = WITHOUT_SHARING;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:124:17: ( 'without sharing' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:124:17: ( 'without sharing' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:124:19: 'without sharing'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:124:19: 'without sharing'
 			{
 			DebugLocation(124, 19);
 			Match("without sharing"); 
@@ -3924,9 +3924,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = WITH_SHARING;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:125:14: ( 'with sharing' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:125:14: ( 'with sharing' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:125:16: 'with sharing'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:125:16: 'with sharing'
 			{
 			DebugLocation(125, 16);
 			Match("with sharing"); 
@@ -3960,9 +3960,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = XOR;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:126:5: ( '^' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:126:5: ( '^' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:126:7: '^'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:126:7: '^'
 			{
 			DebugLocation(126, 7);
 			Match('^'); 
@@ -3995,9 +3995,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = XOR_ASSIGN;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:127:12: ( '^=' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:127:12: ( '^=' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:127:14: '^='
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:127:14: '^='
 			{
 			DebugLocation(127, 14);
 			Match("^="); 
@@ -4031,9 +4031,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = T__194;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:128:8: ( '=>' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:128:8: ( '=>' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:128:10: '=>'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:128:10: '=>'
 			{
 			DebugLocation(128, 10);
 			Match("=>"); 
@@ -4067,13 +4067,13 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = HEX_LITERAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1064:13: ( '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ ( INTEGER_TYPE_SUFFIX )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1066:13: ( '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ ( INTEGER_TYPE_SUFFIX )? )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1064:15: '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ ( INTEGER_TYPE_SUFFIX )?
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1066:15: '0' ( 'x' | 'X' ) ( HEX_DIGIT )+ ( INTEGER_TYPE_SUFFIX )?
 			{
-			DebugLocation(1064, 15);
+			DebugLocation(1066, 15);
 			Match('0'); 
-			DebugLocation(1064, 19);
+			DebugLocation(1066, 19);
 			if (input.LA(1)=='X'||input.LA(1)=='x')
 			{
 				input.Consume();
@@ -4086,8 +4086,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(1064, 29);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1064:29: ( HEX_DIGIT )+
+			DebugLocation(1066, 29);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1066:29: ( HEX_DIGIT )+
 			int cnt1=0;
 			try { DebugEnterSubRule(1);
 			while (true)
@@ -4107,9 +4107,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 					{
-					DebugLocation(1064, 29);
+					DebugLocation(1066, 29);
 					input.Consume();
 
 
@@ -4131,8 +4131,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(1); }
 
-			DebugLocation(1064, 40);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1064:40: ( INTEGER_TYPE_SUFFIX )?
+			DebugLocation(1066, 40);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1066:40: ( INTEGER_TYPE_SUFFIX )?
 			int alt2=2;
 			try { DebugEnterSubRule(2);
 			try { DebugEnterDecision(2, false);
@@ -4147,9 +4147,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 				{
-				DebugLocation(1064, 40);
+				DebugLocation(1066, 40);
 				input.Consume();
 
 
@@ -4188,12 +4188,12 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DECIMAL_LITERAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1066:17: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( INTEGER_TYPE_SUFFIX )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1068:17: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( INTEGER_TYPE_SUFFIX )? )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1066:19: ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( INTEGER_TYPE_SUFFIX )?
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1068:19: ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( INTEGER_TYPE_SUFFIX )?
 			{
-			DebugLocation(1066, 19);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1066:19: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+			DebugLocation(1068, 19);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1068:19: ( '0' | '1' .. '9' ( '0' .. '9' )* )
 			int alt4=2;
 			try { DebugEnterSubRule(4);
 			try { DebugEnterDecision(4, false);
@@ -4218,21 +4218,21 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1066:20: '0'
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1068:20: '0'
 				{
-				DebugLocation(1066, 20);
+				DebugLocation(1068, 20);
 				Match('0'); 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1066:26: '1' .. '9' ( '0' .. '9' )*
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1068:26: '1' .. '9' ( '0' .. '9' )*
 				{
-				DebugLocation(1066, 26);
+				DebugLocation(1068, 26);
 				MatchRange('1','9'); 
-				DebugLocation(1066, 35);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1066:35: ( '0' .. '9' )*
+				DebugLocation(1068, 35);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1068:35: ( '0' .. '9' )*
 				try { DebugEnterSubRule(3);
 				while (true)
 				{
@@ -4251,9 +4251,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 						{
-						DebugLocation(1066, 35);
+						DebugLocation(1068, 35);
 						input.Consume();
 
 
@@ -4277,8 +4277,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			}
 			} finally { DebugExitSubRule(4); }
 
-			DebugLocation(1066, 46);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1066:46: ( INTEGER_TYPE_SUFFIX )?
+			DebugLocation(1068, 46);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1068:46: ( INTEGER_TYPE_SUFFIX )?
 			int alt5=2;
 			try { DebugEnterSubRule(5);
 			try { DebugEnterDecision(5, false);
@@ -4293,9 +4293,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 				{
-				DebugLocation(1066, 46);
+				DebugLocation(1068, 46);
 				input.Consume();
 
 
@@ -4334,14 +4334,14 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = OCTAL_LITERAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1068:15: ( '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1070:15: ( '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )? )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1068:17: '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )?
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1070:17: '0' ( '0' .. '7' )+ ( INTEGER_TYPE_SUFFIX )?
 			{
-			DebugLocation(1068, 17);
+			DebugLocation(1070, 17);
 			Match('0'); 
-			DebugLocation(1068, 21);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1068:21: ( '0' .. '7' )+
+			DebugLocation(1070, 21);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1070:21: ( '0' .. '7' )+
 			int cnt6=0;
 			try { DebugEnterSubRule(6);
 			while (true)
@@ -4361,9 +4361,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 					{
-					DebugLocation(1068, 21);
+					DebugLocation(1070, 21);
 					input.Consume();
 
 
@@ -4385,8 +4385,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(6); }
 
-			DebugLocation(1068, 33);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1068:33: ( INTEGER_TYPE_SUFFIX )?
+			DebugLocation(1070, 33);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1070:33: ( INTEGER_TYPE_SUFFIX )?
 			int alt7=2;
 			try { DebugEnterSubRule(7);
 			try { DebugEnterDecision(7, false);
@@ -4401,9 +4401,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 				{
-				DebugLocation(1068, 33);
+				DebugLocation(1070, 33);
 				input.Consume();
 
 
@@ -4440,11 +4440,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		TraceIn("HEX_DIGIT", 110);
 		try
 		{
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1072:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1074:11: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 			{
-			DebugLocation(1072, 11);
+			DebugLocation(1074, 11);
 			if ((input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f'))
 			{
 				input.Consume();
@@ -4482,11 +4482,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		TraceIn("INTEGER_TYPE_SUFFIX", 111);
 		try
 		{
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1075:21: ( ( 'l' | 'L' ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1077:21: ( ( 'l' | 'L' ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 			{
-			DebugLocation(1075, 21);
+			DebugLocation(1077, 21);
 			if (input.LA(1)=='L'||input.LA(1)=='l')
 			{
 				input.Consume();
@@ -4526,7 +4526,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = FLOATING_POINT_LITERAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1077:5: ( ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX ) | DOT ( '0' .. '9' )+ ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1079:5: ( ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX ) | DOT ( '0' .. '9' )+ ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? )
 			int alt17=2;
 			try { DebugEnterDecision(17, false);
 			int LA17_1 = input.LA(1);
@@ -4550,10 +4550,10 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1077:9: ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1079:9: ( '0' .. '9' )+ ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
 				{
-				DebugLocation(1077, 9);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1077:9: ( '0' .. '9' )+
+				DebugLocation(1079, 9);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1079:9: ( '0' .. '9' )+
 				int cnt8=0;
 				try { DebugEnterSubRule(8);
 				while (true)
@@ -4573,9 +4573,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 						{
-						DebugLocation(1077, 9);
+						DebugLocation(1079, 9);
 						input.Consume();
 
 
@@ -4597,8 +4597,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(8); }
 
-				DebugLocation(1078, 9);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1078:9: ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
+				DebugLocation(1080, 9);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1080:9: ( DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )? | EXPONENT ( FLOAT_TYPE_SUFFIX )? | FLOAT_TYPE_SUFFIX )
 				int alt13=3;
 				try { DebugEnterSubRule(13);
 				try { DebugEnterDecision(13, false);
@@ -4636,12 +4636,12 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1079:13: DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )?
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1081:13: DOT ( '0' .. '9' )* ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )?
 					{
-					DebugLocation(1079, 13);
+					DebugLocation(1081, 13);
 					mDOT(); 
-					DebugLocation(1079, 17);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1079:17: ( '0' .. '9' )*
+					DebugLocation(1081, 17);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1081:17: ( '0' .. '9' )*
 					try { DebugEnterSubRule(9);
 					while (true)
 					{
@@ -4660,9 +4660,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 							{
-							DebugLocation(1079, 17);
+							DebugLocation(1081, 17);
 							input.Consume();
 
 
@@ -4679,8 +4679,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 					} finally { DebugExitSubRule(9); }
 
-					DebugLocation(1079, 29);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1079:29: ( EXPONENT )?
+					DebugLocation(1081, 29);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1081:29: ( EXPONENT )?
 					int alt10=2;
 					try { DebugEnterSubRule(10);
 					try { DebugEnterDecision(10, false);
@@ -4695,9 +4695,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1079:29: EXPONENT
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1081:29: EXPONENT
 						{
-						DebugLocation(1079, 29);
+						DebugLocation(1081, 29);
 						mEXPONENT(); 
 
 						}
@@ -4706,8 +4706,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					}
 					} finally { DebugExitSubRule(10); }
 
-					DebugLocation(1079, 39);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1079:39: ( FLOAT_TYPE_SUFFIX )?
+					DebugLocation(1081, 39);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1081:39: ( FLOAT_TYPE_SUFFIX )?
 					int alt11=2;
 					try { DebugEnterSubRule(11);
 					try { DebugEnterDecision(11, false);
@@ -4722,9 +4722,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 						{
-						DebugLocation(1079, 39);
+						DebugLocation(1081, 39);
 						input.Consume();
 
 
@@ -4739,12 +4739,12 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1080:13: EXPONENT ( FLOAT_TYPE_SUFFIX )?
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1082:13: EXPONENT ( FLOAT_TYPE_SUFFIX )?
 					{
-					DebugLocation(1080, 13);
+					DebugLocation(1082, 13);
 					mEXPONENT(); 
-					DebugLocation(1080, 22);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1080:22: ( FLOAT_TYPE_SUFFIX )?
+					DebugLocation(1082, 22);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1082:22: ( FLOAT_TYPE_SUFFIX )?
 					int alt12=2;
 					try { DebugEnterSubRule(12);
 					try { DebugEnterDecision(12, false);
@@ -4759,9 +4759,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 						{
-						DebugLocation(1080, 22);
+						DebugLocation(1082, 22);
 						input.Consume();
 
 
@@ -4776,9 +4776,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					break;
 				case 3:
 					DebugEnterAlt(3);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1081:13: FLOAT_TYPE_SUFFIX
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1083:13: FLOAT_TYPE_SUFFIX
 					{
-					DebugLocation(1081, 13);
+					DebugLocation(1083, 13);
 					mFLOAT_TYPE_SUFFIX(); 
 
 					}
@@ -4792,12 +4792,12 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1083:9: DOT ( '0' .. '9' )+ ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )?
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1085:9: DOT ( '0' .. '9' )+ ( EXPONENT )? ( FLOAT_TYPE_SUFFIX )?
 				{
-				DebugLocation(1083, 9);
+				DebugLocation(1085, 9);
 				mDOT(); 
-				DebugLocation(1083, 13);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1083:13: ( '0' .. '9' )+
+				DebugLocation(1085, 13);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1085:13: ( '0' .. '9' )+
 				int cnt14=0;
 				try { DebugEnterSubRule(14);
 				while (true)
@@ -4817,9 +4817,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 						{
-						DebugLocation(1083, 13);
+						DebugLocation(1085, 13);
 						input.Consume();
 
 
@@ -4841,8 +4841,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(14); }
 
-				DebugLocation(1083, 25);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1083:25: ( EXPONENT )?
+				DebugLocation(1085, 25);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1085:25: ( EXPONENT )?
 				int alt15=2;
 				try { DebugEnterSubRule(15);
 				try { DebugEnterDecision(15, false);
@@ -4857,9 +4857,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1083:25: EXPONENT
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1085:25: EXPONENT
 					{
-					DebugLocation(1083, 25);
+					DebugLocation(1085, 25);
 					mEXPONENT(); 
 
 					}
@@ -4868,8 +4868,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				}
 				} finally { DebugExitSubRule(15); }
 
-				DebugLocation(1083, 35);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1083:35: ( FLOAT_TYPE_SUFFIX )?
+				DebugLocation(1085, 35);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1085:35: ( FLOAT_TYPE_SUFFIX )?
 				int alt16=2;
 				try { DebugEnterSubRule(16);
 				try { DebugEnterDecision(16, false);
@@ -4884,9 +4884,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 					{
-					DebugLocation(1083, 35);
+					DebugLocation(1085, 35);
 					input.Consume();
 
 
@@ -4925,11 +4925,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		TraceIn("EXPONENT", 113);
 		try
 		{
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1088:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1090:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1088:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1090:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
 			{
-			DebugLocation(1088, 12);
+			DebugLocation(1090, 12);
 			if (input.LA(1)=='E'||input.LA(1)=='e')
 			{
 				input.Consume();
@@ -4942,8 +4942,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(1088, 22);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1088:22: ( '+' | '-' )?
+			DebugLocation(1090, 22);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1090:22: ( '+' | '-' )?
 			int alt18=2;
 			try { DebugEnterSubRule(18);
 			try { DebugEnterDecision(18, false);
@@ -4958,9 +4958,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 				{
-				DebugLocation(1088, 22);
+				DebugLocation(1090, 22);
 				input.Consume();
 
 
@@ -4970,8 +4970,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			}
 			} finally { DebugExitSubRule(18); }
 
-			DebugLocation(1088, 33);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1088:33: ( '0' .. '9' )+
+			DebugLocation(1090, 33);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1090:33: ( '0' .. '9' )+
 			int cnt19=0;
 			try { DebugEnterSubRule(19);
 			while (true)
@@ -4991,9 +4991,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 					{
-					DebugLocation(1088, 33);
+					DebugLocation(1090, 33);
 					input.Consume();
 
 
@@ -5040,11 +5040,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		TraceIn("FLOAT_TYPE_SUFFIX", 114);
 		try
 		{
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1091:19: ( ( 'f' | 'F' | 'd' | 'D' ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1093:19: ( ( 'f' | 'F' | 'd' | 'D' ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 			{
-			DebugLocation(1091, 19);
+			DebugLocation(1093, 19);
 			if (input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='d'||input.LA(1)=='f')
 			{
 				input.Consume();
@@ -5084,14 +5084,14 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = CHARACTER_LITERAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1093:5: ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) ) '\\'' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1095:5: ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) ) '\\'' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1093:9: '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) ) '\\''
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1095:9: '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) ) '\\''
 			{
-			DebugLocation(1093, 9);
+			DebugLocation(1095, 9);
 			Match('\''); 
-			DebugLocation(1093, 14);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1093:14: ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )
+			DebugLocation(1095, 14);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1095:14: ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )
 			int alt20=2;
 			try { DebugEnterSubRule(20);
 			try { DebugEnterDecision(20, false);
@@ -5116,18 +5116,18 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1093:16: ESCAPE_SEQUENCE
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1095:16: ESCAPE_SEQUENCE
 				{
-				DebugLocation(1093, 16);
+				DebugLocation(1095, 16);
 				mESCAPE_SEQUENCE(); 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1093:34: ~ ( '\\'' | '\\\\' )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1095:34: ~ ( '\\'' | '\\\\' )
 				{
-				DebugLocation(1093, 34);
+				DebugLocation(1095, 34);
 				input.Consume();
 
 
@@ -5137,7 +5137,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			}
 			} finally { DebugExitSubRule(20); }
 
-			DebugLocation(1093, 49);
+			DebugLocation(1095, 49);
 			Match('\''); 
 
 			}
@@ -5168,7 +5168,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = STRING_LITERAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1097:5: ( ( '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"' ) | ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )* '\\'' ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1099:5: ( ( '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"' ) | ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )* '\\'' ) )
 			int alt23=2;
 			try { DebugEnterDecision(23, false);
 			int LA23_1 = input.LA(1);
@@ -5192,17 +5192,17 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1097:7: ( '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"' )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1099:7: ( '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"' )
 				{
-				DebugLocation(1097, 7);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1097:7: ( '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"' )
+				DebugLocation(1099, 7);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1099:7: ( '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"' )
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1097:9: '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"'
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1099:9: '\"' ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )* '\"'
 				{
-				DebugLocation(1097, 9);
+				DebugLocation(1099, 9);
 				Match('\"'); 
-				DebugLocation(1097, 13);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1097:13: ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )*
+				DebugLocation(1099, 13);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1099:13: ( ESCAPE_SEQUENCE |~ ( '\\\\' | '\"' ) )*
 				try { DebugEnterSubRule(21);
 				while (true)
 				{
@@ -5225,18 +5225,18 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1097:15: ESCAPE_SEQUENCE
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1099:15: ESCAPE_SEQUENCE
 						{
-						DebugLocation(1097, 15);
+						DebugLocation(1099, 15);
 						mESCAPE_SEQUENCE(); 
 
 						}
 						break;
 					case 2:
 						DebugEnterAlt(2);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1097:33: ~ ( '\\\\' | '\"' )
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1099:33: ~ ( '\\\\' | '\"' )
 						{
-						DebugLocation(1097, 33);
+						DebugLocation(1099, 33);
 						input.Consume();
 
 
@@ -5253,7 +5253,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(21); }
 
-				DebugLocation(1097, 48);
+				DebugLocation(1099, 48);
 				Match('\"'); 
 
 				}
@@ -5263,17 +5263,17 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1098:7: ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )* '\\'' )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1100:7: ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )* '\\'' )
 				{
-				DebugLocation(1098, 7);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1098:7: ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )* '\\'' )
+				DebugLocation(1100, 7);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1100:7: ( '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )* '\\'' )
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1098:8: '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )* '\\''
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1100:8: '\\'' ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )* '\\''
 				{
-				DebugLocation(1098, 8);
+				DebugLocation(1100, 8);
 				Match('\''); 
-				DebugLocation(1098, 13);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1098:13: ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )*
+				DebugLocation(1100, 13);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1100:13: ( ESCAPE_SEQUENCE |~ ( '\\'' | '\\\\' ) )*
 				try { DebugEnterSubRule(22);
 				while (true)
 				{
@@ -5296,18 +5296,18 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1098:15: ESCAPE_SEQUENCE
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1100:15: ESCAPE_SEQUENCE
 						{
-						DebugLocation(1098, 15);
+						DebugLocation(1100, 15);
 						mESCAPE_SEQUENCE(); 
 
 						}
 						break;
 					case 2:
 						DebugEnterAlt(2);
-						// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1098:33: ~ ( '\\'' | '\\\\' )
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1100:33: ~ ( '\\'' | '\\\\' )
 						{
-						DebugLocation(1098, 33);
+						DebugLocation(1100, 33);
 						input.Consume();
 
 
@@ -5324,7 +5324,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 				} finally { DebugExitSubRule(22); }
 
-				DebugLocation(1098, 49);
+				DebugLocation(1100, 49);
 				Match('\''); 
 
 				}
@@ -5360,14 +5360,14 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = SOQL_LITERAL;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:5: ( LBRACK ( ' ' )* ( 'select' ) ( ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK ) | ESCAPE_SEQUENCE |~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:5: ( LBRACK ( ' ' )* ( 'select' ) ( ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK ) | ESCAPE_SEQUENCE |~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:10: LBRACK ( ' ' )* ( 'select' ) ( ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK ) | ESCAPE_SEQUENCE |~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:10: LBRACK ( ' ' )* ( 'select' ) ( ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK ) | ESCAPE_SEQUENCE |~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK
 			{
-			DebugLocation(1102, 10);
+			DebugLocation(1104, 10);
 			mLBRACK(); 
-			DebugLocation(1102, 17);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:17: ( ' ' )*
+			DebugLocation(1104, 17);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:17: ( ' ' )*
 			try { DebugEnterSubRule(24);
 			while (true)
 			{
@@ -5386,9 +5386,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:18: ' '
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:18: ' '
 					{
-					DebugLocation(1102, 18);
+					DebugLocation(1104, 18);
 					Match(' '); 
 
 					}
@@ -5404,19 +5404,19 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(24); }
 
-			DebugLocation(1102, 24);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:24: ( 'select' )
+			DebugLocation(1104, 24);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:24: ( 'select' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:25: 'select'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:25: 'select'
 			{
-			DebugLocation(1102, 25);
+			DebugLocation(1104, 25);
 			Match("select"); 
 
 
 			}
 
-			DebugLocation(1102, 35);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:35: ( ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK ) | ESCAPE_SEQUENCE |~ ( '[' | ']' | '\\\\' | '\"' ) )*
+			DebugLocation(1104, 35);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:35: ( ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK ) | ESCAPE_SEQUENCE |~ ( '[' | ']' | '\\\\' | '\"' ) )*
 			try { DebugEnterSubRule(26);
 			while (true)
 			{
@@ -5443,17 +5443,17 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:37: ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK )
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:37: ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK )
 					{
-					DebugLocation(1102, 37);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:37: ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK )
+					DebugLocation(1104, 37);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:37: ( LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK )
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:38: LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:38: LBRACK (~ ( '[' | ']' | '\\\\' | '\"' ) )* RBRACK
 					{
-					DebugLocation(1102, 38);
+					DebugLocation(1104, 38);
 					mLBRACK(); 
-					DebugLocation(1102, 46);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:46: (~ ( '[' | ']' | '\\\\' | '\"' ) )*
+					DebugLocation(1104, 46);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:46: (~ ( '[' | ']' | '\\\\' | '\"' ) )*
 					try { DebugEnterSubRule(25);
 					while (true)
 					{
@@ -5472,9 +5472,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 							{
-							DebugLocation(1102, 46);
+							DebugLocation(1104, 46);
 							input.Consume();
 
 
@@ -5491,7 +5491,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 					} finally { DebugExitSubRule(25); }
 
-					DebugLocation(1102, 67);
+					DebugLocation(1104, 67);
 					mRBRACK(); 
 
 					}
@@ -5501,18 +5501,18 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:76: ESCAPE_SEQUENCE
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:76: ESCAPE_SEQUENCE
 					{
-					DebugLocation(1102, 76);
+					DebugLocation(1104, 76);
 					mESCAPE_SEQUENCE(); 
 
 					}
 					break;
 				case 3:
 					DebugEnterAlt(3);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1102:94: ~ ( '[' | ']' | '\\\\' | '\"' )
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1104:94: ~ ( '[' | ']' | '\\\\' | '\"' )
 					{
-					DebugLocation(1102, 94);
+					DebugLocation(1104, 94);
 					input.Consume();
 
 
@@ -5529,7 +5529,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(26); }
 
-			DebugLocation(1102, 117);
+			DebugLocation(1104, 117);
 			mRBRACK(); 
 
 			}
@@ -5558,7 +5558,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		TraceIn("ESCAPE_SEQUENCE", 118);
 		try
 		{
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1108:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESCAPE | OCTAL_ESCAPE )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1110:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UNICODE_ESCAPE | OCTAL_ESCAPE )
 			int alt27=3;
 			try { DebugEnterDecision(27, false);
 			int LA27_1 = input.LA(1);
@@ -5616,11 +5616,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1108:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1110:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
 				{
-				DebugLocation(1108, 9);
+				DebugLocation(1110, 9);
 				Match('\\'); 
-				DebugLocation(1108, 14);
+				DebugLocation(1110, 14);
 				input.Consume();
 
 
@@ -5628,18 +5628,18 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1109:9: UNICODE_ESCAPE
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1111:9: UNICODE_ESCAPE
 				{
-				DebugLocation(1109, 9);
+				DebugLocation(1111, 9);
 				mUNICODE_ESCAPE(); 
 
 				}
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1110:9: OCTAL_ESCAPE
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1112:9: OCTAL_ESCAPE
 				{
-				DebugLocation(1110, 9);
+				DebugLocation(1112, 9);
 				mOCTAL_ESCAPE(); 
 
 				}
@@ -5668,7 +5668,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		TraceIn("OCTAL_ESCAPE", 119);
 		try
 		{
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1115:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1117:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
 			int alt28=3;
 			try { DebugEnterDecision(28, false);
 			int LA28_1 = input.LA(1);
@@ -5730,17 +5730,17 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1115:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1117:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
 				{
-				DebugLocation(1115, 9);
+				DebugLocation(1117, 9);
 				Match('\\'); 
-				DebugLocation(1115, 14);
+				DebugLocation(1117, 14);
 				input.Consume();
 
-				DebugLocation(1115, 25);
+				DebugLocation(1117, 25);
 				input.Consume();
 
-				DebugLocation(1115, 36);
+				DebugLocation(1117, 36);
 				input.Consume();
 
 
@@ -5748,14 +5748,14 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1116:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1118:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
 				{
-				DebugLocation(1116, 9);
+				DebugLocation(1118, 9);
 				Match('\\'); 
-				DebugLocation(1116, 14);
+				DebugLocation(1118, 14);
 				input.Consume();
 
-				DebugLocation(1116, 25);
+				DebugLocation(1118, 25);
 				input.Consume();
 
 
@@ -5763,11 +5763,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1117:9: '\\\\' ( '0' .. '7' )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1119:9: '\\\\' ( '0' .. '7' )
 				{
-				DebugLocation(1117, 9);
+				DebugLocation(1119, 9);
 				Match('\\'); 
-				DebugLocation(1117, 14);
+				DebugLocation(1119, 14);
 				input.Consume();
 
 
@@ -5797,21 +5797,21 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		TraceIn("UNICODE_ESCAPE", 120);
 		try
 		{
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1122:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1124:5: ( '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1122:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1124:9: '\\\\' 'u' HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT
 			{
-			DebugLocation(1122, 9);
+			DebugLocation(1124, 9);
 			Match('\\'); 
-			DebugLocation(1122, 14);
+			DebugLocation(1124, 14);
 			Match('u'); 
-			DebugLocation(1122, 18);
+			DebugLocation(1124, 18);
 			mHEX_DIGIT(); 
-			DebugLocation(1122, 28);
+			DebugLocation(1124, 28);
 			mHEX_DIGIT(); 
-			DebugLocation(1122, 38);
+			DebugLocation(1124, 38);
 			mHEX_DIGIT(); 
-			DebugLocation(1122, 48);
+			DebugLocation(1124, 48);
 			mHEX_DIGIT(); 
 
 			}
@@ -5840,19 +5840,19 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = IDENT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1125:5: ( ( JAVA_ID_START ( JAVA_ID_PART )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1127:5: ( ( JAVA_ID_START ( JAVA_ID_PART )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1125:9: ( JAVA_ID_START ( JAVA_ID_PART )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1127:9: ( JAVA_ID_START ( JAVA_ID_PART )* )
 			{
-			DebugLocation(1125, 9);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1125:9: ( JAVA_ID_START ( JAVA_ID_PART )* )
+			DebugLocation(1127, 9);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1127:9: ( JAVA_ID_START ( JAVA_ID_PART )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1125:10: JAVA_ID_START ( JAVA_ID_PART )*
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1127:10: JAVA_ID_START ( JAVA_ID_PART )*
 			{
-			DebugLocation(1125, 10);
+			DebugLocation(1127, 10);
 			mJAVA_ID_START(); 
-			DebugLocation(1125, 24);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1125:24: ( JAVA_ID_PART )*
+			DebugLocation(1127, 24);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1127:24: ( JAVA_ID_PART )*
 			try { DebugEnterSubRule(29);
 			while (true)
 			{
@@ -5871,9 +5871,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 					{
-					DebugLocation(1125, 24);
+					DebugLocation(1127, 24);
 					input.Consume();
 
 
@@ -5920,11 +5920,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		TraceIn("JAVA_ID_START", 122);
 		try
 		{
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1131:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1133:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 			{
-			DebugLocation(1131, 5);
+			DebugLocation(1133, 5);
 			if (input.LA(1)=='$'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u1FFF')||(input.LA(1)>='\u3040' && input.LA(1)<='\u318F')||(input.LA(1)>='\u3300' && input.LA(1)<='\u337F')||(input.LA(1)>='\u3400' && input.LA(1)<='\u3D2D')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FFF')||(input.LA(1)>='\uF900' && input.LA(1)<='\uFAFF'))
 			{
 				input.Consume();
@@ -5962,11 +5962,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		TraceIn("JAVA_ID_PART", 123);
 		try
 		{
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1148:5: ( JAVA_ID_START | '\\u0030' .. '\\u0039' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1150:5: ( JAVA_ID_START | '\\u0030' .. '\\u0039' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 			{
-			DebugLocation(1148, 5);
+			DebugLocation(1150, 5);
 			if (input.LA(1)=='$'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u1FFF')||(input.LA(1)>='\u3040' && input.LA(1)<='\u318F')||(input.LA(1)>='\u3300' && input.LA(1)<='\u337F')||(input.LA(1)>='\u3400' && input.LA(1)<='\u3D2D')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FFF')||(input.LA(1)>='\uF900' && input.LA(1)<='\uFAFF'))
 			{
 				input.Consume();
@@ -6006,11 +6006,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = WS;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1151:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1153:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1151:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1153:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
 			{
-			DebugLocation(1151, 8);
+			DebugLocation(1153, 8);
 			if ((input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ')
 			{
 				input.Consume();
@@ -6023,7 +6023,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				throw mse;
 			}
 
-			DebugLocation(1152, 5);
+			DebugLocation(1154, 5);
 			   
 			        if (!preserveWhitespacesAndComments) {
 			            Skip();
@@ -6060,15 +6060,15 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = COMMENT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1162:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1164:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1162:9: '/*' ( options {greedy=false; } : . )* '*/'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1164:9: '/*' ( options {greedy=false; } : . )* '*/'
 			{
-			DebugLocation(1162, 9);
+			DebugLocation(1164, 9);
 			Match("/*"); 
 
-			DebugLocation(1162, 14);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1162:14: ( options {greedy=false; } : . )*
+			DebugLocation(1164, 14);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1164:14: ( options {greedy=false; } : . )*
 			try { DebugEnterSubRule(30);
 			while (true)
 			{
@@ -6102,9 +6102,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1162:42: .
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1164:42: .
 					{
-					DebugLocation(1162, 42);
+					DebugLocation(1164, 42);
 					MatchAny(); 
 
 					}
@@ -6120,10 +6120,10 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(30); }
 
-			DebugLocation(1162, 47);
+			DebugLocation(1164, 47);
 			Match("*/"); 
 
-			DebugLocation(1163, 5);
+			DebugLocation(1165, 5);
 			   
 			        if (!preserveWhitespacesAndComments) {
 			            Skip();
@@ -6160,15 +6160,15 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 			int _type = LINE_COMMENT;
 			int _channel = DefaultTokenChannel;
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1173:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1175:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1173:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1175:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
 			{
-			DebugLocation(1173, 7);
+			DebugLocation(1175, 7);
 			Match("//"); 
 
-			DebugLocation(1173, 12);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1173:12: (~ ( '\\n' | '\\r' ) )*
+			DebugLocation(1175, 12);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1175:12: (~ ( '\\n' | '\\r' ) )*
 			try { DebugEnterSubRule(31);
 			while (true)
 			{
@@ -6187,9 +6187,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:
 					{
-					DebugLocation(1173, 12);
+					DebugLocation(1175, 12);
 					input.Consume();
 
 
@@ -6206,8 +6206,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 			} finally { DebugExitSubRule(31); }
 
-			DebugLocation(1173, 26);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1173:26: ( '\\r' )?
+			DebugLocation(1175, 26);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1175:26: ( '\\r' )?
 			int alt32=2;
 			try { DebugEnterSubRule(32);
 			try { DebugEnterDecision(32, false);
@@ -6222,9 +6222,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1173:26: '\\r'
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1175:26: '\\r'
 				{
-				DebugLocation(1173, 26);
+				DebugLocation(1175, 26);
 				Match('\r'); 
 
 				}
@@ -6233,9 +6233,9 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			}
 			} finally { DebugExitSubRule(32); }
 
-			DebugLocation(1173, 32);
+			DebugLocation(1175, 32);
 			Match('\n'); 
-			DebugLocation(1174, 5);
+			DebugLocation(1176, 5);
 			   
 			        if (!preserveWhitespacesAndComments) {
 			            Skip();
@@ -6260,7 +6260,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:8: ( ABSTRACT | AND | AND_ASSIGN | ASSIGN | AT | BIT_SHIFT_RIGHT | BIT_SHIFT_RIGHT_ASSIGN | BOOLEAN | BREAK | BYTE | CASE | CATCH | CHAR | CLASS | COLON | COMMA | CONTINUE | DEC | DEFAULT | DIV | DIV_ASSIGN | DO | DOT | DOTSTAR | DOUBLE | ELLIPSIS | ELSE | ENUM | EQUAL | EXTENDS | FALSE | FINAL | FINALLY | FLOAT | FOR | GLOBAL | GREATER_OR_EQUAL | GREATER_THAN | IF | IMPLEMENTS | IMPORT | INC | INSTANCEOF | INT | INTERFACE | LBRACK | LCURLY | LESS_OR_EQUAL | LESS_THAN | LOGICAL_AND | LOGICAL_NOT | LOGICAL_OR | LONG | LPAREN | MINUS | MINUS_ASSIGN | MOD | MOD_ASSIGN | NATIVE | NEW | NOT | NOT_EQUAL | NULL | OR | OR_ASSIGN | OVERRIDE | PACKAGE | PLUS | PLUS_ASSIGN | PRIVATE | PROTECTED | PUBLIC | QUESTION | RBRACK | RCURLY | RETURN | RPAREN | SEMI | SHIFT_LEFT | SHIFT_LEFT_ASSIGN | SHIFT_RIGHT | SHIFT_RIGHT_ASSIGN | SHORT | STAR | STAR_ASSIGN | STATIC | STRICTFP | SUPER | SWITCH | SYNCHRONIZED | TEST_METHOD | THIS | THROW | THROWS | TRANSIENT | TRUE | TRY | VIRTUAL | VOID | VOLATILE | WHILE | WITHOUT_SHARING | WITH_SHARING | XOR | XOR_ASSIGN | T__194 | HEX_LITERAL | DECIMAL_LITERAL | OCTAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | SOQL_LITERAL | IDENT | WS | COMMENT | LINE_COMMENT )
+		// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:8: ( ABSTRACT | AND | AND_ASSIGN | ASSIGN | AT | BIT_SHIFT_RIGHT | BIT_SHIFT_RIGHT_ASSIGN | BOOLEAN | BREAK | BYTE | CASE | CATCH | CHAR | CLASS | COLON | COMMA | CONTINUE | DEC | DEFAULT | DIV | DIV_ASSIGN | DO | DOT | DOTSTAR | DOUBLE | ELLIPSIS | ELSE | ENUM | EQUAL | EXTENDS | FALSE | FINAL | FINALLY | FLOAT | FOR | GLOBAL | GREATER_OR_EQUAL | GREATER_THAN | IF | IMPLEMENTS | IMPORT | INC | INSTANCEOF | INT | INTERFACE | LBRACK | LCURLY | LESS_OR_EQUAL | LESS_THAN | LOGICAL_AND | LOGICAL_NOT | LOGICAL_OR | LONG | LPAREN | MINUS | MINUS_ASSIGN | MOD | MOD_ASSIGN | NATIVE | NEW | NOT | NOT_EQUAL | NULL | OR | OR_ASSIGN | OVERRIDE | PACKAGE | PLUS | PLUS_ASSIGN | PRIVATE | PROTECTED | PUBLIC | QUESTION | RBRACK | RCURLY | RETURN | RPAREN | SEMI | SHIFT_LEFT | SHIFT_LEFT_ASSIGN | SHIFT_RIGHT | SHIFT_RIGHT_ASSIGN | SHORT | STAR | STAR_ASSIGN | STATIC | STRICTFP | SUPER | SWITCH | SYNCHRONIZED | TEST_METHOD | THIS | THROW | THROWS | TRANSIENT | TRUE | TRY | VIRTUAL | VOID | VOLATILE | WHILE | WITHOUT_SHARING | WITH_SHARING | XOR | XOR_ASSIGN | T__194 | HEX_LITERAL | DECIMAL_LITERAL | OCTAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | SOQL_LITERAL | IDENT | WS | COMMENT | LINE_COMMENT )
 		int alt33=117;
 		try { DebugEnterDecision(33, false);
 		try
@@ -6277,7 +6277,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 		case 1:
 			DebugEnterAlt(1);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:10: ABSTRACT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:10: ABSTRACT
 			{
 			DebugLocation(1, 10);
 			mABSTRACT(); 
@@ -6286,7 +6286,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 2:
 			DebugEnterAlt(2);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:19: AND
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:19: AND
 			{
 			DebugLocation(1, 19);
 			mAND(); 
@@ -6295,7 +6295,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 3:
 			DebugEnterAlt(3);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:23: AND_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:23: AND_ASSIGN
 			{
 			DebugLocation(1, 23);
 			mAND_ASSIGN(); 
@@ -6304,7 +6304,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 4:
 			DebugEnterAlt(4);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:34: ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:34: ASSIGN
 			{
 			DebugLocation(1, 34);
 			mASSIGN(); 
@@ -6313,7 +6313,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 5:
 			DebugEnterAlt(5);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:41: AT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:41: AT
 			{
 			DebugLocation(1, 41);
 			mAT(); 
@@ -6322,7 +6322,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 6:
 			DebugEnterAlt(6);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:44: BIT_SHIFT_RIGHT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:44: BIT_SHIFT_RIGHT
 			{
 			DebugLocation(1, 44);
 			mBIT_SHIFT_RIGHT(); 
@@ -6331,7 +6331,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 7:
 			DebugEnterAlt(7);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:60: BIT_SHIFT_RIGHT_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:60: BIT_SHIFT_RIGHT_ASSIGN
 			{
 			DebugLocation(1, 60);
 			mBIT_SHIFT_RIGHT_ASSIGN(); 
@@ -6340,7 +6340,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:83: BOOLEAN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:83: BOOLEAN
 			{
 			DebugLocation(1, 83);
 			mBOOLEAN(); 
@@ -6349,7 +6349,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 9:
 			DebugEnterAlt(9);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:91: BREAK
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:91: BREAK
 			{
 			DebugLocation(1, 91);
 			mBREAK(); 
@@ -6358,7 +6358,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 10:
 			DebugEnterAlt(10);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:97: BYTE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:97: BYTE
 			{
 			DebugLocation(1, 97);
 			mBYTE(); 
@@ -6367,7 +6367,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 11:
 			DebugEnterAlt(11);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:102: CASE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:102: CASE
 			{
 			DebugLocation(1, 102);
 			mCASE(); 
@@ -6376,7 +6376,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 12:
 			DebugEnterAlt(12);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:107: CATCH
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:107: CATCH
 			{
 			DebugLocation(1, 107);
 			mCATCH(); 
@@ -6385,7 +6385,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 13:
 			DebugEnterAlt(13);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:113: CHAR
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:113: CHAR
 			{
 			DebugLocation(1, 113);
 			mCHAR(); 
@@ -6394,7 +6394,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 14:
 			DebugEnterAlt(14);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:118: CLASS
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:118: CLASS
 			{
 			DebugLocation(1, 118);
 			mCLASS(); 
@@ -6403,7 +6403,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 15:
 			DebugEnterAlt(15);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:124: COLON
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:124: COLON
 			{
 			DebugLocation(1, 124);
 			mCOLON(); 
@@ -6412,7 +6412,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 16:
 			DebugEnterAlt(16);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:130: COMMA
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:130: COMMA
 			{
 			DebugLocation(1, 130);
 			mCOMMA(); 
@@ -6421,7 +6421,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 17:
 			DebugEnterAlt(17);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:136: CONTINUE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:136: CONTINUE
 			{
 			DebugLocation(1, 136);
 			mCONTINUE(); 
@@ -6430,7 +6430,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 18:
 			DebugEnterAlt(18);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:145: DEC
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:145: DEC
 			{
 			DebugLocation(1, 145);
 			mDEC(); 
@@ -6439,7 +6439,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 19:
 			DebugEnterAlt(19);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:149: DEFAULT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:149: DEFAULT
 			{
 			DebugLocation(1, 149);
 			mDEFAULT(); 
@@ -6448,7 +6448,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 20:
 			DebugEnterAlt(20);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:157: DIV
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:157: DIV
 			{
 			DebugLocation(1, 157);
 			mDIV(); 
@@ -6457,7 +6457,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 21:
 			DebugEnterAlt(21);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:161: DIV_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:161: DIV_ASSIGN
 			{
 			DebugLocation(1, 161);
 			mDIV_ASSIGN(); 
@@ -6466,7 +6466,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 22:
 			DebugEnterAlt(22);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:172: DO
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:172: DO
 			{
 			DebugLocation(1, 172);
 			mDO(); 
@@ -6475,7 +6475,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 23:
 			DebugEnterAlt(23);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:175: DOT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:175: DOT
 			{
 			DebugLocation(1, 175);
 			mDOT(); 
@@ -6484,7 +6484,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 24:
 			DebugEnterAlt(24);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:179: DOTSTAR
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:179: DOTSTAR
 			{
 			DebugLocation(1, 179);
 			mDOTSTAR(); 
@@ -6493,7 +6493,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 25:
 			DebugEnterAlt(25);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:187: DOUBLE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:187: DOUBLE
 			{
 			DebugLocation(1, 187);
 			mDOUBLE(); 
@@ -6502,7 +6502,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 26:
 			DebugEnterAlt(26);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:194: ELLIPSIS
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:194: ELLIPSIS
 			{
 			DebugLocation(1, 194);
 			mELLIPSIS(); 
@@ -6511,7 +6511,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 27:
 			DebugEnterAlt(27);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:203: ELSE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:203: ELSE
 			{
 			DebugLocation(1, 203);
 			mELSE(); 
@@ -6520,7 +6520,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 28:
 			DebugEnterAlt(28);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:208: ENUM
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:208: ENUM
 			{
 			DebugLocation(1, 208);
 			mENUM(); 
@@ -6529,7 +6529,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 29:
 			DebugEnterAlt(29);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:213: EQUAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:213: EQUAL
 			{
 			DebugLocation(1, 213);
 			mEQUAL(); 
@@ -6538,7 +6538,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 30:
 			DebugEnterAlt(30);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:219: EXTENDS
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:219: EXTENDS
 			{
 			DebugLocation(1, 219);
 			mEXTENDS(); 
@@ -6547,7 +6547,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 31:
 			DebugEnterAlt(31);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:227: FALSE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:227: FALSE
 			{
 			DebugLocation(1, 227);
 			mFALSE(); 
@@ -6556,7 +6556,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 32:
 			DebugEnterAlt(32);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:233: FINAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:233: FINAL
 			{
 			DebugLocation(1, 233);
 			mFINAL(); 
@@ -6565,7 +6565,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 33:
 			DebugEnterAlt(33);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:239: FINALLY
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:239: FINALLY
 			{
 			DebugLocation(1, 239);
 			mFINALLY(); 
@@ -6574,7 +6574,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 34:
 			DebugEnterAlt(34);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:247: FLOAT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:247: FLOAT
 			{
 			DebugLocation(1, 247);
 			mFLOAT(); 
@@ -6583,7 +6583,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 35:
 			DebugEnterAlt(35);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:253: FOR
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:253: FOR
 			{
 			DebugLocation(1, 253);
 			mFOR(); 
@@ -6592,7 +6592,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 36:
 			DebugEnterAlt(36);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:257: GLOBAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:257: GLOBAL
 			{
 			DebugLocation(1, 257);
 			mGLOBAL(); 
@@ -6601,7 +6601,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 37:
 			DebugEnterAlt(37);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:264: GREATER_OR_EQUAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:264: GREATER_OR_EQUAL
 			{
 			DebugLocation(1, 264);
 			mGREATER_OR_EQUAL(); 
@@ -6610,7 +6610,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 38:
 			DebugEnterAlt(38);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:281: GREATER_THAN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:281: GREATER_THAN
 			{
 			DebugLocation(1, 281);
 			mGREATER_THAN(); 
@@ -6619,7 +6619,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 39:
 			DebugEnterAlt(39);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:294: IF
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:294: IF
 			{
 			DebugLocation(1, 294);
 			mIF(); 
@@ -6628,7 +6628,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 40:
 			DebugEnterAlt(40);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:297: IMPLEMENTS
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:297: IMPLEMENTS
 			{
 			DebugLocation(1, 297);
 			mIMPLEMENTS(); 
@@ -6637,7 +6637,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 41:
 			DebugEnterAlt(41);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:308: IMPORT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:308: IMPORT
 			{
 			DebugLocation(1, 308);
 			mIMPORT(); 
@@ -6646,7 +6646,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 42:
 			DebugEnterAlt(42);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:315: INC
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:315: INC
 			{
 			DebugLocation(1, 315);
 			mINC(); 
@@ -6655,7 +6655,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 43:
 			DebugEnterAlt(43);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:319: INSTANCEOF
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:319: INSTANCEOF
 			{
 			DebugLocation(1, 319);
 			mINSTANCEOF(); 
@@ -6664,7 +6664,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 44:
 			DebugEnterAlt(44);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:330: INT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:330: INT
 			{
 			DebugLocation(1, 330);
 			mINT(); 
@@ -6673,7 +6673,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 45:
 			DebugEnterAlt(45);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:334: INTERFACE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:334: INTERFACE
 			{
 			DebugLocation(1, 334);
 			mINTERFACE(); 
@@ -6682,7 +6682,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 46:
 			DebugEnterAlt(46);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:344: LBRACK
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:344: LBRACK
 			{
 			DebugLocation(1, 344);
 			mLBRACK(); 
@@ -6691,7 +6691,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 47:
 			DebugEnterAlt(47);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:351: LCURLY
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:351: LCURLY
 			{
 			DebugLocation(1, 351);
 			mLCURLY(); 
@@ -6700,7 +6700,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 48:
 			DebugEnterAlt(48);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:358: LESS_OR_EQUAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:358: LESS_OR_EQUAL
 			{
 			DebugLocation(1, 358);
 			mLESS_OR_EQUAL(); 
@@ -6709,7 +6709,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 49:
 			DebugEnterAlt(49);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:372: LESS_THAN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:372: LESS_THAN
 			{
 			DebugLocation(1, 372);
 			mLESS_THAN(); 
@@ -6718,7 +6718,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 50:
 			DebugEnterAlt(50);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:382: LOGICAL_AND
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:382: LOGICAL_AND
 			{
 			DebugLocation(1, 382);
 			mLOGICAL_AND(); 
@@ -6727,7 +6727,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 51:
 			DebugEnterAlt(51);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:394: LOGICAL_NOT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:394: LOGICAL_NOT
 			{
 			DebugLocation(1, 394);
 			mLOGICAL_NOT(); 
@@ -6736,7 +6736,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 52:
 			DebugEnterAlt(52);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:406: LOGICAL_OR
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:406: LOGICAL_OR
 			{
 			DebugLocation(1, 406);
 			mLOGICAL_OR(); 
@@ -6745,7 +6745,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 53:
 			DebugEnterAlt(53);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:417: LONG
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:417: LONG
 			{
 			DebugLocation(1, 417);
 			mLONG(); 
@@ -6754,7 +6754,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 54:
 			DebugEnterAlt(54);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:422: LPAREN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:422: LPAREN
 			{
 			DebugLocation(1, 422);
 			mLPAREN(); 
@@ -6763,7 +6763,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 55:
 			DebugEnterAlt(55);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:429: MINUS
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:429: MINUS
 			{
 			DebugLocation(1, 429);
 			mMINUS(); 
@@ -6772,7 +6772,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 56:
 			DebugEnterAlt(56);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:435: MINUS_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:435: MINUS_ASSIGN
 			{
 			DebugLocation(1, 435);
 			mMINUS_ASSIGN(); 
@@ -6781,7 +6781,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 57:
 			DebugEnterAlt(57);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:448: MOD
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:448: MOD
 			{
 			DebugLocation(1, 448);
 			mMOD(); 
@@ -6790,7 +6790,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 58:
 			DebugEnterAlt(58);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:452: MOD_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:452: MOD_ASSIGN
 			{
 			DebugLocation(1, 452);
 			mMOD_ASSIGN(); 
@@ -6799,7 +6799,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 59:
 			DebugEnterAlt(59);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:463: NATIVE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:463: NATIVE
 			{
 			DebugLocation(1, 463);
 			mNATIVE(); 
@@ -6808,7 +6808,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 60:
 			DebugEnterAlt(60);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:470: NEW
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:470: NEW
 			{
 			DebugLocation(1, 470);
 			mNEW(); 
@@ -6817,7 +6817,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 61:
 			DebugEnterAlt(61);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:474: NOT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:474: NOT
 			{
 			DebugLocation(1, 474);
 			mNOT(); 
@@ -6826,7 +6826,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 62:
 			DebugEnterAlt(62);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:478: NOT_EQUAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:478: NOT_EQUAL
 			{
 			DebugLocation(1, 478);
 			mNOT_EQUAL(); 
@@ -6835,7 +6835,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 63:
 			DebugEnterAlt(63);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:488: NULL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:488: NULL
 			{
 			DebugLocation(1, 488);
 			mNULL(); 
@@ -6844,7 +6844,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 64:
 			DebugEnterAlt(64);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:493: OR
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:493: OR
 			{
 			DebugLocation(1, 493);
 			mOR(); 
@@ -6853,7 +6853,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 65:
 			DebugEnterAlt(65);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:496: OR_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:496: OR_ASSIGN
 			{
 			DebugLocation(1, 496);
 			mOR_ASSIGN(); 
@@ -6862,7 +6862,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 66:
 			DebugEnterAlt(66);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:506: OVERRIDE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:506: OVERRIDE
 			{
 			DebugLocation(1, 506);
 			mOVERRIDE(); 
@@ -6871,7 +6871,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 67:
 			DebugEnterAlt(67);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:515: PACKAGE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:515: PACKAGE
 			{
 			DebugLocation(1, 515);
 			mPACKAGE(); 
@@ -6880,7 +6880,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 68:
 			DebugEnterAlt(68);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:523: PLUS
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:523: PLUS
 			{
 			DebugLocation(1, 523);
 			mPLUS(); 
@@ -6889,7 +6889,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 69:
 			DebugEnterAlt(69);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:528: PLUS_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:528: PLUS_ASSIGN
 			{
 			DebugLocation(1, 528);
 			mPLUS_ASSIGN(); 
@@ -6898,7 +6898,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 70:
 			DebugEnterAlt(70);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:540: PRIVATE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:540: PRIVATE
 			{
 			DebugLocation(1, 540);
 			mPRIVATE(); 
@@ -6907,7 +6907,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 71:
 			DebugEnterAlt(71);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:548: PROTECTED
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:548: PROTECTED
 			{
 			DebugLocation(1, 548);
 			mPROTECTED(); 
@@ -6916,7 +6916,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 72:
 			DebugEnterAlt(72);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:558: PUBLIC
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:558: PUBLIC
 			{
 			DebugLocation(1, 558);
 			mPUBLIC(); 
@@ -6925,7 +6925,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 73:
 			DebugEnterAlt(73);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:565: QUESTION
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:565: QUESTION
 			{
 			DebugLocation(1, 565);
 			mQUESTION(); 
@@ -6934,7 +6934,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 74:
 			DebugEnterAlt(74);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:574: RBRACK
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:574: RBRACK
 			{
 			DebugLocation(1, 574);
 			mRBRACK(); 
@@ -6943,7 +6943,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 75:
 			DebugEnterAlt(75);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:581: RCURLY
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:581: RCURLY
 			{
 			DebugLocation(1, 581);
 			mRCURLY(); 
@@ -6952,7 +6952,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 76:
 			DebugEnterAlt(76);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:588: RETURN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:588: RETURN
 			{
 			DebugLocation(1, 588);
 			mRETURN(); 
@@ -6961,7 +6961,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 77:
 			DebugEnterAlt(77);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:595: RPAREN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:595: RPAREN
 			{
 			DebugLocation(1, 595);
 			mRPAREN(); 
@@ -6970,7 +6970,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 78:
 			DebugEnterAlt(78);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:602: SEMI
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:602: SEMI
 			{
 			DebugLocation(1, 602);
 			mSEMI(); 
@@ -6979,7 +6979,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 79:
 			DebugEnterAlt(79);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:607: SHIFT_LEFT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:607: SHIFT_LEFT
 			{
 			DebugLocation(1, 607);
 			mSHIFT_LEFT(); 
@@ -6988,7 +6988,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 80:
 			DebugEnterAlt(80);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:618: SHIFT_LEFT_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:618: SHIFT_LEFT_ASSIGN
 			{
 			DebugLocation(1, 618);
 			mSHIFT_LEFT_ASSIGN(); 
@@ -6997,7 +6997,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 81:
 			DebugEnterAlt(81);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:636: SHIFT_RIGHT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:636: SHIFT_RIGHT
 			{
 			DebugLocation(1, 636);
 			mSHIFT_RIGHT(); 
@@ -7006,7 +7006,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 82:
 			DebugEnterAlt(82);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:648: SHIFT_RIGHT_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:648: SHIFT_RIGHT_ASSIGN
 			{
 			DebugLocation(1, 648);
 			mSHIFT_RIGHT_ASSIGN(); 
@@ -7015,7 +7015,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 83:
 			DebugEnterAlt(83);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:667: SHORT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:667: SHORT
 			{
 			DebugLocation(1, 667);
 			mSHORT(); 
@@ -7024,7 +7024,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 84:
 			DebugEnterAlt(84);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:673: STAR
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:673: STAR
 			{
 			DebugLocation(1, 673);
 			mSTAR(); 
@@ -7033,7 +7033,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 85:
 			DebugEnterAlt(85);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:678: STAR_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:678: STAR_ASSIGN
 			{
 			DebugLocation(1, 678);
 			mSTAR_ASSIGN(); 
@@ -7042,7 +7042,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 86:
 			DebugEnterAlt(86);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:690: STATIC
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:690: STATIC
 			{
 			DebugLocation(1, 690);
 			mSTATIC(); 
@@ -7051,7 +7051,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 87:
 			DebugEnterAlt(87);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:697: STRICTFP
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:697: STRICTFP
 			{
 			DebugLocation(1, 697);
 			mSTRICTFP(); 
@@ -7060,7 +7060,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 88:
 			DebugEnterAlt(88);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:706: SUPER
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:706: SUPER
 			{
 			DebugLocation(1, 706);
 			mSUPER(); 
@@ -7069,7 +7069,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 89:
 			DebugEnterAlt(89);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:712: SWITCH
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:712: SWITCH
 			{
 			DebugLocation(1, 712);
 			mSWITCH(); 
@@ -7078,7 +7078,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 90:
 			DebugEnterAlt(90);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:719: SYNCHRONIZED
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:719: SYNCHRONIZED
 			{
 			DebugLocation(1, 719);
 			mSYNCHRONIZED(); 
@@ -7087,7 +7087,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 91:
 			DebugEnterAlt(91);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:732: TEST_METHOD
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:732: TEST_METHOD
 			{
 			DebugLocation(1, 732);
 			mTEST_METHOD(); 
@@ -7096,7 +7096,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 92:
 			DebugEnterAlt(92);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:744: THIS
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:744: THIS
 			{
 			DebugLocation(1, 744);
 			mTHIS(); 
@@ -7105,7 +7105,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 93:
 			DebugEnterAlt(93);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:749: THROW
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:749: THROW
 			{
 			DebugLocation(1, 749);
 			mTHROW(); 
@@ -7114,7 +7114,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 94:
 			DebugEnterAlt(94);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:755: THROWS
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:755: THROWS
 			{
 			DebugLocation(1, 755);
 			mTHROWS(); 
@@ -7123,7 +7123,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 95:
 			DebugEnterAlt(95);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:762: TRANSIENT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:762: TRANSIENT
 			{
 			DebugLocation(1, 762);
 			mTRANSIENT(); 
@@ -7132,7 +7132,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 96:
 			DebugEnterAlt(96);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:772: TRUE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:772: TRUE
 			{
 			DebugLocation(1, 772);
 			mTRUE(); 
@@ -7141,7 +7141,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 97:
 			DebugEnterAlt(97);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:777: TRY
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:777: TRY
 			{
 			DebugLocation(1, 777);
 			mTRY(); 
@@ -7150,7 +7150,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 98:
 			DebugEnterAlt(98);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:781: VIRTUAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:781: VIRTUAL
 			{
 			DebugLocation(1, 781);
 			mVIRTUAL(); 
@@ -7159,7 +7159,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 99:
 			DebugEnterAlt(99);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:789: VOID
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:789: VOID
 			{
 			DebugLocation(1, 789);
 			mVOID(); 
@@ -7168,7 +7168,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 100:
 			DebugEnterAlt(100);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:794: VOLATILE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:794: VOLATILE
 			{
 			DebugLocation(1, 794);
 			mVOLATILE(); 
@@ -7177,7 +7177,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 101:
 			DebugEnterAlt(101);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:803: WHILE
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:803: WHILE
 			{
 			DebugLocation(1, 803);
 			mWHILE(); 
@@ -7186,7 +7186,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 102:
 			DebugEnterAlt(102);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:809: WITHOUT_SHARING
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:809: WITHOUT_SHARING
 			{
 			DebugLocation(1, 809);
 			mWITHOUT_SHARING(); 
@@ -7195,7 +7195,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 103:
 			DebugEnterAlt(103);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:825: WITH_SHARING
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:825: WITH_SHARING
 			{
 			DebugLocation(1, 825);
 			mWITH_SHARING(); 
@@ -7204,7 +7204,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 104:
 			DebugEnterAlt(104);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:838: XOR
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:838: XOR
 			{
 			DebugLocation(1, 838);
 			mXOR(); 
@@ -7213,7 +7213,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 105:
 			DebugEnterAlt(105);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:842: XOR_ASSIGN
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:842: XOR_ASSIGN
 			{
 			DebugLocation(1, 842);
 			mXOR_ASSIGN(); 
@@ -7222,7 +7222,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 106:
 			DebugEnterAlt(106);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:853: T__194
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:853: T__194
 			{
 			DebugLocation(1, 853);
 			mT__194(); 
@@ -7231,7 +7231,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 107:
 			DebugEnterAlt(107);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:860: HEX_LITERAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:860: HEX_LITERAL
 			{
 			DebugLocation(1, 860);
 			mHEX_LITERAL(); 
@@ -7240,7 +7240,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 108:
 			DebugEnterAlt(108);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:872: DECIMAL_LITERAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:872: DECIMAL_LITERAL
 			{
 			DebugLocation(1, 872);
 			mDECIMAL_LITERAL(); 
@@ -7249,7 +7249,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 109:
 			DebugEnterAlt(109);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:888: OCTAL_LITERAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:888: OCTAL_LITERAL
 			{
 			DebugLocation(1, 888);
 			mOCTAL_LITERAL(); 
@@ -7258,7 +7258,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 110:
 			DebugEnterAlt(110);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:902: FLOATING_POINT_LITERAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:902: FLOATING_POINT_LITERAL
 			{
 			DebugLocation(1, 902);
 			mFLOATING_POINT_LITERAL(); 
@@ -7267,7 +7267,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 111:
 			DebugEnterAlt(111);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:925: CHARACTER_LITERAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:925: CHARACTER_LITERAL
 			{
 			DebugLocation(1, 925);
 			mCHARACTER_LITERAL(); 
@@ -7276,7 +7276,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 112:
 			DebugEnterAlt(112);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:943: STRING_LITERAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:943: STRING_LITERAL
 			{
 			DebugLocation(1, 943);
 			mSTRING_LITERAL(); 
@@ -7285,7 +7285,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 113:
 			DebugEnterAlt(113);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:958: SOQL_LITERAL
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:958: SOQL_LITERAL
 			{
 			DebugLocation(1, 958);
 			mSOQL_LITERAL(); 
@@ -7294,7 +7294,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 114:
 			DebugEnterAlt(114);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:971: IDENT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:971: IDENT
 			{
 			DebugLocation(1, 971);
 			mIDENT(); 
@@ -7303,7 +7303,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 115:
 			DebugEnterAlt(115);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:977: WS
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:977: WS
 			{
 			DebugLocation(1, 977);
 			mWS(); 
@@ -7312,7 +7312,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 116:
 			DebugEnterAlt(116);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:980: COMMENT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:980: COMMENT
 			{
 			DebugLocation(1, 980);
 			mCOMMENT(); 
@@ -7321,7 +7321,7 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			break;
 		case 117:
 			DebugEnterAlt(117);
-			// C:\\Users\\E1ektr0\\Source\\Repos\\ApexParser\\ApexParser\\Java.g:1:988: LINE_COMMENT
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1:988: LINE_COMMENT
 			{
 			DebugLocation(1, 988);
 			mLINE_COMMENT(); 
@@ -7471,8 +7471,8 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			"\x1\x11\x3\xFFFF\x1\x42\x1\xFFFF\x1\x57\x3\xFFFF\x1\x64\x2\xFFFF\x1\x2D"+
 			"\x1\x47\x2\xFFFF\x1\x5F\x1\x28\x1\x2B\x1\xFFFF\x1\x5B\x1\xFFFF\x1\x5A";
 		private const string DFA33_specialS =
-			"\x2D\xFFFF\x1\x7\x59\xFFFF\x1\x8\x39\xFFFF\x1\x4\x1\xFFFF\x1\x0\x1\x5"+
-			"\x37\xFFFF\x1\x6\x1\x2\x32\xFFFF\x1\x1\x45\xFFFF\x1\x3\x2D\xFFFF}>";
+			"\x2D\xFFFF\x1\x5\x59\xFFFF\x1\x2\x39\xFFFF\x1\x0\x1\xFFFF\x1\x7\x1\x3"+
+			"\x37\xFFFF\x1\x1\x1\x4\x32\xFFFF\x1\x6\x45\xFFFF\x1\x8\x2D\xFFFF}>";
 		private static readonly string[] DFA33_transitionS =
 			{
 				"\x2\x30\x1\xFFFF\x2\x30\x12\xFFFF\x1\x30\x1\x16\x1\x2E\x1\xFFFF\x1\x2F"+
@@ -8097,19 +8097,19 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 		{
 		case 0:
 			{
-				if (((LA33_1>='0' && LA33_1<='7'))) {s = 252;}
+				if ((LA33_1=='\'')) {s = 197;}
 
-				else if ((LA33_1=='\'')) {s = 197;}
-
-				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='/')||(LA33_1>='8' && LA33_1<='\uFFFF'))) {s = 46;}
+				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='\uFFFF'))) {s = 46;}
 
 				break;
 			}
 		case 1:
 			{
-				if ((LA33_1=='\'')) {s = 197;}
+				if (((LA33_1>='0' && LA33_1<='7'))) {s = 304;}
 
-				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='\uFFFF'))) {s = 46;}
+				else if ((LA33_1=='\'')) {s = 197;}
+
+				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='/')||(LA33_1>='8' && LA33_1<='\uFFFF'))) {s = 46;}
 
 				break;
 			}
@@ -8123,9 +8123,11 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			}
 		case 3:
 			{
-				if ((LA33_1=='\'')) {s = 197;}
+				if (((LA33_1>='0' && LA33_1<='7'))) {s = 253;}
 
-				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='\uFFFF'))) {s = 46;}
+				else if ((LA33_1=='\'')) {s = 197;}
+
+				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='/')||(LA33_1>='8' && LA33_1<='\uFFFF'))) {s = 46;}
 
 				break;
 			}
@@ -8139,31 +8141,29 @@ public partial class JavaLexer : Antlr.Runtime.Lexer
 			}
 		case 5:
 			{
-				if (((LA33_1>='0' && LA33_1<='7'))) {s = 253;}
-
-				else if ((LA33_1=='\'')) {s = 197;}
-
-				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='/')||(LA33_1>='8' && LA33_1<='\uFFFF'))) {s = 46;}
-
-				break;
-			}
-		case 6:
-			{
-				if (((LA33_1>='0' && LA33_1<='7'))) {s = 304;}
-
-				else if ((LA33_1=='\'')) {s = 197;}
-
-				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='/')||(LA33_1>='8' && LA33_1<='\uFFFF'))) {s = 46;}
-
-				break;
-			}
-		case 7:
-			{
 				if ((LA33_1=='\\')) {s = 134;}
 
 				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='[')||(LA33_1>=']' && LA33_1<='\uFFFF'))) {s = 135;}
 
 				else if ((LA33_1=='\'')) {s = 46;}
+
+				break;
+			}
+		case 6:
+			{
+				if ((LA33_1=='\'')) {s = 197;}
+
+				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='\uFFFF'))) {s = 46;}
+
+				break;
+			}
+		case 7:
+			{
+				if (((LA33_1>='0' && LA33_1<='7'))) {s = 252;}
+
+				else if ((LA33_1=='\'')) {s = 197;}
+
+				else if (((LA33_1>='\u0000' && LA33_1<='&')||(LA33_1>='(' && LA33_1<='/')||(LA33_1>='8' && LA33_1<='\uFFFF'))) {s = 46;}
 
 				break;
 			}

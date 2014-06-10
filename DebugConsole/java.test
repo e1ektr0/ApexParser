@@ -1,6 +1,6 @@
 ﻿public class H_C_CustomSettings
 {
-    public static Boolean triggersEnabled()
+	public static Boolean triggersEnabled()
     {
 		//var x = Ident().
 		var z = 1+1;
@@ -8,4 +8,5 @@
 		var z = 1+1;
 		//var x = (1+Ident()).d
     }
+	public String Name {get;set;}
 }

@@ -92,9 +92,10 @@ namespace ApexParser.ApexNodes
 
     public class ApexClassNode : IApexNode
     {
+        public List<IApexNode> Nodes = new List<IApexNode>();
         public void Add(IApexNode classScopeDeclarations3)
         {
-                
+            Nodes.Add(classScopeDeclarations3);
         }
     }
 }
