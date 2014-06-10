@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.5.1 C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g 2014-06-10 16:34:34
+// $ANTLR 3.5.1 C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g 2014-06-10 17:23:24
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -1857,7 +1857,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_classScopeDeclarations();
 	partial void LeaveRule_classScopeDeclarations();
 	// $ANTLR start "classScopeDeclarations"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:105:1: classScopeDeclarations returns [IApexNode node] : ( ^( CLASS_INSTANCE_INITIALIZER block ) | ^( CLASS_STATIC_INITIALIZER block ) | ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) | ^( VAR_DECLARATION modifierList type variableDeclaratorList ) | ^( CONSTRUCTOR_DECL modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) | ^( PROPERTY_DECL modifierList propertyDeclaration ) | typeDeclaration );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:105:1: classScopeDeclarations returns [IApexNode node] : ( ^( CLASS_INSTANCE_INITIALIZER block ) | ^( CLASS_STATIC_INITIALIZER block ) | ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) | ^( VAR_DECLARATION modifierList type variableDeclaratorList ) | ^( CONSTRUCTOR_DECL modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) | ^( PROPERTY_DECL modifierList type propertyDeclaration ) | typeDeclaration );
 	[GrammarRule("classScopeDeclarations")]
 	private IApexNode classScopeDeclarations()
 	{
@@ -1869,13 +1869,17 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int classScopeDeclarations_StartIndex = input.Index;
 
 		CommonTree IDENT4 = default(CommonTree);
-		CommonTree IDENT6 = default(CommonTree);
+		CommonTree IDENT7 = default(CommonTree);
 		List<Modifier> modifierList5 = default(List<Modifier>);
-		List<Modifier> modifierList7 = default(List<Modifier>);
+		ApexType type6 = default(ApexType);
 		List<Modifier> modifierList8 = default(List<Modifier>);
-		List<Modifier> modifierList9 = default(List<Modifier>);
+		ApexType type9 = default(ApexType);
 		List<Modifier> modifierList10 = default(List<Modifier>);
-		IApexNode typeDeclaration11 = default(IApexNode);
+		List<ApexField> variableDeclaratorList11 = default(List<ApexField>);
+		List<Modifier> modifierList12 = default(List<Modifier>);
+		ApexType type13 = default(ApexType);
+		List<Modifier> modifierList14 = default(List<Modifier>);
+		IApexNode typeDeclaration15 = default(IApexNode);
 
 		try { DebugEnterRule(GrammarFileName, "classScopeDeclarations");
 		DebugLocation(105, 4);
@@ -1883,7 +1887,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 13)) { return node; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:106:5: ( ^( CLASS_INSTANCE_INITIALIZER block ) | ^( CLASS_STATIC_INITIALIZER block ) | ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) | ^( VAR_DECLARATION modifierList type variableDeclaratorList ) | ^( CONSTRUCTOR_DECL modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) | ^( PROPERTY_DECL modifierList propertyDeclaration ) | typeDeclaration )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:106:5: ( ^( CLASS_INSTANCE_INITIALIZER block ) | ^( CLASS_STATIC_INITIALIZER block ) | ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) | ^( VAR_DECLARATION modifierList type variableDeclaratorList ) | ^( CONSTRUCTOR_DECL modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) | ^( PROPERTY_DECL modifierList type propertyDeclaration ) | typeDeclaration )
 			int alt32=8;
 			try { DebugEnterDecision(32, false);
 			switch (input.LA(1))
@@ -2039,7 +2043,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 
 				DebugLocation(108, 71);
 				PushFollow(Follow._type_in_classScopeDeclarations620);
-				type();
+				type6=type();
 				PopFollow();
 				if (state.failed) return node;
 				DebugLocation(108, 76);
@@ -2145,7 +2149,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				DebugLocation(108, 144);
 				if (state.backtracking == 0)
 				{
-					node = new ApexMethod(IDENT4.Text, modifierList5);
+					node = new ApexMethod(IDENT4.Text, modifierList5,type6);
 				}
 
 				}
@@ -2161,7 +2165,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
 				DebugLocation(109, 28);
 				PushFollow(Follow._modifierList_in_classScopeDeclarations648);
-				modifierList7=modifierList();
+				modifierList8=modifierList();
 				PopFollow();
 				if (state.failed) return node;
 				DebugLocation(109, 41);
@@ -2195,7 +2199,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(27); }
 
 				DebugLocation(109, 67);
-				IDENT6=(CommonTree)Match(input,IDENT,Follow._IDENT_in_classScopeDeclarations653); if (state.failed) return node;
+				IDENT7=(CommonTree)Match(input,IDENT,Follow._IDENT_in_classScopeDeclarations653); if (state.failed) return node;
 				DebugLocation(109, 73);
 				PushFollow(Follow._formalParameterList_in_classScopeDeclarations655);
 				formalParameterList();
@@ -2267,7 +2271,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				DebugLocation(109, 114);
 				if (state.backtracking == 0)
 				{
-					node = new ApexMethod(IDENT6.Text, modifierList7);
+					node = new ApexMethod(IDENT7.Text, modifierList8);
 				}
 
 				}
@@ -2283,17 +2287,17 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
 				DebugLocation(110, 27);
 				PushFollow(Follow._modifierList_in_classScopeDeclarations676);
-				modifierList8=modifierList();
+				modifierList10=modifierList();
 				PopFollow();
 				if (state.failed) return node;
 				DebugLocation(110, 40);
 				PushFollow(Follow._type_in_classScopeDeclarations678);
-				type();
+				type9=type();
 				PopFollow();
 				if (state.failed) return node;
 				DebugLocation(110, 45);
 				PushFollow(Follow._variableDeclaratorList_in_classScopeDeclarations680);
-				variableDeclaratorList();
+				variableDeclaratorList11=variableDeclaratorList();
 				PopFollow();
 				if (state.failed) return node;
 
@@ -2302,7 +2306,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				DebugLocation(110, 68);
 				if (state.backtracking == 0)
 				{
-					node = new ApexField(modifierList8);
+					node = new ApexFieldList(type9, modifierList10, variableDeclaratorList11);
 				}
 
 				}
@@ -2318,7 +2322,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
 				DebugLocation(111, 28);
 				PushFollow(Follow._modifierList_in_classScopeDeclarations695);
-				modifierList9=modifierList();
+				modifierList12=modifierList();
 				PopFollow();
 				if (state.failed) return node;
 				DebugLocation(111, 41);
@@ -2397,14 +2401,14 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				DebugLocation(111, 107);
 				if (state.backtracking == 0)
 				{
-					node = new ApexConstructor(modifierList9);
+					node = new ApexConstructor(modifierList12);
 				}
 
 				}
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:112:9: ^( PROPERTY_DECL modifierList propertyDeclaration )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:112:9: ^( PROPERTY_DECL modifierList type propertyDeclaration )
 				{
 				DebugLocation(112, 9);
 				DebugLocation(112, 11);
@@ -2413,21 +2417,26 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
 				DebugLocation(112, 25);
 				PushFollow(Follow._modifierList_in_classScopeDeclarations720);
-				modifierList10=modifierList();
+				modifierList14=modifierList();
 				PopFollow();
 				if (state.failed) return node;
 				DebugLocation(112, 38);
-				PushFollow(Follow._propertyDeclaration_in_classScopeDeclarations722);
+				PushFollow(Follow._type_in_classScopeDeclarations722);
+				type13=type();
+				PopFollow();
+				if (state.failed) return node;
+				DebugLocation(112, 43);
+				PushFollow(Follow._propertyDeclaration_in_classScopeDeclarations724);
 				propertyDeclaration();
 				PopFollow();
 				if (state.failed) return node;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return node;
 
-				DebugLocation(112, 59);
+				DebugLocation(112, 64);
 				if (state.backtracking == 0)
 				{
-					node = new ApexProperty(modifierList10);
+					node = new ApexProperty(type13, modifierList14);
 				}
 
 				}
@@ -2437,14 +2446,14 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:113:9: typeDeclaration
 				{
 				DebugLocation(113, 9);
-				PushFollow(Follow._typeDeclaration_in_classScopeDeclarations735);
-				typeDeclaration11=typeDeclaration();
+				PushFollow(Follow._typeDeclaration_in_classScopeDeclarations737);
+				typeDeclaration15=typeDeclaration();
 				PopFollow();
 				if (state.failed) return node;
 				DebugLocation(113, 25);
 				if (state.backtracking == 0)
 				{
-					node = typeDeclaration11;
+					node = typeDeclaration15;
 				}
 
 				}
@@ -2535,7 +2544,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:3: '{' ( modifier )? getRule ( SEMI | block ) ( ( modifier )? setRule ( SEMI | block ) )? '}'
 				{
 				DebugLocation(118, 3);
-				Match(input,LCURLY,Follow._LCURLY_in_propertyDeclaration752); if (state.failed) return;
+				Match(input,LCURLY,Follow._LCURLY_in_propertyDeclaration754); if (state.failed) return;
 				DebugLocation(118, 7);
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:7: ( modifier )?
 				int alt33=2;
@@ -2555,7 +2564,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:7: modifier
 					{
 					DebugLocation(118, 7);
-					PushFollow(Follow._modifier_in_propertyDeclaration754);
+					PushFollow(Follow._modifier_in_propertyDeclaration756);
 					modifier();
 					PopFollow();
 					if (state.failed) return;
@@ -2567,7 +2576,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(33); }
 
 				DebugLocation(118, 17);
-				PushFollow(Follow._getRule_in_propertyDeclaration757);
+				PushFollow(Follow._getRule_in_propertyDeclaration759);
 				getRule();
 				PopFollow();
 				if (state.failed) return;
@@ -2601,7 +2610,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:26: SEMI
 					{
 					DebugLocation(118, 26);
-					Match(input,SEMI,Follow._SEMI_in_propertyDeclaration760); if (state.failed) return;
+					Match(input,SEMI,Follow._SEMI_in_propertyDeclaration762); if (state.failed) return;
 
 					}
 					break;
@@ -2610,7 +2619,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:31: block
 					{
 					DebugLocation(118, 31);
-					PushFollow(Follow._block_in_propertyDeclaration762);
+					PushFollow(Follow._block_in_propertyDeclaration764);
 					block();
 					PopFollow();
 					if (state.failed) return;
@@ -2658,7 +2667,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:39: modifier
 						{
 						DebugLocation(118, 39);
-						PushFollow(Follow._modifier_in_propertyDeclaration766);
+						PushFollow(Follow._modifier_in_propertyDeclaration768);
 						modifier();
 						PopFollow();
 						if (state.failed) return;
@@ -2670,7 +2679,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					} finally { DebugExitSubRule(35); }
 
 					DebugLocation(118, 49);
-					PushFollow(Follow._setRule_in_propertyDeclaration769);
+					PushFollow(Follow._setRule_in_propertyDeclaration771);
 					setRule();
 					PopFollow();
 					if (state.failed) return;
@@ -2704,7 +2713,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:58: SEMI
 						{
 						DebugLocation(118, 58);
-						Match(input,SEMI,Follow._SEMI_in_propertyDeclaration772); if (state.failed) return;
+						Match(input,SEMI,Follow._SEMI_in_propertyDeclaration774); if (state.failed) return;
 
 						}
 						break;
@@ -2713,7 +2722,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:63: block
 						{
 						DebugLocation(118, 63);
-						PushFollow(Follow._block_in_propertyDeclaration774);
+						PushFollow(Follow._block_in_propertyDeclaration776);
 						block();
 						PopFollow();
 						if (state.failed) return;
@@ -2732,7 +2741,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(37); }
 
 				DebugLocation(118, 72);
-				Match(input,RCURLY,Follow._RCURLY_in_propertyDeclaration779); if (state.failed) return;
+				Match(input,RCURLY,Follow._RCURLY_in_propertyDeclaration781); if (state.failed) return;
 
 				}
 
@@ -2749,7 +2758,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:119:5: '{' ( modifier )? setRule ( SEMI | block ) ( ( modifier )? getRule ( SEMI | block ) )? '}'
 				{
 				DebugLocation(119, 5);
-				Match(input,LCURLY,Follow._LCURLY_in_propertyDeclaration786); if (state.failed) return;
+				Match(input,LCURLY,Follow._LCURLY_in_propertyDeclaration788); if (state.failed) return;
 				DebugLocation(119, 9);
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:119:9: ( modifier )?
 				int alt38=2;
@@ -2769,7 +2778,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:119:9: modifier
 					{
 					DebugLocation(119, 9);
-					PushFollow(Follow._modifier_in_propertyDeclaration788);
+					PushFollow(Follow._modifier_in_propertyDeclaration790);
 					modifier();
 					PopFollow();
 					if (state.failed) return;
@@ -2781,7 +2790,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(38); }
 
 				DebugLocation(119, 19);
-				PushFollow(Follow._setRule_in_propertyDeclaration791);
+				PushFollow(Follow._setRule_in_propertyDeclaration793);
 				setRule();
 				PopFollow();
 				if (state.failed) return;
@@ -2815,7 +2824,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:119:28: SEMI
 					{
 					DebugLocation(119, 28);
-					Match(input,SEMI,Follow._SEMI_in_propertyDeclaration794); if (state.failed) return;
+					Match(input,SEMI,Follow._SEMI_in_propertyDeclaration796); if (state.failed) return;
 
 					}
 					break;
@@ -2824,7 +2833,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:119:33: block
 					{
 					DebugLocation(119, 33);
-					PushFollow(Follow._block_in_propertyDeclaration796);
+					PushFollow(Follow._block_in_propertyDeclaration798);
 					block();
 					PopFollow();
 					if (state.failed) return;
@@ -2872,7 +2881,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:119:41: modifier
 						{
 						DebugLocation(119, 41);
-						PushFollow(Follow._modifier_in_propertyDeclaration800);
+						PushFollow(Follow._modifier_in_propertyDeclaration802);
 						modifier();
 						PopFollow();
 						if (state.failed) return;
@@ -2884,7 +2893,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					} finally { DebugExitSubRule(40); }
 
 					DebugLocation(119, 51);
-					PushFollow(Follow._getRule_in_propertyDeclaration803);
+					PushFollow(Follow._getRule_in_propertyDeclaration805);
 					getRule();
 					PopFollow();
 					if (state.failed) return;
@@ -2918,7 +2927,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:119:60: SEMI
 						{
 						DebugLocation(119, 60);
-						Match(input,SEMI,Follow._SEMI_in_propertyDeclaration806); if (state.failed) return;
+						Match(input,SEMI,Follow._SEMI_in_propertyDeclaration808); if (state.failed) return;
 
 						}
 						break;
@@ -2927,7 +2936,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:119:65: block
 						{
 						DebugLocation(119, 65);
-						PushFollow(Follow._block_in_propertyDeclaration808);
+						PushFollow(Follow._block_in_propertyDeclaration810);
 						block();
 						PopFollow();
 						if (state.failed) return;
@@ -2946,7 +2955,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(42); }
 
 				DebugLocation(119, 75);
-				Match(input,RCURLY,Follow._RCURLY_in_propertyDeclaration814); if (state.failed) return;
+				Match(input,RCURLY,Follow._RCURLY_in_propertyDeclaration816); if (state.failed) return;
 
 				}
 
@@ -3005,7 +3014,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				throw new FailedPredicateException(input, "getRule", "((input.LT(1)as CommonTree)!=null&& (input.LT(1)as CommonTree).Text == \"get\")");
 			}
 			DebugLocation(124, 86);
-			Match(input,IDENT,Follow._IDENT_in_getRule831); if (state.failed) return;
+			Match(input,IDENT,Follow._IDENT_in_getRule833); if (state.failed) return;
 
 			}
 
@@ -3059,7 +3068,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				throw new FailedPredicateException(input, "setRule", "(input.LT(1)as CommonTree)!=null&& (input.LT(1)as CommonTree).Text== \"set\"");
 			}
 			DebugLocation(128, 83);
-			Match(input,IDENT,Follow._IDENT_in_setRule845); if (state.failed) return;
+			Match(input,IDENT,Follow._IDENT_in_setRule847); if (state.failed) return;
 
 			}
 
@@ -3108,7 +3117,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			DebugLocation(132, 9);
 			DebugLocation(132, 11);
-			Match(input,INTERFACE_TOP_LEVEL_SCOPE,Follow._INTERFACE_TOP_LEVEL_SCOPE_in_interfaceTopLevelScope864); if (state.failed) return;
+			Match(input,INTERFACE_TOP_LEVEL_SCOPE,Follow._INTERFACE_TOP_LEVEL_SCOPE_in_interfaceTopLevelScope866); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
@@ -3136,7 +3145,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:132:37: interfaceScopeDeclarations
 						{
 						DebugLocation(132, 37);
-						PushFollow(Follow._interfaceScopeDeclarations_in_interfaceTopLevelScope866);
+						PushFollow(Follow._interfaceScopeDeclarations_in_interfaceTopLevelScope868);
 						interfaceScopeDeclarations();
 						PopFollow();
 						if (state.failed) return;
@@ -3246,11 +3255,11 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				DebugLocation(136, 9);
 				DebugLocation(136, 11);
-				Match(input,FUNCTION_METHOD_DECL,Follow._FUNCTION_METHOD_DECL_in_interfaceScopeDeclarations892); if (state.failed) return;
+				Match(input,FUNCTION_METHOD_DECL,Follow._FUNCTION_METHOD_DECL_in_interfaceScopeDeclarations894); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
 				DebugLocation(136, 32);
-				PushFollow(Follow._modifierList_in_interfaceScopeDeclarations894);
+				PushFollow(Follow._modifierList_in_interfaceScopeDeclarations896);
 				modifierList();
 				PopFollow();
 				if (state.failed) return;
@@ -3273,7 +3282,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:136:45: genericTypeParameterList
 					{
 					DebugLocation(136, 45);
-					PushFollow(Follow._genericTypeParameterList_in_interfaceScopeDeclarations896);
+					PushFollow(Follow._genericTypeParameterList_in_interfaceScopeDeclarations898);
 					genericTypeParameterList();
 					PopFollow();
 					if (state.failed) return;
@@ -3285,14 +3294,14 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(45); }
 
 				DebugLocation(136, 71);
-				PushFollow(Follow._type_in_interfaceScopeDeclarations899);
+				PushFollow(Follow._type_in_interfaceScopeDeclarations901);
 				type();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(136, 76);
-				Match(input,IDENT,Follow._IDENT_in_interfaceScopeDeclarations901); if (state.failed) return;
+				Match(input,IDENT,Follow._IDENT_in_interfaceScopeDeclarations903); if (state.failed) return;
 				DebugLocation(136, 82);
-				PushFollow(Follow._formalParameterList_in_interfaceScopeDeclarations903);
+				PushFollow(Follow._formalParameterList_in_interfaceScopeDeclarations905);
 				formalParameterList();
 				PopFollow();
 				if (state.failed) return;
@@ -3315,7 +3324,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:136:102: arrayDeclaratorList
 					{
 					DebugLocation(136, 102);
-					PushFollow(Follow._arrayDeclaratorList_in_interfaceScopeDeclarations905);
+					PushFollow(Follow._arrayDeclaratorList_in_interfaceScopeDeclarations907);
 					arrayDeclaratorList();
 					PopFollow();
 					if (state.failed) return;
@@ -3345,7 +3354,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:136:123: throwsClause
 					{
 					DebugLocation(136, 123);
-					PushFollow(Follow._throwsClause_in_interfaceScopeDeclarations908);
+					PushFollow(Follow._throwsClause_in_interfaceScopeDeclarations910);
 					throwsClause();
 					PopFollow();
 					if (state.failed) return;
@@ -3368,11 +3377,11 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				DebugLocation(137, 9);
 				DebugLocation(137, 11);
-				Match(input,VOID_METHOD_DECL,Follow._VOID_METHOD_DECL_in_interfaceScopeDeclarations921); if (state.failed) return;
+				Match(input,VOID_METHOD_DECL,Follow._VOID_METHOD_DECL_in_interfaceScopeDeclarations923); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
 				DebugLocation(137, 28);
-				PushFollow(Follow._modifierList_in_interfaceScopeDeclarations923);
+				PushFollow(Follow._modifierList_in_interfaceScopeDeclarations925);
 				modifierList();
 				PopFollow();
 				if (state.failed) return;
@@ -3395,7 +3404,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:137:41: genericTypeParameterList
 					{
 					DebugLocation(137, 41);
-					PushFollow(Follow._genericTypeParameterList_in_interfaceScopeDeclarations925);
+					PushFollow(Follow._genericTypeParameterList_in_interfaceScopeDeclarations927);
 					genericTypeParameterList();
 					PopFollow();
 					if (state.failed) return;
@@ -3407,9 +3416,9 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(48); }
 
 				DebugLocation(137, 67);
-				Match(input,IDENT,Follow._IDENT_in_interfaceScopeDeclarations928); if (state.failed) return;
+				Match(input,IDENT,Follow._IDENT_in_interfaceScopeDeclarations930); if (state.failed) return;
 				DebugLocation(137, 73);
-				PushFollow(Follow._formalParameterList_in_interfaceScopeDeclarations930);
+				PushFollow(Follow._formalParameterList_in_interfaceScopeDeclarations932);
 				formalParameterList();
 				PopFollow();
 				if (state.failed) return;
@@ -3432,7 +3441,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:137:93: throwsClause
 					{
 					DebugLocation(137, 93);
-					PushFollow(Follow._throwsClause_in_interfaceScopeDeclarations932);
+					PushFollow(Follow._throwsClause_in_interfaceScopeDeclarations934);
 					throwsClause();
 					PopFollow();
 					if (state.failed) return;
@@ -3455,21 +3464,21 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				DebugLocation(141, 9);
 				DebugLocation(141, 11);
-				Match(input,VAR_DECLARATION,Follow._VAR_DECLARATION_in_interfaceScopeDeclarations1023); if (state.failed) return;
+				Match(input,VAR_DECLARATION,Follow._VAR_DECLARATION_in_interfaceScopeDeclarations1025); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
 				DebugLocation(141, 27);
-				PushFollow(Follow._modifierList_in_interfaceScopeDeclarations1025);
+				PushFollow(Follow._modifierList_in_interfaceScopeDeclarations1027);
 				modifierList();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(141, 40);
-				PushFollow(Follow._type_in_interfaceScopeDeclarations1027);
+				PushFollow(Follow._type_in_interfaceScopeDeclarations1029);
 				type();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(141, 45);
-				PushFollow(Follow._variableDeclaratorList_in_interfaceScopeDeclarations1029);
+				PushFollow(Follow._variableDeclaratorList_in_interfaceScopeDeclarations1031);
 				variableDeclaratorList();
 				PopFollow();
 				if (state.failed) return;
@@ -3484,7 +3493,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:142:9: typeDeclaration
 				{
 				DebugLocation(142, 9);
-				PushFollow(Follow._typeDeclaration_in_interfaceScopeDeclarations1040);
+				PushFollow(Follow._typeDeclaration_in_interfaceScopeDeclarations1042);
 				typeDeclaration();
 				PopFollow();
 				if (state.failed) return;
@@ -3517,32 +3526,41 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_variableDeclaratorList();
 	partial void LeaveRule_variableDeclaratorList();
 	// $ANTLR start "variableDeclaratorList"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:145:1: variableDeclaratorList : ^( VAR_DECLARATOR_LIST ( variableDeclarator )+ ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:145:1: variableDeclaratorList returns [List<ApexField> fields] : ^( VAR_DECLARATOR_LIST ( variableDeclarator )+ ) ;
 	[GrammarRule("variableDeclaratorList")]
-	private void variableDeclaratorList()
+	private List<ApexField> variableDeclaratorList()
 	{
 		EnterRule_variableDeclaratorList();
 		EnterRule("variableDeclaratorList", 19);
 		TraceIn("variableDeclaratorList", 19);
+		List<ApexField> fields = default(List<ApexField>);
+
 		int variableDeclaratorList_StartIndex = input.Index;
+
+		ApexField variableDeclarator16 = default(ApexField);
 
 		try { DebugEnterRule(GrammarFileName, "variableDeclaratorList");
 		DebugLocation(145, 4);
 		try
 		{
-			if (state.backtracking > 0 && AlreadyParsedRule(input, 19)) { return; }
+			if (state.backtracking > 0 && AlreadyParsedRule(input, 19)) { return fields; }
 
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:146:5: ( ^( VAR_DECLARATOR_LIST ( variableDeclarator )+ ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:146:9: ^( VAR_DECLARATOR_LIST ( variableDeclarator )+ )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:147:6: ^( VAR_DECLARATOR_LIST ( variableDeclarator )+ )
 			{
-			DebugLocation(146, 9);
-			DebugLocation(146, 11);
-			Match(input,VAR_DECLARATOR_LIST,Follow._VAR_DECLARATOR_LIST_in_variableDeclaratorList1060); if (state.failed) return;
+			DebugLocation(147, 6);
+			if (state.backtracking == 0)
+			{
+				fields = new List<ApexField>();
+			}
+			DebugLocation(148, 7);
+			DebugLocation(148, 9);
+			Match(input,VAR_DECLARATOR_LIST,Follow._VAR_DECLARATOR_LIST_in_variableDeclaratorList1079); if (state.failed) return fields;
 
-			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(146, 31);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:146:31: ( variableDeclarator )+
+			Match(input, TokenTypes.Down, null); if (state.failed) return fields;
+			DebugLocation(148, 29);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:148:29: ( variableDeclarator )+
 			int cnt51=0;
 			try { DebugEnterSubRule(51);
 			while (true)
@@ -3562,13 +3580,18 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:146:31: variableDeclarator
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:148:30: variableDeclarator
 					{
-					DebugLocation(146, 31);
-					PushFollow(Follow._variableDeclarator_in_variableDeclaratorList1062);
-					variableDeclarator();
+					DebugLocation(148, 30);
+					PushFollow(Follow._variableDeclarator_in_variableDeclaratorList1082);
+					variableDeclarator16=variableDeclarator();
 					PopFollow();
-					if (state.failed) return;
+					if (state.failed) return fields;
+					DebugLocation(148, 49);
+					if (state.backtracking == 0)
+					{
+					    fields.Add(variableDeclarator16);
+					}
 
 					}
 					break;
@@ -3577,7 +3600,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					if (cnt51 >= 1)
 						goto loop51;
 
-					if (state.backtracking>0) {state.failed=true; return;}
+					if (state.backtracking>0) {state.failed=true; return fields;}
 					EarlyExitException eee51 = new EarlyExitException( 51, input );
 					DebugRecognitionException(eee51);
 					throw eee51;
@@ -3590,7 +3613,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			} finally { DebugExitSubRule(51); }
 
 
-			Match(input, TokenTypes.Up, null); if (state.failed) return;
+			Match(input, TokenTypes.Up, null); if (state.failed) return fields;
 
 
 			}
@@ -3609,9 +3632,9 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 19, variableDeclaratorList_StartIndex); }
 
 		}
-		DebugLocation(147, 4);
+		DebugLocation(149, 4);
 		} finally { DebugExitRule(GrammarFileName, "variableDeclaratorList"); }
-		return;
+		return fields;
 
 	}
 	// $ANTLR end "variableDeclaratorList"
@@ -3619,37 +3642,46 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_variableDeclarator();
 	partial void LeaveRule_variableDeclarator();
 	// $ANTLR start "variableDeclarator"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:149:1: variableDeclarator : ^( VAR_DECLARATOR variableDeclaratorId ( variableInitializer )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:151:1: variableDeclarator returns [ApexField field] : ^( VAR_DECLARATOR variableDeclaratorId ( variableInitializer )? ) ;
 	[GrammarRule("variableDeclarator")]
-	private void variableDeclarator()
+	private ApexField variableDeclarator()
 	{
 		EnterRule_variableDeclarator();
 		EnterRule("variableDeclarator", 20);
 		TraceIn("variableDeclarator", 20);
+		ApexField field = default(ApexField);
+
 		int variableDeclarator_StartIndex = input.Index;
 
+		ApexField variableDeclaratorId17 = default(ApexField);
+
 		try { DebugEnterRule(GrammarFileName, "variableDeclarator");
-		DebugLocation(149, 4);
+		DebugLocation(151, 4);
 		try
 		{
-			if (state.backtracking > 0 && AlreadyParsedRule(input, 20)) { return; }
+			if (state.backtracking > 0 && AlreadyParsedRule(input, 20)) { return field; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:150:5: ( ^( VAR_DECLARATOR variableDeclaratorId ( variableInitializer )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:153:5: ( ^( VAR_DECLARATOR variableDeclaratorId ( variableInitializer )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:150:9: ^( VAR_DECLARATOR variableDeclaratorId ( variableInitializer )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:153:9: ^( VAR_DECLARATOR variableDeclaratorId ( variableInitializer )? )
 			{
-			DebugLocation(150, 9);
-			DebugLocation(150, 11);
-			Match(input,VAR_DECLARATOR,Follow._VAR_DECLARATOR_in_variableDeclarator1084); if (state.failed) return;
+			DebugLocation(153, 9);
+			DebugLocation(153, 11);
+			Match(input,VAR_DECLARATOR,Follow._VAR_DECLARATOR_in_variableDeclarator1112); if (state.failed) return field;
 
-			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(150, 26);
-			PushFollow(Follow._variableDeclaratorId_in_variableDeclarator1086);
-			variableDeclaratorId();
+			Match(input, TokenTypes.Down, null); if (state.failed) return field;
+			DebugLocation(153, 26);
+			PushFollow(Follow._variableDeclaratorId_in_variableDeclarator1114);
+			variableDeclaratorId17=variableDeclaratorId();
 			PopFollow();
-			if (state.failed) return;
-			DebugLocation(150, 47);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:150:47: ( variableInitializer )?
+			if (state.failed) return field;
+			DebugLocation(153, 47);
+			if (state.backtracking == 0)
+			{
+				field = variableDeclaratorId17;
+			}
+			DebugLocation(153, 88);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:153:88: ( variableInitializer )?
 			int alt52=2;
 			try { DebugEnterSubRule(52);
 			try { DebugEnterDecision(52, false);
@@ -3664,13 +3696,13 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:150:47: variableInitializer
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:153:88: variableInitializer
 				{
-				DebugLocation(150, 47);
-				PushFollow(Follow._variableInitializer_in_variableDeclarator1088);
+				DebugLocation(153, 88);
+				PushFollow(Follow._variableInitializer_in_variableDeclarator1118);
 				variableInitializer();
 				PopFollow();
-				if (state.failed) return;
+				if (state.failed) return field;
 
 				}
 				break;
@@ -3679,7 +3711,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			} finally { DebugExitSubRule(52); }
 
 
-			Match(input, TokenTypes.Up, null); if (state.failed) return;
+			Match(input, TokenTypes.Up, null); if (state.failed) return field;
 
 
 			}
@@ -3698,9 +3730,9 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 20, variableDeclarator_StartIndex); }
 
 		}
-		DebugLocation(151, 4);
+		DebugLocation(154, 4);
 		} finally { DebugExitRule(GrammarFileName, "variableDeclarator"); }
-		return;
+		return field;
 
 	}
 	// $ANTLR end "variableDeclarator"
@@ -3708,34 +3740,44 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_variableDeclaratorId();
 	partial void LeaveRule_variableDeclaratorId();
 	// $ANTLR start "variableDeclaratorId"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:153:1: variableDeclaratorId : ^( IDENT ( arrayDeclaratorList )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:156:1: variableDeclaratorId returns [ApexField fieldId] : ^( IDENT ( arrayDeclaratorList )? ) ;
 	[GrammarRule("variableDeclaratorId")]
-	private void variableDeclaratorId()
+	private ApexField variableDeclaratorId()
 	{
 		EnterRule_variableDeclaratorId();
 		EnterRule("variableDeclaratorId", 21);
 		TraceIn("variableDeclaratorId", 21);
+		ApexField fieldId = default(ApexField);
+
 		int variableDeclaratorId_StartIndex = input.Index;
 
+		CommonTree IDENT18 = default(CommonTree);
+
 		try { DebugEnterRule(GrammarFileName, "variableDeclaratorId");
-		DebugLocation(153, 4);
+		DebugLocation(156, 4);
 		try
 		{
-			if (state.backtracking > 0 && AlreadyParsedRule(input, 21)) { return; }
+			if (state.backtracking > 0 && AlreadyParsedRule(input, 21)) { return fieldId; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:154:5: ( ^( IDENT ( arrayDeclaratorList )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:157:5: ( ^( IDENT ( arrayDeclaratorList )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:154:9: ^( IDENT ( arrayDeclaratorList )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:157:9: ^( IDENT ( arrayDeclaratorList )? )
 			{
-			DebugLocation(154, 9);
-			DebugLocation(154, 11);
-			Match(input,IDENT,Follow._IDENT_in_variableDeclaratorId1114); if (state.failed) return;
+			DebugLocation(157, 9);
+			DebugLocation(157, 11);
+			IDENT18=(CommonTree)Match(input,IDENT,Follow._IDENT_in_variableDeclaratorId1148); if (state.failed) return fieldId;
+
+			DebugLocation(157, 17);
+			if (state.backtracking == 0)
+			{
+				fieldId = new ApexField(IDENT18.Text);
+			}
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
-				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(154, 17);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:154:17: ( arrayDeclaratorList )?
+				Match(input, TokenTypes.Down, null); if (state.failed) return fieldId;
+				DebugLocation(157, 57);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:157:57: ( arrayDeclaratorList )?
 				int alt53=2;
 				try { DebugEnterSubRule(53);
 				try { DebugEnterDecision(53, false);
@@ -3750,13 +3792,18 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:154:17: arrayDeclaratorList
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:157:58: arrayDeclaratorList
 					{
-					DebugLocation(154, 17);
-					PushFollow(Follow._arrayDeclaratorList_in_variableDeclaratorId1116);
+					DebugLocation(157, 58);
+					PushFollow(Follow._arrayDeclaratorList_in_variableDeclaratorId1153);
 					arrayDeclaratorList();
 					PopFollow();
-					if (state.failed) return;
+					if (state.failed) return fieldId;
+					DebugLocation(157, 78);
+					if (state.backtracking == 0)
+					{
+                        fieldId.IsArray = true;
+					}
 
 					}
 					break;
@@ -3765,7 +3812,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(53); }
 
 
-				Match(input, TokenTypes.Up, null); if (state.failed) return;
+				Match(input, TokenTypes.Up, null); if (state.failed) return fieldId;
 			}
 
 
@@ -3785,9 +3832,9 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 21, variableDeclaratorId_StartIndex); }
 
 		}
-		DebugLocation(155, 4);
+		DebugLocation(158, 4);
 		} finally { DebugExitRule(GrammarFileName, "variableDeclaratorId"); }
-		return;
+		return fieldId;
 
 	}
 	// $ANTLR end "variableDeclaratorId"
@@ -3795,7 +3842,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_variableInitializer();
 	partial void LeaveRule_variableInitializer();
 	// $ANTLR start "variableInitializer"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:157:1: variableInitializer : ( arrayInitializer | expression | brokenExpression );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:160:1: variableInitializer : ( arrayInitializer | expression | brokenExpression );
 	[GrammarRule("variableInitializer")]
 	private void variableInitializer()
 	{
@@ -3805,12 +3852,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int variableInitializer_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "variableInitializer");
-		DebugLocation(157, 4);
+		DebugLocation(160, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 22)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:158:5: ( arrayInitializer | expression | brokenExpression )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:161:5: ( arrayInitializer | expression | brokenExpression )
 			int alt54=3;
 			try { DebugEnterDecision(54, false);
 			switch (input.LA(1))
@@ -3844,10 +3891,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:158:9: arrayInitializer
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:161:9: arrayInitializer
 				{
-				DebugLocation(158, 9);
-				PushFollow(Follow._arrayInitializer_in_variableInitializer1137);
+				DebugLocation(161, 9);
+				PushFollow(Follow._arrayInitializer_in_variableInitializer1177);
 				arrayInitializer();
 				PopFollow();
 				if (state.failed) return;
@@ -3856,10 +3903,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:159:9: expression
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:162:9: expression
 				{
-				DebugLocation(159, 9);
-				PushFollow(Follow._expression_in_variableInitializer1147);
+				DebugLocation(162, 9);
+				PushFollow(Follow._expression_in_variableInitializer1187);
 				expression();
 				PopFollow();
 				if (state.failed) return;
@@ -3868,10 +3915,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:160:9: brokenExpression
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:163:9: brokenExpression
 				{
-				DebugLocation(160, 9);
-				PushFollow(Follow._brokenExpression_in_variableInitializer1157);
+				DebugLocation(163, 9);
+				PushFollow(Follow._brokenExpression_in_variableInitializer1197);
 				brokenExpression();
 				PopFollow();
 				if (state.failed) return;
@@ -3894,7 +3941,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 22, variableInitializer_StartIndex); }
 
 		}
-		DebugLocation(161, 4);
+		DebugLocation(164, 4);
 		} finally { DebugExitRule(GrammarFileName, "variableInitializer"); }
 		return;
 
@@ -3904,7 +3951,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_arrayDeclarator();
 	partial void LeaveRule_arrayDeclarator();
 	// $ANTLR start "arrayDeclarator"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:163:1: arrayDeclarator : LBRACK RBRACK ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:166:1: arrayDeclarator : LBRACK RBRACK ;
 	[GrammarRule("arrayDeclarator")]
 	private void arrayDeclarator()
 	{
@@ -3914,19 +3961,19 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int arrayDeclarator_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "arrayDeclarator");
-		DebugLocation(163, 4);
+		DebugLocation(166, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 23)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:164:5: ( LBRACK RBRACK )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:167:5: ( LBRACK RBRACK )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:164:9: LBRACK RBRACK
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:167:9: LBRACK RBRACK
 			{
-			DebugLocation(164, 9);
-			Match(input,LBRACK,Follow._LBRACK_in_arrayDeclarator1177); if (state.failed) return;
-			DebugLocation(164, 16);
-			Match(input,RBRACK,Follow._RBRACK_in_arrayDeclarator1179); if (state.failed) return;
+			DebugLocation(167, 9);
+			Match(input,LBRACK,Follow._LBRACK_in_arrayDeclarator1217); if (state.failed) return;
+			DebugLocation(167, 16);
+			Match(input,RBRACK,Follow._RBRACK_in_arrayDeclarator1219); if (state.failed) return;
 
 			}
 
@@ -3944,7 +3991,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 23, arrayDeclarator_StartIndex); }
 
 		}
-		DebugLocation(165, 4);
+		DebugLocation(168, 4);
 		} finally { DebugExitRule(GrammarFileName, "arrayDeclarator"); }
 		return;
 
@@ -3954,7 +4001,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_arrayDeclaratorList();
 	partial void LeaveRule_arrayDeclaratorList();
 	// $ANTLR start "arrayDeclaratorList"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:167:1: arrayDeclaratorList : ^( ARRAY_DECLARATOR_LIST ( ARRAY_DECLARATOR )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:170:1: arrayDeclaratorList : ^( ARRAY_DECLARATOR_LIST ( ARRAY_DECLARATOR )* ) ;
 	[GrammarRule("arrayDeclaratorList")]
 	private void arrayDeclaratorList()
 	{
@@ -3964,24 +4011,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int arrayDeclaratorList_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "arrayDeclaratorList");
-		DebugLocation(167, 4);
+		DebugLocation(170, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 24)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:168:5: ( ^( ARRAY_DECLARATOR_LIST ( ARRAY_DECLARATOR )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:171:5: ( ^( ARRAY_DECLARATOR_LIST ( ARRAY_DECLARATOR )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:168:9: ^( ARRAY_DECLARATOR_LIST ( ARRAY_DECLARATOR )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:171:9: ^( ARRAY_DECLARATOR_LIST ( ARRAY_DECLARATOR )* )
 			{
-			DebugLocation(168, 9);
-			DebugLocation(168, 11);
-			Match(input,ARRAY_DECLARATOR_LIST,Follow._ARRAY_DECLARATOR_LIST_in_arrayDeclaratorList1199); if (state.failed) return;
+			DebugLocation(171, 9);
+			DebugLocation(171, 11);
+			Match(input,ARRAY_DECLARATOR_LIST,Follow._ARRAY_DECLARATOR_LIST_in_arrayDeclaratorList1239); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(168, 33);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:168:33: ( ARRAY_DECLARATOR )*
+				DebugLocation(171, 33);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:171:33: ( ARRAY_DECLARATOR )*
 				try { DebugEnterSubRule(55);
 				while (true)
 				{
@@ -4000,10 +4047,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:168:33: ARRAY_DECLARATOR
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:171:33: ARRAY_DECLARATOR
 						{
-						DebugLocation(168, 33);
-						Match(input,ARRAY_DECLARATOR,Follow._ARRAY_DECLARATOR_in_arrayDeclaratorList1201); if (state.failed) return;
+						DebugLocation(171, 33);
+						Match(input,ARRAY_DECLARATOR,Follow._ARRAY_DECLARATOR_in_arrayDeclaratorList1241); if (state.failed) return;
 
 						}
 						break;
@@ -4039,7 +4086,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 24, arrayDeclaratorList_StartIndex); }
 
 		}
-		DebugLocation(169, 4);
+		DebugLocation(172, 4);
 		} finally { DebugExitRule(GrammarFileName, "arrayDeclaratorList"); }
 		return;
 
@@ -4049,7 +4096,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_arrayInitializer();
 	partial void LeaveRule_arrayInitializer();
 	// $ANTLR start "arrayInitializer"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:171:1: arrayInitializer : ^( ARRAY_INITIALIZER ( variableInitializer )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:174:1: arrayInitializer : ^( ARRAY_INITIALIZER ( variableInitializer )* ) ;
 	[GrammarRule("arrayInitializer")]
 	private void arrayInitializer()
 	{
@@ -4059,24 +4106,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int arrayInitializer_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "arrayInitializer");
-		DebugLocation(171, 4);
+		DebugLocation(174, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 25)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:172:5: ( ^( ARRAY_INITIALIZER ( variableInitializer )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:175:5: ( ^( ARRAY_INITIALIZER ( variableInitializer )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:172:9: ^( ARRAY_INITIALIZER ( variableInitializer )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:175:9: ^( ARRAY_INITIALIZER ( variableInitializer )* )
 			{
-			DebugLocation(172, 9);
-			DebugLocation(172, 11);
-			Match(input,ARRAY_INITIALIZER,Follow._ARRAY_INITIALIZER_in_arrayInitializer1229); if (state.failed) return;
+			DebugLocation(175, 9);
+			DebugLocation(175, 11);
+			Match(input,ARRAY_INITIALIZER,Follow._ARRAY_INITIALIZER_in_arrayInitializer1269); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(172, 29);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:172:29: ( variableInitializer )*
+				DebugLocation(175, 29);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:175:29: ( variableInitializer )*
 				try { DebugEnterSubRule(56);
 				while (true)
 				{
@@ -4095,10 +4142,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:172:29: variableInitializer
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:175:29: variableInitializer
 						{
-						DebugLocation(172, 29);
-						PushFollow(Follow._variableInitializer_in_arrayInitializer1231);
+						DebugLocation(175, 29);
+						PushFollow(Follow._variableInitializer_in_arrayInitializer1271);
 						variableInitializer();
 						PopFollow();
 						if (state.failed) return;
@@ -4137,7 +4184,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 25, arrayInitializer_StartIndex); }
 
 		}
-		DebugLocation(173, 4);
+		DebugLocation(176, 4);
 		} finally { DebugExitRule(GrammarFileName, "arrayInitializer"); }
 		return;
 
@@ -4147,7 +4194,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_throwsClause();
 	partial void LeaveRule_throwsClause();
 	// $ANTLR start "throwsClause"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:175:1: throwsClause : ^( THROWS_CLAUSE ( qualifiedIdentifier )+ ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:178:1: throwsClause : ^( THROWS_CLAUSE ( qualifiedIdentifier )+ ) ;
 	[GrammarRule("throwsClause")]
 	private void throwsClause()
 	{
@@ -4157,22 +4204,22 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int throwsClause_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "throwsClause");
-		DebugLocation(175, 4);
+		DebugLocation(178, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 26)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:176:5: ( ^( THROWS_CLAUSE ( qualifiedIdentifier )+ ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:179:5: ( ^( THROWS_CLAUSE ( qualifiedIdentifier )+ ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:176:9: ^( THROWS_CLAUSE ( qualifiedIdentifier )+ )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:179:9: ^( THROWS_CLAUSE ( qualifiedIdentifier )+ )
 			{
-			DebugLocation(176, 9);
-			DebugLocation(176, 11);
-			Match(input,THROWS_CLAUSE,Follow._THROWS_CLAUSE_in_throwsClause1253); if (state.failed) return;
+			DebugLocation(179, 9);
+			DebugLocation(179, 11);
+			Match(input,THROWS_CLAUSE,Follow._THROWS_CLAUSE_in_throwsClause1293); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(176, 25);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:176:25: ( qualifiedIdentifier )+
+			DebugLocation(179, 25);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:179:25: ( qualifiedIdentifier )+
 			int cnt57=0;
 			try { DebugEnterSubRule(57);
 			while (true)
@@ -4192,10 +4239,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:176:25: qualifiedIdentifier
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:179:25: qualifiedIdentifier
 					{
-					DebugLocation(176, 25);
-					PushFollow(Follow._qualifiedIdentifier_in_throwsClause1255);
+					DebugLocation(179, 25);
+					PushFollow(Follow._qualifiedIdentifier_in_throwsClause1295);
 					qualifiedIdentifier();
 					PopFollow();
 					if (state.failed) return;
@@ -4239,7 +4286,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 26, throwsClause_StartIndex); }
 
 		}
-		DebugLocation(177, 4);
+		DebugLocation(180, 4);
 		} finally { DebugExitRule(GrammarFileName, "throwsClause"); }
 		return;
 
@@ -4249,7 +4296,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_modifierList();
 	partial void LeaveRule_modifierList();
 	// $ANTLR start "modifierList"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:179:1: modifierList returns [List<Modifier> modifierList] : ^( MODIFIER_LIST ( modifier )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:182:1: modifierList returns [List<Modifier> modifierList] : ^( MODIFIER_LIST ( modifier )* ) ;
 	[GrammarRule("modifierList")]
 	private List<Modifier> modifierList()
 	{
@@ -4260,32 +4307,32 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 
 		int modifierList_StartIndex = input.Index;
 
-		Modifier modifier12 = default(Modifier);
+		Modifier modifier19 = default(Modifier);
 
 		try { DebugEnterRule(GrammarFileName, "modifierList");
-		DebugLocation(179, 4);
+		DebugLocation(182, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 27)) { return modifierList; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:180:5: ( ^( MODIFIER_LIST ( modifier )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:183:5: ( ^( MODIFIER_LIST ( modifier )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:181:8: ^( MODIFIER_LIST ( modifier )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:184:8: ^( MODIFIER_LIST ( modifier )* )
 			{
-			DebugLocation(181, 8);
+			DebugLocation(184, 8);
 			if (state.backtracking == 0)
 			{
 				modifierList = new List<Modifier>();
 			}
-			DebugLocation(182, 5);
-			DebugLocation(182, 7);
-			Match(input,MODIFIER_LIST,Follow._MODIFIER_LIST_in_modifierList1296); if (state.failed) return modifierList;
+			DebugLocation(185, 5);
+			DebugLocation(185, 7);
+			Match(input,MODIFIER_LIST,Follow._MODIFIER_LIST_in_modifierList1336); if (state.failed) return modifierList;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return modifierList;
-				DebugLocation(182, 21);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:182:21: ( modifier )*
+				DebugLocation(185, 21);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:185:21: ( modifier )*
 				try { DebugEnterSubRule(58);
 				while (true)
 				{
@@ -4304,17 +4351,17 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:182:22: modifier
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:185:22: modifier
 						{
-						DebugLocation(182, 22);
-						PushFollow(Follow._modifier_in_modifierList1299);
-						modifier12=modifier();
+						DebugLocation(185, 22);
+						PushFollow(Follow._modifier_in_modifierList1339);
+						modifier19=modifier();
 						PopFollow();
 						if (state.failed) return modifierList;
-						DebugLocation(182, 31);
+						DebugLocation(185, 31);
 						if (state.backtracking == 0)
 						{
-							modifierList.Add(modifier12);
+							modifierList.Add(modifier19);
 						}
 
 						}
@@ -4351,7 +4398,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 27, modifierList_StartIndex); }
 
 		}
-		DebugLocation(183, 4);
+		DebugLocation(186, 4);
 		} finally { DebugExitRule(GrammarFileName, "modifierList"); }
 		return modifierList;
 
@@ -4361,7 +4408,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_modifier();
 	partial void LeaveRule_modifier();
 	// $ANTLR start "modifier"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:185:1: modifier returns [Modifier modifier] : ( PUBLIC | OVERRIDE | VIRTUAL | WITH_SHARING | WITHOUT_SHARING | PROTECTED | PRIVATE | STATIC | ABSTRACT | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | GLOBAL | TEST_METHOD | localModifier ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:188:1: modifier returns [Modifier modifier] : ( PUBLIC | OVERRIDE | VIRTUAL | WITH_SHARING | WITHOUT_SHARING | PROTECTED | PRIVATE | STATIC | ABSTRACT | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | GLOBAL | TEST_METHOD | localModifier ) ;
 	[GrammarRule("modifier")]
 	private Modifier modifier()
 	{
@@ -4373,17 +4420,17 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int modifier_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "modifier");
-		DebugLocation(185, 4);
+		DebugLocation(188, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 28)) { return modifier; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:186:5: ( ( PUBLIC | OVERRIDE | VIRTUAL | WITH_SHARING | WITHOUT_SHARING | PROTECTED | PRIVATE | STATIC | ABSTRACT | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | GLOBAL | TEST_METHOD | localModifier ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:189:5: ( ( PUBLIC | OVERRIDE | VIRTUAL | WITH_SHARING | WITHOUT_SHARING | PROTECTED | PRIVATE | STATIC | ABSTRACT | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | GLOBAL | TEST_METHOD | localModifier ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:188:6: ( PUBLIC | OVERRIDE | VIRTUAL | WITH_SHARING | WITHOUT_SHARING | PROTECTED | PRIVATE | STATIC | ABSTRACT | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | GLOBAL | TEST_METHOD | localModifier )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:191:6: ( PUBLIC | OVERRIDE | VIRTUAL | WITH_SHARING | WITHOUT_SHARING | PROTECTED | PRIVATE | STATIC | ABSTRACT | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | GLOBAL | TEST_METHOD | localModifier )
 			{
-			DebugLocation(188, 6);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:188:6: ( PUBLIC | OVERRIDE | VIRTUAL | WITH_SHARING | WITHOUT_SHARING | PROTECTED | PRIVATE | STATIC | ABSTRACT | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | GLOBAL | TEST_METHOD | localModifier )
+			DebugLocation(191, 6);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:191:6: ( PUBLIC | OVERRIDE | VIRTUAL | WITH_SHARING | WITHOUT_SHARING | PROTECTED | PRIVATE | STATIC | ABSTRACT | NATIVE | SYNCHRONIZED | TRANSIENT | VOLATILE | STRICTFP | GLOBAL | TEST_METHOD | localModifier )
 			int alt59=17;
 			try { DebugEnterSubRule(59);
 			try { DebugEnterDecision(59, false);
@@ -4489,11 +4536,11 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:188:7: PUBLIC
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:191:7: PUBLIC
 				{
-				DebugLocation(188, 7);
-				Match(input,PUBLIC,Follow._PUBLIC_in_modifier1337); if (state.failed) return modifier;
-				DebugLocation(188, 14);
+				DebugLocation(191, 7);
+				Match(input,PUBLIC,Follow._PUBLIC_in_modifier1377); if (state.failed) return modifier;
+				DebugLocation(191, 14);
 				if (state.backtracking == 0)
 				{
 					modifier = Modifier.Public;
@@ -4503,11 +4550,11 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:189:9: OVERRIDE
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:192:9: OVERRIDE
 				{
-				DebugLocation(189, 9);
-				Match(input,OVERRIDE,Follow._OVERRIDE_in_modifier1349); if (state.failed) return modifier;
-				DebugLocation(189, 18);
+				DebugLocation(192, 9);
+				Match(input,OVERRIDE,Follow._OVERRIDE_in_modifier1389); if (state.failed) return modifier;
+				DebugLocation(192, 18);
 				if (state.backtracking == 0)
 				{
 					modifier = Modifier.Override;
@@ -4517,11 +4564,11 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:190:9: VIRTUAL
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:193:9: VIRTUAL
 				{
-				DebugLocation(190, 9);
-				Match(input,VIRTUAL,Follow._VIRTUAL_in_modifier1361); if (state.failed) return modifier;
-				DebugLocation(190, 17);
+				DebugLocation(193, 9);
+				Match(input,VIRTUAL,Follow._VIRTUAL_in_modifier1401); if (state.failed) return modifier;
+				DebugLocation(193, 17);
 				if (state.backtracking == 0)
 				{
 					modifier = Modifier.Virtual;
@@ -4531,29 +4578,29 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:191:9: WITH_SHARING
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:194:9: WITH_SHARING
 				{
-				DebugLocation(191, 9);
-				Match(input,WITH_SHARING,Follow._WITH_SHARING_in_modifier1373); if (state.failed) return modifier;
+				DebugLocation(194, 9);
+				Match(input,WITH_SHARING,Follow._WITH_SHARING_in_modifier1413); if (state.failed) return modifier;
 
 				}
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:192:7: WITHOUT_SHARING
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:195:7: WITHOUT_SHARING
 				{
-				DebugLocation(192, 7);
-				Match(input,WITHOUT_SHARING,Follow._WITHOUT_SHARING_in_modifier1382); if (state.failed) return modifier;
+				DebugLocation(195, 7);
+				Match(input,WITHOUT_SHARING,Follow._WITHOUT_SHARING_in_modifier1422); if (state.failed) return modifier;
 
 				}
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:193:9: PROTECTED
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:196:9: PROTECTED
 				{
-				DebugLocation(193, 9);
-				Match(input,PROTECTED,Follow._PROTECTED_in_modifier1392); if (state.failed) return modifier;
-				DebugLocation(193, 19);
+				DebugLocation(196, 9);
+				Match(input,PROTECTED,Follow._PROTECTED_in_modifier1432); if (state.failed) return modifier;
+				DebugLocation(196, 19);
 				if (state.backtracking == 0)
 				{
 					modifier = Modifier.Protected;
@@ -4563,11 +4610,11 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:194:9: PRIVATE
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:197:9: PRIVATE
 				{
-				DebugLocation(194, 9);
-				Match(input,PRIVATE,Follow._PRIVATE_in_modifier1404); if (state.failed) return modifier;
-				DebugLocation(194, 17);
+				DebugLocation(197, 9);
+				Match(input,PRIVATE,Follow._PRIVATE_in_modifier1444); if (state.failed) return modifier;
+				DebugLocation(197, 17);
 				if (state.backtracking == 0)
 				{
 					modifier = Modifier.Private;
@@ -4577,11 +4624,11 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 8:
 				DebugEnterAlt(8);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:195:9: STATIC
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:198:9: STATIC
 				{
-				DebugLocation(195, 9);
-				Match(input,STATIC,Follow._STATIC_in_modifier1416); if (state.failed) return modifier;
-				DebugLocation(195, 16);
+				DebugLocation(198, 9);
+				Match(input,STATIC,Follow._STATIC_in_modifier1456); if (state.failed) return modifier;
+				DebugLocation(198, 16);
 				if (state.backtracking == 0)
 				{
 					modifier = Modifier.Static;
@@ -4591,11 +4638,11 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 9:
 				DebugEnterAlt(9);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:196:9: ABSTRACT
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:199:9: ABSTRACT
 				{
-				DebugLocation(196, 9);
-				Match(input,ABSTRACT,Follow._ABSTRACT_in_modifier1428); if (state.failed) return modifier;
-				DebugLocation(196, 18);
+				DebugLocation(199, 9);
+				Match(input,ABSTRACT,Follow._ABSTRACT_in_modifier1468); if (state.failed) return modifier;
+				DebugLocation(199, 18);
 				if (state.backtracking == 0)
 				{
 					modifier = Modifier.Abstract;
@@ -4605,56 +4652,56 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 10:
 				DebugEnterAlt(10);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:197:9: NATIVE
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:200:9: NATIVE
 				{
-				DebugLocation(197, 9);
-				Match(input,NATIVE,Follow._NATIVE_in_modifier1440); if (state.failed) return modifier;
+				DebugLocation(200, 9);
+				Match(input,NATIVE,Follow._NATIVE_in_modifier1480); if (state.failed) return modifier;
 
 				}
 				break;
 			case 11:
 				DebugEnterAlt(11);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:198:9: SYNCHRONIZED
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:201:9: SYNCHRONIZED
 				{
-				DebugLocation(198, 9);
-				Match(input,SYNCHRONIZED,Follow._SYNCHRONIZED_in_modifier1450); if (state.failed) return modifier;
+				DebugLocation(201, 9);
+				Match(input,SYNCHRONIZED,Follow._SYNCHRONIZED_in_modifier1490); if (state.failed) return modifier;
 
 				}
 				break;
 			case 12:
 				DebugEnterAlt(12);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:199:9: TRANSIENT
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:202:9: TRANSIENT
 				{
-				DebugLocation(199, 9);
-				Match(input,TRANSIENT,Follow._TRANSIENT_in_modifier1460); if (state.failed) return modifier;
+				DebugLocation(202, 9);
+				Match(input,TRANSIENT,Follow._TRANSIENT_in_modifier1500); if (state.failed) return modifier;
 
 				}
 				break;
 			case 13:
 				DebugEnterAlt(13);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:200:9: VOLATILE
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:203:9: VOLATILE
 				{
-				DebugLocation(200, 9);
-				Match(input,VOLATILE,Follow._VOLATILE_in_modifier1470); if (state.failed) return modifier;
+				DebugLocation(203, 9);
+				Match(input,VOLATILE,Follow._VOLATILE_in_modifier1510); if (state.failed) return modifier;
 
 				}
 				break;
 			case 14:
 				DebugEnterAlt(14);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:201:9: STRICTFP
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:204:9: STRICTFP
 				{
-				DebugLocation(201, 9);
-				Match(input,STRICTFP,Follow._STRICTFP_in_modifier1480); if (state.failed) return modifier;
+				DebugLocation(204, 9);
+				Match(input,STRICTFP,Follow._STRICTFP_in_modifier1520); if (state.failed) return modifier;
 
 				}
 				break;
 			case 15:
 				DebugEnterAlt(15);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:202:7: GLOBAL
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:205:7: GLOBAL
 				{
-				DebugLocation(202, 7);
-				Match(input,GLOBAL,Follow._GLOBAL_in_modifier1488); if (state.failed) return modifier;
-				DebugLocation(202, 14);
+				DebugLocation(205, 7);
+				Match(input,GLOBAL,Follow._GLOBAL_in_modifier1528); if (state.failed) return modifier;
+				DebugLocation(205, 14);
 				if (state.backtracking == 0)
 				{
 					modifier = Modifier.Global;
@@ -4664,11 +4711,11 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 16:
 				DebugEnterAlt(16);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:203:9: TEST_METHOD
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:206:9: TEST_METHOD
 				{
-				DebugLocation(203, 9);
-				Match(input,TEST_METHOD,Follow._TEST_METHOD_in_modifier1500); if (state.failed) return modifier;
-				DebugLocation(203, 21);
+				DebugLocation(206, 9);
+				Match(input,TEST_METHOD,Follow._TEST_METHOD_in_modifier1540); if (state.failed) return modifier;
+				DebugLocation(206, 21);
 				if (state.backtracking == 0)
 				{
 					modifier = Modifier.TestMethod;
@@ -4678,10 +4725,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 17:
 				DebugEnterAlt(17);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:204:9: localModifier
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:207:9: localModifier
 				{
-				DebugLocation(204, 9);
-				PushFollow(Follow._localModifier_in_modifier1512);
+				DebugLocation(207, 9);
+				PushFollow(Follow._localModifier_in_modifier1552);
 				localModifier();
 				PopFollow();
 				if (state.failed) return modifier;
@@ -4709,7 +4756,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 28, modifier_StartIndex); }
 
 		}
-		DebugLocation(205, 4);
+		DebugLocation(208, 4);
 		} finally { DebugExitRule(GrammarFileName, "modifier"); }
 		return modifier;
 
@@ -4719,7 +4766,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_localModifierList();
 	partial void LeaveRule_localModifierList();
 	// $ANTLR start "localModifierList"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:207:1: localModifierList : ^( LOCAL_MODIFIER_LIST ( localModifier )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:210:1: localModifierList : ^( LOCAL_MODIFIER_LIST ( localModifier )* ) ;
 	[GrammarRule("localModifierList")]
 	private void localModifierList()
 	{
@@ -4729,24 +4776,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int localModifierList_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "localModifierList");
-		DebugLocation(207, 4);
+		DebugLocation(210, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 29)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:208:5: ( ^( LOCAL_MODIFIER_LIST ( localModifier )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:211:5: ( ^( LOCAL_MODIFIER_LIST ( localModifier )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:208:9: ^( LOCAL_MODIFIER_LIST ( localModifier )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:211:9: ^( LOCAL_MODIFIER_LIST ( localModifier )* )
 			{
-			DebugLocation(208, 9);
-			DebugLocation(208, 11);
-			Match(input,LOCAL_MODIFIER_LIST,Follow._LOCAL_MODIFIER_LIST_in_localModifierList1533); if (state.failed) return;
+			DebugLocation(211, 9);
+			DebugLocation(211, 11);
+			Match(input,LOCAL_MODIFIER_LIST,Follow._LOCAL_MODIFIER_LIST_in_localModifierList1573); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(208, 31);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:208:31: ( localModifier )*
+				DebugLocation(211, 31);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:211:31: ( localModifier )*
 				try { DebugEnterSubRule(60);
 				while (true)
 				{
@@ -4765,10 +4812,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:208:31: localModifier
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:211:31: localModifier
 						{
-						DebugLocation(208, 31);
-						PushFollow(Follow._localModifier_in_localModifierList1535);
+						DebugLocation(211, 31);
+						PushFollow(Follow._localModifier_in_localModifierList1575);
 						localModifier();
 						PopFollow();
 						if (state.failed) return;
@@ -4807,7 +4854,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 29, localModifierList_StartIndex); }
 
 		}
-		DebugLocation(209, 4);
+		DebugLocation(212, 4);
 		} finally { DebugExitRule(GrammarFileName, "localModifierList"); }
 		return;
 
@@ -4817,7 +4864,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_localModifier();
 	partial void LeaveRule_localModifier();
 	// $ANTLR start "localModifier"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:211:1: localModifier : ( FINAL | annotation );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:214:1: localModifier : ( FINAL | annotation );
 	[GrammarRule("localModifier")]
 	private void localModifier()
 	{
@@ -4827,12 +4874,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int localModifier_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "localModifier");
-		DebugLocation(211, 4);
+		DebugLocation(214, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 30)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:212:5: ( FINAL | annotation )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:215:5: ( FINAL | annotation )
 			int alt61=2;
 			try { DebugEnterDecision(61, false);
 			int LA61_1 = input.LA(1);
@@ -4857,19 +4904,19 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:212:9: FINAL
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:215:9: FINAL
 				{
-				DebugLocation(212, 9);
-				Match(input,FINAL,Follow._FINAL_in_localModifier1556); if (state.failed) return;
+				DebugLocation(215, 9);
+				Match(input,FINAL,Follow._FINAL_in_localModifier1596); if (state.failed) return;
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:213:9: annotation
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:216:9: annotation
 				{
-				DebugLocation(213, 9);
-				PushFollow(Follow._annotation_in_localModifier1566);
+				DebugLocation(216, 9);
+				PushFollow(Follow._annotation_in_localModifier1606);
 				annotation();
 				PopFollow();
 				if (state.failed) return;
@@ -4892,7 +4939,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 30, localModifier_StartIndex); }
 
 		}
-		DebugLocation(214, 4);
+		DebugLocation(217, 4);
 		} finally { DebugExitRule(GrammarFileName, "localModifier"); }
 		return;
 
@@ -4902,32 +4949,36 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_type();
 	partial void LeaveRule_type();
 	// $ANTLR start "type"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:216:1: type : ^( TYPE ( primitiveType | qualifiedTypeIdent ) ( arrayDeclaratorList )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:219:1: type returns [ApexType type] : ^( TYPE ( primitiveType | qualifiedTypeIdent ) ( arrayDeclaratorList )? ) ;
 	[GrammarRule("type")]
-	private void type()
+	private ApexType type()
 	{
 		EnterRule_type();
 		EnterRule("type", 31);
 		TraceIn("type", 31);
+		ApexType type = default(ApexType);
+
 		int type_StartIndex = input.Index;
 
+		ApexType qualifiedTypeIdent20 = default(ApexType);
+
 		try { DebugEnterRule(GrammarFileName, "type");
-		DebugLocation(216, 4);
+		DebugLocation(219, 4);
 		try
 		{
-			if (state.backtracking > 0 && AlreadyParsedRule(input, 31)) { return; }
+			if (state.backtracking > 0 && AlreadyParsedRule(input, 31)) { return type; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:217:5: ( ^( TYPE ( primitiveType | qualifiedTypeIdent ) ( arrayDeclaratorList )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:220:5: ( ^( TYPE ( primitiveType | qualifiedTypeIdent ) ( arrayDeclaratorList )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:217:9: ^( TYPE ( primitiveType | qualifiedTypeIdent ) ( arrayDeclaratorList )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:6: ^( TYPE ( primitiveType | qualifiedTypeIdent ) ( arrayDeclaratorList )? )
 			{
-			DebugLocation(217, 9);
-			DebugLocation(217, 11);
-			Match(input,TYPE,Follow._TYPE_in_type1586); if (state.failed) return;
+			DebugLocation(221, 6);
+			DebugLocation(221, 8);
+			Match(input,TYPE,Follow._TYPE_in_type1636); if (state.failed) return type;
 
-			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(217, 16);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:217:16: ( primitiveType | qualifiedTypeIdent )
+			Match(input, TokenTypes.Down, null); if (state.failed) return type;
+			DebugLocation(221, 13);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:13: ( primitiveType | qualifiedTypeIdent )
 			int alt62=2;
 			try { DebugEnterSubRule(62);
 			try { DebugEnterDecision(62, false);
@@ -4943,7 +4994,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			}
 			else
 			{
-				if (state.backtracking>0) {state.failed=true; return;}
+				if (state.backtracking>0) {state.failed=true; return type;}
 				NoViableAltException nvae = new NoViableAltException("", 62, 0, input, 1);
 				DebugRecognitionException(nvae);
 				throw nvae;
@@ -4953,25 +5004,30 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:217:17: primitiveType
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:14: primitiveType
 				{
-				DebugLocation(217, 17);
-				PushFollow(Follow._primitiveType_in_type1589);
+				DebugLocation(221, 14);
+				PushFollow(Follow._primitiveType_in_type1639);
 				primitiveType();
 				PopFollow();
-				if (state.failed) return;
+				if (state.failed) return type;
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:217:33: qualifiedTypeIdent
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:30: qualifiedTypeIdent
 				{
-				DebugLocation(217, 33);
-				PushFollow(Follow._qualifiedTypeIdent_in_type1593);
-				qualifiedTypeIdent();
+				DebugLocation(221, 30);
+				PushFollow(Follow._qualifiedTypeIdent_in_type1643);
+				qualifiedTypeIdent20=qualifiedTypeIdent();
 				PopFollow();
-				if (state.failed) return;
+				if (state.failed) return type;
+				DebugLocation(221, 49);
+				if (state.backtracking == 0)
+				{
+					type = qualifiedTypeIdent20;
+				}
 
 				}
 				break;
@@ -4979,8 +5035,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			}
 			} finally { DebugExitSubRule(62); }
 
-			DebugLocation(217, 53);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:217:53: ( arrayDeclaratorList )?
+			DebugLocation(221, 85);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:85: ( arrayDeclaratorList )?
 			int alt63=2;
 			try { DebugEnterSubRule(63);
 			try { DebugEnterDecision(63, false);
@@ -4995,13 +5051,13 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:217:53: arrayDeclaratorList
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:85: arrayDeclaratorList
 				{
-				DebugLocation(217, 53);
-				PushFollow(Follow._arrayDeclaratorList_in_type1596);
+				DebugLocation(221, 85);
+				PushFollow(Follow._arrayDeclaratorList_in_type1648);
 				arrayDeclaratorList();
 				PopFollow();
-				if (state.failed) return;
+				if (state.failed) return type;
 
 				}
 				break;
@@ -5010,7 +5066,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			} finally { DebugExitSubRule(63); }
 
 
-			Match(input, TokenTypes.Up, null); if (state.failed) return;
+			Match(input, TokenTypes.Up, null); if (state.failed) return type;
 
 
 			}
@@ -5029,9 +5085,9 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 31, type_StartIndex); }
 
 		}
-		DebugLocation(218, 4);
+		DebugLocation(222, 4);
 		} finally { DebugExitRule(GrammarFileName, "type"); }
-		return;
+		return type;
 
 	}
 	// $ANTLR end "type"
@@ -5039,32 +5095,43 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_qualifiedTypeIdent();
 	partial void LeaveRule_qualifiedTypeIdent();
 	// $ANTLR start "qualifiedTypeIdent"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:220:1: qualifiedTypeIdent : ^( QUALIFIED_TYPE_IDENT ( typeIdent )+ ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:224:1: qualifiedTypeIdent returns [ApexType type] : ^( QUALIFIED_TYPE_IDENT ( typeIdent )+ ) ;
 	[GrammarRule("qualifiedTypeIdent")]
-	private void qualifiedTypeIdent()
+	private ApexType qualifiedTypeIdent()
 	{
 		EnterRule_qualifiedTypeIdent();
 		EnterRule("qualifiedTypeIdent", 32);
 		TraceIn("qualifiedTypeIdent", 32);
+		ApexType type = default(ApexType);
+
 		int qualifiedTypeIdent_StartIndex = input.Index;
 
+		CommonTree QUALIFIED_TYPE_IDENT21 = default(CommonTree);
+		ApexType typeIdent22 = default(ApexType);
+
 		try { DebugEnterRule(GrammarFileName, "qualifiedTypeIdent");
-		DebugLocation(220, 4);
+		DebugLocation(224, 4);
 		try
 		{
-			if (state.backtracking > 0 && AlreadyParsedRule(input, 32)) { return; }
+			if (state.backtracking > 0 && AlreadyParsedRule(input, 32)) { return type; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:5: ( ^( QUALIFIED_TYPE_IDENT ( typeIdent )+ ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:225:5: ( ^( QUALIFIED_TYPE_IDENT ( typeIdent )+ ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:9: ^( QUALIFIED_TYPE_IDENT ( typeIdent )+ )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:225:9: ^( QUALIFIED_TYPE_IDENT ( typeIdent )+ )
 			{
-			DebugLocation(221, 9);
-			DebugLocation(221, 11);
-			Match(input,QUALIFIED_TYPE_IDENT,Follow._QUALIFIED_TYPE_IDENT_in_qualifiedTypeIdent1618); if (state.failed) return;
+			DebugLocation(225, 9);
+			DebugLocation(225, 11);
+			QUALIFIED_TYPE_IDENT21=(CommonTree)Match(input,QUALIFIED_TYPE_IDENT,Follow._QUALIFIED_TYPE_IDENT_in_qualifiedTypeIdent1675); if (state.failed) return type;
 
-			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(221, 32);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:32: ( typeIdent )+
+			DebugLocation(225, 32);
+			if (state.backtracking == 0)
+			{
+				type = new ApexType(QUALIFIED_TYPE_IDENT21.Text);
+			}
+
+			Match(input, TokenTypes.Down, null); if (state.failed) return type;
+			DebugLocation(225, 83);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:225:83: ( typeIdent )+
 			int cnt64=0;
 			try { DebugEnterSubRule(64);
 			while (true)
@@ -5084,13 +5151,18 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:221:32: typeIdent
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:225:84: typeIdent
 					{
-					DebugLocation(221, 32);
-					PushFollow(Follow._typeIdent_in_qualifiedTypeIdent1620);
-					typeIdent();
+					DebugLocation(225, 84);
+					PushFollow(Follow._typeIdent_in_qualifiedTypeIdent1680);
+					typeIdent22=typeIdent();
 					PopFollow();
-					if (state.failed) return;
+					if (state.failed) return type;
+					DebugLocation(225, 94);
+					if (state.backtracking == 0)
+					{
+						type.AddType(typeIdent22);
+					}
 
 					}
 					break;
@@ -5099,7 +5171,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					if (cnt64 >= 1)
 						goto loop64;
 
-					if (state.backtracking>0) {state.failed=true; return;}
+					if (state.backtracking>0) {state.failed=true; return type;}
 					EarlyExitException eee64 = new EarlyExitException( 64, input );
 					DebugRecognitionException(eee64);
 					throw eee64;
@@ -5112,7 +5184,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			} finally { DebugExitSubRule(64); }
 
 
-			Match(input, TokenTypes.Up, null); if (state.failed) return;
+			Match(input, TokenTypes.Up, null); if (state.failed) return type;
 
 
 			}
@@ -5131,9 +5203,9 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 32, qualifiedTypeIdent_StartIndex); }
 
 		}
-		DebugLocation(222, 4);
+		DebugLocation(226, 4);
 		} finally { DebugExitRule(GrammarFileName, "qualifiedTypeIdent"); }
-		return;
+		return type;
 
 	}
 	// $ANTLR end "qualifiedTypeIdent"
@@ -5141,34 +5213,45 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_typeIdent();
 	partial void LeaveRule_typeIdent();
 	// $ANTLR start "typeIdent"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:224:1: typeIdent : ^( IDENT ( genericTypeArgumentList )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:228:1: typeIdent returns [ApexType type] : ^( IDENT ( genericTypeArgumentList )? ) ;
 	[GrammarRule("typeIdent")]
-	private void typeIdent()
+	private ApexType typeIdent()
 	{
 		EnterRule_typeIdent();
 		EnterRule("typeIdent", 33);
 		TraceIn("typeIdent", 33);
+		ApexType type = default(ApexType);
+
 		int typeIdent_StartIndex = input.Index;
 
+		CommonTree IDENT23 = default(CommonTree);
+		List<ApexType> genericTypeArgumentList24 = default(List<ApexType>);
+
 		try { DebugEnterRule(GrammarFileName, "typeIdent");
-		DebugLocation(224, 4);
+		DebugLocation(228, 4);
 		try
 		{
-			if (state.backtracking > 0 && AlreadyParsedRule(input, 33)) { return; }
+			if (state.backtracking > 0 && AlreadyParsedRule(input, 33)) { return type; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:225:5: ( ^( IDENT ( genericTypeArgumentList )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:229:5: ( ^( IDENT ( genericTypeArgumentList )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:225:9: ^( IDENT ( genericTypeArgumentList )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:230:6: ^( IDENT ( genericTypeArgumentList )? )
 			{
-			DebugLocation(225, 9);
-			DebugLocation(225, 11);
-			Match(input,IDENT,Follow._IDENT_in_typeIdent1643); if (state.failed) return;
+			DebugLocation(230, 6);
+			DebugLocation(230, 8);
+			IDENT23=(CommonTree)Match(input,IDENT,Follow._IDENT_in_typeIdent1716); if (state.failed) return type;
+
+			DebugLocation(230, 14);
+			if (state.backtracking == 0)
+			{
+				type = new ApexType(IDENT23.Text);
+			}
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
-				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(225, 17);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:225:17: ( genericTypeArgumentList )?
+				Match(input, TokenTypes.Down, null); if (state.failed) return type;
+				DebugLocation(230, 50);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:230:50: ( genericTypeArgumentList )?
 				int alt65=2;
 				try { DebugEnterSubRule(65);
 				try { DebugEnterDecision(65, false);
@@ -5183,13 +5266,18 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:225:17: genericTypeArgumentList
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:230:51: genericTypeArgumentList
 					{
-					DebugLocation(225, 17);
-					PushFollow(Follow._genericTypeArgumentList_in_typeIdent1645);
-					genericTypeArgumentList();
+					DebugLocation(230, 51);
+					PushFollow(Follow._genericTypeArgumentList_in_typeIdent1721);
+					genericTypeArgumentList24=genericTypeArgumentList();
 					PopFollow();
-					if (state.failed) return;
+					if (state.failed) return type;
+					DebugLocation(230, 75);
+					if (state.backtracking == 0)
+					{
+						type.AddTypes(genericTypeArgumentList24);
+					}
 
 					}
 					break;
@@ -5198,7 +5286,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(65); }
 
 
-				Match(input, TokenTypes.Up, null); if (state.failed) return;
+				Match(input, TokenTypes.Up, null); if (state.failed) return type;
 			}
 
 
@@ -5218,9 +5306,9 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 33, typeIdent_StartIndex); }
 
 		}
-		DebugLocation(226, 4);
+		DebugLocation(231, 4);
 		} finally { DebugExitRule(GrammarFileName, "typeIdent"); }
-		return;
+		return type;
 
 	}
 	// $ANTLR end "typeIdent"
@@ -5228,7 +5316,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_primitiveType();
 	partial void LeaveRule_primitiveType();
 	// $ANTLR start "primitiveType"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:228:1: primitiveType : ( BOOLEAN | CHAR | BYTE | SHORT | INT | LONG | FLOAT | DOUBLE );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:233:1: primitiveType : ( BOOLEAN | CHAR | BYTE | SHORT | INT | LONG | FLOAT | DOUBLE );
 	[GrammarRule("primitiveType")]
 	private void primitiveType()
 	{
@@ -5238,16 +5326,16 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int primitiveType_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "primitiveType");
-		DebugLocation(228, 4);
+		DebugLocation(233, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 34)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:229:5: ( BOOLEAN | CHAR | BYTE | SHORT | INT | LONG | FLOAT | DOUBLE )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:234:5: ( BOOLEAN | CHAR | BYTE | SHORT | INT | LONG | FLOAT | DOUBLE )
 			DebugEnterAlt(1);
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:
 			{
-			DebugLocation(229, 5);
+			DebugLocation(234, 5);
 			if (input.LA(1)==BOOLEAN||input.LA(1)==BYTE||input.LA(1)==CHAR||input.LA(1)==DOUBLE||input.LA(1)==FLOAT||input.LA(1)==INT||input.LA(1)==LONG||input.LA(1)==SHORT)
 			{
 				input.Consume();
@@ -5278,7 +5366,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 34, primitiveType_StartIndex); }
 
 		}
-		DebugLocation(237, 4);
+		DebugLocation(242, 4);
 		} finally { DebugExitRule(GrammarFileName, "primitiveType"); }
 		return;
 
@@ -5288,32 +5376,42 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_genericTypeArgumentList();
 	partial void LeaveRule_genericTypeArgumentList();
 	// $ANTLR start "genericTypeArgumentList"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:239:1: genericTypeArgumentList : ^( GENERIC_TYPE_ARG_LIST ( genericTypeArgument )+ ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:244:1: genericTypeArgumentList returns [List<ApexType> types] : ^( GENERIC_TYPE_ARG_LIST ( genericTypeArgument )+ ) ;
 	[GrammarRule("genericTypeArgumentList")]
-	private void genericTypeArgumentList()
+	private List<ApexType> genericTypeArgumentList()
 	{
 		EnterRule_genericTypeArgumentList();
 		EnterRule("genericTypeArgumentList", 35);
 		TraceIn("genericTypeArgumentList", 35);
+		List<ApexType> types = default(List<ApexType>);
+
 		int genericTypeArgumentList_StartIndex = input.Index;
 
+		ApexType genericTypeArgument25 = default(ApexType);
+
 		try { DebugEnterRule(GrammarFileName, "genericTypeArgumentList");
-		DebugLocation(239, 4);
+		DebugLocation(244, 4);
 		try
 		{
-			if (state.backtracking > 0 && AlreadyParsedRule(input, 35)) { return; }
+			if (state.backtracking > 0 && AlreadyParsedRule(input, 35)) { return types; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:240:5: ( ^( GENERIC_TYPE_ARG_LIST ( genericTypeArgument )+ ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:245:5: ( ^( GENERIC_TYPE_ARG_LIST ( genericTypeArgument )+ ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:240:9: ^( GENERIC_TYPE_ARG_LIST ( genericTypeArgument )+ )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:245:9: ^( GENERIC_TYPE_ARG_LIST ( genericTypeArgument )+ )
 			{
-			DebugLocation(240, 9);
-			DebugLocation(240, 11);
-			Match(input,GENERIC_TYPE_ARG_LIST,Follow._GENERIC_TYPE_ARG_LIST_in_genericTypeArgumentList1756); if (state.failed) return;
+			DebugLocation(245, 9);
+			DebugLocation(245, 11);
+			Match(input,GENERIC_TYPE_ARG_LIST,Follow._GENERIC_TYPE_ARG_LIST_in_genericTypeArgumentList1840); if (state.failed) return types;
 
-			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(240, 33);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:240:33: ( genericTypeArgument )+
+			DebugLocation(245, 33);
+			if (state.backtracking == 0)
+			{
+				types = new List<ApexType>();
+			}
+
+			Match(input, TokenTypes.Down, null); if (state.failed) return types;
+			DebugLocation(245, 65);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:245:65: ( genericTypeArgument )+
 			int cnt66=0;
 			try { DebugEnterSubRule(66);
 			while (true)
@@ -5333,13 +5431,18 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:240:33: genericTypeArgument
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:245:66: genericTypeArgument
 					{
-					DebugLocation(240, 33);
-					PushFollow(Follow._genericTypeArgument_in_genericTypeArgumentList1758);
-					genericTypeArgument();
+					DebugLocation(245, 66);
+					PushFollow(Follow._genericTypeArgument_in_genericTypeArgumentList1845);
+					genericTypeArgument25=genericTypeArgument();
 					PopFollow();
-					if (state.failed) return;
+					if (state.failed) return types;
+					DebugLocation(245, 86);
+					if (state.backtracking == 0)
+					{
+						types.Add(genericTypeArgument25);
+					}
 
 					}
 					break;
@@ -5348,7 +5451,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					if (cnt66 >= 1)
 						goto loop66;
 
-					if (state.backtracking>0) {state.failed=true; return;}
+					if (state.backtracking>0) {state.failed=true; return types;}
 					EarlyExitException eee66 = new EarlyExitException( 66, input );
 					DebugRecognitionException(eee66);
 					throw eee66;
@@ -5361,7 +5464,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			} finally { DebugExitSubRule(66); }
 
 
-			Match(input, TokenTypes.Up, null); if (state.failed) return;
+			Match(input, TokenTypes.Up, null); if (state.failed) return types;
 
 
 			}
@@ -5380,9 +5483,9 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 35, genericTypeArgumentList_StartIndex); }
 
 		}
-		DebugLocation(241, 4);
+		DebugLocation(246, 4);
 		} finally { DebugExitRule(GrammarFileName, "genericTypeArgumentList"); }
-		return;
+		return types;
 
 	}
 	// $ANTLR end "genericTypeArgumentList"
@@ -5390,22 +5493,26 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_genericTypeArgument();
 	partial void LeaveRule_genericTypeArgument();
 	// $ANTLR start "genericTypeArgument"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:243:1: genericTypeArgument : ( type | ^( QUESTION ( genericWildcardBoundType )? ) );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:248:1: genericTypeArgument returns [ApexType genericTypeArgument] : ( type | ^( QUESTION ( genericWildcardBoundType )? ) );
 	[GrammarRule("genericTypeArgument")]
-	private void genericTypeArgument()
+	private ApexType genericTypeArgument()
 	{
 		EnterRule_genericTypeArgument();
 		EnterRule("genericTypeArgument", 36);
 		TraceIn("genericTypeArgument", 36);
+		ApexType genericTypeArgument = default(ApexType);
+
 		int genericTypeArgument_StartIndex = input.Index;
 
+		ApexType type26 = default(ApexType);
+
 		try { DebugEnterRule(GrammarFileName, "genericTypeArgument");
-		DebugLocation(243, 4);
+		DebugLocation(248, 4);
 		try
 		{
-			if (state.backtracking > 0 && AlreadyParsedRule(input, 36)) { return; }
+			if (state.backtracking > 0 && AlreadyParsedRule(input, 36)) { return genericTypeArgument; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:244:5: ( type | ^( QUESTION ( genericWildcardBoundType )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:249:5: ( type | ^( QUESTION ( genericWildcardBoundType )? ) )
 			int alt68=2;
 			try { DebugEnterDecision(68, false);
 			int LA68_1 = input.LA(1);
@@ -5420,7 +5527,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			}
 			else
 			{
-				if (state.backtracking>0) {state.failed=true; return;}
+				if (state.backtracking>0) {state.failed=true; return genericTypeArgument;}
 				NoViableAltException nvae = new NoViableAltException("", 68, 0, input, 1);
 				DebugRecognitionException(nvae);
 				throw nvae;
@@ -5430,29 +5537,34 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:244:9: type
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:250:6: type
 				{
-				DebugLocation(244, 9);
-				PushFollow(Follow._type_in_genericTypeArgument1783);
-				type();
+				DebugLocation(250, 6);
+				PushFollow(Follow._type_in_genericTypeArgument1884);
+				type26=type();
 				PopFollow();
-				if (state.failed) return;
+				if (state.failed) return genericTypeArgument;
+				DebugLocation(250, 11);
+				if (state.backtracking == 0)
+				{
+					genericTypeArgument = type26;
+				}
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:245:9: ^( QUESTION ( genericWildcardBoundType )? )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:251:9: ^( QUESTION ( genericWildcardBoundType )? )
 				{
-				DebugLocation(245, 9);
-				DebugLocation(245, 11);
-				Match(input,QUESTION,Follow._QUESTION_in_genericTypeArgument1794); if (state.failed) return;
+				DebugLocation(251, 9);
+				DebugLocation(251, 11);
+				Match(input,QUESTION,Follow._QUESTION_in_genericTypeArgument1897); if (state.failed) return genericTypeArgument;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
-					Match(input, TokenTypes.Down, null); if (state.failed) return;
-					DebugLocation(245, 20);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:245:20: ( genericWildcardBoundType )?
+					Match(input, TokenTypes.Down, null); if (state.failed) return genericTypeArgument;
+					DebugLocation(251, 20);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:251:20: ( genericWildcardBoundType )?
 					int alt67=2;
 					try { DebugEnterSubRule(67);
 					try { DebugEnterDecision(67, false);
@@ -5467,13 +5579,13 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:245:20: genericWildcardBoundType
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:251:20: genericWildcardBoundType
 						{
-						DebugLocation(245, 20);
-						PushFollow(Follow._genericWildcardBoundType_in_genericTypeArgument1796);
+						DebugLocation(251, 20);
+						PushFollow(Follow._genericWildcardBoundType_in_genericTypeArgument1899);
 						genericWildcardBoundType();
 						PopFollow();
-						if (state.failed) return;
+						if (state.failed) return genericTypeArgument;
 
 						}
 						break;
@@ -5482,7 +5594,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					} finally { DebugExitSubRule(67); }
 
 
-					Match(input, TokenTypes.Up, null); if (state.failed) return;
+					Match(input, TokenTypes.Up, null); if (state.failed) return genericTypeArgument;
 				}
 
 
@@ -5504,9 +5616,9 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 36, genericTypeArgument_StartIndex); }
 
 		}
-		DebugLocation(246, 4);
+		DebugLocation(252, 4);
 		} finally { DebugExitRule(GrammarFileName, "genericTypeArgument"); }
-		return;
+		return genericTypeArgument;
 
 	}
 	// $ANTLR end "genericTypeArgument"
@@ -5514,7 +5626,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_genericWildcardBoundType();
 	partial void LeaveRule_genericWildcardBoundType();
 	// $ANTLR start "genericWildcardBoundType"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:248:1: genericWildcardBoundType : ( ^( EXTENDS type ) | ^( SUPER type ) );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:254:1: genericWildcardBoundType : ( ^( EXTENDS type ) | ^( SUPER type ) );
 	[GrammarRule("genericWildcardBoundType")]
 	private void genericWildcardBoundType()
 	{
@@ -5524,12 +5636,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int genericWildcardBoundType_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "genericWildcardBoundType");
-		DebugLocation(248, 4);
+		DebugLocation(254, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 37)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:249:5: ( ^( EXTENDS type ) | ^( SUPER type ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:255:5: ( ^( EXTENDS type ) | ^( SUPER type ) )
 			int alt69=2;
 			try { DebugEnterDecision(69, false);
 			int LA69_1 = input.LA(1);
@@ -5554,15 +5666,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:249:9: ^( EXTENDS type )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:255:9: ^( EXTENDS type )
 				{
-				DebugLocation(249, 9);
-				DebugLocation(249, 11);
-				Match(input,EXTENDS,Follow._EXTENDS_in_genericWildcardBoundType1936); if (state.failed) return;
+				DebugLocation(255, 9);
+				DebugLocation(255, 11);
+				Match(input,EXTENDS,Follow._EXTENDS_in_genericWildcardBoundType2039); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(249, 19);
-				PushFollow(Follow._type_in_genericWildcardBoundType1938);
+				DebugLocation(255, 19);
+				PushFollow(Follow._type_in_genericWildcardBoundType2041);
 				type();
 				PopFollow();
 				if (state.failed) return;
@@ -5574,15 +5686,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:250:9: ^( SUPER type )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:256:9: ^( SUPER type )
 				{
-				DebugLocation(250, 9);
-				DebugLocation(250, 11);
-				Match(input,SUPER,Follow._SUPER_in_genericWildcardBoundType1950); if (state.failed) return;
+				DebugLocation(256, 9);
+				DebugLocation(256, 11);
+				Match(input,SUPER,Follow._SUPER_in_genericWildcardBoundType2053); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(250, 17);
-				PushFollow(Follow._type_in_genericWildcardBoundType1952);
+				DebugLocation(256, 17);
+				PushFollow(Follow._type_in_genericWildcardBoundType2055);
 				type();
 				PopFollow();
 				if (state.failed) return;
@@ -5608,7 +5720,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 37, genericWildcardBoundType_StartIndex); }
 
 		}
-		DebugLocation(251, 4);
+		DebugLocation(257, 4);
 		} finally { DebugExitRule(GrammarFileName, "genericWildcardBoundType"); }
 		return;
 
@@ -5618,7 +5730,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_formalParameterList();
 	partial void LeaveRule_formalParameterList();
 	// $ANTLR start "formalParameterList"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:253:1: formalParameterList : ^( FORMAL_PARAM_LIST ( formalParameterStandardDecl )* ( formalParameterVarargDecl )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:259:1: formalParameterList : ^( FORMAL_PARAM_LIST ( formalParameterStandardDecl )* ( formalParameterVarargDecl )? ) ;
 	[GrammarRule("formalParameterList")]
 	private void formalParameterList()
 	{
@@ -5628,24 +5740,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int formalParameterList_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "formalParameterList");
-		DebugLocation(253, 4);
+		DebugLocation(259, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 38)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:254:5: ( ^( FORMAL_PARAM_LIST ( formalParameterStandardDecl )* ( formalParameterVarargDecl )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:260:5: ( ^( FORMAL_PARAM_LIST ( formalParameterStandardDecl )* ( formalParameterVarargDecl )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:254:9: ^( FORMAL_PARAM_LIST ( formalParameterStandardDecl )* ( formalParameterVarargDecl )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:260:9: ^( FORMAL_PARAM_LIST ( formalParameterStandardDecl )* ( formalParameterVarargDecl )? )
 			{
-			DebugLocation(254, 9);
-			DebugLocation(254, 11);
-			Match(input,FORMAL_PARAM_LIST,Follow._FORMAL_PARAM_LIST_in_formalParameterList1973); if (state.failed) return;
+			DebugLocation(260, 9);
+			DebugLocation(260, 11);
+			Match(input,FORMAL_PARAM_LIST,Follow._FORMAL_PARAM_LIST_in_formalParameterList2076); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(254, 29);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:254:29: ( formalParameterStandardDecl )*
+				DebugLocation(260, 29);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:260:29: ( formalParameterStandardDecl )*
 				try { DebugEnterSubRule(70);
 				while (true)
 				{
@@ -5664,10 +5776,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:254:29: formalParameterStandardDecl
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:260:29: formalParameterStandardDecl
 						{
-						DebugLocation(254, 29);
-						PushFollow(Follow._formalParameterStandardDecl_in_formalParameterList1975);
+						DebugLocation(260, 29);
+						PushFollow(Follow._formalParameterStandardDecl_in_formalParameterList2078);
 						formalParameterStandardDecl();
 						PopFollow();
 						if (state.failed) return;
@@ -5685,8 +5797,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 
 				} finally { DebugExitSubRule(70); }
 
-				DebugLocation(254, 58);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:254:58: ( formalParameterVarargDecl )?
+				DebugLocation(260, 58);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:260:58: ( formalParameterVarargDecl )?
 				int alt71=2;
 				try { DebugEnterSubRule(71);
 				try { DebugEnterDecision(71, false);
@@ -5701,10 +5813,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:254:58: formalParameterVarargDecl
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:260:58: formalParameterVarargDecl
 					{
-					DebugLocation(254, 58);
-					PushFollow(Follow._formalParameterVarargDecl_in_formalParameterList1978);
+					DebugLocation(260, 58);
+					PushFollow(Follow._formalParameterVarargDecl_in_formalParameterList2081);
 					formalParameterVarargDecl();
 					PopFollow();
 					if (state.failed) return;
@@ -5736,7 +5848,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 38, formalParameterList_StartIndex); }
 
 		}
-		DebugLocation(255, 4);
+		DebugLocation(261, 4);
 		} finally { DebugExitRule(GrammarFileName, "formalParameterList"); }
 		return;
 
@@ -5746,7 +5858,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_formalParameterStandardDecl();
 	partial void LeaveRule_formalParameterStandardDecl();
 	// $ANTLR start "formalParameterStandardDecl"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:257:1: formalParameterStandardDecl : ^( FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:263:1: formalParameterStandardDecl : ^( FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId ) ;
 	[GrammarRule("formalParameterStandardDecl")]
 	private void formalParameterStandardDecl()
 	{
@@ -5756,32 +5868,32 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int formalParameterStandardDecl_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "formalParameterStandardDecl");
-		DebugLocation(257, 4);
+		DebugLocation(263, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 39)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:258:5: ( ^( FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:264:5: ( ^( FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:258:9: ^( FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:264:9: ^( FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId )
 			{
-			DebugLocation(258, 9);
-			DebugLocation(258, 11);
-			Match(input,FORMAL_PARAM_STD_DECL,Follow._FORMAL_PARAM_STD_DECL_in_formalParameterStandardDecl2005); if (state.failed) return;
+			DebugLocation(264, 9);
+			DebugLocation(264, 11);
+			Match(input,FORMAL_PARAM_STD_DECL,Follow._FORMAL_PARAM_STD_DECL_in_formalParameterStandardDecl2108); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(258, 33);
-			PushFollow(Follow._localModifierList_in_formalParameterStandardDecl2007);
+			DebugLocation(264, 33);
+			PushFollow(Follow._localModifierList_in_formalParameterStandardDecl2110);
 			localModifierList();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(258, 51);
-			PushFollow(Follow._type_in_formalParameterStandardDecl2009);
+			DebugLocation(264, 51);
+			PushFollow(Follow._type_in_formalParameterStandardDecl2112);
 			type();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(258, 56);
-			PushFollow(Follow._variableDeclaratorId_in_formalParameterStandardDecl2011);
+			DebugLocation(264, 56);
+			PushFollow(Follow._variableDeclaratorId_in_formalParameterStandardDecl2114);
 			variableDeclaratorId();
 			PopFollow();
 			if (state.failed) return;
@@ -5805,7 +5917,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 39, formalParameterStandardDecl_StartIndex); }
 
 		}
-		DebugLocation(259, 4);
+		DebugLocation(265, 4);
 		} finally { DebugExitRule(GrammarFileName, "formalParameterStandardDecl"); }
 		return;
 
@@ -5815,7 +5927,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_formalParameterVarargDecl();
 	partial void LeaveRule_formalParameterVarargDecl();
 	// $ANTLR start "formalParameterVarargDecl"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:261:1: formalParameterVarargDecl : ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:267:1: formalParameterVarargDecl : ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId ) ;
 	[GrammarRule("formalParameterVarargDecl")]
 	private void formalParameterVarargDecl()
 	{
@@ -5825,32 +5937,32 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int formalParameterVarargDecl_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "formalParameterVarargDecl");
-		DebugLocation(261, 4);
+		DebugLocation(267, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 40)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:262:5: ( ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:268:5: ( ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:262:9: ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:268:9: ^( FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId )
 			{
-			DebugLocation(262, 9);
-			DebugLocation(262, 11);
-			Match(input,FORMAL_PARAM_VARARG_DECL,Follow._FORMAL_PARAM_VARARG_DECL_in_formalParameterVarargDecl2036); if (state.failed) return;
+			DebugLocation(268, 9);
+			DebugLocation(268, 11);
+			Match(input,FORMAL_PARAM_VARARG_DECL,Follow._FORMAL_PARAM_VARARG_DECL_in_formalParameterVarargDecl2139); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(262, 36);
-			PushFollow(Follow._localModifierList_in_formalParameterVarargDecl2038);
+			DebugLocation(268, 36);
+			PushFollow(Follow._localModifierList_in_formalParameterVarargDecl2141);
 			localModifierList();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(262, 54);
-			PushFollow(Follow._type_in_formalParameterVarargDecl2040);
+			DebugLocation(268, 54);
+			PushFollow(Follow._type_in_formalParameterVarargDecl2143);
 			type();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(262, 59);
-			PushFollow(Follow._variableDeclaratorId_in_formalParameterVarargDecl2042);
+			DebugLocation(268, 59);
+			PushFollow(Follow._variableDeclaratorId_in_formalParameterVarargDecl2145);
 			variableDeclaratorId();
 			PopFollow();
 			if (state.failed) return;
@@ -5874,7 +5986,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 40, formalParameterVarargDecl_StartIndex); }
 
 		}
-		DebugLocation(263, 4);
+		DebugLocation(269, 4);
 		} finally { DebugExitRule(GrammarFileName, "formalParameterVarargDecl"); }
 		return;
 
@@ -5884,7 +5996,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_qualifiedIdentifier();
 	partial void LeaveRule_qualifiedIdentifier();
 	// $ANTLR start "qualifiedIdentifier"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:265:1: qualifiedIdentifier : ( IDENT | ^( DOT qualifiedIdentifier IDENT ) );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:271:1: qualifiedIdentifier : ( IDENT | ^( DOT qualifiedIdentifier IDENT ) );
 	[GrammarRule("qualifiedIdentifier")]
 	private void qualifiedIdentifier()
 	{
@@ -5894,12 +6006,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int qualifiedIdentifier_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "qualifiedIdentifier");
-		DebugLocation(265, 4);
+		DebugLocation(271, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 41)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:266:5: ( IDENT | ^( DOT qualifiedIdentifier IDENT ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:272:5: ( IDENT | ^( DOT qualifiedIdentifier IDENT ) )
 			int alt72=2;
 			try { DebugEnterDecision(72, false);
 			int LA72_1 = input.LA(1);
@@ -5924,29 +6036,29 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:266:9: IDENT
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:272:9: IDENT
 				{
-				DebugLocation(266, 9);
-				Match(input,IDENT,Follow._IDENT_in_qualifiedIdentifier2067); if (state.failed) return;
+				DebugLocation(272, 9);
+				Match(input,IDENT,Follow._IDENT_in_qualifiedIdentifier2170); if (state.failed) return;
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:267:9: ^( DOT qualifiedIdentifier IDENT )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:273:9: ^( DOT qualifiedIdentifier IDENT )
 				{
-				DebugLocation(267, 9);
-				DebugLocation(267, 11);
-				Match(input,DOT,Follow._DOT_in_qualifiedIdentifier2078); if (state.failed) return;
+				DebugLocation(273, 9);
+				DebugLocation(273, 11);
+				Match(input,DOT,Follow._DOT_in_qualifiedIdentifier2181); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(267, 15);
-				PushFollow(Follow._qualifiedIdentifier_in_qualifiedIdentifier2080);
+				DebugLocation(273, 15);
+				PushFollow(Follow._qualifiedIdentifier_in_qualifiedIdentifier2183);
 				qualifiedIdentifier();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(267, 35);
-				Match(input,IDENT,Follow._IDENT_in_qualifiedIdentifier2082); if (state.failed) return;
+				DebugLocation(273, 35);
+				Match(input,IDENT,Follow._IDENT_in_qualifiedIdentifier2185); if (state.failed) return;
 
 				Match(input, TokenTypes.Up, null); if (state.failed) return;
 
@@ -5969,7 +6081,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 41, qualifiedIdentifier_StartIndex); }
 
 		}
-		DebugLocation(268, 4);
+		DebugLocation(274, 4);
 		} finally { DebugExitRule(GrammarFileName, "qualifiedIdentifier"); }
 		return;
 
@@ -5979,7 +6091,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_annotationList();
 	partial void LeaveRule_annotationList();
 	// $ANTLR start "annotationList"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:272:1: annotationList : ^( ANNOTATION_LIST ( annotation )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:278:1: annotationList : ^( ANNOTATION_LIST ( annotation )* ) ;
 	[GrammarRule("annotationList")]
 	private void annotationList()
 	{
@@ -5989,24 +6101,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int annotationList_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "annotationList");
-		DebugLocation(272, 4);
+		DebugLocation(278, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 42)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:273:5: ( ^( ANNOTATION_LIST ( annotation )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:279:5: ( ^( ANNOTATION_LIST ( annotation )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:273:9: ^( ANNOTATION_LIST ( annotation )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:279:9: ^( ANNOTATION_LIST ( annotation )* )
 			{
-			DebugLocation(273, 9);
-			DebugLocation(273, 11);
-			Match(input,ANNOTATION_LIST,Follow._ANNOTATION_LIST_in_annotationList2109); if (state.failed) return;
+			DebugLocation(279, 9);
+			DebugLocation(279, 11);
+			Match(input,ANNOTATION_LIST,Follow._ANNOTATION_LIST_in_annotationList2212); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(273, 27);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:273:27: ( annotation )*
+				DebugLocation(279, 27);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:279:27: ( annotation )*
 				try { DebugEnterSubRule(73);
 				while (true)
 				{
@@ -6025,10 +6137,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:273:27: annotation
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:279:27: annotation
 						{
-						DebugLocation(273, 27);
-						PushFollow(Follow._annotation_in_annotationList2111);
+						DebugLocation(279, 27);
+						PushFollow(Follow._annotation_in_annotationList2214);
 						annotation();
 						PopFollow();
 						if (state.failed) return;
@@ -6067,7 +6179,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 42, annotationList_StartIndex); }
 
 		}
-		DebugLocation(274, 4);
+		DebugLocation(280, 4);
 		} finally { DebugExitRule(GrammarFileName, "annotationList"); }
 		return;
 
@@ -6077,7 +6189,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_annotation();
 	partial void LeaveRule_annotation();
 	// $ANTLR start "annotation"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:276:1: annotation : ^( AT qualifiedIdentifier ( annotationInit )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:282:1: annotation : ^( AT qualifiedIdentifier ( annotationInit )? ) ;
 	[GrammarRule("annotation")]
 	private void annotation()
 	{
@@ -6087,27 +6199,27 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int annotation_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "annotation");
-		DebugLocation(276, 4);
+		DebugLocation(282, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 43)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:277:5: ( ^( AT qualifiedIdentifier ( annotationInit )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:283:5: ( ^( AT qualifiedIdentifier ( annotationInit )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:277:9: ^( AT qualifiedIdentifier ( annotationInit )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:283:9: ^( AT qualifiedIdentifier ( annotationInit )? )
 			{
-			DebugLocation(277, 9);
-			DebugLocation(277, 11);
-			Match(input,AT,Follow._AT_in_annotation2133); if (state.failed) return;
+			DebugLocation(283, 9);
+			DebugLocation(283, 11);
+			Match(input,AT,Follow._AT_in_annotation2236); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(277, 14);
-			PushFollow(Follow._qualifiedIdentifier_in_annotation2135);
+			DebugLocation(283, 14);
+			PushFollow(Follow._qualifiedIdentifier_in_annotation2238);
 			qualifiedIdentifier();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(277, 34);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:277:34: ( annotationInit )?
+			DebugLocation(283, 34);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:283:34: ( annotationInit )?
 			int alt74=2;
 			try { DebugEnterSubRule(74);
 			try { DebugEnterDecision(74, false);
@@ -6122,10 +6234,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:277:34: annotationInit
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:283:34: annotationInit
 				{
-				DebugLocation(277, 34);
-				PushFollow(Follow._annotationInit_in_annotation2137);
+				DebugLocation(283, 34);
+				PushFollow(Follow._annotationInit_in_annotation2240);
 				annotationInit();
 				PopFollow();
 				if (state.failed) return;
@@ -6156,7 +6268,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 43, annotation_StartIndex); }
 
 		}
-		DebugLocation(278, 4);
+		DebugLocation(284, 4);
 		} finally { DebugExitRule(GrammarFileName, "annotation"); }
 		return;
 
@@ -6166,7 +6278,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_annotationInit();
 	partial void LeaveRule_annotationInit();
 	// $ANTLR start "annotationInit"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:280:1: annotationInit : ^( ANNOTATION_INIT_BLOCK annotationInitializers ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:286:1: annotationInit : ^( ANNOTATION_INIT_BLOCK annotationInitializers ) ;
 	[GrammarRule("annotationInit")]
 	private void annotationInit()
 	{
@@ -6176,22 +6288,22 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int annotationInit_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "annotationInit");
-		DebugLocation(280, 4);
+		DebugLocation(286, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 44)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:281:5: ( ^( ANNOTATION_INIT_BLOCK annotationInitializers ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:287:5: ( ^( ANNOTATION_INIT_BLOCK annotationInitializers ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:281:9: ^( ANNOTATION_INIT_BLOCK annotationInitializers )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:287:9: ^( ANNOTATION_INIT_BLOCK annotationInitializers )
 			{
-			DebugLocation(281, 9);
-			DebugLocation(281, 11);
-			Match(input,ANNOTATION_INIT_BLOCK,Follow._ANNOTATION_INIT_BLOCK_in_annotationInit2163); if (state.failed) return;
+			DebugLocation(287, 9);
+			DebugLocation(287, 11);
+			Match(input,ANNOTATION_INIT_BLOCK,Follow._ANNOTATION_INIT_BLOCK_in_annotationInit2266); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(281, 33);
-			PushFollow(Follow._annotationInitializers_in_annotationInit2165);
+			DebugLocation(287, 33);
+			PushFollow(Follow._annotationInitializers_in_annotationInit2268);
 			annotationInitializers();
 			PopFollow();
 			if (state.failed) return;
@@ -6215,7 +6327,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 44, annotationInit_StartIndex); }
 
 		}
-		DebugLocation(282, 4);
+		DebugLocation(288, 4);
 		} finally { DebugExitRule(GrammarFileName, "annotationInit"); }
 		return;
 
@@ -6225,7 +6337,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_annotationInitializers();
 	partial void LeaveRule_annotationInitializers();
 	// $ANTLR start "annotationInitializers"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:284:1: annotationInitializers : ( ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ ) | ^( ANNOTATION_INIT_DEFAULT_KEY annotationElementValue ) );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:290:1: annotationInitializers : ( ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ ) | ^( ANNOTATION_INIT_DEFAULT_KEY annotationElementValue ) );
 	[GrammarRule("annotationInitializers")]
 	private void annotationInitializers()
 	{
@@ -6235,12 +6347,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int annotationInitializers_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "annotationInitializers");
-		DebugLocation(284, 4);
+		DebugLocation(290, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 45)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:285:5: ( ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ ) | ^( ANNOTATION_INIT_DEFAULT_KEY annotationElementValue ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:291:5: ( ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ ) | ^( ANNOTATION_INIT_DEFAULT_KEY annotationElementValue ) )
 			int alt76=2;
 			try { DebugEnterDecision(76, false);
 			int LA76_1 = input.LA(1);
@@ -6265,15 +6377,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:285:9: ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:291:9: ^( ANNOTATION_INIT_KEY_LIST ( annotationInitializer )+ )
 				{
-				DebugLocation(285, 9);
-				DebugLocation(285, 11);
-				Match(input,ANNOTATION_INIT_KEY_LIST,Follow._ANNOTATION_INIT_KEY_LIST_in_annotationInitializers2186); if (state.failed) return;
+				DebugLocation(291, 9);
+				DebugLocation(291, 11);
+				Match(input,ANNOTATION_INIT_KEY_LIST,Follow._ANNOTATION_INIT_KEY_LIST_in_annotationInitializers2289); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(285, 36);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:285:36: ( annotationInitializer )+
+				DebugLocation(291, 36);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:291:36: ( annotationInitializer )+
 				int cnt75=0;
 				try { DebugEnterSubRule(75);
 				while (true)
@@ -6293,10 +6405,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:285:36: annotationInitializer
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:291:36: annotationInitializer
 						{
-						DebugLocation(285, 36);
-						PushFollow(Follow._annotationInitializer_in_annotationInitializers2188);
+						DebugLocation(291, 36);
+						PushFollow(Follow._annotationInitializer_in_annotationInitializers2291);
 						annotationInitializer();
 						PopFollow();
 						if (state.failed) return;
@@ -6328,15 +6440,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:286:9: ^( ANNOTATION_INIT_DEFAULT_KEY annotationElementValue )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:292:9: ^( ANNOTATION_INIT_DEFAULT_KEY annotationElementValue )
 				{
-				DebugLocation(286, 9);
-				DebugLocation(286, 11);
-				Match(input,ANNOTATION_INIT_DEFAULT_KEY,Follow._ANNOTATION_INIT_DEFAULT_KEY_in_annotationInitializers2201); if (state.failed) return;
+				DebugLocation(292, 9);
+				DebugLocation(292, 11);
+				Match(input,ANNOTATION_INIT_DEFAULT_KEY,Follow._ANNOTATION_INIT_DEFAULT_KEY_in_annotationInitializers2304); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(286, 39);
-				PushFollow(Follow._annotationElementValue_in_annotationInitializers2203);
+				DebugLocation(292, 39);
+				PushFollow(Follow._annotationElementValue_in_annotationInitializers2306);
 				annotationElementValue();
 				PopFollow();
 				if (state.failed) return;
@@ -6362,7 +6474,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 45, annotationInitializers_StartIndex); }
 
 		}
-		DebugLocation(287, 4);
+		DebugLocation(293, 4);
 		} finally { DebugExitRule(GrammarFileName, "annotationInitializers"); }
 		return;
 
@@ -6372,7 +6484,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_annotationInitializer();
 	partial void LeaveRule_annotationInitializer();
 	// $ANTLR start "annotationInitializer"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:289:1: annotationInitializer : ^( IDENT annotationElementValue ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:295:1: annotationInitializer : ^( IDENT annotationElementValue ) ;
 	[GrammarRule("annotationInitializer")]
 	private void annotationInitializer()
 	{
@@ -6382,22 +6494,22 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int annotationInitializer_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "annotationInitializer");
-		DebugLocation(289, 4);
+		DebugLocation(295, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 46)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:290:5: ( ^( IDENT annotationElementValue ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:296:5: ( ^( IDENT annotationElementValue ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:290:9: ^( IDENT annotationElementValue )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:296:9: ^( IDENT annotationElementValue )
 			{
-			DebugLocation(290, 9);
-			DebugLocation(290, 11);
-			Match(input,IDENT,Follow._IDENT_in_annotationInitializer2228); if (state.failed) return;
+			DebugLocation(296, 9);
+			DebugLocation(296, 11);
+			Match(input,IDENT,Follow._IDENT_in_annotationInitializer2331); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(290, 17);
-			PushFollow(Follow._annotationElementValue_in_annotationInitializer2230);
+			DebugLocation(296, 17);
+			PushFollow(Follow._annotationElementValue_in_annotationInitializer2333);
 			annotationElementValue();
 			PopFollow();
 			if (state.failed) return;
@@ -6421,7 +6533,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 46, annotationInitializer_StartIndex); }
 
 		}
-		DebugLocation(291, 4);
+		DebugLocation(297, 4);
 		} finally { DebugExitRule(GrammarFileName, "annotationInitializer"); }
 		return;
 
@@ -6431,7 +6543,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_annotationElementValue();
 	partial void LeaveRule_annotationElementValue();
 	// $ANTLR start "annotationElementValue"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:293:1: annotationElementValue : ( ^( ANNOTATION_INIT_ARRAY_ELEMENT ( annotationElementValue )* ) | annotation | expression );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:299:1: annotationElementValue : ( ^( ANNOTATION_INIT_ARRAY_ELEMENT ( annotationElementValue )* ) | annotation | expression );
 	[GrammarRule("annotationElementValue")]
 	private void annotationElementValue()
 	{
@@ -6441,12 +6553,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int annotationElementValue_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "annotationElementValue");
-		DebugLocation(293, 4);
+		DebugLocation(299, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 47)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:294:5: ( ^( ANNOTATION_INIT_ARRAY_ELEMENT ( annotationElementValue )* ) | annotation | expression )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:300:5: ( ^( ANNOTATION_INIT_ARRAY_ELEMENT ( annotationElementValue )* ) | annotation | expression )
 			int alt78=3;
 			try { DebugEnterDecision(78, false);
 			switch (input.LA(1))
@@ -6480,17 +6592,17 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:294:9: ^( ANNOTATION_INIT_ARRAY_ELEMENT ( annotationElementValue )* )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:300:9: ^( ANNOTATION_INIT_ARRAY_ELEMENT ( annotationElementValue )* )
 				{
-				DebugLocation(294, 9);
-				DebugLocation(294, 11);
-				Match(input,ANNOTATION_INIT_ARRAY_ELEMENT,Follow._ANNOTATION_INIT_ARRAY_ELEMENT_in_annotationElementValue2255); if (state.failed) return;
+				DebugLocation(300, 9);
+				DebugLocation(300, 11);
+				Match(input,ANNOTATION_INIT_ARRAY_ELEMENT,Follow._ANNOTATION_INIT_ARRAY_ELEMENT_in_annotationElementValue2358); if (state.failed) return;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return;
-					DebugLocation(294, 41);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:294:41: ( annotationElementValue )*
+					DebugLocation(300, 41);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:300:41: ( annotationElementValue )*
 					try { DebugEnterSubRule(77);
 					while (true)
 					{
@@ -6509,10 +6621,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:294:41: annotationElementValue
+							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:300:41: annotationElementValue
 							{
-							DebugLocation(294, 41);
-							PushFollow(Follow._annotationElementValue_in_annotationElementValue2257);
+							DebugLocation(300, 41);
+							PushFollow(Follow._annotationElementValue_in_annotationElementValue2360);
 							annotationElementValue();
 							PopFollow();
 							if (state.failed) return;
@@ -6539,10 +6651,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:295:9: annotation
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:301:9: annotation
 				{
-				DebugLocation(295, 9);
-				PushFollow(Follow._annotation_in_annotationElementValue2269);
+				DebugLocation(301, 9);
+				PushFollow(Follow._annotation_in_annotationElementValue2372);
 				annotation();
 				PopFollow();
 				if (state.failed) return;
@@ -6551,10 +6663,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:296:9: expression
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:302:9: expression
 				{
-				DebugLocation(296, 9);
-				PushFollow(Follow._expression_in_annotationElementValue2279);
+				DebugLocation(302, 9);
+				PushFollow(Follow._expression_in_annotationElementValue2382);
 				expression();
 				PopFollow();
 				if (state.failed) return;
@@ -6577,7 +6689,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 47, annotationElementValue_StartIndex); }
 
 		}
-		DebugLocation(297, 4);
+		DebugLocation(303, 4);
 		} finally { DebugExitRule(GrammarFileName, "annotationElementValue"); }
 		return;
 
@@ -6587,7 +6699,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_annotationTopLevelScope();
 	partial void LeaveRule_annotationTopLevelScope();
 	// $ANTLR start "annotationTopLevelScope"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:299:1: annotationTopLevelScope : ^( ANNOTATION_TOP_LEVEL_SCOPE ( annotationScopeDeclarations )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:305:1: annotationTopLevelScope : ^( ANNOTATION_TOP_LEVEL_SCOPE ( annotationScopeDeclarations )* ) ;
 	[GrammarRule("annotationTopLevelScope")]
 	private void annotationTopLevelScope()
 	{
@@ -6597,24 +6709,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int annotationTopLevelScope_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "annotationTopLevelScope");
-		DebugLocation(299, 4);
+		DebugLocation(305, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 48)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:300:5: ( ^( ANNOTATION_TOP_LEVEL_SCOPE ( annotationScopeDeclarations )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:306:5: ( ^( ANNOTATION_TOP_LEVEL_SCOPE ( annotationScopeDeclarations )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:300:9: ^( ANNOTATION_TOP_LEVEL_SCOPE ( annotationScopeDeclarations )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:306:9: ^( ANNOTATION_TOP_LEVEL_SCOPE ( annotationScopeDeclarations )* )
 			{
-			DebugLocation(300, 9);
-			DebugLocation(300, 11);
-			Match(input,ANNOTATION_TOP_LEVEL_SCOPE,Follow._ANNOTATION_TOP_LEVEL_SCOPE_in_annotationTopLevelScope2303); if (state.failed) return;
+			DebugLocation(306, 9);
+			DebugLocation(306, 11);
+			Match(input,ANNOTATION_TOP_LEVEL_SCOPE,Follow._ANNOTATION_TOP_LEVEL_SCOPE_in_annotationTopLevelScope2406); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(300, 38);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:300:38: ( annotationScopeDeclarations )*
+				DebugLocation(306, 38);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:306:38: ( annotationScopeDeclarations )*
 				try { DebugEnterSubRule(79);
 				while (true)
 				{
@@ -6633,10 +6745,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:300:38: annotationScopeDeclarations
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:306:38: annotationScopeDeclarations
 						{
-						DebugLocation(300, 38);
-						PushFollow(Follow._annotationScopeDeclarations_in_annotationTopLevelScope2305);
+						DebugLocation(306, 38);
+						PushFollow(Follow._annotationScopeDeclarations_in_annotationTopLevelScope2408);
 						annotationScopeDeclarations();
 						PopFollow();
 						if (state.failed) return;
@@ -6675,7 +6787,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 48, annotationTopLevelScope_StartIndex); }
 
 		}
-		DebugLocation(301, 4);
+		DebugLocation(307, 4);
 		} finally { DebugExitRule(GrammarFileName, "annotationTopLevelScope"); }
 		return;
 
@@ -6685,7 +6797,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_annotationScopeDeclarations();
 	partial void LeaveRule_annotationScopeDeclarations();
 	// $ANTLR start "annotationScopeDeclarations"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:303:1: annotationScopeDeclarations : ( ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? ) | ^( VAR_DECLARATION modifierList type variableDeclaratorList ) | typeDeclaration );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:309:1: annotationScopeDeclarations : ( ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? ) | ^( VAR_DECLARATION modifierList type variableDeclaratorList ) | typeDeclaration );
 	[GrammarRule("annotationScopeDeclarations")]
 	private void annotationScopeDeclarations()
 	{
@@ -6695,12 +6807,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int annotationScopeDeclarations_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "annotationScopeDeclarations");
-		DebugLocation(303, 4);
+		DebugLocation(309, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 49)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:304:5: ( ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? ) | ^( VAR_DECLARATION modifierList type variableDeclaratorList ) | typeDeclaration )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:310:5: ( ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? ) | ^( VAR_DECLARATION modifierList type variableDeclaratorList ) | typeDeclaration )
 			int alt81=3;
 			try { DebugEnterDecision(81, false);
 			switch (input.LA(1))
@@ -6737,27 +6849,27 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:304:9: ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:310:9: ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? )
 				{
-				DebugLocation(304, 9);
-				DebugLocation(304, 11);
-				Match(input,ANNOTATION_METHOD_DECL,Follow._ANNOTATION_METHOD_DECL_in_annotationScopeDeclarations2331); if (state.failed) return;
+				DebugLocation(310, 9);
+				DebugLocation(310, 11);
+				Match(input,ANNOTATION_METHOD_DECL,Follow._ANNOTATION_METHOD_DECL_in_annotationScopeDeclarations2434); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(304, 34);
-				PushFollow(Follow._modifierList_in_annotationScopeDeclarations2333);
+				DebugLocation(310, 34);
+				PushFollow(Follow._modifierList_in_annotationScopeDeclarations2436);
 				modifierList();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(304, 47);
-				PushFollow(Follow._type_in_annotationScopeDeclarations2335);
+				DebugLocation(310, 47);
+				PushFollow(Follow._type_in_annotationScopeDeclarations2438);
 				type();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(304, 52);
-				Match(input,IDENT,Follow._IDENT_in_annotationScopeDeclarations2337); if (state.failed) return;
-				DebugLocation(304, 58);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:304:58: ( annotationDefaultValue )?
+				DebugLocation(310, 52);
+				Match(input,IDENT,Follow._IDENT_in_annotationScopeDeclarations2440); if (state.failed) return;
+				DebugLocation(310, 58);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:310:58: ( annotationDefaultValue )?
 				int alt80=2;
 				try { DebugEnterSubRule(80);
 				try { DebugEnterDecision(80, false);
@@ -6772,10 +6884,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:304:58: annotationDefaultValue
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:310:58: annotationDefaultValue
 					{
-					DebugLocation(304, 58);
-					PushFollow(Follow._annotationDefaultValue_in_annotationScopeDeclarations2339);
+					DebugLocation(310, 58);
+					PushFollow(Follow._annotationDefaultValue_in_annotationScopeDeclarations2442);
 					annotationDefaultValue();
 					PopFollow();
 					if (state.failed) return;
@@ -6794,25 +6906,25 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:305:9: ^( VAR_DECLARATION modifierList type variableDeclaratorList )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:311:9: ^( VAR_DECLARATION modifierList type variableDeclaratorList )
 				{
-				DebugLocation(305, 9);
-				DebugLocation(305, 11);
-				Match(input,VAR_DECLARATION,Follow._VAR_DECLARATION_in_annotationScopeDeclarations2352); if (state.failed) return;
+				DebugLocation(311, 9);
+				DebugLocation(311, 11);
+				Match(input,VAR_DECLARATION,Follow._VAR_DECLARATION_in_annotationScopeDeclarations2455); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(305, 27);
-				PushFollow(Follow._modifierList_in_annotationScopeDeclarations2354);
+				DebugLocation(311, 27);
+				PushFollow(Follow._modifierList_in_annotationScopeDeclarations2457);
 				modifierList();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(305, 40);
-				PushFollow(Follow._type_in_annotationScopeDeclarations2356);
+				DebugLocation(311, 40);
+				PushFollow(Follow._type_in_annotationScopeDeclarations2459);
 				type();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(305, 45);
-				PushFollow(Follow._variableDeclaratorList_in_annotationScopeDeclarations2358);
+				DebugLocation(311, 45);
+				PushFollow(Follow._variableDeclaratorList_in_annotationScopeDeclarations2461);
 				variableDeclaratorList();
 				PopFollow();
 				if (state.failed) return;
@@ -6824,10 +6936,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:306:9: typeDeclaration
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:312:9: typeDeclaration
 				{
-				DebugLocation(306, 9);
-				PushFollow(Follow._typeDeclaration_in_annotationScopeDeclarations2369);
+				DebugLocation(312, 9);
+				PushFollow(Follow._typeDeclaration_in_annotationScopeDeclarations2472);
 				typeDeclaration();
 				PopFollow();
 				if (state.failed) return;
@@ -6850,7 +6962,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 49, annotationScopeDeclarations_StartIndex); }
 
 		}
-		DebugLocation(307, 4);
+		DebugLocation(313, 4);
 		} finally { DebugExitRule(GrammarFileName, "annotationScopeDeclarations"); }
 		return;
 
@@ -6860,7 +6972,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_annotationDefaultValue();
 	partial void LeaveRule_annotationDefaultValue();
 	// $ANTLR start "annotationDefaultValue"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:309:1: annotationDefaultValue : ^( DEFAULT annotationElementValue ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:315:1: annotationDefaultValue : ^( DEFAULT annotationElementValue ) ;
 	[GrammarRule("annotationDefaultValue")]
 	private void annotationDefaultValue()
 	{
@@ -6870,22 +6982,22 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int annotationDefaultValue_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "annotationDefaultValue");
-		DebugLocation(309, 4);
+		DebugLocation(315, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 50)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:310:5: ( ^( DEFAULT annotationElementValue ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:316:5: ( ^( DEFAULT annotationElementValue ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:310:9: ^( DEFAULT annotationElementValue )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:316:9: ^( DEFAULT annotationElementValue )
 			{
-			DebugLocation(310, 9);
-			DebugLocation(310, 11);
-			Match(input,DEFAULT,Follow._DEFAULT_in_annotationDefaultValue2393); if (state.failed) return;
+			DebugLocation(316, 9);
+			DebugLocation(316, 11);
+			Match(input,DEFAULT,Follow._DEFAULT_in_annotationDefaultValue2496); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(310, 19);
-			PushFollow(Follow._annotationElementValue_in_annotationDefaultValue2395);
+			DebugLocation(316, 19);
+			PushFollow(Follow._annotationElementValue_in_annotationDefaultValue2498);
 			annotationElementValue();
 			PopFollow();
 			if (state.failed) return;
@@ -6909,7 +7021,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 50, annotationDefaultValue_StartIndex); }
 
 		}
-		DebugLocation(311, 4);
+		DebugLocation(317, 4);
 		} finally { DebugExitRule(GrammarFileName, "annotationDefaultValue"); }
 		return;
 
@@ -6919,7 +7031,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_block();
 	partial void LeaveRule_block();
 	// $ANTLR start "block"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:315:1: block returns [IApexNode node] : ^( BLOCK_SCOPE ( blockStatement )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:321:1: block returns [IApexNode node] : ^( BLOCK_SCOPE ( blockStatement )* ) ;
 	[GrammarRule("block")]
 	private IApexNode block()
 	{
@@ -6931,24 +7043,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int block_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "block");
-		DebugLocation(315, 4);
+		DebugLocation(321, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 51)) { return node; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:316:5: ( ^( BLOCK_SCOPE ( blockStatement )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:322:5: ( ^( BLOCK_SCOPE ( blockStatement )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:316:9: ^( BLOCK_SCOPE ( blockStatement )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:322:9: ^( BLOCK_SCOPE ( blockStatement )* )
 			{
-			DebugLocation(316, 9);
-			DebugLocation(316, 11);
-			Match(input,BLOCK_SCOPE,Follow._BLOCK_SCOPE_in_block2422); if (state.failed) return node;
+			DebugLocation(322, 9);
+			DebugLocation(322, 11);
+			Match(input,BLOCK_SCOPE,Follow._BLOCK_SCOPE_in_block2525); if (state.failed) return node;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(316, 23);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:316:23: ( blockStatement )*
+				DebugLocation(322, 23);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:322:23: ( blockStatement )*
 				try { DebugEnterSubRule(82);
 				while (true)
 				{
@@ -6967,10 +7079,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:316:23: blockStatement
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:322:23: blockStatement
 						{
-						DebugLocation(316, 23);
-						PushFollow(Follow._blockStatement_in_block2424);
+						DebugLocation(322, 23);
+						PushFollow(Follow._blockStatement_in_block2527);
 						blockStatement();
 						PopFollow();
 						if (state.failed) return node;
@@ -7009,7 +7121,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 51, block_StartIndex); }
 
 		}
-		DebugLocation(317, 4);
+		DebugLocation(323, 4);
 		} finally { DebugExitRule(GrammarFileName, "block"); }
 		return node;
 
@@ -7019,7 +7131,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_blockStatement();
 	partial void LeaveRule_blockStatement();
 	// $ANTLR start "blockStatement"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:319:1: blockStatement returns [IApexNode node] : ( localVariableDeclaration | typeDeclaration | statement | brokenExpression );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:325:1: blockStatement returns [IApexNode node] : ( localVariableDeclaration | typeDeclaration | statement | brokenExpression );
 	[GrammarRule("blockStatement")]
 	private IApexNode blockStatement()
 	{
@@ -7031,12 +7143,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int blockStatement_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "blockStatement");
-		DebugLocation(319, 4);
+		DebugLocation(325, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 52)) { return node; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:320:5: ( localVariableDeclaration | typeDeclaration | statement | brokenExpression )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:326:5: ( localVariableDeclaration | typeDeclaration | statement | brokenExpression )
 			int alt83=4;
 			try { DebugEnterDecision(83, false);
 			switch (input.LA(1))
@@ -7093,10 +7205,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:320:9: localVariableDeclaration
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:326:9: localVariableDeclaration
 				{
-				DebugLocation(320, 9);
-				PushFollow(Follow._localVariableDeclaration_in_blockStatement2453);
+				DebugLocation(326, 9);
+				PushFollow(Follow._localVariableDeclaration_in_blockStatement2556);
 				localVariableDeclaration();
 				PopFollow();
 				if (state.failed) return node;
@@ -7105,10 +7217,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:321:9: typeDeclaration
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:327:9: typeDeclaration
 				{
-				DebugLocation(321, 9);
-				PushFollow(Follow._typeDeclaration_in_blockStatement2463);
+				DebugLocation(327, 9);
+				PushFollow(Follow._typeDeclaration_in_blockStatement2566);
 				typeDeclaration();
 				PopFollow();
 				if (state.failed) return node;
@@ -7117,10 +7229,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:322:9: statement
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:328:9: statement
 				{
-				DebugLocation(322, 9);
-				PushFollow(Follow._statement_in_blockStatement2473);
+				DebugLocation(328, 9);
+				PushFollow(Follow._statement_in_blockStatement2576);
 				statement();
 				PopFollow();
 				if (state.failed) return node;
@@ -7129,10 +7241,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:323:8: brokenExpression
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:329:8: brokenExpression
 				{
-				DebugLocation(323, 8);
-				PushFollow(Follow._brokenExpression_in_blockStatement2482);
+				DebugLocation(329, 8);
+				PushFollow(Follow._brokenExpression_in_blockStatement2585);
 				brokenExpression();
 				PopFollow();
 				if (state.failed) return node;
@@ -7155,7 +7267,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 52, blockStatement_StartIndex); }
 
 		}
-		DebugLocation(324, 4);
+		DebugLocation(330, 4);
 		} finally { DebugExitRule(GrammarFileName, "blockStatement"); }
 		return node;
 
@@ -7165,7 +7277,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_brokenExpression();
 	partial void LeaveRule_brokenExpression();
 	// $ANTLR start "brokenExpression"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:325:1: brokenExpression : ^( BROKEN_EXPRESSION expression ( DOT )? ( SEMI )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:331:1: brokenExpression : ^( BROKEN_EXPRESSION expression ( DOT )? ( SEMI )? ) ;
 	[GrammarRule("brokenExpression")]
 	private void brokenExpression()
 	{
@@ -7175,27 +7287,27 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int brokenExpression_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "brokenExpression");
-		DebugLocation(325, 0);
+		DebugLocation(331, 0);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 53)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:326:4: ( ^( BROKEN_EXPRESSION expression ( DOT )? ( SEMI )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:332:4: ( ^( BROKEN_EXPRESSION expression ( DOT )? ( SEMI )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:327:4: ^( BROKEN_EXPRESSION expression ( DOT )? ( SEMI )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:333:4: ^( BROKEN_EXPRESSION expression ( DOT )? ( SEMI )? )
 			{
-			DebugLocation(327, 4);
-			DebugLocation(327, 6);
-			Match(input,BROKEN_EXPRESSION,Follow._BROKEN_EXPRESSION_in_brokenExpression2499); if (state.failed) return;
+			DebugLocation(333, 4);
+			DebugLocation(333, 6);
+			Match(input,BROKEN_EXPRESSION,Follow._BROKEN_EXPRESSION_in_brokenExpression2602); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(327, 24);
-			PushFollow(Follow._expression_in_brokenExpression2501);
+			DebugLocation(333, 24);
+			PushFollow(Follow._expression_in_brokenExpression2604);
 			expression();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(327, 35);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:327:35: ( DOT )?
+			DebugLocation(333, 35);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:333:35: ( DOT )?
 			int alt84=2;
 			try { DebugEnterSubRule(84);
 			try { DebugEnterDecision(84, false);
@@ -7210,10 +7322,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:327:35: DOT
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:333:35: DOT
 				{
-				DebugLocation(327, 35);
-				Match(input,DOT,Follow._DOT_in_brokenExpression2503); if (state.failed) return;
+				DebugLocation(333, 35);
+				Match(input,DOT,Follow._DOT_in_brokenExpression2606); if (state.failed) return;
 
 				}
 				break;
@@ -7221,8 +7333,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			}
 			} finally { DebugExitSubRule(84); }
 
-			DebugLocation(327, 40);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:327:40: ( SEMI )?
+			DebugLocation(333, 40);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:333:40: ( SEMI )?
 			int alt85=2;
 			try { DebugEnterSubRule(85);
 			try { DebugEnterDecision(85, false);
@@ -7237,10 +7349,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:327:40: SEMI
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:333:40: SEMI
 				{
-				DebugLocation(327, 40);
-				Match(input,SEMI,Follow._SEMI_in_brokenExpression2506); if (state.failed) return;
+				DebugLocation(333, 40);
+				Match(input,SEMI,Follow._SEMI_in_brokenExpression2609); if (state.failed) return;
 
 				}
 				break;
@@ -7268,7 +7380,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 53, brokenExpression_StartIndex); }
 
 		}
-		DebugLocation(328, 0);
+		DebugLocation(334, 0);
 		} finally { DebugExitRule(GrammarFileName, "brokenExpression"); }
 		return;
 
@@ -7278,7 +7390,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_localVariableDeclaration();
 	partial void LeaveRule_localVariableDeclaration();
 	// $ANTLR start "localVariableDeclaration"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:329:1: localVariableDeclaration : ^( VAR_DECLARATION localModifierList type variableDeclaratorList ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:335:1: localVariableDeclaration : ^( VAR_DECLARATION localModifierList type variableDeclaratorList ) ;
 	[GrammarRule("localVariableDeclaration")]
 	private void localVariableDeclaration()
 	{
@@ -7288,32 +7400,32 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int localVariableDeclaration_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "localVariableDeclaration");
-		DebugLocation(329, 4);
+		DebugLocation(335, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 54)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:330:5: ( ^( VAR_DECLARATION localModifierList type variableDeclaratorList ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:336:5: ( ^( VAR_DECLARATION localModifierList type variableDeclaratorList ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:330:9: ^( VAR_DECLARATION localModifierList type variableDeclaratorList )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:336:9: ^( VAR_DECLARATION localModifierList type variableDeclaratorList )
 			{
-			DebugLocation(330, 9);
-			DebugLocation(330, 11);
-			Match(input,VAR_DECLARATION,Follow._VAR_DECLARATION_in_localVariableDeclaration2523); if (state.failed) return;
+			DebugLocation(336, 9);
+			DebugLocation(336, 11);
+			Match(input,VAR_DECLARATION,Follow._VAR_DECLARATION_in_localVariableDeclaration2626); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(330, 27);
-			PushFollow(Follow._localModifierList_in_localVariableDeclaration2525);
+			DebugLocation(336, 27);
+			PushFollow(Follow._localModifierList_in_localVariableDeclaration2628);
 			localModifierList();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(330, 45);
-			PushFollow(Follow._type_in_localVariableDeclaration2527);
+			DebugLocation(336, 45);
+			PushFollow(Follow._type_in_localVariableDeclaration2630);
 			type();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(330, 50);
-			PushFollow(Follow._variableDeclaratorList_in_localVariableDeclaration2529);
+			DebugLocation(336, 50);
+			PushFollow(Follow._variableDeclaratorList_in_localVariableDeclaration2632);
 			variableDeclaratorList();
 			PopFollow();
 			if (state.failed) return;
@@ -7337,7 +7449,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 54, localVariableDeclaration_StartIndex); }
 
 		}
-		DebugLocation(331, 4);
+		DebugLocation(337, 4);
 		} finally { DebugExitRule(GrammarFileName, "localVariableDeclaration"); }
 		return;
 
@@ -7347,7 +7459,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_statement();
 	partial void LeaveRule_statement();
 	// $ANTLR start "statement"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:334:1: statement returns [IApexNode node] : ( block | ^( IF parenthesizedExpression statement ( statement )? ) | ^( FOR forInit forCondition forUpdater statement ) | ^( FOR_EACH localModifierList type IDENT expression statement ) | ^( WHILE parenthesizedExpression statement ) | ^( DO statement parenthesizedExpression ) | ^( TRY block ( catches )? ( block )? ) | ^( SWITCH parenthesizedExpression switchBlockLabels ) | ^( SYNCHRONIZED parenthesizedExpression block ) | ^( RETURN ( expression )? ) | ^( THROW expression ) | ^( BREAK ( IDENT )? ) | ^( CONTINUE ( IDENT )? ) | ^( LABELED_STATEMENT IDENT statement ) | expression | SEMI );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:340:1: statement returns [IApexNode node] : ( block | ^( IF parenthesizedExpression statement ( statement )? ) | ^( FOR forInit forCondition forUpdater statement ) | ^( FOR_EACH localModifierList type IDENT expression statement ) | ^( WHILE parenthesizedExpression statement ) | ^( DO statement parenthesizedExpression ) | ^( TRY block ( catches )? ( block )? ) | ^( SWITCH parenthesizedExpression switchBlockLabels ) | ^( SYNCHRONIZED parenthesizedExpression block ) | ^( RETURN ( expression )? ) | ^( THROW expression ) | ^( BREAK ( IDENT )? ) | ^( CONTINUE ( IDENT )? ) | ^( LABELED_STATEMENT IDENT statement ) | expression | SEMI );
 	[GrammarRule("statement")]
 	private IApexNode statement()
 	{
@@ -7359,12 +7471,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int statement_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "statement");
-		DebugLocation(334, 4);
+		DebugLocation(340, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 55)) { return node; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:335:5: ( block | ^( IF parenthesizedExpression statement ( statement )? ) | ^( FOR forInit forCondition forUpdater statement ) | ^( FOR_EACH localModifierList type IDENT expression statement ) | ^( WHILE parenthesizedExpression statement ) | ^( DO statement parenthesizedExpression ) | ^( TRY block ( catches )? ( block )? ) | ^( SWITCH parenthesizedExpression switchBlockLabels ) | ^( SYNCHRONIZED parenthesizedExpression block ) | ^( RETURN ( expression )? ) | ^( THROW expression ) | ^( BREAK ( IDENT )? ) | ^( CONTINUE ( IDENT )? ) | ^( LABELED_STATEMENT IDENT statement ) | expression | SEMI )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:341:5: ( block | ^( IF parenthesizedExpression statement ( statement )? ) | ^( FOR forInit forCondition forUpdater statement ) | ^( FOR_EACH localModifierList type IDENT expression statement ) | ^( WHILE parenthesizedExpression statement ) | ^( DO statement parenthesizedExpression ) | ^( TRY block ( catches )? ( block )? ) | ^( SWITCH parenthesizedExpression switchBlockLabels ) | ^( SYNCHRONIZED parenthesizedExpression block ) | ^( RETURN ( expression )? ) | ^( THROW expression ) | ^( BREAK ( IDENT )? ) | ^( CONTINUE ( IDENT )? ) | ^( LABELED_STATEMENT IDENT statement ) | expression | SEMI )
 			int alt92=16;
 			try { DebugEnterDecision(92, false);
 			switch (input.LA(1))
@@ -7463,10 +7575,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:335:9: block
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:341:9: block
 				{
-				DebugLocation(335, 9);
-				PushFollow(Follow._block_in_statement2566);
+				DebugLocation(341, 9);
+				PushFollow(Follow._block_in_statement2669);
 				block();
 				PopFollow();
 				if (state.failed) return node;
@@ -7475,25 +7587,25 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:336:9: ^( IF parenthesizedExpression statement ( statement )? )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:342:9: ^( IF parenthesizedExpression statement ( statement )? )
 				{
-				DebugLocation(336, 9);
-				DebugLocation(336, 11);
-				Match(input,IF,Follow._IF_in_statement2577); if (state.failed) return node;
+				DebugLocation(342, 9);
+				DebugLocation(342, 11);
+				Match(input,IF,Follow._IF_in_statement2680); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(336, 14);
-				PushFollow(Follow._parenthesizedExpression_in_statement2579);
+				DebugLocation(342, 14);
+				PushFollow(Follow._parenthesizedExpression_in_statement2682);
 				parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(336, 38);
-				PushFollow(Follow._statement_in_statement2581);
+				DebugLocation(342, 38);
+				PushFollow(Follow._statement_in_statement2684);
 				statement();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(336, 48);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:336:48: ( statement )?
+				DebugLocation(342, 48);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:342:48: ( statement )?
 				int alt86=2;
 				try { DebugEnterSubRule(86);
 				try { DebugEnterDecision(86, false);
@@ -7508,10 +7620,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:336:48: statement
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:342:48: statement
 					{
-					DebugLocation(336, 48);
-					PushFollow(Follow._statement_in_statement2583);
+					DebugLocation(342, 48);
+					PushFollow(Follow._statement_in_statement2686);
 					statement();
 					PopFollow();
 					if (state.failed) return node;
@@ -7530,30 +7642,30 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:337:9: ^( FOR forInit forCondition forUpdater statement )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:343:9: ^( FOR forInit forCondition forUpdater statement )
 				{
-				DebugLocation(337, 9);
-				DebugLocation(337, 11);
-				Match(input,FOR,Follow._FOR_in_statement2596); if (state.failed) return node;
+				DebugLocation(343, 9);
+				DebugLocation(343, 11);
+				Match(input,FOR,Follow._FOR_in_statement2699); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(337, 15);
-				PushFollow(Follow._forInit_in_statement2598);
+				DebugLocation(343, 15);
+				PushFollow(Follow._forInit_in_statement2701);
 				forInit();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(337, 23);
-				PushFollow(Follow._forCondition_in_statement2600);
+				DebugLocation(343, 23);
+				PushFollow(Follow._forCondition_in_statement2703);
 				forCondition();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(337, 36);
-				PushFollow(Follow._forUpdater_in_statement2602);
+				DebugLocation(343, 36);
+				PushFollow(Follow._forUpdater_in_statement2705);
 				forUpdater();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(337, 47);
-				PushFollow(Follow._statement_in_statement2604);
+				DebugLocation(343, 47);
+				PushFollow(Follow._statement_in_statement2707);
 				statement();
 				PopFollow();
 				if (state.failed) return node;
@@ -7565,32 +7677,32 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:338:9: ^( FOR_EACH localModifierList type IDENT expression statement )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:344:9: ^( FOR_EACH localModifierList type IDENT expression statement )
 				{
-				DebugLocation(338, 9);
-				DebugLocation(338, 11);
-				Match(input,FOR_EACH,Follow._FOR_EACH_in_statement2616); if (state.failed) return node;
+				DebugLocation(344, 9);
+				DebugLocation(344, 11);
+				Match(input,FOR_EACH,Follow._FOR_EACH_in_statement2719); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(338, 20);
-				PushFollow(Follow._localModifierList_in_statement2618);
+				DebugLocation(344, 20);
+				PushFollow(Follow._localModifierList_in_statement2721);
 				localModifierList();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(338, 38);
-				PushFollow(Follow._type_in_statement2620);
+				DebugLocation(344, 38);
+				PushFollow(Follow._type_in_statement2723);
 				type();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(338, 43);
-				Match(input,IDENT,Follow._IDENT_in_statement2622); if (state.failed) return node;
-				DebugLocation(338, 49);
-				PushFollow(Follow._expression_in_statement2624);
+				DebugLocation(344, 43);
+				Match(input,IDENT,Follow._IDENT_in_statement2725); if (state.failed) return node;
+				DebugLocation(344, 49);
+				PushFollow(Follow._expression_in_statement2727);
 				expression();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(338, 60);
-				PushFollow(Follow._statement_in_statement2626);
+				DebugLocation(344, 60);
+				PushFollow(Follow._statement_in_statement2729);
 				statement();
 				PopFollow();
 				if (state.failed) return node;
@@ -7602,20 +7714,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:339:9: ^( WHILE parenthesizedExpression statement )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:345:9: ^( WHILE parenthesizedExpression statement )
 				{
-				DebugLocation(339, 9);
-				DebugLocation(339, 11);
-				Match(input,WHILE,Follow._WHILE_in_statement2639); if (state.failed) return node;
+				DebugLocation(345, 9);
+				DebugLocation(345, 11);
+				Match(input,WHILE,Follow._WHILE_in_statement2742); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(339, 17);
-				PushFollow(Follow._parenthesizedExpression_in_statement2641);
+				DebugLocation(345, 17);
+				PushFollow(Follow._parenthesizedExpression_in_statement2744);
 				parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(339, 41);
-				PushFollow(Follow._statement_in_statement2643);
+				DebugLocation(345, 41);
+				PushFollow(Follow._statement_in_statement2746);
 				statement();
 				PopFollow();
 				if (state.failed) return node;
@@ -7627,20 +7739,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:340:9: ^( DO statement parenthesizedExpression )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:346:9: ^( DO statement parenthesizedExpression )
 				{
-				DebugLocation(340, 9);
-				DebugLocation(340, 11);
-				Match(input,DO,Follow._DO_in_statement2655); if (state.failed) return node;
+				DebugLocation(346, 9);
+				DebugLocation(346, 11);
+				Match(input,DO,Follow._DO_in_statement2758); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(340, 14);
-				PushFollow(Follow._statement_in_statement2657);
+				DebugLocation(346, 14);
+				PushFollow(Follow._statement_in_statement2760);
 				statement();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(340, 24);
-				PushFollow(Follow._parenthesizedExpression_in_statement2659);
+				DebugLocation(346, 24);
+				PushFollow(Follow._parenthesizedExpression_in_statement2762);
 				parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return node;
@@ -7652,20 +7764,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:341:9: ^( TRY block ( catches )? ( block )? )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:347:9: ^( TRY block ( catches )? ( block )? )
 				{
-				DebugLocation(341, 9);
-				DebugLocation(341, 11);
-				Match(input,TRY,Follow._TRY_in_statement2671); if (state.failed) return node;
+				DebugLocation(347, 9);
+				DebugLocation(347, 11);
+				Match(input,TRY,Follow._TRY_in_statement2774); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(341, 15);
-				PushFollow(Follow._block_in_statement2673);
+				DebugLocation(347, 15);
+				PushFollow(Follow._block_in_statement2776);
 				block();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(341, 21);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:341:21: ( catches )?
+				DebugLocation(347, 21);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:347:21: ( catches )?
 				int alt87=2;
 				try { DebugEnterSubRule(87);
 				try { DebugEnterDecision(87, false);
@@ -7680,10 +7792,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:341:21: catches
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:347:21: catches
 					{
-					DebugLocation(341, 21);
-					PushFollow(Follow._catches_in_statement2675);
+					DebugLocation(347, 21);
+					PushFollow(Follow._catches_in_statement2778);
 					catches();
 					PopFollow();
 					if (state.failed) return node;
@@ -7694,8 +7806,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				}
 				} finally { DebugExitSubRule(87); }
 
-				DebugLocation(341, 30);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:341:30: ( block )?
+				DebugLocation(347, 30);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:347:30: ( block )?
 				int alt88=2;
 				try { DebugEnterSubRule(88);
 				try { DebugEnterDecision(88, false);
@@ -7710,10 +7822,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:341:30: block
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:347:30: block
 					{
-					DebugLocation(341, 30);
-					PushFollow(Follow._block_in_statement2678);
+					DebugLocation(347, 30);
+					PushFollow(Follow._block_in_statement2781);
 					block();
 					PopFollow();
 					if (state.failed) return node;
@@ -7732,20 +7844,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 8:
 				DebugEnterAlt(8);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:342:9: ^( SWITCH parenthesizedExpression switchBlockLabels )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:348:9: ^( SWITCH parenthesizedExpression switchBlockLabels )
 				{
-				DebugLocation(342, 9);
-				DebugLocation(342, 11);
-				Match(input,SWITCH,Follow._SWITCH_in_statement2693); if (state.failed) return node;
+				DebugLocation(348, 9);
+				DebugLocation(348, 11);
+				Match(input,SWITCH,Follow._SWITCH_in_statement2796); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(342, 18);
-				PushFollow(Follow._parenthesizedExpression_in_statement2695);
+				DebugLocation(348, 18);
+				PushFollow(Follow._parenthesizedExpression_in_statement2798);
 				parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(342, 42);
-				PushFollow(Follow._switchBlockLabels_in_statement2697);
+				DebugLocation(348, 42);
+				PushFollow(Follow._switchBlockLabels_in_statement2800);
 				switchBlockLabels();
 				PopFollow();
 				if (state.failed) return node;
@@ -7757,20 +7869,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 9:
 				DebugEnterAlt(9);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:343:9: ^( SYNCHRONIZED parenthesizedExpression block )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:349:9: ^( SYNCHRONIZED parenthesizedExpression block )
 				{
-				DebugLocation(343, 9);
-				DebugLocation(343, 11);
-				Match(input,SYNCHRONIZED,Follow._SYNCHRONIZED_in_statement2709); if (state.failed) return node;
+				DebugLocation(349, 9);
+				DebugLocation(349, 11);
+				Match(input,SYNCHRONIZED,Follow._SYNCHRONIZED_in_statement2812); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(343, 24);
-				PushFollow(Follow._parenthesizedExpression_in_statement2711);
+				DebugLocation(349, 24);
+				PushFollow(Follow._parenthesizedExpression_in_statement2814);
 				parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(343, 48);
-				PushFollow(Follow._block_in_statement2713);
+				DebugLocation(349, 48);
+				PushFollow(Follow._block_in_statement2816);
 				block();
 				PopFollow();
 				if (state.failed) return node;
@@ -7782,17 +7894,17 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 10:
 				DebugEnterAlt(10);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:344:9: ^( RETURN ( expression )? )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:350:9: ^( RETURN ( expression )? )
 				{
-				DebugLocation(344, 9);
-				DebugLocation(344, 11);
-				Match(input,RETURN,Follow._RETURN_in_statement2725); if (state.failed) return node;
+				DebugLocation(350, 9);
+				DebugLocation(350, 11);
+				Match(input,RETURN,Follow._RETURN_in_statement2828); if (state.failed) return node;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return node;
-					DebugLocation(344, 18);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:344:18: ( expression )?
+					DebugLocation(350, 18);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:350:18: ( expression )?
 					int alt89=2;
 					try { DebugEnterSubRule(89);
 					try { DebugEnterDecision(89, false);
@@ -7807,10 +7919,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:344:18: expression
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:350:18: expression
 						{
-						DebugLocation(344, 18);
-						PushFollow(Follow._expression_in_statement2727);
+						DebugLocation(350, 18);
+						PushFollow(Follow._expression_in_statement2830);
 						expression();
 						PopFollow();
 						if (state.failed) return node;
@@ -7830,15 +7942,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 11:
 				DebugEnterAlt(11);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:345:9: ^( THROW expression )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:351:9: ^( THROW expression )
 				{
-				DebugLocation(345, 9);
-				DebugLocation(345, 11);
-				Match(input,THROW,Follow._THROW_in_statement2740); if (state.failed) return node;
+				DebugLocation(351, 9);
+				DebugLocation(351, 11);
+				Match(input,THROW,Follow._THROW_in_statement2843); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(345, 17);
-				PushFollow(Follow._expression_in_statement2742);
+				DebugLocation(351, 17);
+				PushFollow(Follow._expression_in_statement2845);
 				expression();
 				PopFollow();
 				if (state.failed) return node;
@@ -7850,17 +7962,17 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 12:
 				DebugEnterAlt(12);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:346:9: ^( BREAK ( IDENT )? )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:352:9: ^( BREAK ( IDENT )? )
 				{
-				DebugLocation(346, 9);
-				DebugLocation(346, 11);
-				Match(input,BREAK,Follow._BREAK_in_statement2754); if (state.failed) return node;
+				DebugLocation(352, 9);
+				DebugLocation(352, 11);
+				Match(input,BREAK,Follow._BREAK_in_statement2857); if (state.failed) return node;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return node;
-					DebugLocation(346, 17);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:346:17: ( IDENT )?
+					DebugLocation(352, 17);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:352:17: ( IDENT )?
 					int alt90=2;
 					try { DebugEnterSubRule(90);
 					try { DebugEnterDecision(90, false);
@@ -7875,10 +7987,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:346:17: IDENT
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:352:17: IDENT
 						{
-						DebugLocation(346, 17);
-						Match(input,IDENT,Follow._IDENT_in_statement2756); if (state.failed) return node;
+						DebugLocation(352, 17);
+						Match(input,IDENT,Follow._IDENT_in_statement2859); if (state.failed) return node;
 
 						}
 						break;
@@ -7895,17 +8007,17 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 13:
 				DebugEnterAlt(13);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:347:9: ^( CONTINUE ( IDENT )? )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:353:9: ^( CONTINUE ( IDENT )? )
 				{
-				DebugLocation(347, 9);
-				DebugLocation(347, 11);
-				Match(input,CONTINUE,Follow._CONTINUE_in_statement2769); if (state.failed) return node;
+				DebugLocation(353, 9);
+				DebugLocation(353, 11);
+				Match(input,CONTINUE,Follow._CONTINUE_in_statement2872); if (state.failed) return node;
 
 				if (input.LA(1) == TokenTypes.Down)
 				{
 					Match(input, TokenTypes.Down, null); if (state.failed) return node;
-					DebugLocation(347, 20);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:347:20: ( IDENT )?
+					DebugLocation(353, 20);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:353:20: ( IDENT )?
 					int alt91=2;
 					try { DebugEnterSubRule(91);
 					try { DebugEnterDecision(91, false);
@@ -7920,10 +8032,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:347:20: IDENT
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:353:20: IDENT
 						{
-						DebugLocation(347, 20);
-						Match(input,IDENT,Follow._IDENT_in_statement2771); if (state.failed) return node;
+						DebugLocation(353, 20);
+						Match(input,IDENT,Follow._IDENT_in_statement2874); if (state.failed) return node;
 
 						}
 						break;
@@ -7940,17 +8052,17 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 14:
 				DebugEnterAlt(14);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:348:9: ^( LABELED_STATEMENT IDENT statement )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:354:9: ^( LABELED_STATEMENT IDENT statement )
 				{
-				DebugLocation(348, 9);
-				DebugLocation(348, 11);
-				Match(input,LABELED_STATEMENT,Follow._LABELED_STATEMENT_in_statement2784); if (state.failed) return node;
+				DebugLocation(354, 9);
+				DebugLocation(354, 11);
+				Match(input,LABELED_STATEMENT,Follow._LABELED_STATEMENT_in_statement2887); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(348, 29);
-				Match(input,IDENT,Follow._IDENT_in_statement2786); if (state.failed) return node;
-				DebugLocation(348, 35);
-				PushFollow(Follow._statement_in_statement2788);
+				DebugLocation(354, 29);
+				Match(input,IDENT,Follow._IDENT_in_statement2889); if (state.failed) return node;
+				DebugLocation(354, 35);
+				PushFollow(Follow._statement_in_statement2891);
 				statement();
 				PopFollow();
 				if (state.failed) return node;
@@ -7962,10 +8074,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 15:
 				DebugEnterAlt(15);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:349:9: expression
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:355:9: expression
 				{
-				DebugLocation(349, 9);
-				PushFollow(Follow._expression_in_statement2799);
+				DebugLocation(355, 9);
+				PushFollow(Follow._expression_in_statement2902);
 				expression();
 				PopFollow();
 				if (state.failed) return node;
@@ -7974,10 +8086,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 16:
 				DebugEnterAlt(16);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:350:9: SEMI
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:356:9: SEMI
 				{
-				DebugLocation(350, 9);
-				Match(input,SEMI,Follow._SEMI_in_statement2809); if (state.failed) return node;
+				DebugLocation(356, 9);
+				Match(input,SEMI,Follow._SEMI_in_statement2912); if (state.failed) return node;
 
 				}
 				break;
@@ -7997,7 +8109,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 55, statement_StartIndex); }
 
 		}
-		DebugLocation(351, 4);
+		DebugLocation(357, 4);
 		} finally { DebugExitRule(GrammarFileName, "statement"); }
 		return node;
 
@@ -8007,7 +8119,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_catches();
 	partial void LeaveRule_catches();
 	// $ANTLR start "catches"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:353:1: catches : ^( CATCH_CLAUSE_LIST ( catchClause )+ ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:359:1: catches : ^( CATCH_CLAUSE_LIST ( catchClause )+ ) ;
 	[GrammarRule("catches")]
 	private void catches()
 	{
@@ -8017,22 +8129,22 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int catches_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "catches");
-		DebugLocation(353, 4);
+		DebugLocation(359, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 56)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:354:5: ( ^( CATCH_CLAUSE_LIST ( catchClause )+ ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:360:5: ( ^( CATCH_CLAUSE_LIST ( catchClause )+ ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:354:9: ^( CATCH_CLAUSE_LIST ( catchClause )+ )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:360:9: ^( CATCH_CLAUSE_LIST ( catchClause )+ )
 			{
-			DebugLocation(354, 9);
-			DebugLocation(354, 11);
-			Match(input,CATCH_CLAUSE_LIST,Follow._CATCH_CLAUSE_LIST_in_catches2838); if (state.failed) return;
+			DebugLocation(360, 9);
+			DebugLocation(360, 11);
+			Match(input,CATCH_CLAUSE_LIST,Follow._CATCH_CLAUSE_LIST_in_catches2941); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(354, 29);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:354:29: ( catchClause )+
+			DebugLocation(360, 29);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:360:29: ( catchClause )+
 			int cnt93=0;
 			try { DebugEnterSubRule(93);
 			while (true)
@@ -8052,10 +8164,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:354:29: catchClause
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:360:29: catchClause
 					{
-					DebugLocation(354, 29);
-					PushFollow(Follow._catchClause_in_catches2840);
+					DebugLocation(360, 29);
+					PushFollow(Follow._catchClause_in_catches2943);
 					catchClause();
 					PopFollow();
 					if (state.failed) return;
@@ -8099,7 +8211,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 56, catches_StartIndex); }
 
 		}
-		DebugLocation(355, 4);
+		DebugLocation(361, 4);
 		} finally { DebugExitRule(GrammarFileName, "catches"); }
 		return;
 
@@ -8109,7 +8221,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_catchClause();
 	partial void LeaveRule_catchClause();
 	// $ANTLR start "catchClause"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:357:1: catchClause : ^( CATCH formalParameterStandardDecl block ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:363:1: catchClause : ^( CATCH formalParameterStandardDecl block ) ;
 	[GrammarRule("catchClause")]
 	private void catchClause()
 	{
@@ -8119,27 +8231,27 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int catchClause_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "catchClause");
-		DebugLocation(357, 4);
+		DebugLocation(363, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 57)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:358:5: ( ^( CATCH formalParameterStandardDecl block ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:364:5: ( ^( CATCH formalParameterStandardDecl block ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:358:9: ^( CATCH formalParameterStandardDecl block )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:364:9: ^( CATCH formalParameterStandardDecl block )
 			{
-			DebugLocation(358, 9);
-			DebugLocation(358, 11);
-			Match(input,CATCH,Follow._CATCH_in_catchClause2866); if (state.failed) return;
+			DebugLocation(364, 9);
+			DebugLocation(364, 11);
+			Match(input,CATCH,Follow._CATCH_in_catchClause2969); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(358, 17);
-			PushFollow(Follow._formalParameterStandardDecl_in_catchClause2868);
+			DebugLocation(364, 17);
+			PushFollow(Follow._formalParameterStandardDecl_in_catchClause2971);
 			formalParameterStandardDecl();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(358, 45);
-			PushFollow(Follow._block_in_catchClause2870);
+			DebugLocation(364, 45);
+			PushFollow(Follow._block_in_catchClause2973);
 			block();
 			PopFollow();
 			if (state.failed) return;
@@ -8163,7 +8275,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 57, catchClause_StartIndex); }
 
 		}
-		DebugLocation(359, 4);
+		DebugLocation(365, 4);
 		} finally { DebugExitRule(GrammarFileName, "catchClause"); }
 		return;
 
@@ -8173,7 +8285,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_switchBlockLabels();
 	partial void LeaveRule_switchBlockLabels();
 	// $ANTLR start "switchBlockLabels"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:361:1: switchBlockLabels : ^( SWITCH_BLOCK_LABEL_LIST ( switchCaseLabel )* ( switchDefaultLabel )? ( switchCaseLabel )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:367:1: switchBlockLabels : ^( SWITCH_BLOCK_LABEL_LIST ( switchCaseLabel )* ( switchDefaultLabel )? ( switchCaseLabel )* ) ;
 	[GrammarRule("switchBlockLabels")]
 	private void switchBlockLabels()
 	{
@@ -8183,24 +8295,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int switchBlockLabels_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "switchBlockLabels");
-		DebugLocation(361, 4);
+		DebugLocation(367, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 58)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:5: ( ^( SWITCH_BLOCK_LABEL_LIST ( switchCaseLabel )* ( switchDefaultLabel )? ( switchCaseLabel )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:5: ( ^( SWITCH_BLOCK_LABEL_LIST ( switchCaseLabel )* ( switchDefaultLabel )? ( switchCaseLabel )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:9: ^( SWITCH_BLOCK_LABEL_LIST ( switchCaseLabel )* ( switchDefaultLabel )? ( switchCaseLabel )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:9: ^( SWITCH_BLOCK_LABEL_LIST ( switchCaseLabel )* ( switchDefaultLabel )? ( switchCaseLabel )* )
 			{
-			DebugLocation(362, 9);
-			DebugLocation(362, 11);
-			Match(input,SWITCH_BLOCK_LABEL_LIST,Follow._SWITCH_BLOCK_LABEL_LIST_in_switchBlockLabels2891); if (state.failed) return;
+			DebugLocation(368, 9);
+			DebugLocation(368, 11);
+			Match(input,SWITCH_BLOCK_LABEL_LIST,Follow._SWITCH_BLOCK_LABEL_LIST_in_switchBlockLabels2994); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(362, 35);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:35: ( switchCaseLabel )*
+				DebugLocation(368, 35);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:35: ( switchCaseLabel )*
 				try { DebugEnterSubRule(94);
 				while (true)
 				{
@@ -8226,10 +8338,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:35: switchCaseLabel
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:35: switchCaseLabel
 						{
-						DebugLocation(362, 35);
-						PushFollow(Follow._switchCaseLabel_in_switchBlockLabels2893);
+						DebugLocation(368, 35);
+						PushFollow(Follow._switchCaseLabel_in_switchBlockLabels2996);
 						switchCaseLabel();
 						PopFollow();
 						if (state.failed) return;
@@ -8247,8 +8359,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 
 				} finally { DebugExitSubRule(94); }
 
-				DebugLocation(362, 52);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:52: ( switchDefaultLabel )?
+				DebugLocation(368, 52);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:52: ( switchDefaultLabel )?
 				int alt95=2;
 				try { DebugEnterSubRule(95);
 				try { DebugEnterDecision(95, false);
@@ -8263,10 +8375,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:52: switchDefaultLabel
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:52: switchDefaultLabel
 					{
-					DebugLocation(362, 52);
-					PushFollow(Follow._switchDefaultLabel_in_switchBlockLabels2896);
+					DebugLocation(368, 52);
+					PushFollow(Follow._switchDefaultLabel_in_switchBlockLabels2999);
 					switchDefaultLabel();
 					PopFollow();
 					if (state.failed) return;
@@ -8277,8 +8389,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				}
 				} finally { DebugExitSubRule(95); }
 
-				DebugLocation(362, 72);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:72: ( switchCaseLabel )*
+				DebugLocation(368, 72);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:72: ( switchCaseLabel )*
 				try { DebugEnterSubRule(96);
 				while (true)
 				{
@@ -8297,10 +8409,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:72: switchCaseLabel
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:72: switchCaseLabel
 						{
-						DebugLocation(362, 72);
-						PushFollow(Follow._switchCaseLabel_in_switchBlockLabels2899);
+						DebugLocation(368, 72);
+						PushFollow(Follow._switchCaseLabel_in_switchBlockLabels3002);
 						switchCaseLabel();
 						PopFollow();
 						if (state.failed) return;
@@ -8339,7 +8451,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 58, switchBlockLabels_StartIndex); }
 
 		}
-		DebugLocation(363, 4);
+		DebugLocation(369, 4);
 		} finally { DebugExitRule(GrammarFileName, "switchBlockLabels"); }
 		return;
 
@@ -8349,7 +8461,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_switchCaseLabel();
 	partial void LeaveRule_switchCaseLabel();
 	// $ANTLR start "switchCaseLabel"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:365:1: switchCaseLabel : ^( CASE expression ( blockStatement )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:371:1: switchCaseLabel : ^( CASE expression ( blockStatement )* ) ;
 	[GrammarRule("switchCaseLabel")]
 	private void switchCaseLabel()
 	{
@@ -8359,27 +8471,27 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int switchCaseLabel_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "switchCaseLabel");
-		DebugLocation(365, 4);
+		DebugLocation(371, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 59)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:366:5: ( ^( CASE expression ( blockStatement )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:372:5: ( ^( CASE expression ( blockStatement )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:366:9: ^( CASE expression ( blockStatement )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:372:9: ^( CASE expression ( blockStatement )* )
 			{
-			DebugLocation(366, 9);
-			DebugLocation(366, 11);
-			Match(input,CASE,Follow._CASE_in_switchCaseLabel2929); if (state.failed) return;
+			DebugLocation(372, 9);
+			DebugLocation(372, 11);
+			Match(input,CASE,Follow._CASE_in_switchCaseLabel3032); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(366, 16);
-			PushFollow(Follow._expression_in_switchCaseLabel2931);
+			DebugLocation(372, 16);
+			PushFollow(Follow._expression_in_switchCaseLabel3034);
 			expression();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(366, 27);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:366:27: ( blockStatement )*
+			DebugLocation(372, 27);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:372:27: ( blockStatement )*
 			try { DebugEnterSubRule(97);
 			while (true)
 			{
@@ -8398,10 +8510,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:366:27: blockStatement
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:372:27: blockStatement
 					{
-					DebugLocation(366, 27);
-					PushFollow(Follow._blockStatement_in_switchCaseLabel2933);
+					DebugLocation(372, 27);
+					PushFollow(Follow._blockStatement_in_switchCaseLabel3036);
 					blockStatement();
 					PopFollow();
 					if (state.failed) return;
@@ -8439,7 +8551,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 59, switchCaseLabel_StartIndex); }
 
 		}
-		DebugLocation(367, 4);
+		DebugLocation(373, 4);
 		} finally { DebugExitRule(GrammarFileName, "switchCaseLabel"); }
 		return;
 
@@ -8449,7 +8561,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_switchDefaultLabel();
 	partial void LeaveRule_switchDefaultLabel();
 	// $ANTLR start "switchDefaultLabel"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:369:1: switchDefaultLabel : ^( DEFAULT ( blockStatement )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:375:1: switchDefaultLabel : ^( DEFAULT ( blockStatement )* ) ;
 	[GrammarRule("switchDefaultLabel")]
 	private void switchDefaultLabel()
 	{
@@ -8459,24 +8571,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int switchDefaultLabel_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "switchDefaultLabel");
-		DebugLocation(369, 4);
+		DebugLocation(375, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 60)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:370:5: ( ^( DEFAULT ( blockStatement )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:376:5: ( ^( DEFAULT ( blockStatement )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:370:9: ^( DEFAULT ( blockStatement )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:376:9: ^( DEFAULT ( blockStatement )* )
 			{
-			DebugLocation(370, 9);
-			DebugLocation(370, 11);
-			Match(input,DEFAULT,Follow._DEFAULT_in_switchDefaultLabel2959); if (state.failed) return;
+			DebugLocation(376, 9);
+			DebugLocation(376, 11);
+			Match(input,DEFAULT,Follow._DEFAULT_in_switchDefaultLabel3062); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(370, 19);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:370:19: ( blockStatement )*
+				DebugLocation(376, 19);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:376:19: ( blockStatement )*
 				try { DebugEnterSubRule(98);
 				while (true)
 				{
@@ -8495,10 +8607,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:370:19: blockStatement
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:376:19: blockStatement
 						{
-						DebugLocation(370, 19);
-						PushFollow(Follow._blockStatement_in_switchDefaultLabel2961);
+						DebugLocation(376, 19);
+						PushFollow(Follow._blockStatement_in_switchDefaultLabel3064);
 						blockStatement();
 						PopFollow();
 						if (state.failed) return;
@@ -8537,7 +8649,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 60, switchDefaultLabel_StartIndex); }
 
 		}
-		DebugLocation(371, 4);
+		DebugLocation(377, 4);
 		} finally { DebugExitRule(GrammarFileName, "switchDefaultLabel"); }
 		return;
 
@@ -8547,7 +8659,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_forInit();
 	partial void LeaveRule_forInit();
 	// $ANTLR start "forInit"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:373:1: forInit : ^( FOR_INIT ( localVariableDeclaration | ( expression )* )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:379:1: forInit : ^( FOR_INIT ( localVariableDeclaration | ( expression )* )? ) ;
 	[GrammarRule("forInit")]
 	private void forInit()
 	{
@@ -8557,24 +8669,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int forInit_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "forInit");
-		DebugLocation(373, 4);
+		DebugLocation(379, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 61)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:5: ( ^( FOR_INIT ( localVariableDeclaration | ( expression )* )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:5: ( ^( FOR_INIT ( localVariableDeclaration | ( expression )* )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:9: ^( FOR_INIT ( localVariableDeclaration | ( expression )* )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:9: ^( FOR_INIT ( localVariableDeclaration | ( expression )* )? )
 			{
-			DebugLocation(374, 9);
-			DebugLocation(374, 11);
-			Match(input,FOR_INIT,Follow._FOR_INIT_in_forInit2987); if (state.failed) return;
+			DebugLocation(380, 9);
+			DebugLocation(380, 11);
+			Match(input,FOR_INIT,Follow._FOR_INIT_in_forInit3090); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(374, 20);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:20: ( localVariableDeclaration | ( expression )* )?
+				DebugLocation(380, 20);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:20: ( localVariableDeclaration | ( expression )* )?
 				int alt100=3;
 				try { DebugEnterSubRule(100);
 				try { DebugEnterDecision(100, false);
@@ -8607,10 +8719,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:21: localVariableDeclaration
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:21: localVariableDeclaration
 					{
-					DebugLocation(374, 21);
-					PushFollow(Follow._localVariableDeclaration_in_forInit2990);
+					DebugLocation(380, 21);
+					PushFollow(Follow._localVariableDeclaration_in_forInit3093);
 					localVariableDeclaration();
 					PopFollow();
 					if (state.failed) return;
@@ -8619,10 +8731,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:48: ( expression )*
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:48: ( expression )*
 					{
-					DebugLocation(374, 48);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:48: ( expression )*
+					DebugLocation(380, 48);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:48: ( expression )*
 					try { DebugEnterSubRule(99);
 					while (true)
 					{
@@ -8641,10 +8753,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						{
 						case 1:
 							DebugEnterAlt(1);
-							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:48: expression
+							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:48: expression
 							{
-							DebugLocation(374, 48);
-							PushFollow(Follow._expression_in_forInit2994);
+							DebugLocation(380, 48);
+							PushFollow(Follow._expression_in_forInit3097);
 							expression();
 							PopFollow();
 							if (state.failed) return;
@@ -8690,7 +8802,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 61, forInit_StartIndex); }
 
 		}
-		DebugLocation(375, 4);
+		DebugLocation(381, 4);
 		} finally { DebugExitRule(GrammarFileName, "forInit"); }
 		return;
 
@@ -8700,7 +8812,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_forCondition();
 	partial void LeaveRule_forCondition();
 	// $ANTLR start "forCondition"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:377:1: forCondition : ^( FOR_CONDITION ( expression )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:383:1: forCondition : ^( FOR_CONDITION ( expression )? ) ;
 	[GrammarRule("forCondition")]
 	private void forCondition()
 	{
@@ -8710,24 +8822,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int forCondition_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "forCondition");
-		DebugLocation(377, 4);
+		DebugLocation(383, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 62)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:378:5: ( ^( FOR_CONDITION ( expression )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:384:5: ( ^( FOR_CONDITION ( expression )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:378:9: ^( FOR_CONDITION ( expression )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:384:9: ^( FOR_CONDITION ( expression )? )
 			{
-			DebugLocation(378, 9);
-			DebugLocation(378, 11);
-			Match(input,FOR_CONDITION,Follow._FOR_CONDITION_in_forCondition3022); if (state.failed) return;
+			DebugLocation(384, 9);
+			DebugLocation(384, 11);
+			Match(input,FOR_CONDITION,Follow._FOR_CONDITION_in_forCondition3125); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(378, 25);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:378:25: ( expression )?
+				DebugLocation(384, 25);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:384:25: ( expression )?
 				int alt101=2;
 				try { DebugEnterSubRule(101);
 				try { DebugEnterDecision(101, false);
@@ -8742,10 +8854,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:378:25: expression
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:384:25: expression
 					{
-					DebugLocation(378, 25);
-					PushFollow(Follow._expression_in_forCondition3024);
+					DebugLocation(384, 25);
+					PushFollow(Follow._expression_in_forCondition3127);
 					expression();
 					PopFollow();
 					if (state.failed) return;
@@ -8777,7 +8889,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 62, forCondition_StartIndex); }
 
 		}
-		DebugLocation(379, 4);
+		DebugLocation(385, 4);
 		} finally { DebugExitRule(GrammarFileName, "forCondition"); }
 		return;
 
@@ -8787,7 +8899,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_forUpdater();
 	partial void LeaveRule_forUpdater();
 	// $ANTLR start "forUpdater"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:381:1: forUpdater : ^( FOR_UPDATE ( expression )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:387:1: forUpdater : ^( FOR_UPDATE ( expression )* ) ;
 	[GrammarRule("forUpdater")]
 	private void forUpdater()
 	{
@@ -8797,24 +8909,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int forUpdater_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "forUpdater");
-		DebugLocation(381, 4);
+		DebugLocation(387, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 63)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:382:5: ( ^( FOR_UPDATE ( expression )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:388:5: ( ^( FOR_UPDATE ( expression )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:382:9: ^( FOR_UPDATE ( expression )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:388:9: ^( FOR_UPDATE ( expression )* )
 			{
-			DebugLocation(382, 9);
-			DebugLocation(382, 11);
-			Match(input,FOR_UPDATE,Follow._FOR_UPDATE_in_forUpdater3050); if (state.failed) return;
+			DebugLocation(388, 9);
+			DebugLocation(388, 11);
+			Match(input,FOR_UPDATE,Follow._FOR_UPDATE_in_forUpdater3153); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(382, 22);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:382:22: ( expression )*
+				DebugLocation(388, 22);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:388:22: ( expression )*
 				try { DebugEnterSubRule(102);
 				while (true)
 				{
@@ -8833,10 +8945,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:382:22: expression
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:388:22: expression
 						{
-						DebugLocation(382, 22);
-						PushFollow(Follow._expression_in_forUpdater3052);
+						DebugLocation(388, 22);
+						PushFollow(Follow._expression_in_forUpdater3155);
 						expression();
 						PopFollow();
 						if (state.failed) return;
@@ -8875,7 +8987,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 63, forUpdater_StartIndex); }
 
 		}
-		DebugLocation(383, 4);
+		DebugLocation(389, 4);
 		} finally { DebugExitRule(GrammarFileName, "forUpdater"); }
 		return;
 
@@ -8885,7 +8997,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_parenthesizedExpression();
 	partial void LeaveRule_parenthesizedExpression();
 	// $ANTLR start "parenthesizedExpression"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:387:1: parenthesizedExpression : ^( PARENTESIZED_EXPR expression ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:393:1: parenthesizedExpression : ^( PARENTESIZED_EXPR expression ) ;
 	[GrammarRule("parenthesizedExpression")]
 	private void parenthesizedExpression()
 	{
@@ -8895,22 +9007,22 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int parenthesizedExpression_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "parenthesizedExpression");
-		DebugLocation(387, 4);
+		DebugLocation(393, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 64)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:388:5: ( ^( PARENTESIZED_EXPR expression ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:394:5: ( ^( PARENTESIZED_EXPR expression ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:388:9: ^( PARENTESIZED_EXPR expression )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:394:9: ^( PARENTESIZED_EXPR expression )
 			{
-			DebugLocation(388, 9);
-			DebugLocation(388, 11);
-			Match(input,PARENTESIZED_EXPR,Follow._PARENTESIZED_EXPR_in_parenthesizedExpression3080); if (state.failed) return;
+			DebugLocation(394, 9);
+			DebugLocation(394, 11);
+			Match(input,PARENTESIZED_EXPR,Follow._PARENTESIZED_EXPR_in_parenthesizedExpression3183); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(388, 29);
-			PushFollow(Follow._expression_in_parenthesizedExpression3082);
+			DebugLocation(394, 29);
+			PushFollow(Follow._expression_in_parenthesizedExpression3185);
 			expression();
 			PopFollow();
 			if (state.failed) return;
@@ -8934,7 +9046,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 64, parenthesizedExpression_StartIndex); }
 
 		}
-		DebugLocation(389, 4);
+		DebugLocation(395, 4);
 		} finally { DebugExitRule(GrammarFileName, "parenthesizedExpression"); }
 		return;
 
@@ -8944,7 +9056,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_expression();
 	partial void LeaveRule_expression();
 	// $ANTLR start "expression"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:391:1: expression returns [IApexNode node] : ^( EXPR expr ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:397:1: expression returns [IApexNode node] : ^( EXPR expr ) ;
 	[GrammarRule("expression")]
 	private IApexNode expression()
 	{
@@ -8956,22 +9068,22 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int expression_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "expression");
-		DebugLocation(391, 4);
+		DebugLocation(397, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 65)) { return node; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:392:5: ( ^( EXPR expr ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:398:5: ( ^( EXPR expr ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:392:9: ^( EXPR expr )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:398:9: ^( EXPR expr )
 			{
-			DebugLocation(392, 9);
-			DebugLocation(392, 11);
-			Match(input,EXPR,Follow._EXPR_in_expression3111); if (state.failed) return node;
+			DebugLocation(398, 9);
+			DebugLocation(398, 11);
+			Match(input,EXPR,Follow._EXPR_in_expression3214); if (state.failed) return node;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return node;
-			DebugLocation(392, 16);
-			PushFollow(Follow._expr_in_expression3113);
+			DebugLocation(398, 16);
+			PushFollow(Follow._expr_in_expression3216);
 			expr();
 			PopFollow();
 			if (state.failed) return node;
@@ -8995,7 +9107,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 65, expression_StartIndex); }
 
 		}
-		DebugLocation(393, 4);
+		DebugLocation(399, 4);
 		} finally { DebugExitRule(GrammarFileName, "expression"); }
 		return node;
 
@@ -9005,7 +9117,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_expr();
 	partial void LeaveRule_expr();
 	// $ANTLR start "expr"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:395:1: expr returns [IApexNode node] : ( ^( ASSIGN a= expr b= expr ) | ^( PLUS_ASSIGN expr expr ) | ^( MINUS_ASSIGN expr expr ) | ^( STAR_ASSIGN expr expr ) | ^( DIV_ASSIGN expr expr ) | ^( AND_ASSIGN expr expr ) | ^( OR_ASSIGN expr expr ) | ^( XOR_ASSIGN expr expr ) | ^( MOD_ASSIGN expr expr ) | ^( BIT_SHIFT_RIGHT_ASSIGN expr expr ) | ^( SHIFT_RIGHT_ASSIGN expr expr ) | ^( SHIFT_LEFT_ASSIGN expr expr ) | ^( QUESTION expr expr expr ) | ^( LOGICAL_OR expr expr ) | ^( LOGICAL_AND expr expr ) | ^( OR expr expr ) | ^( XOR expr expr ) | ^( AND expr expr ) | ^( EQUAL expr expr ) | ^( NOT_EQUAL expr expr ) | ^( INSTANCEOF expr type ) | ^( LESS_OR_EQUAL expr expr ) | ^( GREATER_OR_EQUAL expr expr ) | ^( BIT_SHIFT_RIGHT expr expr ) | ^( SHIFT_RIGHT expr expr ) | ^( GREATER_THAN expr expr ) | ^( SHIFT_LEFT expr expr ) | ^( LESS_THAN expr expr ) | ^( PLUS expr expr ) | ^( MINUS expr expr ) | ^( STAR expr expr ) | ^( DIV expr expr ) | ^( MOD expr expr ) | ^( UNARY_PLUS expr ) | ^( UNARY_MINUS expr ) | ^( PRE_INC expr ) | ^( PRE_DEC expr ) | ^( POST_INC expr ) | ^( POST_DEC expr ) | ^( NOT expr ) | ^( LOGICAL_NOT expr ) | ^( CAST_EXPR type expr ) | primaryExpression );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:401:1: expr returns [IApexNode node] : ( ^( ASSIGN a= expr b= expr ) | ^( PLUS_ASSIGN expr expr ) | ^( MINUS_ASSIGN expr expr ) | ^( STAR_ASSIGN expr expr ) | ^( DIV_ASSIGN expr expr ) | ^( AND_ASSIGN expr expr ) | ^( OR_ASSIGN expr expr ) | ^( XOR_ASSIGN expr expr ) | ^( MOD_ASSIGN expr expr ) | ^( BIT_SHIFT_RIGHT_ASSIGN expr expr ) | ^( SHIFT_RIGHT_ASSIGN expr expr ) | ^( SHIFT_LEFT_ASSIGN expr expr ) | ^( QUESTION expr expr expr ) | ^( LOGICAL_OR expr expr ) | ^( LOGICAL_AND expr expr ) | ^( OR expr expr ) | ^( XOR expr expr ) | ^( AND expr expr ) | ^( EQUAL expr expr ) | ^( NOT_EQUAL expr expr ) | ^( INSTANCEOF expr type ) | ^( LESS_OR_EQUAL expr expr ) | ^( GREATER_OR_EQUAL expr expr ) | ^( BIT_SHIFT_RIGHT expr expr ) | ^( SHIFT_RIGHT expr expr ) | ^( GREATER_THAN expr expr ) | ^( SHIFT_LEFT expr expr ) | ^( LESS_THAN expr expr ) | ^( PLUS expr expr ) | ^( MINUS expr expr ) | ^( STAR expr expr ) | ^( DIV expr expr ) | ^( MOD expr expr ) | ^( UNARY_PLUS expr ) | ^( UNARY_MINUS expr ) | ^( PRE_INC expr ) | ^( PRE_DEC expr ) | ^( POST_INC expr ) | ^( POST_DEC expr ) | ^( NOT expr ) | ^( LOGICAL_NOT expr ) | ^( CAST_EXPR type expr ) | primaryExpression );
 	[GrammarRule("expr")]
 	private IApexNode expr()
 	{
@@ -9020,12 +9132,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		IApexNode b = default(IApexNode);
 
 		try { DebugEnterRule(GrammarFileName, "expr");
-		DebugLocation(395, 4);
+		DebugLocation(401, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 66)) { return node; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:396:5: ( ^( ASSIGN a= expr b= expr ) | ^( PLUS_ASSIGN expr expr ) | ^( MINUS_ASSIGN expr expr ) | ^( STAR_ASSIGN expr expr ) | ^( DIV_ASSIGN expr expr ) | ^( AND_ASSIGN expr expr ) | ^( OR_ASSIGN expr expr ) | ^( XOR_ASSIGN expr expr ) | ^( MOD_ASSIGN expr expr ) | ^( BIT_SHIFT_RIGHT_ASSIGN expr expr ) | ^( SHIFT_RIGHT_ASSIGN expr expr ) | ^( SHIFT_LEFT_ASSIGN expr expr ) | ^( QUESTION expr expr expr ) | ^( LOGICAL_OR expr expr ) | ^( LOGICAL_AND expr expr ) | ^( OR expr expr ) | ^( XOR expr expr ) | ^( AND expr expr ) | ^( EQUAL expr expr ) | ^( NOT_EQUAL expr expr ) | ^( INSTANCEOF expr type ) | ^( LESS_OR_EQUAL expr expr ) | ^( GREATER_OR_EQUAL expr expr ) | ^( BIT_SHIFT_RIGHT expr expr ) | ^( SHIFT_RIGHT expr expr ) | ^( GREATER_THAN expr expr ) | ^( SHIFT_LEFT expr expr ) | ^( LESS_THAN expr expr ) | ^( PLUS expr expr ) | ^( MINUS expr expr ) | ^( STAR expr expr ) | ^( DIV expr expr ) | ^( MOD expr expr ) | ^( UNARY_PLUS expr ) | ^( UNARY_MINUS expr ) | ^( PRE_INC expr ) | ^( PRE_DEC expr ) | ^( POST_INC expr ) | ^( POST_DEC expr ) | ^( NOT expr ) | ^( LOGICAL_NOT expr ) | ^( CAST_EXPR type expr ) | primaryExpression )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:402:5: ( ^( ASSIGN a= expr b= expr ) | ^( PLUS_ASSIGN expr expr ) | ^( MINUS_ASSIGN expr expr ) | ^( STAR_ASSIGN expr expr ) | ^( DIV_ASSIGN expr expr ) | ^( AND_ASSIGN expr expr ) | ^( OR_ASSIGN expr expr ) | ^( XOR_ASSIGN expr expr ) | ^( MOD_ASSIGN expr expr ) | ^( BIT_SHIFT_RIGHT_ASSIGN expr expr ) | ^( SHIFT_RIGHT_ASSIGN expr expr ) | ^( SHIFT_LEFT_ASSIGN expr expr ) | ^( QUESTION expr expr expr ) | ^( LOGICAL_OR expr expr ) | ^( LOGICAL_AND expr expr ) | ^( OR expr expr ) | ^( XOR expr expr ) | ^( AND expr expr ) | ^( EQUAL expr expr ) | ^( NOT_EQUAL expr expr ) | ^( INSTANCEOF expr type ) | ^( LESS_OR_EQUAL expr expr ) | ^( GREATER_OR_EQUAL expr expr ) | ^( BIT_SHIFT_RIGHT expr expr ) | ^( SHIFT_RIGHT expr expr ) | ^( GREATER_THAN expr expr ) | ^( SHIFT_LEFT expr expr ) | ^( LESS_THAN expr expr ) | ^( PLUS expr expr ) | ^( MINUS expr expr ) | ^( STAR expr expr ) | ^( DIV expr expr ) | ^( MOD expr expr ) | ^( UNARY_PLUS expr ) | ^( UNARY_MINUS expr ) | ^( PRE_INC expr ) | ^( PRE_DEC expr ) | ^( POST_INC expr ) | ^( POST_DEC expr ) | ^( NOT expr ) | ^( LOGICAL_NOT expr ) | ^( CAST_EXPR type expr ) | primaryExpression )
 			int alt103=43;
 			try { DebugEnterDecision(103, false);
 			switch (input.LA(1))
@@ -9279,20 +9391,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:396:9: ^( ASSIGN a= expr b= expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:402:9: ^( ASSIGN a= expr b= expr )
 				{
-				DebugLocation(396, 9);
-				DebugLocation(396, 11);
-				Match(input,ASSIGN,Follow._ASSIGN_in_expr3138); if (state.failed) return node;
+				DebugLocation(402, 9);
+				DebugLocation(402, 11);
+				Match(input,ASSIGN,Follow._ASSIGN_in_expr3241); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(396, 20);
-				PushFollow(Follow._expr_in_expr3143);
+				DebugLocation(402, 20);
+				PushFollow(Follow._expr_in_expr3246);
 				a=expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(396, 27);
-				PushFollow(Follow._expr_in_expr3147);
+				DebugLocation(402, 27);
+				PushFollow(Follow._expr_in_expr3250);
 				b=expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9304,20 +9416,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:397:9: ^( PLUS_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:403:9: ^( PLUS_ASSIGN expr expr )
 				{
-				DebugLocation(397, 9);
-				DebugLocation(397, 11);
-				Match(input,PLUS_ASSIGN,Follow._PLUS_ASSIGN_in_expr3159); if (state.failed) return node;
+				DebugLocation(403, 9);
+				DebugLocation(403, 11);
+				Match(input,PLUS_ASSIGN,Follow._PLUS_ASSIGN_in_expr3262); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(397, 23);
-				PushFollow(Follow._expr_in_expr3161);
+				DebugLocation(403, 23);
+				PushFollow(Follow._expr_in_expr3264);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(397, 28);
-				PushFollow(Follow._expr_in_expr3163);
+				DebugLocation(403, 28);
+				PushFollow(Follow._expr_in_expr3266);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9329,20 +9441,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:398:9: ^( MINUS_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:404:9: ^( MINUS_ASSIGN expr expr )
 				{
-				DebugLocation(398, 9);
-				DebugLocation(398, 11);
-				Match(input,MINUS_ASSIGN,Follow._MINUS_ASSIGN_in_expr3175); if (state.failed) return node;
+				DebugLocation(404, 9);
+				DebugLocation(404, 11);
+				Match(input,MINUS_ASSIGN,Follow._MINUS_ASSIGN_in_expr3278); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(398, 24);
-				PushFollow(Follow._expr_in_expr3177);
+				DebugLocation(404, 24);
+				PushFollow(Follow._expr_in_expr3280);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(398, 29);
-				PushFollow(Follow._expr_in_expr3179);
+				DebugLocation(404, 29);
+				PushFollow(Follow._expr_in_expr3282);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9354,20 +9466,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:399:9: ^( STAR_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:405:9: ^( STAR_ASSIGN expr expr )
 				{
-				DebugLocation(399, 9);
-				DebugLocation(399, 11);
-				Match(input,STAR_ASSIGN,Follow._STAR_ASSIGN_in_expr3191); if (state.failed) return node;
+				DebugLocation(405, 9);
+				DebugLocation(405, 11);
+				Match(input,STAR_ASSIGN,Follow._STAR_ASSIGN_in_expr3294); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(399, 23);
-				PushFollow(Follow._expr_in_expr3193);
+				DebugLocation(405, 23);
+				PushFollow(Follow._expr_in_expr3296);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(399, 28);
-				PushFollow(Follow._expr_in_expr3195);
+				DebugLocation(405, 28);
+				PushFollow(Follow._expr_in_expr3298);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9379,20 +9491,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:400:9: ^( DIV_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:406:9: ^( DIV_ASSIGN expr expr )
 				{
-				DebugLocation(400, 9);
-				DebugLocation(400, 11);
-				Match(input,DIV_ASSIGN,Follow._DIV_ASSIGN_in_expr3207); if (state.failed) return node;
+				DebugLocation(406, 9);
+				DebugLocation(406, 11);
+				Match(input,DIV_ASSIGN,Follow._DIV_ASSIGN_in_expr3310); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(400, 22);
-				PushFollow(Follow._expr_in_expr3209);
+				DebugLocation(406, 22);
+				PushFollow(Follow._expr_in_expr3312);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(400, 27);
-				PushFollow(Follow._expr_in_expr3211);
+				DebugLocation(406, 27);
+				PushFollow(Follow._expr_in_expr3314);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9404,20 +9516,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:401:9: ^( AND_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:407:9: ^( AND_ASSIGN expr expr )
 				{
-				DebugLocation(401, 9);
-				DebugLocation(401, 11);
-				Match(input,AND_ASSIGN,Follow._AND_ASSIGN_in_expr3223); if (state.failed) return node;
+				DebugLocation(407, 9);
+				DebugLocation(407, 11);
+				Match(input,AND_ASSIGN,Follow._AND_ASSIGN_in_expr3326); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(401, 22);
-				PushFollow(Follow._expr_in_expr3225);
+				DebugLocation(407, 22);
+				PushFollow(Follow._expr_in_expr3328);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(401, 27);
-				PushFollow(Follow._expr_in_expr3227);
+				DebugLocation(407, 27);
+				PushFollow(Follow._expr_in_expr3330);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9429,20 +9541,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:402:9: ^( OR_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:408:9: ^( OR_ASSIGN expr expr )
 				{
-				DebugLocation(402, 9);
-				DebugLocation(402, 11);
-				Match(input,OR_ASSIGN,Follow._OR_ASSIGN_in_expr3239); if (state.failed) return node;
+				DebugLocation(408, 9);
+				DebugLocation(408, 11);
+				Match(input,OR_ASSIGN,Follow._OR_ASSIGN_in_expr3342); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(402, 21);
-				PushFollow(Follow._expr_in_expr3241);
+				DebugLocation(408, 21);
+				PushFollow(Follow._expr_in_expr3344);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(402, 26);
-				PushFollow(Follow._expr_in_expr3243);
+				DebugLocation(408, 26);
+				PushFollow(Follow._expr_in_expr3346);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9454,20 +9566,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 8:
 				DebugEnterAlt(8);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:403:9: ^( XOR_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:409:9: ^( XOR_ASSIGN expr expr )
 				{
-				DebugLocation(403, 9);
-				DebugLocation(403, 11);
-				Match(input,XOR_ASSIGN,Follow._XOR_ASSIGN_in_expr3255); if (state.failed) return node;
+				DebugLocation(409, 9);
+				DebugLocation(409, 11);
+				Match(input,XOR_ASSIGN,Follow._XOR_ASSIGN_in_expr3358); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(403, 22);
-				PushFollow(Follow._expr_in_expr3257);
+				DebugLocation(409, 22);
+				PushFollow(Follow._expr_in_expr3360);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(403, 27);
-				PushFollow(Follow._expr_in_expr3259);
+				DebugLocation(409, 27);
+				PushFollow(Follow._expr_in_expr3362);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9479,20 +9591,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 9:
 				DebugEnterAlt(9);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:404:9: ^( MOD_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:410:9: ^( MOD_ASSIGN expr expr )
 				{
-				DebugLocation(404, 9);
-				DebugLocation(404, 11);
-				Match(input,MOD_ASSIGN,Follow._MOD_ASSIGN_in_expr3271); if (state.failed) return node;
+				DebugLocation(410, 9);
+				DebugLocation(410, 11);
+				Match(input,MOD_ASSIGN,Follow._MOD_ASSIGN_in_expr3374); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(404, 22);
-				PushFollow(Follow._expr_in_expr3273);
+				DebugLocation(410, 22);
+				PushFollow(Follow._expr_in_expr3376);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(404, 27);
-				PushFollow(Follow._expr_in_expr3275);
+				DebugLocation(410, 27);
+				PushFollow(Follow._expr_in_expr3378);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9504,20 +9616,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 10:
 				DebugEnterAlt(10);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:405:9: ^( BIT_SHIFT_RIGHT_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:411:9: ^( BIT_SHIFT_RIGHT_ASSIGN expr expr )
 				{
-				DebugLocation(405, 9);
-				DebugLocation(405, 11);
-				Match(input,BIT_SHIFT_RIGHT_ASSIGN,Follow._BIT_SHIFT_RIGHT_ASSIGN_in_expr3287); if (state.failed) return node;
+				DebugLocation(411, 9);
+				DebugLocation(411, 11);
+				Match(input,BIT_SHIFT_RIGHT_ASSIGN,Follow._BIT_SHIFT_RIGHT_ASSIGN_in_expr3390); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(405, 34);
-				PushFollow(Follow._expr_in_expr3289);
+				DebugLocation(411, 34);
+				PushFollow(Follow._expr_in_expr3392);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(405, 39);
-				PushFollow(Follow._expr_in_expr3291);
+				DebugLocation(411, 39);
+				PushFollow(Follow._expr_in_expr3394);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9529,20 +9641,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 11:
 				DebugEnterAlt(11);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:406:9: ^( SHIFT_RIGHT_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:412:9: ^( SHIFT_RIGHT_ASSIGN expr expr )
 				{
-				DebugLocation(406, 9);
-				DebugLocation(406, 11);
-				Match(input,SHIFT_RIGHT_ASSIGN,Follow._SHIFT_RIGHT_ASSIGN_in_expr3303); if (state.failed) return node;
+				DebugLocation(412, 9);
+				DebugLocation(412, 11);
+				Match(input,SHIFT_RIGHT_ASSIGN,Follow._SHIFT_RIGHT_ASSIGN_in_expr3406); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(406, 30);
-				PushFollow(Follow._expr_in_expr3305);
+				DebugLocation(412, 30);
+				PushFollow(Follow._expr_in_expr3408);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(406, 35);
-				PushFollow(Follow._expr_in_expr3307);
+				DebugLocation(412, 35);
+				PushFollow(Follow._expr_in_expr3410);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9554,20 +9666,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 12:
 				DebugEnterAlt(12);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:407:9: ^( SHIFT_LEFT_ASSIGN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:413:9: ^( SHIFT_LEFT_ASSIGN expr expr )
 				{
-				DebugLocation(407, 9);
-				DebugLocation(407, 11);
-				Match(input,SHIFT_LEFT_ASSIGN,Follow._SHIFT_LEFT_ASSIGN_in_expr3319); if (state.failed) return node;
+				DebugLocation(413, 9);
+				DebugLocation(413, 11);
+				Match(input,SHIFT_LEFT_ASSIGN,Follow._SHIFT_LEFT_ASSIGN_in_expr3422); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(407, 29);
-				PushFollow(Follow._expr_in_expr3321);
+				DebugLocation(413, 29);
+				PushFollow(Follow._expr_in_expr3424);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(407, 34);
-				PushFollow(Follow._expr_in_expr3323);
+				DebugLocation(413, 34);
+				PushFollow(Follow._expr_in_expr3426);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9579,25 +9691,25 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 13:
 				DebugEnterAlt(13);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:408:9: ^( QUESTION expr expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:414:9: ^( QUESTION expr expr expr )
 				{
-				DebugLocation(408, 9);
-				DebugLocation(408, 11);
-				Match(input,QUESTION,Follow._QUESTION_in_expr3335); if (state.failed) return node;
+				DebugLocation(414, 9);
+				DebugLocation(414, 11);
+				Match(input,QUESTION,Follow._QUESTION_in_expr3438); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(408, 20);
-				PushFollow(Follow._expr_in_expr3337);
+				DebugLocation(414, 20);
+				PushFollow(Follow._expr_in_expr3440);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(408, 25);
-				PushFollow(Follow._expr_in_expr3339);
+				DebugLocation(414, 25);
+				PushFollow(Follow._expr_in_expr3442);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(408, 30);
-				PushFollow(Follow._expr_in_expr3341);
+				DebugLocation(414, 30);
+				PushFollow(Follow._expr_in_expr3444);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9609,20 +9721,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 14:
 				DebugEnterAlt(14);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:409:9: ^( LOGICAL_OR expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:415:9: ^( LOGICAL_OR expr expr )
 				{
-				DebugLocation(409, 9);
-				DebugLocation(409, 11);
-				Match(input,LOGICAL_OR,Follow._LOGICAL_OR_in_expr3353); if (state.failed) return node;
+				DebugLocation(415, 9);
+				DebugLocation(415, 11);
+				Match(input,LOGICAL_OR,Follow._LOGICAL_OR_in_expr3456); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(409, 22);
-				PushFollow(Follow._expr_in_expr3355);
+				DebugLocation(415, 22);
+				PushFollow(Follow._expr_in_expr3458);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(409, 27);
-				PushFollow(Follow._expr_in_expr3357);
+				DebugLocation(415, 27);
+				PushFollow(Follow._expr_in_expr3460);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9634,20 +9746,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 15:
 				DebugEnterAlt(15);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:410:9: ^( LOGICAL_AND expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:416:9: ^( LOGICAL_AND expr expr )
 				{
-				DebugLocation(410, 9);
-				DebugLocation(410, 11);
-				Match(input,LOGICAL_AND,Follow._LOGICAL_AND_in_expr3369); if (state.failed) return node;
+				DebugLocation(416, 9);
+				DebugLocation(416, 11);
+				Match(input,LOGICAL_AND,Follow._LOGICAL_AND_in_expr3472); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(410, 23);
-				PushFollow(Follow._expr_in_expr3371);
+				DebugLocation(416, 23);
+				PushFollow(Follow._expr_in_expr3474);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(410, 28);
-				PushFollow(Follow._expr_in_expr3373);
+				DebugLocation(416, 28);
+				PushFollow(Follow._expr_in_expr3476);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9659,20 +9771,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 16:
 				DebugEnterAlt(16);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:411:9: ^( OR expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:417:9: ^( OR expr expr )
 				{
-				DebugLocation(411, 9);
-				DebugLocation(411, 11);
-				Match(input,OR,Follow._OR_in_expr3385); if (state.failed) return node;
+				DebugLocation(417, 9);
+				DebugLocation(417, 11);
+				Match(input,OR,Follow._OR_in_expr3488); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(411, 14);
-				PushFollow(Follow._expr_in_expr3387);
+				DebugLocation(417, 14);
+				PushFollow(Follow._expr_in_expr3490);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(411, 19);
-				PushFollow(Follow._expr_in_expr3389);
+				DebugLocation(417, 19);
+				PushFollow(Follow._expr_in_expr3492);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9684,20 +9796,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 17:
 				DebugEnterAlt(17);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:412:9: ^( XOR expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:418:9: ^( XOR expr expr )
 				{
-				DebugLocation(412, 9);
-				DebugLocation(412, 11);
-				Match(input,XOR,Follow._XOR_in_expr3401); if (state.failed) return node;
+				DebugLocation(418, 9);
+				DebugLocation(418, 11);
+				Match(input,XOR,Follow._XOR_in_expr3504); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(412, 15);
-				PushFollow(Follow._expr_in_expr3403);
+				DebugLocation(418, 15);
+				PushFollow(Follow._expr_in_expr3506);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(412, 20);
-				PushFollow(Follow._expr_in_expr3405);
+				DebugLocation(418, 20);
+				PushFollow(Follow._expr_in_expr3508);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9709,20 +9821,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 18:
 				DebugEnterAlt(18);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:413:9: ^( AND expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:419:9: ^( AND expr expr )
 				{
-				DebugLocation(413, 9);
-				DebugLocation(413, 11);
-				Match(input,AND,Follow._AND_in_expr3417); if (state.failed) return node;
+				DebugLocation(419, 9);
+				DebugLocation(419, 11);
+				Match(input,AND,Follow._AND_in_expr3520); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(413, 15);
-				PushFollow(Follow._expr_in_expr3419);
+				DebugLocation(419, 15);
+				PushFollow(Follow._expr_in_expr3522);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(413, 20);
-				PushFollow(Follow._expr_in_expr3421);
+				DebugLocation(419, 20);
+				PushFollow(Follow._expr_in_expr3524);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9734,20 +9846,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 19:
 				DebugEnterAlt(19);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:414:9: ^( EQUAL expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:420:9: ^( EQUAL expr expr )
 				{
-				DebugLocation(414, 9);
-				DebugLocation(414, 11);
-				Match(input,EQUAL,Follow._EQUAL_in_expr3433); if (state.failed) return node;
+				DebugLocation(420, 9);
+				DebugLocation(420, 11);
+				Match(input,EQUAL,Follow._EQUAL_in_expr3536); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(414, 17);
-				PushFollow(Follow._expr_in_expr3435);
+				DebugLocation(420, 17);
+				PushFollow(Follow._expr_in_expr3538);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(414, 22);
-				PushFollow(Follow._expr_in_expr3437);
+				DebugLocation(420, 22);
+				PushFollow(Follow._expr_in_expr3540);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9759,20 +9871,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 20:
 				DebugEnterAlt(20);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:415:9: ^( NOT_EQUAL expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:421:9: ^( NOT_EQUAL expr expr )
 				{
-				DebugLocation(415, 9);
-				DebugLocation(415, 11);
-				Match(input,NOT_EQUAL,Follow._NOT_EQUAL_in_expr3449); if (state.failed) return node;
+				DebugLocation(421, 9);
+				DebugLocation(421, 11);
+				Match(input,NOT_EQUAL,Follow._NOT_EQUAL_in_expr3552); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(415, 21);
-				PushFollow(Follow._expr_in_expr3451);
+				DebugLocation(421, 21);
+				PushFollow(Follow._expr_in_expr3554);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(415, 26);
-				PushFollow(Follow._expr_in_expr3453);
+				DebugLocation(421, 26);
+				PushFollow(Follow._expr_in_expr3556);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9784,20 +9896,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 21:
 				DebugEnterAlt(21);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:416:9: ^( INSTANCEOF expr type )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:422:9: ^( INSTANCEOF expr type )
 				{
-				DebugLocation(416, 9);
-				DebugLocation(416, 11);
-				Match(input,INSTANCEOF,Follow._INSTANCEOF_in_expr3465); if (state.failed) return node;
+				DebugLocation(422, 9);
+				DebugLocation(422, 11);
+				Match(input,INSTANCEOF,Follow._INSTANCEOF_in_expr3568); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(416, 22);
-				PushFollow(Follow._expr_in_expr3467);
+				DebugLocation(422, 22);
+				PushFollow(Follow._expr_in_expr3570);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(416, 27);
-				PushFollow(Follow._type_in_expr3469);
+				DebugLocation(422, 27);
+				PushFollow(Follow._type_in_expr3572);
 				type();
 				PopFollow();
 				if (state.failed) return node;
@@ -9809,20 +9921,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 22:
 				DebugEnterAlt(22);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:417:9: ^( LESS_OR_EQUAL expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:423:9: ^( LESS_OR_EQUAL expr expr )
 				{
-				DebugLocation(417, 9);
-				DebugLocation(417, 11);
-				Match(input,LESS_OR_EQUAL,Follow._LESS_OR_EQUAL_in_expr3481); if (state.failed) return node;
+				DebugLocation(423, 9);
+				DebugLocation(423, 11);
+				Match(input,LESS_OR_EQUAL,Follow._LESS_OR_EQUAL_in_expr3584); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(417, 25);
-				PushFollow(Follow._expr_in_expr3483);
+				DebugLocation(423, 25);
+				PushFollow(Follow._expr_in_expr3586);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(417, 30);
-				PushFollow(Follow._expr_in_expr3485);
+				DebugLocation(423, 30);
+				PushFollow(Follow._expr_in_expr3588);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9834,20 +9946,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 23:
 				DebugEnterAlt(23);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:418:9: ^( GREATER_OR_EQUAL expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:424:9: ^( GREATER_OR_EQUAL expr expr )
 				{
-				DebugLocation(418, 9);
-				DebugLocation(418, 11);
-				Match(input,GREATER_OR_EQUAL,Follow._GREATER_OR_EQUAL_in_expr3497); if (state.failed) return node;
+				DebugLocation(424, 9);
+				DebugLocation(424, 11);
+				Match(input,GREATER_OR_EQUAL,Follow._GREATER_OR_EQUAL_in_expr3600); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(418, 28);
-				PushFollow(Follow._expr_in_expr3499);
+				DebugLocation(424, 28);
+				PushFollow(Follow._expr_in_expr3602);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(418, 33);
-				PushFollow(Follow._expr_in_expr3501);
+				DebugLocation(424, 33);
+				PushFollow(Follow._expr_in_expr3604);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9859,20 +9971,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 24:
 				DebugEnterAlt(24);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:419:9: ^( BIT_SHIFT_RIGHT expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:425:9: ^( BIT_SHIFT_RIGHT expr expr )
 				{
-				DebugLocation(419, 9);
-				DebugLocation(419, 11);
-				Match(input,BIT_SHIFT_RIGHT,Follow._BIT_SHIFT_RIGHT_in_expr3513); if (state.failed) return node;
+				DebugLocation(425, 9);
+				DebugLocation(425, 11);
+				Match(input,BIT_SHIFT_RIGHT,Follow._BIT_SHIFT_RIGHT_in_expr3616); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(419, 27);
-				PushFollow(Follow._expr_in_expr3515);
+				DebugLocation(425, 27);
+				PushFollow(Follow._expr_in_expr3618);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(419, 32);
-				PushFollow(Follow._expr_in_expr3517);
+				DebugLocation(425, 32);
+				PushFollow(Follow._expr_in_expr3620);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9884,20 +9996,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 25:
 				DebugEnterAlt(25);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:420:9: ^( SHIFT_RIGHT expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:426:9: ^( SHIFT_RIGHT expr expr )
 				{
-				DebugLocation(420, 9);
-				DebugLocation(420, 11);
-				Match(input,SHIFT_RIGHT,Follow._SHIFT_RIGHT_in_expr3529); if (state.failed) return node;
+				DebugLocation(426, 9);
+				DebugLocation(426, 11);
+				Match(input,SHIFT_RIGHT,Follow._SHIFT_RIGHT_in_expr3632); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(420, 23);
-				PushFollow(Follow._expr_in_expr3531);
+				DebugLocation(426, 23);
+				PushFollow(Follow._expr_in_expr3634);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(420, 28);
-				PushFollow(Follow._expr_in_expr3533);
+				DebugLocation(426, 28);
+				PushFollow(Follow._expr_in_expr3636);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9909,20 +10021,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 26:
 				DebugEnterAlt(26);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:421:9: ^( GREATER_THAN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:427:9: ^( GREATER_THAN expr expr )
 				{
-				DebugLocation(421, 9);
-				DebugLocation(421, 11);
-				Match(input,GREATER_THAN,Follow._GREATER_THAN_in_expr3545); if (state.failed) return node;
+				DebugLocation(427, 9);
+				DebugLocation(427, 11);
+				Match(input,GREATER_THAN,Follow._GREATER_THAN_in_expr3648); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(421, 24);
-				PushFollow(Follow._expr_in_expr3547);
+				DebugLocation(427, 24);
+				PushFollow(Follow._expr_in_expr3650);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(421, 29);
-				PushFollow(Follow._expr_in_expr3549);
+				DebugLocation(427, 29);
+				PushFollow(Follow._expr_in_expr3652);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9934,20 +10046,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 27:
 				DebugEnterAlt(27);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:422:9: ^( SHIFT_LEFT expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:428:9: ^( SHIFT_LEFT expr expr )
 				{
-				DebugLocation(422, 9);
-				DebugLocation(422, 11);
-				Match(input,SHIFT_LEFT,Follow._SHIFT_LEFT_in_expr3561); if (state.failed) return node;
+				DebugLocation(428, 9);
+				DebugLocation(428, 11);
+				Match(input,SHIFT_LEFT,Follow._SHIFT_LEFT_in_expr3664); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(422, 22);
-				PushFollow(Follow._expr_in_expr3563);
+				DebugLocation(428, 22);
+				PushFollow(Follow._expr_in_expr3666);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(422, 27);
-				PushFollow(Follow._expr_in_expr3565);
+				DebugLocation(428, 27);
+				PushFollow(Follow._expr_in_expr3668);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9959,20 +10071,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 28:
 				DebugEnterAlt(28);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:423:9: ^( LESS_THAN expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:429:9: ^( LESS_THAN expr expr )
 				{
-				DebugLocation(423, 9);
-				DebugLocation(423, 11);
-				Match(input,LESS_THAN,Follow._LESS_THAN_in_expr3577); if (state.failed) return node;
+				DebugLocation(429, 9);
+				DebugLocation(429, 11);
+				Match(input,LESS_THAN,Follow._LESS_THAN_in_expr3680); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(423, 21);
-				PushFollow(Follow._expr_in_expr3579);
+				DebugLocation(429, 21);
+				PushFollow(Follow._expr_in_expr3682);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(423, 26);
-				PushFollow(Follow._expr_in_expr3581);
+				DebugLocation(429, 26);
+				PushFollow(Follow._expr_in_expr3684);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -9984,20 +10096,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 29:
 				DebugEnterAlt(29);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:424:9: ^( PLUS expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:430:9: ^( PLUS expr expr )
 				{
-				DebugLocation(424, 9);
-				DebugLocation(424, 11);
-				Match(input,PLUS,Follow._PLUS_in_expr3593); if (state.failed) return node;
+				DebugLocation(430, 9);
+				DebugLocation(430, 11);
+				Match(input,PLUS,Follow._PLUS_in_expr3696); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(424, 16);
-				PushFollow(Follow._expr_in_expr3595);
+				DebugLocation(430, 16);
+				PushFollow(Follow._expr_in_expr3698);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(424, 21);
-				PushFollow(Follow._expr_in_expr3597);
+				DebugLocation(430, 21);
+				PushFollow(Follow._expr_in_expr3700);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10009,20 +10121,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 30:
 				DebugEnterAlt(30);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:425:9: ^( MINUS expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:431:9: ^( MINUS expr expr )
 				{
-				DebugLocation(425, 9);
-				DebugLocation(425, 11);
-				Match(input,MINUS,Follow._MINUS_in_expr3609); if (state.failed) return node;
+				DebugLocation(431, 9);
+				DebugLocation(431, 11);
+				Match(input,MINUS,Follow._MINUS_in_expr3712); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(425, 17);
-				PushFollow(Follow._expr_in_expr3611);
+				DebugLocation(431, 17);
+				PushFollow(Follow._expr_in_expr3714);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(425, 22);
-				PushFollow(Follow._expr_in_expr3613);
+				DebugLocation(431, 22);
+				PushFollow(Follow._expr_in_expr3716);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10034,20 +10146,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 31:
 				DebugEnterAlt(31);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:426:9: ^( STAR expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:432:9: ^( STAR expr expr )
 				{
-				DebugLocation(426, 9);
-				DebugLocation(426, 11);
-				Match(input,STAR,Follow._STAR_in_expr3625); if (state.failed) return node;
+				DebugLocation(432, 9);
+				DebugLocation(432, 11);
+				Match(input,STAR,Follow._STAR_in_expr3728); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(426, 16);
-				PushFollow(Follow._expr_in_expr3627);
+				DebugLocation(432, 16);
+				PushFollow(Follow._expr_in_expr3730);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(426, 21);
-				PushFollow(Follow._expr_in_expr3629);
+				DebugLocation(432, 21);
+				PushFollow(Follow._expr_in_expr3732);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10059,20 +10171,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 32:
 				DebugEnterAlt(32);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:427:9: ^( DIV expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:433:9: ^( DIV expr expr )
 				{
-				DebugLocation(427, 9);
-				DebugLocation(427, 11);
-				Match(input,DIV,Follow._DIV_in_expr3641); if (state.failed) return node;
+				DebugLocation(433, 9);
+				DebugLocation(433, 11);
+				Match(input,DIV,Follow._DIV_in_expr3744); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(427, 15);
-				PushFollow(Follow._expr_in_expr3643);
+				DebugLocation(433, 15);
+				PushFollow(Follow._expr_in_expr3746);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(427, 20);
-				PushFollow(Follow._expr_in_expr3645);
+				DebugLocation(433, 20);
+				PushFollow(Follow._expr_in_expr3748);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10084,20 +10196,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 33:
 				DebugEnterAlt(33);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:428:9: ^( MOD expr expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:434:9: ^( MOD expr expr )
 				{
-				DebugLocation(428, 9);
-				DebugLocation(428, 11);
-				Match(input,MOD,Follow._MOD_in_expr3657); if (state.failed) return node;
+				DebugLocation(434, 9);
+				DebugLocation(434, 11);
+				Match(input,MOD,Follow._MOD_in_expr3760); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(428, 15);
-				PushFollow(Follow._expr_in_expr3659);
+				DebugLocation(434, 15);
+				PushFollow(Follow._expr_in_expr3762);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(428, 20);
-				PushFollow(Follow._expr_in_expr3661);
+				DebugLocation(434, 20);
+				PushFollow(Follow._expr_in_expr3764);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10109,15 +10221,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 34:
 				DebugEnterAlt(34);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:429:9: ^( UNARY_PLUS expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:435:9: ^( UNARY_PLUS expr )
 				{
-				DebugLocation(429, 9);
-				DebugLocation(429, 11);
-				Match(input,UNARY_PLUS,Follow._UNARY_PLUS_in_expr3673); if (state.failed) return node;
+				DebugLocation(435, 9);
+				DebugLocation(435, 11);
+				Match(input,UNARY_PLUS,Follow._UNARY_PLUS_in_expr3776); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(429, 22);
-				PushFollow(Follow._expr_in_expr3675);
+				DebugLocation(435, 22);
+				PushFollow(Follow._expr_in_expr3778);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10129,15 +10241,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 35:
 				DebugEnterAlt(35);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:430:9: ^( UNARY_MINUS expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:436:9: ^( UNARY_MINUS expr )
 				{
-				DebugLocation(430, 9);
-				DebugLocation(430, 11);
-				Match(input,UNARY_MINUS,Follow._UNARY_MINUS_in_expr3687); if (state.failed) return node;
+				DebugLocation(436, 9);
+				DebugLocation(436, 11);
+				Match(input,UNARY_MINUS,Follow._UNARY_MINUS_in_expr3790); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(430, 23);
-				PushFollow(Follow._expr_in_expr3689);
+				DebugLocation(436, 23);
+				PushFollow(Follow._expr_in_expr3792);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10149,15 +10261,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 36:
 				DebugEnterAlt(36);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:431:9: ^( PRE_INC expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:437:9: ^( PRE_INC expr )
 				{
-				DebugLocation(431, 9);
-				DebugLocation(431, 11);
-				Match(input,PRE_INC,Follow._PRE_INC_in_expr3701); if (state.failed) return node;
+				DebugLocation(437, 9);
+				DebugLocation(437, 11);
+				Match(input,PRE_INC,Follow._PRE_INC_in_expr3804); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(431, 19);
-				PushFollow(Follow._expr_in_expr3703);
+				DebugLocation(437, 19);
+				PushFollow(Follow._expr_in_expr3806);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10169,15 +10281,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 37:
 				DebugEnterAlt(37);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:432:9: ^( PRE_DEC expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:438:9: ^( PRE_DEC expr )
 				{
-				DebugLocation(432, 9);
-				DebugLocation(432, 11);
-				Match(input,PRE_DEC,Follow._PRE_DEC_in_expr3715); if (state.failed) return node;
+				DebugLocation(438, 9);
+				DebugLocation(438, 11);
+				Match(input,PRE_DEC,Follow._PRE_DEC_in_expr3818); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(432, 19);
-				PushFollow(Follow._expr_in_expr3717);
+				DebugLocation(438, 19);
+				PushFollow(Follow._expr_in_expr3820);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10189,15 +10301,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 38:
 				DebugEnterAlt(38);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:433:9: ^( POST_INC expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:439:9: ^( POST_INC expr )
 				{
-				DebugLocation(433, 9);
-				DebugLocation(433, 11);
-				Match(input,POST_INC,Follow._POST_INC_in_expr3729); if (state.failed) return node;
+				DebugLocation(439, 9);
+				DebugLocation(439, 11);
+				Match(input,POST_INC,Follow._POST_INC_in_expr3832); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(433, 20);
-				PushFollow(Follow._expr_in_expr3731);
+				DebugLocation(439, 20);
+				PushFollow(Follow._expr_in_expr3834);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10209,15 +10321,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 39:
 				DebugEnterAlt(39);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:434:9: ^( POST_DEC expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:440:9: ^( POST_DEC expr )
 				{
-				DebugLocation(434, 9);
-				DebugLocation(434, 11);
-				Match(input,POST_DEC,Follow._POST_DEC_in_expr3743); if (state.failed) return node;
+				DebugLocation(440, 9);
+				DebugLocation(440, 11);
+				Match(input,POST_DEC,Follow._POST_DEC_in_expr3846); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(434, 20);
-				PushFollow(Follow._expr_in_expr3745);
+				DebugLocation(440, 20);
+				PushFollow(Follow._expr_in_expr3848);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10229,15 +10341,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 40:
 				DebugEnterAlt(40);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:435:9: ^( NOT expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:441:9: ^( NOT expr )
 				{
-				DebugLocation(435, 9);
-				DebugLocation(435, 11);
-				Match(input,NOT,Follow._NOT_in_expr3757); if (state.failed) return node;
+				DebugLocation(441, 9);
+				DebugLocation(441, 11);
+				Match(input,NOT,Follow._NOT_in_expr3860); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(435, 15);
-				PushFollow(Follow._expr_in_expr3759);
+				DebugLocation(441, 15);
+				PushFollow(Follow._expr_in_expr3862);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10249,15 +10361,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 41:
 				DebugEnterAlt(41);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:436:9: ^( LOGICAL_NOT expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:442:9: ^( LOGICAL_NOT expr )
 				{
-				DebugLocation(436, 9);
-				DebugLocation(436, 11);
-				Match(input,LOGICAL_NOT,Follow._LOGICAL_NOT_in_expr3771); if (state.failed) return node;
+				DebugLocation(442, 9);
+				DebugLocation(442, 11);
+				Match(input,LOGICAL_NOT,Follow._LOGICAL_NOT_in_expr3874); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(436, 23);
-				PushFollow(Follow._expr_in_expr3773);
+				DebugLocation(442, 23);
+				PushFollow(Follow._expr_in_expr3876);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10269,20 +10381,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 42:
 				DebugEnterAlt(42);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:437:9: ^( CAST_EXPR type expr )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:443:9: ^( CAST_EXPR type expr )
 				{
-				DebugLocation(437, 9);
-				DebugLocation(437, 11);
-				Match(input,CAST_EXPR,Follow._CAST_EXPR_in_expr3785); if (state.failed) return node;
+				DebugLocation(443, 9);
+				DebugLocation(443, 11);
+				Match(input,CAST_EXPR,Follow._CAST_EXPR_in_expr3888); if (state.failed) return node;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return node;
-				DebugLocation(437, 21);
-				PushFollow(Follow._type_in_expr3787);
+				DebugLocation(443, 21);
+				PushFollow(Follow._type_in_expr3890);
 				type();
 				PopFollow();
 				if (state.failed) return node;
-				DebugLocation(437, 26);
-				PushFollow(Follow._expr_in_expr3789);
+				DebugLocation(443, 26);
+				PushFollow(Follow._expr_in_expr3892);
 				expr();
 				PopFollow();
 				if (state.failed) return node;
@@ -10294,10 +10406,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 43:
 				DebugEnterAlt(43);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:438:9: primaryExpression
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:444:9: primaryExpression
 				{
-				DebugLocation(438, 9);
-				PushFollow(Follow._primaryExpression_in_expr3800);
+				DebugLocation(444, 9);
+				PushFollow(Follow._primaryExpression_in_expr3903);
 				primaryExpression();
 				PopFollow();
 				if (state.failed) return node;
@@ -10320,7 +10432,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 66, expr_StartIndex); }
 
 		}
-		DebugLocation(439, 4);
+		DebugLocation(445, 4);
 		} finally { DebugExitRule(GrammarFileName, "expr"); }
 		return node;
 
@@ -10330,7 +10442,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_primaryExpression();
 	partial void LeaveRule_primaryExpression();
 	// $ANTLR start "primaryExpression"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:441:1: primaryExpression : ( ^( DOT ( primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS ) | primitiveType CLASS | VOID CLASS ) ) | parenthesizedExpression | IDENT | ^( METHOD_CALL primaryExpression ( genericTypeArgumentList )? arguments ) | explicitConstructorCall | ^( ARRAY_ELEMENT_ACCESS primaryExpression expression ) | literal | newExpression | THIS | arrayTypeDeclarator | SUPER );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:447:1: primaryExpression : ( ^( DOT ( primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS ) | primitiveType CLASS | VOID CLASS ) ) | parenthesizedExpression | IDENT | ^( METHOD_CALL primaryExpression ( genericTypeArgumentList )? arguments ) | explicitConstructorCall | ^( ARRAY_ELEMENT_ACCESS primaryExpression expression ) | literal | newExpression | THIS | arrayTypeDeclarator | SUPER );
 	[GrammarRule("primaryExpression")]
 	private void primaryExpression()
 	{
@@ -10340,12 +10452,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int primaryExpression_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "primaryExpression");
-		DebugLocation(441, 4);
+		DebugLocation(447, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 67)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:442:5: ( ^( DOT ( primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS ) | primitiveType CLASS | VOID CLASS ) ) | parenthesizedExpression | IDENT | ^( METHOD_CALL primaryExpression ( genericTypeArgumentList )? arguments ) | explicitConstructorCall | ^( ARRAY_ELEMENT_ACCESS primaryExpression expression ) | literal | newExpression | THIS | arrayTypeDeclarator | SUPER )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:448:5: ( ^( DOT ( primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS ) | primitiveType CLASS | VOID CLASS ) ) | parenthesizedExpression | IDENT | ^( METHOD_CALL primaryExpression ( genericTypeArgumentList )? arguments ) | explicitConstructorCall | ^( ARRAY_ELEMENT_ACCESS primaryExpression expression ) | literal | newExpression | THIS | arrayTypeDeclarator | SUPER )
 			int alt107=11;
 			try { DebugEnterDecision(107, false);
 			switch (input.LA(1))
@@ -10429,15 +10541,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:442:9: ^( DOT ( primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS ) | primitiveType CLASS | VOID CLASS ) )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:448:9: ^( DOT ( primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS ) | primitiveType CLASS | VOID CLASS ) )
 				{
-				DebugLocation(442, 9);
-				DebugLocation(442, 13);
-				Match(input,DOT,Follow._DOT_in_primaryExpression3826); if (state.failed) return;
+				DebugLocation(448, 9);
+				DebugLocation(448, 13);
+				Match(input,DOT,Follow._DOT_in_primaryExpression3929); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(443, 13);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:443:13: ( primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS ) | primitiveType CLASS | VOID CLASS )
+				DebugLocation(449, 13);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:449:13: ( primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS ) | primitiveType CLASS | VOID CLASS )
 				int alt105=3;
 				try { DebugEnterSubRule(105);
 				try { DebugEnterDecision(105, false);
@@ -10499,15 +10611,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:443:17: primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS )
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:449:17: primaryExpression ( IDENT | THIS | SUPER | innerNewExpression | CLASS )
 					{
-					DebugLocation(443, 17);
-					PushFollow(Follow._primaryExpression_in_primaryExpression3844);
+					DebugLocation(449, 17);
+					PushFollow(Follow._primaryExpression_in_primaryExpression3947);
 					primaryExpression();
 					PopFollow();
 					if (state.failed) return;
-					DebugLocation(444, 17);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:444:17: ( IDENT | THIS | SUPER | innerNewExpression | CLASS )
+					DebugLocation(450, 17);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:450:17: ( IDENT | THIS | SUPER | innerNewExpression | CLASS )
 					int alt104=5;
 					try { DebugEnterSubRule(104);
 					try { DebugEnterDecision(104, false);
@@ -10552,37 +10664,37 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:444:21: IDENT
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:450:21: IDENT
 						{
-						DebugLocation(444, 21);
-						Match(input,IDENT,Follow._IDENT_in_primaryExpression3866); if (state.failed) return;
+						DebugLocation(450, 21);
+						Match(input,IDENT,Follow._IDENT_in_primaryExpression3969); if (state.failed) return;
 
 						}
 						break;
 					case 2:
 						DebugEnterAlt(2);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:445:21: THIS
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:451:21: THIS
 						{
-						DebugLocation(445, 21);
-						Match(input,THIS,Follow._THIS_in_primaryExpression3888); if (state.failed) return;
+						DebugLocation(451, 21);
+						Match(input,THIS,Follow._THIS_in_primaryExpression3991); if (state.failed) return;
 
 						}
 						break;
 					case 3:
 						DebugEnterAlt(3);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:446:21: SUPER
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:452:21: SUPER
 						{
-						DebugLocation(446, 21);
-						Match(input,SUPER,Follow._SUPER_in_primaryExpression3910); if (state.failed) return;
+						DebugLocation(452, 21);
+						Match(input,SUPER,Follow._SUPER_in_primaryExpression4013); if (state.failed) return;
 
 						}
 						break;
 					case 4:
 						DebugEnterAlt(4);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:447:21: innerNewExpression
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:453:21: innerNewExpression
 						{
-						DebugLocation(447, 21);
-						PushFollow(Follow._innerNewExpression_in_primaryExpression3932);
+						DebugLocation(453, 21);
+						PushFollow(Follow._innerNewExpression_in_primaryExpression4035);
 						innerNewExpression();
 						PopFollow();
 						if (state.failed) return;
@@ -10591,10 +10703,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 						break;
 					case 5:
 						DebugEnterAlt(5);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:448:21: CLASS
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:454:21: CLASS
 						{
-						DebugLocation(448, 21);
-						Match(input,CLASS,Follow._CLASS_in_primaryExpression3954); if (state.failed) return;
+						DebugLocation(454, 21);
+						Match(input,CLASS,Follow._CLASS_in_primaryExpression4057); if (state.failed) return;
 
 						}
 						break;
@@ -10607,26 +10719,26 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:450:17: primitiveType CLASS
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:456:17: primitiveType CLASS
 					{
-					DebugLocation(450, 17);
-					PushFollow(Follow._primitiveType_in_primaryExpression3990);
+					DebugLocation(456, 17);
+					PushFollow(Follow._primitiveType_in_primaryExpression4093);
 					primitiveType();
 					PopFollow();
 					if (state.failed) return;
-					DebugLocation(450, 31);
-					Match(input,CLASS,Follow._CLASS_in_primaryExpression3992); if (state.failed) return;
+					DebugLocation(456, 31);
+					Match(input,CLASS,Follow._CLASS_in_primaryExpression4095); if (state.failed) return;
 
 					}
 					break;
 				case 3:
 					DebugEnterAlt(3);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:451:17: VOID CLASS
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:457:17: VOID CLASS
 					{
-					DebugLocation(451, 17);
-					Match(input,VOID,Follow._VOID_in_primaryExpression4010); if (state.failed) return;
-					DebugLocation(451, 22);
-					Match(input,CLASS,Follow._CLASS_in_primaryExpression4012); if (state.failed) return;
+					DebugLocation(457, 17);
+					Match(input,VOID,Follow._VOID_in_primaryExpression4113); if (state.failed) return;
+					DebugLocation(457, 22);
+					Match(input,CLASS,Follow._CLASS_in_primaryExpression4115); if (state.failed) return;
 
 					}
 					break;
@@ -10642,10 +10754,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:454:9: parenthesizedExpression
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:460:9: parenthesizedExpression
 				{
-				DebugLocation(454, 9);
-				PushFollow(Follow._parenthesizedExpression_in_primaryExpression4046);
+				DebugLocation(460, 9);
+				PushFollow(Follow._parenthesizedExpression_in_primaryExpression4149);
 				parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return;
@@ -10654,29 +10766,29 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:455:9: IDENT
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:461:9: IDENT
 				{
-				DebugLocation(455, 9);
-				Match(input,IDENT,Follow._IDENT_in_primaryExpression4056); if (state.failed) return;
+				DebugLocation(461, 9);
+				Match(input,IDENT,Follow._IDENT_in_primaryExpression4159); if (state.failed) return;
 
 				}
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:456:9: ^( METHOD_CALL primaryExpression ( genericTypeArgumentList )? arguments )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:462:9: ^( METHOD_CALL primaryExpression ( genericTypeArgumentList )? arguments )
 				{
-				DebugLocation(456, 9);
-				DebugLocation(456, 11);
-				Match(input,METHOD_CALL,Follow._METHOD_CALL_in_primaryExpression4067); if (state.failed) return;
+				DebugLocation(462, 9);
+				DebugLocation(462, 11);
+				Match(input,METHOD_CALL,Follow._METHOD_CALL_in_primaryExpression4170); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(456, 23);
-				PushFollow(Follow._primaryExpression_in_primaryExpression4069);
+				DebugLocation(462, 23);
+				PushFollow(Follow._primaryExpression_in_primaryExpression4172);
 				primaryExpression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(456, 41);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:456:41: ( genericTypeArgumentList )?
+				DebugLocation(462, 41);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:462:41: ( genericTypeArgumentList )?
 				int alt106=2;
 				try { DebugEnterSubRule(106);
 				try { DebugEnterDecision(106, false);
@@ -10691,10 +10803,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:456:41: genericTypeArgumentList
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:462:41: genericTypeArgumentList
 					{
-					DebugLocation(456, 41);
-					PushFollow(Follow._genericTypeArgumentList_in_primaryExpression4071);
+					DebugLocation(462, 41);
+					PushFollow(Follow._genericTypeArgumentList_in_primaryExpression4174);
 					genericTypeArgumentList();
 					PopFollow();
 					if (state.failed) return;
@@ -10705,8 +10817,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				}
 				} finally { DebugExitSubRule(106); }
 
-				DebugLocation(456, 66);
-				PushFollow(Follow._arguments_in_primaryExpression4074);
+				DebugLocation(462, 66);
+				PushFollow(Follow._arguments_in_primaryExpression4177);
 				arguments();
 				PopFollow();
 				if (state.failed) return;
@@ -10718,10 +10830,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 5:
 				DebugEnterAlt(5);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:457:9: explicitConstructorCall
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:463:9: explicitConstructorCall
 				{
-				DebugLocation(457, 9);
-				PushFollow(Follow._explicitConstructorCall_in_primaryExpression4085);
+				DebugLocation(463, 9);
+				PushFollow(Follow._explicitConstructorCall_in_primaryExpression4188);
 				explicitConstructorCall();
 				PopFollow();
 				if (state.failed) return;
@@ -10730,20 +10842,20 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 6:
 				DebugEnterAlt(6);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:458:9: ^( ARRAY_ELEMENT_ACCESS primaryExpression expression )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:464:9: ^( ARRAY_ELEMENT_ACCESS primaryExpression expression )
 				{
-				DebugLocation(458, 9);
-				DebugLocation(458, 11);
-				Match(input,ARRAY_ELEMENT_ACCESS,Follow._ARRAY_ELEMENT_ACCESS_in_primaryExpression4096); if (state.failed) return;
+				DebugLocation(464, 9);
+				DebugLocation(464, 11);
+				Match(input,ARRAY_ELEMENT_ACCESS,Follow._ARRAY_ELEMENT_ACCESS_in_primaryExpression4199); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(458, 32);
-				PushFollow(Follow._primaryExpression_in_primaryExpression4098);
+				DebugLocation(464, 32);
+				PushFollow(Follow._primaryExpression_in_primaryExpression4201);
 				primaryExpression();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(458, 50);
-				PushFollow(Follow._expression_in_primaryExpression4100);
+				DebugLocation(464, 50);
+				PushFollow(Follow._expression_in_primaryExpression4203);
 				expression();
 				PopFollow();
 				if (state.failed) return;
@@ -10755,10 +10867,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 7:
 				DebugEnterAlt(7);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:459:9: literal
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:465:9: literal
 				{
-				DebugLocation(459, 9);
-				PushFollow(Follow._literal_in_primaryExpression4111);
+				DebugLocation(465, 9);
+				PushFollow(Follow._literal_in_primaryExpression4214);
 				literal();
 				PopFollow();
 				if (state.failed) return;
@@ -10767,10 +10879,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 8:
 				DebugEnterAlt(8);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:460:9: newExpression
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:466:9: newExpression
 				{
-				DebugLocation(460, 9);
-				PushFollow(Follow._newExpression_in_primaryExpression4121);
+				DebugLocation(466, 9);
+				PushFollow(Follow._newExpression_in_primaryExpression4224);
 				newExpression();
 				PopFollow();
 				if (state.failed) return;
@@ -10779,19 +10891,19 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 9:
 				DebugEnterAlt(9);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:461:9: THIS
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:467:9: THIS
 				{
-				DebugLocation(461, 9);
-				Match(input,THIS,Follow._THIS_in_primaryExpression4131); if (state.failed) return;
+				DebugLocation(467, 9);
+				Match(input,THIS,Follow._THIS_in_primaryExpression4234); if (state.failed) return;
 
 				}
 				break;
 			case 10:
 				DebugEnterAlt(10);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:462:9: arrayTypeDeclarator
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:468:9: arrayTypeDeclarator
 				{
-				DebugLocation(462, 9);
-				PushFollow(Follow._arrayTypeDeclarator_in_primaryExpression4141);
+				DebugLocation(468, 9);
+				PushFollow(Follow._arrayTypeDeclarator_in_primaryExpression4244);
 				arrayTypeDeclarator();
 				PopFollow();
 				if (state.failed) return;
@@ -10800,10 +10912,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 11:
 				DebugEnterAlt(11);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:463:9: SUPER
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:469:9: SUPER
 				{
-				DebugLocation(463, 9);
-				Match(input,SUPER,Follow._SUPER_in_primaryExpression4151); if (state.failed) return;
+				DebugLocation(469, 9);
+				Match(input,SUPER,Follow._SUPER_in_primaryExpression4254); if (state.failed) return;
 
 				}
 				break;
@@ -10823,7 +10935,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 67, primaryExpression_StartIndex); }
 
 		}
-		DebugLocation(464, 4);
+		DebugLocation(470, 4);
 		} finally { DebugExitRule(GrammarFileName, "primaryExpression"); }
 		return;
 
@@ -10833,7 +10945,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_explicitConstructorCall();
 	partial void LeaveRule_explicitConstructorCall();
 	// $ANTLR start "explicitConstructorCall"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:466:1: explicitConstructorCall : ( ^( THIS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? arguments ) | ^( SUPER_CONSTRUCTOR_CALL ( primaryExpression )? ( genericTypeArgumentList )? arguments ) );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:472:1: explicitConstructorCall : ( ^( THIS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? arguments ) | ^( SUPER_CONSTRUCTOR_CALL ( primaryExpression )? ( genericTypeArgumentList )? arguments ) );
 	[GrammarRule("explicitConstructorCall")]
 	private void explicitConstructorCall()
 	{
@@ -10843,12 +10955,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int explicitConstructorCall_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "explicitConstructorCall");
-		DebugLocation(466, 4);
+		DebugLocation(472, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 68)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:467:5: ( ^( THIS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? arguments ) | ^( SUPER_CONSTRUCTOR_CALL ( primaryExpression )? ( genericTypeArgumentList )? arguments ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:473:5: ( ^( THIS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? arguments ) | ^( SUPER_CONSTRUCTOR_CALL ( primaryExpression )? ( genericTypeArgumentList )? arguments ) )
 			int alt111=2;
 			try { DebugEnterDecision(111, false);
 			int LA111_1 = input.LA(1);
@@ -10873,15 +10985,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:467:9: ^( THIS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? arguments )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:473:9: ^( THIS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? arguments )
 				{
-				DebugLocation(467, 9);
-				DebugLocation(467, 11);
-				Match(input,THIS_CONSTRUCTOR_CALL,Follow._THIS_CONSTRUCTOR_CALL_in_explicitConstructorCall4175); if (state.failed) return;
+				DebugLocation(473, 9);
+				DebugLocation(473, 11);
+				Match(input,THIS_CONSTRUCTOR_CALL,Follow._THIS_CONSTRUCTOR_CALL_in_explicitConstructorCall4278); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(467, 33);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:467:33: ( genericTypeArgumentList )?
+				DebugLocation(473, 33);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:473:33: ( genericTypeArgumentList )?
 				int alt108=2;
 				try { DebugEnterSubRule(108);
 				try { DebugEnterDecision(108, false);
@@ -10896,10 +11008,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:467:33: genericTypeArgumentList
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:473:33: genericTypeArgumentList
 					{
-					DebugLocation(467, 33);
-					PushFollow(Follow._genericTypeArgumentList_in_explicitConstructorCall4177);
+					DebugLocation(473, 33);
+					PushFollow(Follow._genericTypeArgumentList_in_explicitConstructorCall4280);
 					genericTypeArgumentList();
 					PopFollow();
 					if (state.failed) return;
@@ -10910,8 +11022,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				}
 				} finally { DebugExitSubRule(108); }
 
-				DebugLocation(467, 58);
-				PushFollow(Follow._arguments_in_explicitConstructorCall4180);
+				DebugLocation(473, 58);
+				PushFollow(Follow._arguments_in_explicitConstructorCall4283);
 				arguments();
 				PopFollow();
 				if (state.failed) return;
@@ -10923,15 +11035,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:468:9: ^( SUPER_CONSTRUCTOR_CALL ( primaryExpression )? ( genericTypeArgumentList )? arguments )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:474:9: ^( SUPER_CONSTRUCTOR_CALL ( primaryExpression )? ( genericTypeArgumentList )? arguments )
 				{
-				DebugLocation(468, 9);
-				DebugLocation(468, 11);
-				Match(input,SUPER_CONSTRUCTOR_CALL,Follow._SUPER_CONSTRUCTOR_CALL_in_explicitConstructorCall4192); if (state.failed) return;
+				DebugLocation(474, 9);
+				DebugLocation(474, 11);
+				Match(input,SUPER_CONSTRUCTOR_CALL,Follow._SUPER_CONSTRUCTOR_CALL_in_explicitConstructorCall4295); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(468, 34);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:468:34: ( primaryExpression )?
+				DebugLocation(474, 34);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:474:34: ( primaryExpression )?
 				int alt109=2;
 				try { DebugEnterSubRule(109);
 				try { DebugEnterDecision(109, false);
@@ -10946,10 +11058,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:468:34: primaryExpression
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:474:34: primaryExpression
 					{
-					DebugLocation(468, 34);
-					PushFollow(Follow._primaryExpression_in_explicitConstructorCall4194);
+					DebugLocation(474, 34);
+					PushFollow(Follow._primaryExpression_in_explicitConstructorCall4297);
 					primaryExpression();
 					PopFollow();
 					if (state.failed) return;
@@ -10960,8 +11072,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				}
 				} finally { DebugExitSubRule(109); }
 
-				DebugLocation(468, 53);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:468:53: ( genericTypeArgumentList )?
+				DebugLocation(474, 53);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:474:53: ( genericTypeArgumentList )?
 				int alt110=2;
 				try { DebugEnterSubRule(110);
 				try { DebugEnterDecision(110, false);
@@ -10976,10 +11088,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:468:53: genericTypeArgumentList
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:474:53: genericTypeArgumentList
 					{
-					DebugLocation(468, 53);
-					PushFollow(Follow._genericTypeArgumentList_in_explicitConstructorCall4197);
+					DebugLocation(474, 53);
+					PushFollow(Follow._genericTypeArgumentList_in_explicitConstructorCall4300);
 					genericTypeArgumentList();
 					PopFollow();
 					if (state.failed) return;
@@ -10990,8 +11102,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				}
 				} finally { DebugExitSubRule(110); }
 
-				DebugLocation(468, 78);
-				PushFollow(Follow._arguments_in_explicitConstructorCall4200);
+				DebugLocation(474, 78);
+				PushFollow(Follow._arguments_in_explicitConstructorCall4303);
 				arguments();
 				PopFollow();
 				if (state.failed) return;
@@ -11017,7 +11129,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 68, explicitConstructorCall_StartIndex); }
 
 		}
-		DebugLocation(469, 4);
+		DebugLocation(475, 4);
 		} finally { DebugExitRule(GrammarFileName, "explicitConstructorCall"); }
 		return;
 
@@ -11027,7 +11139,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_arrayTypeDeclarator();
 	partial void LeaveRule_arrayTypeDeclarator();
 	// $ANTLR start "arrayTypeDeclarator"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:471:1: arrayTypeDeclarator : ^( ARRAY_DECLARATOR ( arrayTypeDeclarator | qualifiedIdentifier | primitiveType ) ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:477:1: arrayTypeDeclarator : ^( ARRAY_DECLARATOR ( arrayTypeDeclarator | qualifiedIdentifier | primitiveType ) ) ;
 	[GrammarRule("arrayTypeDeclarator")]
 	private void arrayTypeDeclarator()
 	{
@@ -11037,22 +11149,22 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int arrayTypeDeclarator_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "arrayTypeDeclarator");
-		DebugLocation(471, 4);
+		DebugLocation(477, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 69)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:472:5: ( ^( ARRAY_DECLARATOR ( arrayTypeDeclarator | qualifiedIdentifier | primitiveType ) ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:478:5: ( ^( ARRAY_DECLARATOR ( arrayTypeDeclarator | qualifiedIdentifier | primitiveType ) ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:472:9: ^( ARRAY_DECLARATOR ( arrayTypeDeclarator | qualifiedIdentifier | primitiveType ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:478:9: ^( ARRAY_DECLARATOR ( arrayTypeDeclarator | qualifiedIdentifier | primitiveType ) )
 			{
-			DebugLocation(472, 9);
-			DebugLocation(472, 11);
-			Match(input,ARRAY_DECLARATOR,Follow._ARRAY_DECLARATOR_in_arrayTypeDeclarator4221); if (state.failed) return;
+			DebugLocation(478, 9);
+			DebugLocation(478, 11);
+			Match(input,ARRAY_DECLARATOR,Follow._ARRAY_DECLARATOR_in_arrayTypeDeclarator4324); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(472, 28);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:472:28: ( arrayTypeDeclarator | qualifiedIdentifier | primitiveType )
+			DebugLocation(478, 28);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:478:28: ( arrayTypeDeclarator | qualifiedIdentifier | primitiveType )
 			int alt112=3;
 			try { DebugEnterSubRule(112);
 			try { DebugEnterDecision(112, false);
@@ -11095,10 +11207,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:472:29: arrayTypeDeclarator
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:478:29: arrayTypeDeclarator
 				{
-				DebugLocation(472, 29);
-				PushFollow(Follow._arrayTypeDeclarator_in_arrayTypeDeclarator4224);
+				DebugLocation(478, 29);
+				PushFollow(Follow._arrayTypeDeclarator_in_arrayTypeDeclarator4327);
 				arrayTypeDeclarator();
 				PopFollow();
 				if (state.failed) return;
@@ -11107,10 +11219,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:472:51: qualifiedIdentifier
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:478:51: qualifiedIdentifier
 				{
-				DebugLocation(472, 51);
-				PushFollow(Follow._qualifiedIdentifier_in_arrayTypeDeclarator4228);
+				DebugLocation(478, 51);
+				PushFollow(Follow._qualifiedIdentifier_in_arrayTypeDeclarator4331);
 				qualifiedIdentifier();
 				PopFollow();
 				if (state.failed) return;
@@ -11119,10 +11231,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:472:73: primitiveType
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:478:73: primitiveType
 				{
-				DebugLocation(472, 73);
-				PushFollow(Follow._primitiveType_in_arrayTypeDeclarator4232);
+				DebugLocation(478, 73);
+				PushFollow(Follow._primitiveType_in_arrayTypeDeclarator4335);
 				primitiveType();
 				PopFollow();
 				if (state.failed) return;
@@ -11153,7 +11265,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 69, arrayTypeDeclarator_StartIndex); }
 
 		}
-		DebugLocation(473, 4);
+		DebugLocation(479, 4);
 		} finally { DebugExitRule(GrammarFileName, "arrayTypeDeclarator"); }
 		return;
 
@@ -11163,7 +11275,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_newExpression();
 	partial void LeaveRule_newExpression();
 	// $ANTLR start "newExpression"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:475:1: newExpression : ( ^( STATIC_ARRAY_CREATOR ( primitiveType newArrayConstruction | ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction ) ) | ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? qualifiedTypeIdent arguments ( classTopLevelScope )? ) );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:481:1: newExpression : ( ^( STATIC_ARRAY_CREATOR ( primitiveType newArrayConstruction | ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction ) ) | ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? qualifiedTypeIdent arguments ( classTopLevelScope )? ) );
 	[GrammarRule("newExpression")]
 	private void newExpression()
 	{
@@ -11173,12 +11285,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int newExpression_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "newExpression");
-		DebugLocation(475, 4);
+		DebugLocation(481, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 70)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:476:5: ( ^( STATIC_ARRAY_CREATOR ( primitiveType newArrayConstruction | ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction ) ) | ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? qualifiedTypeIdent arguments ( classTopLevelScope )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:482:5: ( ^( STATIC_ARRAY_CREATOR ( primitiveType newArrayConstruction | ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction ) ) | ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? qualifiedTypeIdent arguments ( classTopLevelScope )? ) )
 			int alt117=2;
 			try { DebugEnterDecision(117, false);
 			int LA117_1 = input.LA(1);
@@ -11203,15 +11315,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:476:9: ^( STATIC_ARRAY_CREATOR ( primitiveType newArrayConstruction | ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction ) )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:482:9: ^( STATIC_ARRAY_CREATOR ( primitiveType newArrayConstruction | ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction ) )
 				{
-				DebugLocation(476, 9);
-				DebugLocation(476, 13);
-				Match(input,STATIC_ARRAY_CREATOR,Follow._STATIC_ARRAY_CREATOR_in_newExpression4256); if (state.failed) return;
+				DebugLocation(482, 9);
+				DebugLocation(482, 13);
+				Match(input,STATIC_ARRAY_CREATOR,Follow._STATIC_ARRAY_CREATOR_in_newExpression4359); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(477, 13);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:477:13: ( primitiveType newArrayConstruction | ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction )
+				DebugLocation(483, 13);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:483:13: ( primitiveType newArrayConstruction | ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction )
 				int alt114=2;
 				try { DebugEnterSubRule(114);
 				try { DebugEnterDecision(114, false);
@@ -11237,15 +11349,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:477:17: primitiveType newArrayConstruction
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:483:17: primitiveType newArrayConstruction
 					{
-					DebugLocation(477, 17);
-					PushFollow(Follow._primitiveType_in_newExpression4274);
+					DebugLocation(483, 17);
+					PushFollow(Follow._primitiveType_in_newExpression4377);
 					primitiveType();
 					PopFollow();
 					if (state.failed) return;
-					DebugLocation(477, 31);
-					PushFollow(Follow._newArrayConstruction_in_newExpression4276);
+					DebugLocation(483, 31);
+					PushFollow(Follow._newArrayConstruction_in_newExpression4379);
 					newArrayConstruction();
 					PopFollow();
 					if (state.failed) return;
@@ -11254,10 +11366,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					break;
 				case 2:
 					DebugEnterAlt(2);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:478:17: ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:484:17: ( genericTypeArgumentList )? qualifiedTypeIdent newArrayConstruction
 					{
-					DebugLocation(478, 17);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:478:17: ( genericTypeArgumentList )?
+					DebugLocation(484, 17);
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:484:17: ( genericTypeArgumentList )?
 					int alt113=2;
 					try { DebugEnterSubRule(113);
 					try { DebugEnterDecision(113, false);
@@ -11272,10 +11384,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:478:17: genericTypeArgumentList
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:484:17: genericTypeArgumentList
 						{
-						DebugLocation(478, 17);
-						PushFollow(Follow._genericTypeArgumentList_in_newExpression4294);
+						DebugLocation(484, 17);
+						PushFollow(Follow._genericTypeArgumentList_in_newExpression4397);
 						genericTypeArgumentList();
 						PopFollow();
 						if (state.failed) return;
@@ -11286,13 +11398,13 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					}
 					} finally { DebugExitSubRule(113); }
 
-					DebugLocation(478, 42);
-					PushFollow(Follow._qualifiedTypeIdent_in_newExpression4297);
+					DebugLocation(484, 42);
+					PushFollow(Follow._qualifiedTypeIdent_in_newExpression4400);
 					qualifiedTypeIdent();
 					PopFollow();
 					if (state.failed) return;
-					DebugLocation(478, 61);
-					PushFollow(Follow._newArrayConstruction_in_newExpression4299);
+					DebugLocation(484, 61);
+					PushFollow(Follow._newArrayConstruction_in_newExpression4402);
 					newArrayConstruction();
 					PopFollow();
 					if (state.failed) return;
@@ -11311,15 +11423,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:481:9: ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? qualifiedTypeIdent arguments ( classTopLevelScope )? )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:487:9: ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? qualifiedTypeIdent arguments ( classTopLevelScope )? )
 				{
-				DebugLocation(481, 9);
-				DebugLocation(481, 11);
-				Match(input,CLASS_CONSTRUCTOR_CALL,Follow._CLASS_CONSTRUCTOR_CALL_in_newExpression4334); if (state.failed) return;
+				DebugLocation(487, 9);
+				DebugLocation(487, 11);
+				Match(input,CLASS_CONSTRUCTOR_CALL,Follow._CLASS_CONSTRUCTOR_CALL_in_newExpression4437); if (state.failed) return;
 
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(481, 34);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:481:34: ( genericTypeArgumentList )?
+				DebugLocation(487, 34);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:487:34: ( genericTypeArgumentList )?
 				int alt115=2;
 				try { DebugEnterSubRule(115);
 				try { DebugEnterDecision(115, false);
@@ -11334,10 +11446,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:481:34: genericTypeArgumentList
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:487:34: genericTypeArgumentList
 					{
-					DebugLocation(481, 34);
-					PushFollow(Follow._genericTypeArgumentList_in_newExpression4336);
+					DebugLocation(487, 34);
+					PushFollow(Follow._genericTypeArgumentList_in_newExpression4439);
 					genericTypeArgumentList();
 					PopFollow();
 					if (state.failed) return;
@@ -11348,18 +11460,18 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				}
 				} finally { DebugExitSubRule(115); }
 
-				DebugLocation(481, 59);
-				PushFollow(Follow._qualifiedTypeIdent_in_newExpression4339);
+				DebugLocation(487, 59);
+				PushFollow(Follow._qualifiedTypeIdent_in_newExpression4442);
 				qualifiedTypeIdent();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(481, 78);
-				PushFollow(Follow._arguments_in_newExpression4341);
+				DebugLocation(487, 78);
+				PushFollow(Follow._arguments_in_newExpression4444);
 				arguments();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(481, 88);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:481:88: ( classTopLevelScope )?
+				DebugLocation(487, 88);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:487:88: ( classTopLevelScope )?
 				int alt116=2;
 				try { DebugEnterSubRule(116);
 				try { DebugEnterDecision(116, false);
@@ -11374,10 +11486,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:481:88: classTopLevelScope
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:487:88: classTopLevelScope
 					{
-					DebugLocation(481, 88);
-					PushFollow(Follow._classTopLevelScope_in_newExpression4343);
+					DebugLocation(487, 88);
+					PushFollow(Follow._classTopLevelScope_in_newExpression4446);
 					classTopLevelScope();
 					PopFollow();
 					if (state.failed) return;
@@ -11410,7 +11522,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 70, newExpression_StartIndex); }
 
 		}
-		DebugLocation(482, 4);
+		DebugLocation(488, 4);
 		} finally { DebugExitRule(GrammarFileName, "newExpression"); }
 		return;
 
@@ -11420,7 +11532,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_innerNewExpression();
 	partial void LeaveRule_innerNewExpression();
 	// $ANTLR start "innerNewExpression"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:484:1: innerNewExpression : ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? IDENT arguments ( classTopLevelScope )? ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:490:1: innerNewExpression : ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? IDENT arguments ( classTopLevelScope )? ) ;
 	[GrammarRule("innerNewExpression")]
 	private void innerNewExpression()
 	{
@@ -11430,22 +11542,22 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int innerNewExpression_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "innerNewExpression");
-		DebugLocation(484, 4);
+		DebugLocation(490, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 71)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:485:5: ( ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? IDENT arguments ( classTopLevelScope )? ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:491:5: ( ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? IDENT arguments ( classTopLevelScope )? ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:485:9: ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? IDENT arguments ( classTopLevelScope )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:491:9: ^( CLASS_CONSTRUCTOR_CALL ( genericTypeArgumentList )? IDENT arguments ( classTopLevelScope )? )
 			{
-			DebugLocation(485, 9);
-			DebugLocation(485, 11);
-			Match(input,CLASS_CONSTRUCTOR_CALL,Follow._CLASS_CONSTRUCTOR_CALL_in_innerNewExpression4366); if (state.failed) return;
+			DebugLocation(491, 9);
+			DebugLocation(491, 11);
+			Match(input,CLASS_CONSTRUCTOR_CALL,Follow._CLASS_CONSTRUCTOR_CALL_in_innerNewExpression4469); if (state.failed) return;
 
 			Match(input, TokenTypes.Down, null); if (state.failed) return;
-			DebugLocation(485, 34);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:485:34: ( genericTypeArgumentList )?
+			DebugLocation(491, 34);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:491:34: ( genericTypeArgumentList )?
 			int alt118=2;
 			try { DebugEnterSubRule(118);
 			try { DebugEnterDecision(118, false);
@@ -11460,10 +11572,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:485:34: genericTypeArgumentList
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:491:34: genericTypeArgumentList
 				{
-				DebugLocation(485, 34);
-				PushFollow(Follow._genericTypeArgumentList_in_innerNewExpression4368);
+				DebugLocation(491, 34);
+				PushFollow(Follow._genericTypeArgumentList_in_innerNewExpression4471);
 				genericTypeArgumentList();
 				PopFollow();
 				if (state.failed) return;
@@ -11474,15 +11586,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			}
 			} finally { DebugExitSubRule(118); }
 
-			DebugLocation(485, 59);
-			Match(input,IDENT,Follow._IDENT_in_innerNewExpression4371); if (state.failed) return;
-			DebugLocation(485, 65);
-			PushFollow(Follow._arguments_in_innerNewExpression4373);
+			DebugLocation(491, 59);
+			Match(input,IDENT,Follow._IDENT_in_innerNewExpression4474); if (state.failed) return;
+			DebugLocation(491, 65);
+			PushFollow(Follow._arguments_in_innerNewExpression4476);
 			arguments();
 			PopFollow();
 			if (state.failed) return;
-			DebugLocation(485, 75);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:485:75: ( classTopLevelScope )?
+			DebugLocation(491, 75);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:491:75: ( classTopLevelScope )?
 			int alt119=2;
 			try { DebugEnterSubRule(119);
 			try { DebugEnterDecision(119, false);
@@ -11497,10 +11609,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:485:75: classTopLevelScope
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:491:75: classTopLevelScope
 				{
-				DebugLocation(485, 75);
-				PushFollow(Follow._classTopLevelScope_in_innerNewExpression4375);
+				DebugLocation(491, 75);
+				PushFollow(Follow._classTopLevelScope_in_innerNewExpression4478);
 				classTopLevelScope();
 				PopFollow();
 				if (state.failed) return;
@@ -11531,7 +11643,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 71, innerNewExpression_StartIndex); }
 
 		}
-		DebugLocation(486, 4);
+		DebugLocation(492, 4);
 		} finally { DebugExitRule(GrammarFileName, "innerNewExpression"); }
 		return;
 
@@ -11541,7 +11653,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_newArrayConstruction();
 	partial void LeaveRule_newArrayConstruction();
 	// $ANTLR start "newArrayConstruction"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:488:1: newArrayConstruction : ( arrayDeclaratorList arrayInitializer | ( expression )+ ( arrayDeclaratorList )? );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:494:1: newArrayConstruction : ( arrayDeclaratorList arrayInitializer | ( expression )+ ( arrayDeclaratorList )? );
 	[GrammarRule("newArrayConstruction")]
 	private void newArrayConstruction()
 	{
@@ -11551,12 +11663,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int newArrayConstruction_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "newArrayConstruction");
-		DebugLocation(488, 4);
+		DebugLocation(494, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 72)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:489:5: ( arrayDeclaratorList arrayInitializer | ( expression )+ ( arrayDeclaratorList )? )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:495:5: ( arrayDeclaratorList arrayInitializer | ( expression )+ ( arrayDeclaratorList )? )
 			int alt122=2;
 			try { DebugEnterDecision(122, false);
 			int LA122_1 = input.LA(1);
@@ -11581,15 +11693,15 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:489:9: arrayDeclaratorList arrayInitializer
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:495:9: arrayDeclaratorList arrayInitializer
 				{
-				DebugLocation(489, 9);
-				PushFollow(Follow._arrayDeclaratorList_in_newArrayConstruction4400);
+				DebugLocation(495, 9);
+				PushFollow(Follow._arrayDeclaratorList_in_newArrayConstruction4503);
 				arrayDeclaratorList();
 				PopFollow();
 				if (state.failed) return;
-				DebugLocation(489, 29);
-				PushFollow(Follow._arrayInitializer_in_newArrayConstruction4402);
+				DebugLocation(495, 29);
+				PushFollow(Follow._arrayInitializer_in_newArrayConstruction4505);
 				arrayInitializer();
 				PopFollow();
 				if (state.failed) return;
@@ -11598,10 +11710,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:490:9: ( expression )+ ( arrayDeclaratorList )?
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:496:9: ( expression )+ ( arrayDeclaratorList )?
 				{
-				DebugLocation(490, 9);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:490:9: ( expression )+
+				DebugLocation(496, 9);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:496:9: ( expression )+
 				int cnt120=0;
 				try { DebugEnterSubRule(120);
 				while (true)
@@ -11621,10 +11733,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:490:9: expression
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:496:9: expression
 						{
-						DebugLocation(490, 9);
-						PushFollow(Follow._expression_in_newArrayConstruction4412);
+						DebugLocation(496, 9);
+						PushFollow(Follow._expression_in_newArrayConstruction4515);
 						expression();
 						PopFollow();
 						if (state.failed) return;
@@ -11648,8 +11760,8 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 
 				} finally { DebugExitSubRule(120); }
 
-				DebugLocation(490, 21);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:490:21: ( arrayDeclaratorList )?
+				DebugLocation(496, 21);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:496:21: ( arrayDeclaratorList )?
 				int alt121=2;
 				try { DebugEnterSubRule(121);
 				try { DebugEnterDecision(121, false);
@@ -11664,10 +11776,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:490:21: arrayDeclaratorList
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:496:21: arrayDeclaratorList
 					{
-					DebugLocation(490, 21);
-					PushFollow(Follow._arrayDeclaratorList_in_newArrayConstruction4415);
+					DebugLocation(496, 21);
+					PushFollow(Follow._arrayDeclaratorList_in_newArrayConstruction4518);
 					arrayDeclaratorList();
 					PopFollow();
 					if (state.failed) return;
@@ -11697,7 +11809,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 72, newArrayConstruction_StartIndex); }
 
 		}
-		DebugLocation(491, 4);
+		DebugLocation(497, 4);
 		} finally { DebugExitRule(GrammarFileName, "newArrayConstruction"); }
 		return;
 
@@ -11707,7 +11819,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_arguments();
 	partial void LeaveRule_arguments();
 	// $ANTLR start "arguments"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:493:1: arguments : ^( ARGUMENT_LIST ( expression )* ) ;
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:499:1: arguments : ^( ARGUMENT_LIST ( expression )* ) ;
 	[GrammarRule("arguments")]
 	private void arguments()
 	{
@@ -11717,24 +11829,24 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int arguments_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "arguments");
-		DebugLocation(493, 4);
+		DebugLocation(499, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 73)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:494:5: ( ^( ARGUMENT_LIST ( expression )* ) )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:500:5: ( ^( ARGUMENT_LIST ( expression )* ) )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:494:9: ^( ARGUMENT_LIST ( expression )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:500:9: ^( ARGUMENT_LIST ( expression )* )
 			{
-			DebugLocation(494, 9);
-			DebugLocation(494, 11);
-			Match(input,ARGUMENT_LIST,Follow._ARGUMENT_LIST_in_arguments4436); if (state.failed) return;
+			DebugLocation(500, 9);
+			DebugLocation(500, 11);
+			Match(input,ARGUMENT_LIST,Follow._ARGUMENT_LIST_in_arguments4539); if (state.failed) return;
 
 			if (input.LA(1) == TokenTypes.Down)
 			{
 				Match(input, TokenTypes.Down, null); if (state.failed) return;
-				DebugLocation(494, 25);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:494:25: ( expression )*
+				DebugLocation(500, 25);
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:500:25: ( expression )*
 				try { DebugEnterSubRule(123);
 				while (true)
 				{
@@ -11753,10 +11865,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:494:25: expression
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:500:25: expression
 						{
-						DebugLocation(494, 25);
-						PushFollow(Follow._expression_in_arguments4438);
+						DebugLocation(500, 25);
+						PushFollow(Follow._expression_in_arguments4541);
 						expression();
 						PopFollow();
 						if (state.failed) return;
@@ -11795,7 +11907,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 73, arguments_StartIndex); }
 
 		}
-		DebugLocation(495, 4);
+		DebugLocation(501, 4);
 		} finally { DebugExitRule(GrammarFileName, "arguments"); }
 		return;
 
@@ -11805,7 +11917,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 	partial void EnterRule_literal();
 	partial void LeaveRule_literal();
 	// $ANTLR start "literal"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:497:1: literal : ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL );
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:503:1: literal : ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL );
 	[GrammarRule("literal")]
 	private void literal()
 	{
@@ -11815,16 +11927,16 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		int literal_StartIndex = input.Index;
 
 		try { DebugEnterRule(GrammarFileName, "literal");
-		DebugLocation(497, 4);
+		DebugLocation(503, 4);
 		try
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 74)) { return; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:498:5: ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:504:5: ( HEX_LITERAL | OCTAL_LITERAL | DECIMAL_LITERAL | FLOATING_POINT_LITERAL | CHARACTER_LITERAL | STRING_LITERAL | TRUE | FALSE | NULL )
 			DebugEnterAlt(1);
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:
 			{
-			DebugLocation(498, 5);
+			DebugLocation(504, 5);
 			if (input.LA(1)==CHARACTER_LITERAL||input.LA(1)==DECIMAL_LITERAL||input.LA(1)==FALSE||input.LA(1)==FLOATING_POINT_LITERAL||input.LA(1)==HEX_LITERAL||input.LA(1)==NULL||input.LA(1)==OCTAL_LITERAL||input.LA(1)==STRING_LITERAL||input.LA(1)==TRUE)
 			{
 				input.Consume();
@@ -11855,7 +11967,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			if (state.backtracking > 0) { Memoize(input, 74, literal_StartIndex); }
 
 		}
-		DebugLocation(507, 4);
+		DebugLocation(513, 4);
 		} finally { DebugExitRule(GrammarFileName, "literal"); }
 		return;
 
@@ -11883,7 +11995,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:3: '{' ( modifier )? getRule ( SEMI | block ) ( ( modifier )? setRule ( SEMI | block ) )? '}'
 			{
 			DebugLocation(118, 3);
-			Match(input,LCURLY,Follow._LCURLY_in_synpred46_JavaTreeParser752); if (state.failed) return;
+			Match(input,LCURLY,Follow._LCURLY_in_synpred46_JavaTreeParser754); if (state.failed) return;
 			DebugLocation(118, 7);
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:7: ( modifier )?
 			int alt141=2;
@@ -11903,7 +12015,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:7: modifier
 				{
 				DebugLocation(118, 7);
-				PushFollow(Follow._modifier_in_synpred46_JavaTreeParser754);
+				PushFollow(Follow._modifier_in_synpred46_JavaTreeParser756);
 				modifier();
 				PopFollow();
 				if (state.failed) return;
@@ -11915,7 +12027,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			} finally { DebugExitSubRule(141); }
 
 			DebugLocation(118, 17);
-			PushFollow(Follow._getRule_in_synpred46_JavaTreeParser757);
+			PushFollow(Follow._getRule_in_synpred46_JavaTreeParser759);
 			getRule();
 			PopFollow();
 			if (state.failed) return;
@@ -11949,7 +12061,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:26: SEMI
 				{
 				DebugLocation(118, 26);
-				Match(input,SEMI,Follow._SEMI_in_synpred46_JavaTreeParser760); if (state.failed) return;
+				Match(input,SEMI,Follow._SEMI_in_synpred46_JavaTreeParser762); if (state.failed) return;
 
 				}
 				break;
@@ -11958,7 +12070,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:31: block
 				{
 				DebugLocation(118, 31);
-				PushFollow(Follow._block_in_synpred46_JavaTreeParser762);
+				PushFollow(Follow._block_in_synpred46_JavaTreeParser764);
 				block();
 				PopFollow();
 				if (state.failed) return;
@@ -12006,7 +12118,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:39: modifier
 					{
 					DebugLocation(118, 39);
-					PushFollow(Follow._modifier_in_synpred46_JavaTreeParser766);
+					PushFollow(Follow._modifier_in_synpred46_JavaTreeParser768);
 					modifier();
 					PopFollow();
 					if (state.failed) return;
@@ -12018,7 +12130,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				} finally { DebugExitSubRule(143); }
 
 				DebugLocation(118, 49);
-				PushFollow(Follow._setRule_in_synpred46_JavaTreeParser769);
+				PushFollow(Follow._setRule_in_synpred46_JavaTreeParser771);
 				setRule();
 				PopFollow();
 				if (state.failed) return;
@@ -12052,7 +12164,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:58: SEMI
 					{
 					DebugLocation(118, 58);
-					Match(input,SEMI,Follow._SEMI_in_synpred46_JavaTreeParser772); if (state.failed) return;
+					Match(input,SEMI,Follow._SEMI_in_synpred46_JavaTreeParser774); if (state.failed) return;
 
 					}
 					break;
@@ -12061,7 +12173,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:118:63: block
 					{
 					DebugLocation(118, 63);
-					PushFollow(Follow._block_in_synpred46_JavaTreeParser774);
+					PushFollow(Follow._block_in_synpred46_JavaTreeParser776);
 					block();
 					PopFollow();
 					if (state.failed) return;
@@ -12080,7 +12192,7 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 			} finally { DebugExitSubRule(145); }
 
 			DebugLocation(118, 72);
-			Match(input,RCURLY,Follow._RCURLY_in_synpred46_JavaTreeParser779); if (state.failed) return;
+			Match(input,RCURLY,Follow._RCURLY_in_synpred46_JavaTreeParser781); if (state.failed) return;
 
 			}
 
@@ -12108,12 +12220,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		TraceIn("synpred145_JavaTreeParser_fragment", 219);
 		try
 		{
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:35: ( switchCaseLabel )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:35: ( switchCaseLabel )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:362:35: switchCaseLabel
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:368:35: switchCaseLabel
 			{
-			DebugLocation(362, 35);
-			PushFollow(Follow._switchCaseLabel_in_synpred145_JavaTreeParser2893);
+			DebugLocation(368, 35);
+			PushFollow(Follow._switchCaseLabel_in_synpred145_JavaTreeParser2996);
 			switchCaseLabel();
 			PopFollow();
 			if (state.failed) return;
@@ -12141,12 +12253,12 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		TraceIn("synpred152_JavaTreeParser_fragment", 226);
 		try
 		{
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:48: ( ( expression )* )
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:48: ( ( expression )* )
 			DebugEnterAlt(1);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:48: ( expression )*
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:48: ( expression )*
 			{
-			DebugLocation(374, 48);
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:48: ( expression )*
+			DebugLocation(380, 48);
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:48: ( expression )*
 			try { DebugEnterSubRule(162);
 			while (true)
 			{
@@ -12165,10 +12277,10 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:374:48: expression
+					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\JavaTreeParser.g:380:48: expression
 					{
-					DebugLocation(374, 48);
-					PushFollow(Follow._expression_in_synpred152_JavaTreeParser2994);
+					DebugLocation(380, 48);
+					PushFollow(Follow._expression_in_synpred152_JavaTreeParser3097);
 					expression();
 					PopFollow();
 					if (state.failed) return;
@@ -12310,431 +12422,432 @@ public partial class JavaTreeParser : Antlr.Runtime.Tree.TreeParser
 		public static readonly BitSet _throwsClause_in_classScopeDeclarations702 = new BitSet(new ulong[]{0x1000000UL});
 		public static readonly BitSet _block_in_classScopeDeclarations705 = new BitSet(new ulong[]{0x8UL});
 		public static readonly BitSet _PROPERTY_DECL_in_classScopeDeclarations718 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _modifierList_in_classScopeDeclarations720 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _propertyDeclaration_in_classScopeDeclarations722 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _typeDeclaration_in_classScopeDeclarations735 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_propertyDeclaration752 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
-		public static readonly BitSet _modifier_in_propertyDeclaration754 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _getRule_in_propertyDeclaration757 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_propertyDeclaration760 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _block_in_propertyDeclaration762 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _modifier_in_propertyDeclaration766 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _setRule_in_propertyDeclaration769 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_propertyDeclaration772 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _block_in_propertyDeclaration774 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_propertyDeclaration779 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_propertyDeclaration786 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
-		public static readonly BitSet _modifier_in_propertyDeclaration788 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _setRule_in_propertyDeclaration791 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_propertyDeclaration794 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _block_in_propertyDeclaration796 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _modifier_in_propertyDeclaration800 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _getRule_in_propertyDeclaration803 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_propertyDeclaration806 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _block_in_propertyDeclaration808 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_propertyDeclaration814 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_getRule831 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_setRule845 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _INTERFACE_TOP_LEVEL_SCOPE_in_interfaceTopLevelScope864 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _interfaceScopeDeclarations_in_interfaceTopLevelScope866 = new BitSet(new ulong[]{0x200001000200008UL,0x200010000UL,0x420000000000000UL});
-		public static readonly BitSet _FUNCTION_METHOD_DECL_in_interfaceScopeDeclarations892 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _modifierList_in_interfaceScopeDeclarations894 = new BitSet(new ulong[]{0x0UL,0x40000UL,0x2000000000000UL});
-		public static readonly BitSet _genericTypeParameterList_in_interfaceScopeDeclarations896 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
-		public static readonly BitSet _type_in_interfaceScopeDeclarations899 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_interfaceScopeDeclarations901 = new BitSet(new ulong[]{0x0UL,0x200UL});
-		public static readonly BitSet _formalParameterList_in_interfaceScopeDeclarations903 = new BitSet(new ulong[]{0x20008UL,0x0UL,0x200000000000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_interfaceScopeDeclarations905 = new BitSet(new ulong[]{0x8UL,0x0UL,0x200000000000UL});
-		public static readonly BitSet _throwsClause_in_interfaceScopeDeclarations908 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _VOID_METHOD_DECL_in_interfaceScopeDeclarations921 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _modifierList_in_interfaceScopeDeclarations923 = new BitSet(new ulong[]{0x0UL,0x1040000UL});
-		public static readonly BitSet _genericTypeParameterList_in_interfaceScopeDeclarations925 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_interfaceScopeDeclarations928 = new BitSet(new ulong[]{0x0UL,0x200UL});
-		public static readonly BitSet _formalParameterList_in_interfaceScopeDeclarations930 = new BitSet(new ulong[]{0x8UL,0x0UL,0x200000000000UL});
-		public static readonly BitSet _throwsClause_in_interfaceScopeDeclarations932 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _VAR_DECLARATION_in_interfaceScopeDeclarations1023 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _modifierList_in_interfaceScopeDeclarations1025 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
-		public static readonly BitSet _type_in_interfaceScopeDeclarations1027 = new BitSet(new ulong[]{0x0UL,0x0UL,0x80000000000000UL});
-		public static readonly BitSet _variableDeclaratorList_in_interfaceScopeDeclarations1029 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _typeDeclaration_in_interfaceScopeDeclarations1040 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VAR_DECLARATOR_LIST_in_variableDeclaratorList1060 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _variableDeclarator_in_variableDeclaratorList1062 = new BitSet(new ulong[]{0x8UL,0x0UL,0x40000000000000UL});
-		public static readonly BitSet _VAR_DECLARATOR_in_variableDeclarator1084 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _variableDeclaratorId_in_variableDeclarator1086 = new BitSet(new ulong[]{0x4000000010080008UL});
-		public static readonly BitSet _variableInitializer_in_variableDeclarator1088 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _IDENT_in_variableDeclaratorId1114 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _arrayDeclaratorList_in_variableDeclaratorId1116 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _arrayInitializer_in_variableInitializer1137 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_variableInitializer1147 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _brokenExpression_in_variableInitializer1157 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LBRACK_in_arrayDeclarator1177 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
-		public static readonly BitSet _RBRACK_in_arrayDeclarator1179 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ARRAY_DECLARATOR_LIST_in_arrayDeclaratorList1199 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _ARRAY_DECLARATOR_in_arrayDeclaratorList1201 = new BitSet(new ulong[]{0x10008UL});
-		public static readonly BitSet _ARRAY_INITIALIZER_in_arrayInitializer1229 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _variableInitializer_in_arrayInitializer1231 = new BitSet(new ulong[]{0x4000000010080008UL});
-		public static readonly BitSet _THROWS_CLAUSE_in_throwsClause1253 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _qualifiedIdentifier_in_throwsClause1255 = new BitSet(new ulong[]{0x10000000000008UL,0x1000000UL});
-		public static readonly BitSet _MODIFIER_LIST_in_modifierList1296 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _modifier_in_modifierList1299 = new BitSet(new ulong[]{0x200018UL,0x200000000080008UL,0x6900418280006804UL});
-		public static readonly BitSet _PUBLIC_in_modifier1337 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _OVERRIDE_in_modifier1349 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VIRTUAL_in_modifier1361 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _WITH_SHARING_in_modifier1373 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _WITHOUT_SHARING_in_modifier1382 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _PROTECTED_in_modifier1392 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _PRIVATE_in_modifier1404 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _STATIC_in_modifier1416 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ABSTRACT_in_modifier1428 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _NATIVE_in_modifier1440 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SYNCHRONIZED_in_modifier1450 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TRANSIENT_in_modifier1460 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VOLATILE_in_modifier1470 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _STRICTFP_in_modifier1480 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _GLOBAL_in_modifier1488 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TEST_METHOD_in_modifier1500 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localModifier_in_modifier1512 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LOCAL_MODIFIER_LIST_in_localModifierList1533 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _localModifier_in_localModifierList1535 = new BitSet(new ulong[]{0x200008UL,0x8UL});
-		public static readonly BitSet _FINAL_in_localModifier1556 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _annotation_in_localModifier1566 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TYPE_in_type1586 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _primitiveType_in_type1589 = new BitSet(new ulong[]{0x20008UL});
-		public static readonly BitSet _qualifiedTypeIdent_in_type1593 = new BitSet(new ulong[]{0x20008UL});
-		public static readonly BitSet _arrayDeclaratorList_in_type1596 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _QUALIFIED_TYPE_IDENT_in_qualifiedTypeIdent1618 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _typeIdent_in_qualifiedTypeIdent1620 = new BitSet(new ulong[]{0x8UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_typeIdent1643 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _genericTypeArgumentList_in_typeIdent1645 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _GENERIC_TYPE_ARG_LIST_in_genericTypeArgumentList1756 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _genericTypeArgument_in_genericTypeArgumentList1758 = new BitSet(new ulong[]{0x8UL,0x0UL,0x2000000010000UL});
-		public static readonly BitSet _type_in_genericTypeArgument1783 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _QUESTION_in_genericTypeArgument1794 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _genericWildcardBoundType_in_genericTypeArgument1796 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _EXTENDS_in_genericWildcardBoundType1936 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _type_in_genericWildcardBoundType1938 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SUPER_in_genericWildcardBoundType1950 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _type_in_genericWildcardBoundType1952 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _FORMAL_PARAM_LIST_in_formalParameterList1973 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _formalParameterStandardDecl_in_formalParameterList1975 = new BitSet(new ulong[]{0x8UL,0xC00UL});
-		public static readonly BitSet _formalParameterVarargDecl_in_formalParameterList1978 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _FORMAL_PARAM_STD_DECL_in_formalParameterStandardDecl2005 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _localModifierList_in_formalParameterStandardDecl2007 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
-		public static readonly BitSet _type_in_formalParameterStandardDecl2009 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _variableDeclaratorId_in_formalParameterStandardDecl2011 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _FORMAL_PARAM_VARARG_DECL_in_formalParameterVarargDecl2036 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _localModifierList_in_formalParameterVarargDecl2038 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
-		public static readonly BitSet _type_in_formalParameterVarargDecl2040 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _variableDeclaratorId_in_formalParameterVarargDecl2042 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _IDENT_in_qualifiedIdentifier2067 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_qualifiedIdentifier2078 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _qualifiedIdentifier_in_qualifiedIdentifier2080 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_qualifiedIdentifier2082 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ANNOTATION_LIST_in_annotationList2109 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _annotation_in_annotationList2111 = new BitSet(new ulong[]{0x200008UL});
-		public static readonly BitSet _AT_in_annotation2133 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _qualifiedIdentifier_in_annotation2135 = new BitSet(new ulong[]{0x108UL});
-		public static readonly BitSet _annotationInit_in_annotation2137 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ANNOTATION_INIT_BLOCK_in_annotationInit2163 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _annotationInitializers_in_annotationInit2165 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ANNOTATION_INIT_KEY_LIST_in_annotationInitializers2186 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _annotationInitializer_in_annotationInitializers2188 = new BitSet(new ulong[]{0x8UL,0x1000000UL});
-		public static readonly BitSet _ANNOTATION_INIT_DEFAULT_KEY_in_annotationInitializers2201 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _annotationElementValue_in_annotationInitializers2203 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _IDENT_in_annotationInitializer2228 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _annotationElementValue_in_annotationInitializer2230 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ANNOTATION_INIT_ARRAY_ELEMENT_in_annotationElementValue2255 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _annotationElementValue_in_annotationElementValue2257 = new BitSet(new ulong[]{0x4000000000200088UL});
-		public static readonly BitSet _annotation_in_annotationElementValue2269 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_annotationElementValue2279 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ANNOTATION_TOP_LEVEL_SCOPE_in_annotationTopLevelScope2303 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _annotationScopeDeclarations_in_annotationTopLevelScope2305 = new BitSet(new ulong[]{0x200001000201008UL,0x200000000UL,0x20000000000000UL});
-		public static readonly BitSet _ANNOTATION_METHOD_DECL_in_annotationScopeDeclarations2331 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _modifierList_in_annotationScopeDeclarations2333 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
-		public static readonly BitSet _type_in_annotationScopeDeclarations2335 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_annotationScopeDeclarations2337 = new BitSet(new ulong[]{0x1000000000008UL});
-		public static readonly BitSet _annotationDefaultValue_in_annotationScopeDeclarations2339 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _VAR_DECLARATION_in_annotationScopeDeclarations2352 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _modifierList_in_annotationScopeDeclarations2354 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
-		public static readonly BitSet _type_in_annotationScopeDeclarations2356 = new BitSet(new ulong[]{0x0UL,0x0UL,0x80000000000000UL});
-		public static readonly BitSet _variableDeclaratorList_in_annotationScopeDeclarations2358 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _typeDeclaration_in_annotationScopeDeclarations2369 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEFAULT_in_annotationDefaultValue2393 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _annotationElementValue_in_annotationDefaultValue2395 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _BLOCK_SCOPE_in_block2422 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _blockStatement_in_block2424 = new BitSet(new ulong[]{0x4208201015200008UL,0x4202002100UL,0x102108A000280000UL});
-		public static readonly BitSet _localVariableDeclaration_in_blockStatement2453 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _typeDeclaration_in_blockStatement2463 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _statement_in_blockStatement2473 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _brokenExpression_in_blockStatement2482 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _BROKEN_EXPRESSION_in_brokenExpression2499 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expression_in_brokenExpression2501 = new BitSet(new ulong[]{0x10000000000008UL,0x0UL,0x200000UL});
-		public static readonly BitSet _DOT_in_brokenExpression2503 = new BitSet(new ulong[]{0x8UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_brokenExpression2506 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _VAR_DECLARATION_in_localVariableDeclaration2523 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _localModifierList_in_localVariableDeclaration2525 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
-		public static readonly BitSet _type_in_localVariableDeclaration2527 = new BitSet(new ulong[]{0x0UL,0x0UL,0x80000000000000UL});
-		public static readonly BitSet _variableDeclaratorList_in_localVariableDeclaration2529 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _block_in_statement2566 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IF_in_statement2577 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement2579 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
-		public static readonly BitSet _statement_in_statement2581 = new BitSet(new ulong[]{0x4008200005000008UL,0x4002002100UL,0x100108A000280000UL});
-		public static readonly BitSet _statement_in_statement2583 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _FOR_in_statement2596 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _forInit_in_statement2598 = new BitSet(new ulong[]{0x0UL,0x1000UL});
-		public static readonly BitSet _forCondition_in_statement2600 = new BitSet(new ulong[]{0x0UL,0x8000UL});
-		public static readonly BitSet _forUpdater_in_statement2602 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
-		public static readonly BitSet _statement_in_statement2604 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _FOR_EACH_in_statement2616 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _localModifierList_in_statement2618 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
-		public static readonly BitSet _type_in_statement2620 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_statement2622 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _expression_in_statement2624 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
-		public static readonly BitSet _statement_in_statement2626 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _WHILE_in_statement2639 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement2641 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
-		public static readonly BitSet _statement_in_statement2643 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _DO_in_statement2655 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _statement_in_statement2657 = new BitSet(new ulong[]{0x0UL,0x0UL,0x10UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement2659 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _TRY_in_statement2671 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _block_in_statement2673 = new BitSet(new ulong[]{0x201000008UL});
-		public static readonly BitSet _catches_in_statement2675 = new BitSet(new ulong[]{0x1000008UL});
-		public static readonly BitSet _block_in_statement2678 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SWITCH_in_statement2693 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement2695 = new BitSet(new ulong[]{0x0UL,0x0UL,0x4000000000UL});
-		public static readonly BitSet _switchBlockLabels_in_statement2697 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SYNCHRONIZED_in_statement2709 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement2711 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _block_in_statement2713 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _RETURN_in_statement2725 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expression_in_statement2727 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _THROW_in_statement2740 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expression_in_statement2742 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _BREAK_in_statement2754 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _IDENT_in_statement2756 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _CONTINUE_in_statement2769 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _IDENT_in_statement2771 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _LABELED_STATEMENT_in_statement2784 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _IDENT_in_statement2786 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
-		public static readonly BitSet _statement_in_statement2788 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _expression_in_statement2799 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_statement2809 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _CATCH_CLAUSE_LIST_in_catches2838 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _catchClause_in_catches2840 = new BitSet(new ulong[]{0x100000008UL});
-		public static readonly BitSet _CATCH_in_catchClause2866 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _formalParameterStandardDecl_in_catchClause2868 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _block_in_catchClause2870 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SWITCH_BLOCK_LABEL_LIST_in_switchBlockLabels2891 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _switchCaseLabel_in_switchBlockLabels2893 = new BitSet(new ulong[]{0x1000040000008UL});
-		public static readonly BitSet _switchDefaultLabel_in_switchBlockLabels2896 = new BitSet(new ulong[]{0x40000008UL});
-		public static readonly BitSet _switchCaseLabel_in_switchBlockLabels2899 = new BitSet(new ulong[]{0x40000008UL});
-		public static readonly BitSet _CASE_in_switchCaseLabel2929 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expression_in_switchCaseLabel2931 = new BitSet(new ulong[]{0x4208201015200008UL,0x4202002100UL,0x102108A000280000UL});
-		public static readonly BitSet _blockStatement_in_switchCaseLabel2933 = new BitSet(new ulong[]{0x4208201015200008UL,0x4202002100UL,0x102108A000280000UL});
-		public static readonly BitSet _DEFAULT_in_switchDefaultLabel2959 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _blockStatement_in_switchDefaultLabel2961 = new BitSet(new ulong[]{0x4208201015200008UL,0x4202002100UL,0x102108A000280000UL});
-		public static readonly BitSet _FOR_INIT_in_forInit2987 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _localVariableDeclaration_in_forInit2990 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _expression_in_forInit2994 = new BitSet(new ulong[]{0x4000000000000008UL});
-		public static readonly BitSet _FOR_CONDITION_in_forCondition3022 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expression_in_forCondition3024 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _FOR_UPDATE_in_forUpdater3050 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expression_in_forUpdater3052 = new BitSet(new ulong[]{0x4000000000000008UL});
-		public static readonly BitSet _PARENTESIZED_EXPR_in_parenthesizedExpression3080 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expression_in_parenthesizedExpression3082 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _EXPR_in_expression3111 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expression3113 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ASSIGN_in_expr3138 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3143 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3147 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _PLUS_ASSIGN_in_expr3159 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3161 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3163 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _MINUS_ASSIGN_in_expr3175 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3177 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3179 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _STAR_ASSIGN_in_expr3191 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3193 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3195 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _DIV_ASSIGN_in_expr3207 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3209 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3211 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _AND_ASSIGN_in_expr3223 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3225 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3227 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _OR_ASSIGN_in_expr3239 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3241 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3243 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _XOR_ASSIGN_in_expr3255 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3257 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3259 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _MOD_ASSIGN_in_expr3271 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3273 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3275 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _BIT_SHIFT_RIGHT_ASSIGN_in_expr3287 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3289 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3291 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SHIFT_RIGHT_ASSIGN_in_expr3303 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3305 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3307 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SHIFT_LEFT_ASSIGN_in_expr3319 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3321 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3323 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _QUESTION_in_expr3335 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3337 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3339 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3341 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _LOGICAL_OR_in_expr3353 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3355 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3357 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _LOGICAL_AND_in_expr3369 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3371 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3373 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _OR_in_expr3385 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3387 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3389 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _XOR_in_expr3401 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3403 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3405 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _AND_in_expr3417 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3419 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3421 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _EQUAL_in_expr3433 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3435 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3437 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _NOT_EQUAL_in_expr3449 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3451 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3453 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _INSTANCEOF_in_expr3465 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3467 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
-		public static readonly BitSet _type_in_expr3469 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _LESS_OR_EQUAL_in_expr3481 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3483 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3485 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _GREATER_OR_EQUAL_in_expr3497 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3499 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3501 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _BIT_SHIFT_RIGHT_in_expr3513 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3515 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3517 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SHIFT_RIGHT_in_expr3529 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3531 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3533 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _GREATER_THAN_in_expr3545 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3547 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3549 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SHIFT_LEFT_in_expr3561 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3563 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3565 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _LESS_THAN_in_expr3577 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3579 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3581 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _PLUS_in_expr3593 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3595 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3597 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _MINUS_in_expr3609 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3611 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3613 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _STAR_in_expr3625 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3627 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3629 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _DIV_in_expr3641 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3643 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3645 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _MOD_in_expr3657 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3659 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3661 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _UNARY_PLUS_in_expr3673 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3675 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _UNARY_MINUS_in_expr3687 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3689 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _PRE_INC_in_expr3701 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3703 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _PRE_DEC_in_expr3715 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3717 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _POST_INC_in_expr3729 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3731 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _POST_DEC_in_expr3743 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3745 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _NOT_in_expr3757 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3759 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _LOGICAL_NOT_in_expr3771 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expr_in_expr3773 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _CAST_EXPR_in_expr3785 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _type_in_expr3787 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
-		public static readonly BitSet _expr_in_expr3789 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _primaryExpression_in_expr3800 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_primaryExpression3826 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _primaryExpression_in_primaryExpression3844 = new BitSet(new ulong[]{0x3000000000UL,0x1000000UL,0x20800000000UL});
-		public static readonly BitSet _IDENT_in_primaryExpression3866 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _THIS_in_primaryExpression3888 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SUPER_in_primaryExpression3910 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _innerNewExpression_in_primaryExpression3932 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _CLASS_in_primaryExpression3954 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _primitiveType_in_primaryExpression3990 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _CLASS_in_primaryExpression3992 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _VOID_in_primaryExpression4010 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _CLASS_in_primaryExpression4012 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _parenthesizedExpression_in_primaryExpression4046 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_primaryExpression4056 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _METHOD_CALL_in_primaryExpression4067 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _primaryExpression_in_primaryExpression4069 = new BitSet(new ulong[]{0x8000UL,0x20000UL});
-		public static readonly BitSet _genericTypeArgumentList_in_primaryExpression4071 = new BitSet(new ulong[]{0x8000UL});
-		public static readonly BitSet _arguments_in_primaryExpression4074 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _explicitConstructorCall_in_primaryExpression4085 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ARRAY_ELEMENT_ACCESS_in_primaryExpression4096 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _primaryExpression_in_primaryExpression4098 = new BitSet(new ulong[]{0x4000000000000000UL});
-		public static readonly BitSet _expression_in_primaryExpression4100 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _literal_in_primaryExpression4111 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _newExpression_in_primaryExpression4121 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _THIS_in_primaryExpression4131 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arrayTypeDeclarator_in_primaryExpression4141 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SUPER_in_primaryExpression4151 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _THIS_CONSTRUCTOR_CALL_in_explicitConstructorCall4175 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _genericTypeArgumentList_in_explicitConstructorCall4177 = new BitSet(new ulong[]{0x8000UL});
-		public static readonly BitSet _arguments_in_explicitConstructorCall4180 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _SUPER_CONSTRUCTOR_CALL_in_explicitConstructorCall4192 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _primaryExpression_in_explicitConstructorCall4194 = new BitSet(new ulong[]{0x8000UL,0x20000UL});
-		public static readonly BitSet _genericTypeArgumentList_in_explicitConstructorCall4197 = new BitSet(new ulong[]{0x8000UL});
-		public static readonly BitSet _arguments_in_explicitConstructorCall4200 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _ARRAY_DECLARATOR_in_arrayTypeDeclarator4221 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _arrayTypeDeclarator_in_arrayTypeDeclarator4224 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _qualifiedIdentifier_in_arrayTypeDeclarator4228 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _primitiveType_in_arrayTypeDeclarator4232 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _STATIC_ARRAY_CREATOR_in_newExpression4256 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _primitiveType_in_newExpression4274 = new BitSet(new ulong[]{0x4000000000020000UL});
-		public static readonly BitSet _newArrayConstruction_in_newExpression4276 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _genericTypeArgumentList_in_newExpression4294 = new BitSet(new ulong[]{0x0UL,0x0UL,0x8000UL});
-		public static readonly BitSet _qualifiedTypeIdent_in_newExpression4297 = new BitSet(new ulong[]{0x4000000000020000UL});
-		public static readonly BitSet _newArrayConstruction_in_newExpression4299 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _CLASS_CONSTRUCTOR_CALL_in_newExpression4334 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _genericTypeArgumentList_in_newExpression4336 = new BitSet(new ulong[]{0x0UL,0x0UL,0x8000UL});
-		public static readonly BitSet _qualifiedTypeIdent_in_newExpression4339 = new BitSet(new ulong[]{0x8000UL});
-		public static readonly BitSet _arguments_in_newExpression4341 = new BitSet(new ulong[]{0x10000000008UL});
-		public static readonly BitSet _classTopLevelScope_in_newExpression4343 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _CLASS_CONSTRUCTOR_CALL_in_innerNewExpression4366 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _genericTypeArgumentList_in_innerNewExpression4368 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_innerNewExpression4371 = new BitSet(new ulong[]{0x8000UL});
-		public static readonly BitSet _arguments_in_innerNewExpression4373 = new BitSet(new ulong[]{0x10000000008UL});
-		public static readonly BitSet _classTopLevelScope_in_innerNewExpression4375 = new BitSet(new ulong[]{0x8UL});
-		public static readonly BitSet _arrayDeclaratorList_in_newArrayConstruction4400 = new BitSet(new ulong[]{0x80000UL});
-		public static readonly BitSet _arrayInitializer_in_newArrayConstruction4402 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_newArrayConstruction4412 = new BitSet(new ulong[]{0x4000000000020002UL});
-		public static readonly BitSet _arrayDeclaratorList_in_newArrayConstruction4415 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ARGUMENT_LIST_in_arguments4436 = new BitSet(new ulong[]{0x4UL});
-		public static readonly BitSet _expression_in_arguments4438 = new BitSet(new ulong[]{0x4000000000000008UL});
-		public static readonly BitSet _LCURLY_in_synpred46_JavaTreeParser752 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
-		public static readonly BitSet _modifier_in_synpred46_JavaTreeParser754 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _getRule_in_synpred46_JavaTreeParser757 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred46_JavaTreeParser760 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _block_in_synpred46_JavaTreeParser762 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _modifier_in_synpred46_JavaTreeParser766 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _setRule_in_synpred46_JavaTreeParser769 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred46_JavaTreeParser772 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _block_in_synpred46_JavaTreeParser774 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_synpred46_JavaTreeParser779 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _switchCaseLabel_in_synpred145_JavaTreeParser2893 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_synpred152_JavaTreeParser2994 = new BitSet(new ulong[]{0x4000000000000002UL});
+		public static readonly BitSet _modifierList_in_classScopeDeclarations720 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_classScopeDeclarations722 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _propertyDeclaration_in_classScopeDeclarations724 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _typeDeclaration_in_classScopeDeclarations737 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_propertyDeclaration754 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
+		public static readonly BitSet _modifier_in_propertyDeclaration756 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _getRule_in_propertyDeclaration759 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_propertyDeclaration762 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _block_in_propertyDeclaration764 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _modifier_in_propertyDeclaration768 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _setRule_in_propertyDeclaration771 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_propertyDeclaration774 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _block_in_propertyDeclaration776 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_propertyDeclaration781 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_propertyDeclaration788 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
+		public static readonly BitSet _modifier_in_propertyDeclaration790 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _setRule_in_propertyDeclaration793 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_propertyDeclaration796 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _block_in_propertyDeclaration798 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _modifier_in_propertyDeclaration802 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _getRule_in_propertyDeclaration805 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_propertyDeclaration808 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _block_in_propertyDeclaration810 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_propertyDeclaration816 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_getRule833 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_setRule847 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INTERFACE_TOP_LEVEL_SCOPE_in_interfaceTopLevelScope866 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _interfaceScopeDeclarations_in_interfaceTopLevelScope868 = new BitSet(new ulong[]{0x200001000200008UL,0x200010000UL,0x420000000000000UL});
+		public static readonly BitSet _FUNCTION_METHOD_DECL_in_interfaceScopeDeclarations894 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _modifierList_in_interfaceScopeDeclarations896 = new BitSet(new ulong[]{0x0UL,0x40000UL,0x2000000000000UL});
+		public static readonly BitSet _genericTypeParameterList_in_interfaceScopeDeclarations898 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_interfaceScopeDeclarations901 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_interfaceScopeDeclarations903 = new BitSet(new ulong[]{0x0UL,0x200UL});
+		public static readonly BitSet _formalParameterList_in_interfaceScopeDeclarations905 = new BitSet(new ulong[]{0x20008UL,0x0UL,0x200000000000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_interfaceScopeDeclarations907 = new BitSet(new ulong[]{0x8UL,0x0UL,0x200000000000UL});
+		public static readonly BitSet _throwsClause_in_interfaceScopeDeclarations910 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _VOID_METHOD_DECL_in_interfaceScopeDeclarations923 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _modifierList_in_interfaceScopeDeclarations925 = new BitSet(new ulong[]{0x0UL,0x1040000UL});
+		public static readonly BitSet _genericTypeParameterList_in_interfaceScopeDeclarations927 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_interfaceScopeDeclarations930 = new BitSet(new ulong[]{0x0UL,0x200UL});
+		public static readonly BitSet _formalParameterList_in_interfaceScopeDeclarations932 = new BitSet(new ulong[]{0x8UL,0x0UL,0x200000000000UL});
+		public static readonly BitSet _throwsClause_in_interfaceScopeDeclarations934 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _VAR_DECLARATION_in_interfaceScopeDeclarations1025 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _modifierList_in_interfaceScopeDeclarations1027 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_interfaceScopeDeclarations1029 = new BitSet(new ulong[]{0x0UL,0x0UL,0x80000000000000UL});
+		public static readonly BitSet _variableDeclaratorList_in_interfaceScopeDeclarations1031 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _typeDeclaration_in_interfaceScopeDeclarations1042 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VAR_DECLARATOR_LIST_in_variableDeclaratorList1079 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _variableDeclarator_in_variableDeclaratorList1082 = new BitSet(new ulong[]{0x8UL,0x0UL,0x40000000000000UL});
+		public static readonly BitSet _VAR_DECLARATOR_in_variableDeclarator1112 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _variableDeclaratorId_in_variableDeclarator1114 = new BitSet(new ulong[]{0x4000000010080008UL});
+		public static readonly BitSet _variableInitializer_in_variableDeclarator1118 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _IDENT_in_variableDeclaratorId1148 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _arrayDeclaratorList_in_variableDeclaratorId1153 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _arrayInitializer_in_variableInitializer1177 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_variableInitializer1187 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _brokenExpression_in_variableInitializer1197 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LBRACK_in_arrayDeclarator1217 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
+		public static readonly BitSet _RBRACK_in_arrayDeclarator1219 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ARRAY_DECLARATOR_LIST_in_arrayDeclaratorList1239 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _ARRAY_DECLARATOR_in_arrayDeclaratorList1241 = new BitSet(new ulong[]{0x10008UL});
+		public static readonly BitSet _ARRAY_INITIALIZER_in_arrayInitializer1269 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _variableInitializer_in_arrayInitializer1271 = new BitSet(new ulong[]{0x4000000010080008UL});
+		public static readonly BitSet _THROWS_CLAUSE_in_throwsClause1293 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _qualifiedIdentifier_in_throwsClause1295 = new BitSet(new ulong[]{0x10000000000008UL,0x1000000UL});
+		public static readonly BitSet _MODIFIER_LIST_in_modifierList1336 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _modifier_in_modifierList1339 = new BitSet(new ulong[]{0x200018UL,0x200000000080008UL,0x6900418280006804UL});
+		public static readonly BitSet _PUBLIC_in_modifier1377 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _OVERRIDE_in_modifier1389 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VIRTUAL_in_modifier1401 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _WITH_SHARING_in_modifier1413 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _WITHOUT_SHARING_in_modifier1422 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _PROTECTED_in_modifier1432 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _PRIVATE_in_modifier1444 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _STATIC_in_modifier1456 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ABSTRACT_in_modifier1468 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _NATIVE_in_modifier1480 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SYNCHRONIZED_in_modifier1490 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TRANSIENT_in_modifier1500 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VOLATILE_in_modifier1510 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _STRICTFP_in_modifier1520 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _GLOBAL_in_modifier1528 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TEST_METHOD_in_modifier1540 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localModifier_in_modifier1552 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LOCAL_MODIFIER_LIST_in_localModifierList1573 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _localModifier_in_localModifierList1575 = new BitSet(new ulong[]{0x200008UL,0x8UL});
+		public static readonly BitSet _FINAL_in_localModifier1596 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _annotation_in_localModifier1606 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TYPE_in_type1636 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _primitiveType_in_type1639 = new BitSet(new ulong[]{0x20008UL});
+		public static readonly BitSet _qualifiedTypeIdent_in_type1643 = new BitSet(new ulong[]{0x20008UL});
+		public static readonly BitSet _arrayDeclaratorList_in_type1648 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _QUALIFIED_TYPE_IDENT_in_qualifiedTypeIdent1675 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _typeIdent_in_qualifiedTypeIdent1680 = new BitSet(new ulong[]{0x8UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_typeIdent1716 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _genericTypeArgumentList_in_typeIdent1721 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _GENERIC_TYPE_ARG_LIST_in_genericTypeArgumentList1840 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _genericTypeArgument_in_genericTypeArgumentList1845 = new BitSet(new ulong[]{0x8UL,0x0UL,0x2000000010000UL});
+		public static readonly BitSet _type_in_genericTypeArgument1884 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _QUESTION_in_genericTypeArgument1897 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _genericWildcardBoundType_in_genericTypeArgument1899 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _EXTENDS_in_genericWildcardBoundType2039 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _type_in_genericWildcardBoundType2041 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SUPER_in_genericWildcardBoundType2053 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _type_in_genericWildcardBoundType2055 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _FORMAL_PARAM_LIST_in_formalParameterList2076 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _formalParameterStandardDecl_in_formalParameterList2078 = new BitSet(new ulong[]{0x8UL,0xC00UL});
+		public static readonly BitSet _formalParameterVarargDecl_in_formalParameterList2081 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _FORMAL_PARAM_STD_DECL_in_formalParameterStandardDecl2108 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _localModifierList_in_formalParameterStandardDecl2110 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_formalParameterStandardDecl2112 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _variableDeclaratorId_in_formalParameterStandardDecl2114 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _FORMAL_PARAM_VARARG_DECL_in_formalParameterVarargDecl2139 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _localModifierList_in_formalParameterVarargDecl2141 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_formalParameterVarargDecl2143 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _variableDeclaratorId_in_formalParameterVarargDecl2145 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _IDENT_in_qualifiedIdentifier2170 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_qualifiedIdentifier2181 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _qualifiedIdentifier_in_qualifiedIdentifier2183 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_qualifiedIdentifier2185 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ANNOTATION_LIST_in_annotationList2212 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _annotation_in_annotationList2214 = new BitSet(new ulong[]{0x200008UL});
+		public static readonly BitSet _AT_in_annotation2236 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _qualifiedIdentifier_in_annotation2238 = new BitSet(new ulong[]{0x108UL});
+		public static readonly BitSet _annotationInit_in_annotation2240 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ANNOTATION_INIT_BLOCK_in_annotationInit2266 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _annotationInitializers_in_annotationInit2268 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ANNOTATION_INIT_KEY_LIST_in_annotationInitializers2289 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _annotationInitializer_in_annotationInitializers2291 = new BitSet(new ulong[]{0x8UL,0x1000000UL});
+		public static readonly BitSet _ANNOTATION_INIT_DEFAULT_KEY_in_annotationInitializers2304 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _annotationElementValue_in_annotationInitializers2306 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _IDENT_in_annotationInitializer2331 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _annotationElementValue_in_annotationInitializer2333 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ANNOTATION_INIT_ARRAY_ELEMENT_in_annotationElementValue2358 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _annotationElementValue_in_annotationElementValue2360 = new BitSet(new ulong[]{0x4000000000200088UL});
+		public static readonly BitSet _annotation_in_annotationElementValue2372 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_annotationElementValue2382 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ANNOTATION_TOP_LEVEL_SCOPE_in_annotationTopLevelScope2406 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _annotationScopeDeclarations_in_annotationTopLevelScope2408 = new BitSet(new ulong[]{0x200001000201008UL,0x200000000UL,0x20000000000000UL});
+		public static readonly BitSet _ANNOTATION_METHOD_DECL_in_annotationScopeDeclarations2434 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _modifierList_in_annotationScopeDeclarations2436 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_annotationScopeDeclarations2438 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_annotationScopeDeclarations2440 = new BitSet(new ulong[]{0x1000000000008UL});
+		public static readonly BitSet _annotationDefaultValue_in_annotationScopeDeclarations2442 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _VAR_DECLARATION_in_annotationScopeDeclarations2455 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _modifierList_in_annotationScopeDeclarations2457 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_annotationScopeDeclarations2459 = new BitSet(new ulong[]{0x0UL,0x0UL,0x80000000000000UL});
+		public static readonly BitSet _variableDeclaratorList_in_annotationScopeDeclarations2461 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _typeDeclaration_in_annotationScopeDeclarations2472 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEFAULT_in_annotationDefaultValue2496 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _annotationElementValue_in_annotationDefaultValue2498 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _BLOCK_SCOPE_in_block2525 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _blockStatement_in_block2527 = new BitSet(new ulong[]{0x4208201015200008UL,0x4202002100UL,0x102108A000280000UL});
+		public static readonly BitSet _localVariableDeclaration_in_blockStatement2556 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _typeDeclaration_in_blockStatement2566 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _statement_in_blockStatement2576 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _brokenExpression_in_blockStatement2585 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _BROKEN_EXPRESSION_in_brokenExpression2602 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expression_in_brokenExpression2604 = new BitSet(new ulong[]{0x10000000000008UL,0x0UL,0x200000UL});
+		public static readonly BitSet _DOT_in_brokenExpression2606 = new BitSet(new ulong[]{0x8UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_brokenExpression2609 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _VAR_DECLARATION_in_localVariableDeclaration2626 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _localModifierList_in_localVariableDeclaration2628 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_localVariableDeclaration2630 = new BitSet(new ulong[]{0x0UL,0x0UL,0x80000000000000UL});
+		public static readonly BitSet _variableDeclaratorList_in_localVariableDeclaration2632 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _block_in_statement2669 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IF_in_statement2680 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement2682 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
+		public static readonly BitSet _statement_in_statement2684 = new BitSet(new ulong[]{0x4008200005000008UL,0x4002002100UL,0x100108A000280000UL});
+		public static readonly BitSet _statement_in_statement2686 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _FOR_in_statement2699 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _forInit_in_statement2701 = new BitSet(new ulong[]{0x0UL,0x1000UL});
+		public static readonly BitSet _forCondition_in_statement2703 = new BitSet(new ulong[]{0x0UL,0x8000UL});
+		public static readonly BitSet _forUpdater_in_statement2705 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
+		public static readonly BitSet _statement_in_statement2707 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _FOR_EACH_in_statement2719 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _localModifierList_in_statement2721 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_statement2723 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_statement2725 = new BitSet(new ulong[]{0x4000000000000000UL});
+		public static readonly BitSet _expression_in_statement2727 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
+		public static readonly BitSet _statement_in_statement2729 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _WHILE_in_statement2742 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement2744 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
+		public static readonly BitSet _statement_in_statement2746 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _DO_in_statement2758 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _statement_in_statement2760 = new BitSet(new ulong[]{0x0UL,0x0UL,0x10UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement2762 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _TRY_in_statement2774 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _block_in_statement2776 = new BitSet(new ulong[]{0x201000008UL});
+		public static readonly BitSet _catches_in_statement2778 = new BitSet(new ulong[]{0x1000008UL});
+		public static readonly BitSet _block_in_statement2781 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SWITCH_in_statement2796 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement2798 = new BitSet(new ulong[]{0x0UL,0x0UL,0x4000000000UL});
+		public static readonly BitSet _switchBlockLabels_in_statement2800 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SYNCHRONIZED_in_statement2812 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement2814 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _block_in_statement2816 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _RETURN_in_statement2828 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expression_in_statement2830 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _THROW_in_statement2843 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expression_in_statement2845 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _BREAK_in_statement2857 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _IDENT_in_statement2859 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _CONTINUE_in_statement2872 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _IDENT_in_statement2874 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _LABELED_STATEMENT_in_statement2887 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _IDENT_in_statement2889 = new BitSet(new ulong[]{0x4008200005000000UL,0x4002002100UL,0x100108A000280000UL});
+		public static readonly BitSet _statement_in_statement2891 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _expression_in_statement2902 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_statement2912 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _CATCH_CLAUSE_LIST_in_catches2941 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _catchClause_in_catches2943 = new BitSet(new ulong[]{0x100000008UL});
+		public static readonly BitSet _CATCH_in_catchClause2969 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _formalParameterStandardDecl_in_catchClause2971 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _block_in_catchClause2973 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SWITCH_BLOCK_LABEL_LIST_in_switchBlockLabels2994 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _switchCaseLabel_in_switchBlockLabels2996 = new BitSet(new ulong[]{0x1000040000008UL});
+		public static readonly BitSet _switchDefaultLabel_in_switchBlockLabels2999 = new BitSet(new ulong[]{0x40000008UL});
+		public static readonly BitSet _switchCaseLabel_in_switchBlockLabels3002 = new BitSet(new ulong[]{0x40000008UL});
+		public static readonly BitSet _CASE_in_switchCaseLabel3032 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expression_in_switchCaseLabel3034 = new BitSet(new ulong[]{0x4208201015200008UL,0x4202002100UL,0x102108A000280000UL});
+		public static readonly BitSet _blockStatement_in_switchCaseLabel3036 = new BitSet(new ulong[]{0x4208201015200008UL,0x4202002100UL,0x102108A000280000UL});
+		public static readonly BitSet _DEFAULT_in_switchDefaultLabel3062 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _blockStatement_in_switchDefaultLabel3064 = new BitSet(new ulong[]{0x4208201015200008UL,0x4202002100UL,0x102108A000280000UL});
+		public static readonly BitSet _FOR_INIT_in_forInit3090 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _localVariableDeclaration_in_forInit3093 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _expression_in_forInit3097 = new BitSet(new ulong[]{0x4000000000000008UL});
+		public static readonly BitSet _FOR_CONDITION_in_forCondition3125 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expression_in_forCondition3127 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _FOR_UPDATE_in_forUpdater3153 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expression_in_forUpdater3155 = new BitSet(new ulong[]{0x4000000000000008UL});
+		public static readonly BitSet _PARENTESIZED_EXPR_in_parenthesizedExpression3183 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expression_in_parenthesizedExpression3185 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _EXPR_in_expression3214 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expression3216 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ASSIGN_in_expr3241 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3246 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3250 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _PLUS_ASSIGN_in_expr3262 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3264 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3266 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _MINUS_ASSIGN_in_expr3278 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3280 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3282 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _STAR_ASSIGN_in_expr3294 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3296 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3298 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _DIV_ASSIGN_in_expr3310 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3312 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3314 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _AND_ASSIGN_in_expr3326 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3328 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3330 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _OR_ASSIGN_in_expr3342 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3344 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3346 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _XOR_ASSIGN_in_expr3358 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3360 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3362 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _MOD_ASSIGN_in_expr3374 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3376 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3378 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _BIT_SHIFT_RIGHT_ASSIGN_in_expr3390 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3392 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3394 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SHIFT_RIGHT_ASSIGN_in_expr3406 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3408 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3410 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SHIFT_LEFT_ASSIGN_in_expr3422 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3424 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3426 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _QUESTION_in_expr3438 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3440 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3442 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3444 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _LOGICAL_OR_in_expr3456 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3458 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3460 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _LOGICAL_AND_in_expr3472 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3474 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3476 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _OR_in_expr3488 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3490 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3492 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _XOR_in_expr3504 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3506 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3508 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _AND_in_expr3520 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3522 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3524 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _EQUAL_in_expr3536 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3538 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3540 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _NOT_EQUAL_in_expr3552 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3554 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3556 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _INSTANCEOF_in_expr3568 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3570 = new BitSet(new ulong[]{0x0UL,0x0UL,0x2000000000000UL});
+		public static readonly BitSet _type_in_expr3572 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _LESS_OR_EQUAL_in_expr3584 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3586 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3588 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _GREATER_OR_EQUAL_in_expr3600 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3602 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3604 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _BIT_SHIFT_RIGHT_in_expr3616 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3618 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3620 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SHIFT_RIGHT_in_expr3632 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3634 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3636 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _GREATER_THAN_in_expr3648 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3650 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3652 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SHIFT_LEFT_in_expr3664 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3666 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3668 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _LESS_THAN_in_expr3680 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3682 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3684 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _PLUS_in_expr3696 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3698 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3700 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _MINUS_in_expr3712 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3714 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3716 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _STAR_in_expr3728 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3730 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3732 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _DIV_in_expr3744 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3746 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3748 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _MOD_in_expr3760 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3762 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3764 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _UNARY_PLUS_in_expr3776 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3778 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _UNARY_MINUS_in_expr3790 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3792 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _PRE_INC_in_expr3804 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3806 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _PRE_DEC_in_expr3818 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3820 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _POST_INC_in_expr3832 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3834 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _POST_DEC_in_expr3846 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3848 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _NOT_in_expr3860 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3862 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _LOGICAL_NOT_in_expr3874 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expr_in_expr3876 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _CAST_EXPR_in_expr3888 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _type_in_expr3890 = new BitSet(new ulong[]{0x816802880D50060UL,0xB978E60041B00044UL,0xC861D678107F3UL,0x3UL});
+		public static readonly BitSet _expr_in_expr3892 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _primaryExpression_in_expr3903 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_primaryExpression3929 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _primaryExpression_in_primaryExpression3947 = new BitSet(new ulong[]{0x3000000000UL,0x1000000UL,0x20800000000UL});
+		public static readonly BitSet _IDENT_in_primaryExpression3969 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _THIS_in_primaryExpression3991 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SUPER_in_primaryExpression4013 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _innerNewExpression_in_primaryExpression4035 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _CLASS_in_primaryExpression4057 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _primitiveType_in_primaryExpression4093 = new BitSet(new ulong[]{0x1000000000UL});
+		public static readonly BitSet _CLASS_in_primaryExpression4095 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _VOID_in_primaryExpression4113 = new BitSet(new ulong[]{0x1000000000UL});
+		public static readonly BitSet _CLASS_in_primaryExpression4115 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _parenthesizedExpression_in_primaryExpression4149 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_primaryExpression4159 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _METHOD_CALL_in_primaryExpression4170 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _primaryExpression_in_primaryExpression4172 = new BitSet(new ulong[]{0x8000UL,0x20000UL});
+		public static readonly BitSet _genericTypeArgumentList_in_primaryExpression4174 = new BitSet(new ulong[]{0x8000UL});
+		public static readonly BitSet _arguments_in_primaryExpression4177 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _explicitConstructorCall_in_primaryExpression4188 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ARRAY_ELEMENT_ACCESS_in_primaryExpression4199 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _primaryExpression_in_primaryExpression4201 = new BitSet(new ulong[]{0x4000000000000000UL});
+		public static readonly BitSet _expression_in_primaryExpression4203 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _literal_in_primaryExpression4214 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _newExpression_in_primaryExpression4224 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _THIS_in_primaryExpression4234 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arrayTypeDeclarator_in_primaryExpression4244 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SUPER_in_primaryExpression4254 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _THIS_CONSTRUCTOR_CALL_in_explicitConstructorCall4278 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _genericTypeArgumentList_in_explicitConstructorCall4280 = new BitSet(new ulong[]{0x8000UL});
+		public static readonly BitSet _arguments_in_explicitConstructorCall4283 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _SUPER_CONSTRUCTOR_CALL_in_explicitConstructorCall4295 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _primaryExpression_in_explicitConstructorCall4297 = new BitSet(new ulong[]{0x8000UL,0x20000UL});
+		public static readonly BitSet _genericTypeArgumentList_in_explicitConstructorCall4300 = new BitSet(new ulong[]{0x8000UL});
+		public static readonly BitSet _arguments_in_explicitConstructorCall4303 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _ARRAY_DECLARATOR_in_arrayTypeDeclarator4324 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _arrayTypeDeclarator_in_arrayTypeDeclarator4327 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _qualifiedIdentifier_in_arrayTypeDeclarator4331 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _primitiveType_in_arrayTypeDeclarator4335 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _STATIC_ARRAY_CREATOR_in_newExpression4359 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _primitiveType_in_newExpression4377 = new BitSet(new ulong[]{0x4000000000020000UL});
+		public static readonly BitSet _newArrayConstruction_in_newExpression4379 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _genericTypeArgumentList_in_newExpression4397 = new BitSet(new ulong[]{0x0UL,0x0UL,0x8000UL});
+		public static readonly BitSet _qualifiedTypeIdent_in_newExpression4400 = new BitSet(new ulong[]{0x4000000000020000UL});
+		public static readonly BitSet _newArrayConstruction_in_newExpression4402 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _CLASS_CONSTRUCTOR_CALL_in_newExpression4437 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _genericTypeArgumentList_in_newExpression4439 = new BitSet(new ulong[]{0x0UL,0x0UL,0x8000UL});
+		public static readonly BitSet _qualifiedTypeIdent_in_newExpression4442 = new BitSet(new ulong[]{0x8000UL});
+		public static readonly BitSet _arguments_in_newExpression4444 = new BitSet(new ulong[]{0x10000000008UL});
+		public static readonly BitSet _classTopLevelScope_in_newExpression4446 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _CLASS_CONSTRUCTOR_CALL_in_innerNewExpression4469 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _genericTypeArgumentList_in_innerNewExpression4471 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_innerNewExpression4474 = new BitSet(new ulong[]{0x8000UL});
+		public static readonly BitSet _arguments_in_innerNewExpression4476 = new BitSet(new ulong[]{0x10000000008UL});
+		public static readonly BitSet _classTopLevelScope_in_innerNewExpression4478 = new BitSet(new ulong[]{0x8UL});
+		public static readonly BitSet _arrayDeclaratorList_in_newArrayConstruction4503 = new BitSet(new ulong[]{0x80000UL});
+		public static readonly BitSet _arrayInitializer_in_newArrayConstruction4505 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_newArrayConstruction4515 = new BitSet(new ulong[]{0x4000000000020002UL});
+		public static readonly BitSet _arrayDeclaratorList_in_newArrayConstruction4518 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ARGUMENT_LIST_in_arguments4539 = new BitSet(new ulong[]{0x4UL});
+		public static readonly BitSet _expression_in_arguments4541 = new BitSet(new ulong[]{0x4000000000000008UL});
+		public static readonly BitSet _LCURLY_in_synpred46_JavaTreeParser754 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
+		public static readonly BitSet _modifier_in_synpred46_JavaTreeParser756 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _getRule_in_synpred46_JavaTreeParser759 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred46_JavaTreeParser762 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _block_in_synpred46_JavaTreeParser764 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _modifier_in_synpred46_JavaTreeParser768 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _setRule_in_synpred46_JavaTreeParser771 = new BitSet(new ulong[]{0x1000000UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred46_JavaTreeParser774 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _block_in_synpred46_JavaTreeParser776 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_synpred46_JavaTreeParser781 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _switchCaseLabel_in_synpred145_JavaTreeParser2996 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_synpred152_JavaTreeParser3097 = new BitSet(new ulong[]{0x4000000000000002UL});
 	}
 	#endregion Follow sets
 }

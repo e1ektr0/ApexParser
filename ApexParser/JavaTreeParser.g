@@ -105,11 +105,11 @@ classTopLevelScope returns [IApexNode node]
 classScopeDeclarations returns [IApexNode node]
     :   ^(CLASS_INSTANCE_INITIALIZER block) {node = null;}
     |   ^(CLASS_STATIC_INITIALIZER block){node = null;}
-    |   ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? block?){node = new ApexMethod($IDENT.Text, $modifierList.modifierList);}
+    |   ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? block?){node = new ApexMethod($IDENT.Text, $modifierList.modifierList,$type.type);}
     |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?){node = new ApexMethod($IDENT.Text, $modifierList.modifierList);}
-    |   ^(VAR_DECLARATION modifierList type variableDeclaratorList){node = new ApexField($modifierList.modifierList);}
+    |   ^(VAR_DECLARATION modifierList type variableDeclaratorList){node = new ApexFieldList($type.type, $modifierList.modifierList, $variableDeclaratorList.fields);}
     |   ^(CONSTRUCTOR_DECL modifierList genericTypeParameterList? formalParameterList throwsClause? block){node = new ApexConstructor($modifierList.modifierList);}
-    |   ^(PROPERTY_DECL modifierList propertyDeclaration ){node = new ApexProperty($modifierList.modifierList);}
+    |   ^(PROPERTY_DECL modifierList type propertyDeclaration ){node = new ApexProperty($type.type, $modifierList.modifierList);}
     |   typeDeclaration {node = $typeDeclaration.node;}
     ;
 
@@ -142,16 +142,19 @@ interfaceScopeDeclarations
     |   typeDeclaration
     ;
 
-variableDeclaratorList
-    :   ^(VAR_DECLARATOR_LIST variableDeclarator+)
+variableDeclaratorList returns [List<ApexField> fields]
+    :  
+    	{fields = new List<ApexField>();}
+     	^(VAR_DECLARATOR_LIST (variableDeclarator {fields.Add($variableDeclarator.field);})+)
     ;
 
-variableDeclarator
-    :   ^(VAR_DECLARATOR variableDeclaratorId variableInitializer?)
+variableDeclarator returns [ApexField field]
+//todo: add initializer to field
+    :   ^(VAR_DECLARATOR variableDeclaratorId {field = $variableDeclaratorId.fieldId;} variableInitializer?)
     ;
     
-variableDeclaratorId
-    :   ^(IDENT arrayDeclaratorList?)
+variableDeclaratorId returns [ApexField fieldId]
+    :   ^(IDENT {fieldId = new ApexField($IDENT.Text);} (arrayDeclaratorList {fieldId.IsArray = true;})?)
     ;
 
 variableInitializer
@@ -213,16 +216,18 @@ localModifier
     |   annotation
     ;
 
-type
-    :   ^(TYPE (primitiveType | qualifiedTypeIdent) arrayDeclaratorList?)
+type returns [ApexType type]
+    :   
+    	^(TYPE (primitiveType | qualifiedTypeIdent {type = $qualifiedTypeIdent.type;}) arrayDeclaratorList?)
     ;
 
-qualifiedTypeIdent
-    :   ^(QUALIFIED_TYPE_IDENT typeIdent+) 
+qualifiedTypeIdent  returns [ApexType type]
+    :   ^(QUALIFIED_TYPE_IDENT {type = new ApexType($QUALIFIED_TYPE_IDENT.Text);} (typeIdent {type.AddType($typeIdent.type);})+) 
     ;
 
-typeIdent
-    :   ^(IDENT genericTypeArgumentList?)
+typeIdent returns [ApexType type]
+    :   
+    	^(IDENT {type = new ApexType($IDENT.Text);} (genericTypeArgumentList {type.AddTypes($genericTypeArgumentList.types);})?)
     ;
 
 primitiveType
@@ -236,12 +241,13 @@ primitiveType
     |   DOUBLE
     ;
 
-genericTypeArgumentList
-    :   ^(GENERIC_TYPE_ARG_LIST genericTypeArgument+)
+genericTypeArgumentList  returns [List<ApexType> types]
+    :   ^(GENERIC_TYPE_ARG_LIST {types = new List<ApexType>();} (genericTypeArgument {types.Add($genericTypeArgument.genericTypeArgument);})+)
     ;
     
-genericTypeArgument
-    :   type
+genericTypeArgument  returns [ApexType genericTypeArgument]
+    :   
+    	type {genericTypeArgument = $type.type;}
     |   ^(QUESTION genericWildcardBoundType?)
     ;
 

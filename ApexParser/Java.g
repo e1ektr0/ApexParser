@@ -374,14 +374,14 @@ classScopeDeclarations
     |   modifierList
         (   genericTypeParameterList?
             (   
-                type IDENT propertyDeclaration -> ^(PROPERTY_DECL propertyDeclaration)
-            |   type IDENT formalParameterList arrayDeclaratorList? throwsClause? (block | SEMI)
+            	type IDENT formalParameterList arrayDeclaratorList? throwsClause? (block | SEMI)
                 ->  ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? block?)
             |   VOID IDENT formalParameterList throwsClause? (block | SEMI)
                 ->  ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?)
             |   ident=IDENT formalParameterList throwsClause? block
                 ->  ^(CONSTRUCTOR_DECL[$ident, "CONSTRUCTOR_DECL"] modifierList genericTypeParameterList? formalParameterList throwsClause? block)
             )
+	|   type IDENT propertyDeclaration -> ^(PROPERTY_DECL propertyDeclaration)
         |   type classFieldDeclaratorList SEMI
             ->  ^(VAR_DECLARATION modifierList type classFieldDeclaratorList)
        	|   type classFieldDeclaratorList DOT? SEMI?
