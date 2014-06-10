@@ -59,7 +59,7 @@ importDeclaration
     ;
     
 typeDeclaration returns [IApexNode node]
-    :   ^(CLASS modifierList IDENT genericTypeParameterList? extendsClause? implementsClause? classTopLevelScope) {node = new ApexClassNode();}
+    :   ^(CLASS modifierList IDENT genericTypeParameterList? extendsClause? implementsClause? classTopLevelScope) {node = $classTopLevelScope.node;}
     |   ^(INTERFACE modifierList IDENT genericTypeParameterList? extendsClause? interfaceTopLevelScope)
     |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope)
     |   ^(AT modifierList IDENT annotationTopLevelScope)
@@ -96,18 +96,22 @@ enumConstant
     
     
 classTopLevelScope returns [IApexNode node]
-    :   ^(CLASS_TOP_LEVEL_SCOPE classScopeDeclarations*) 
+    :
+    
+       ^(CLASS_TOP_LEVEL_SCOPE {
+	 	node = new ApexClassNode(); 
+	} (classScopeDeclarations {((ApexClassNode)node).Add($classScopeDeclarations.node);})*)  
     ;
     
 classScopeDeclarations returns [IApexNode node]
-    :   ^(CLASS_INSTANCE_INITIALIZER block)
-    |   ^(CLASS_STATIC_INITIALIZER block)
-    |   ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? block?)
-    |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?)
-    |   ^(VAR_DECLARATION modifierList type variableDeclaratorList)
-    |   ^(CONSTRUCTOR_DECL modifierList genericTypeParameterList? formalParameterList throwsClause? block)
-    |   ^(PROPERTY_DECL propertyDeclaration )
-    |   typeDeclaration
+    :   ^(CLASS_INSTANCE_INITIALIZER block) {node = null;}
+    |   ^(CLASS_STATIC_INITIALIZER block){node = null;}
+    |   ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? block?){node = new ApexMethod($IDENT.Text);}
+    |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?){node = new ApexMethod($IDENT.Text);}
+    |   ^(VAR_DECLARATION modifierList type variableDeclaratorList){node = new ApexField();}
+    |   ^(CONSTRUCTOR_DECL modifierList genericTypeParameterList? formalParameterList throwsClause? block){node = new ApexConstructor();}
+    |   ^(PROPERTY_DECL propertyDeclaration ){node = new ApexConstructor();}
+    |   typeDeclaration {node = $typeDeclaration.node;}
     ;
 
 propertyDeclaration
