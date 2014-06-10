@@ -42,12 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApexNodes\IApexNode.cs" />
     <Compile Include="output\JavaLexer.cs" />
     <Compile Include="output\JavaParser.cs" />
+    <Compile Include="output\JavaTreeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Java.g" />
+    <Antlr3 Include="JavaTreeParser.g">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>ApexParser</CustomToolNamespace>
+    </Antlr3>
     <None Include="output\Java.tokens" />
     <None Include="packages.config" />
   </ItemGroup>

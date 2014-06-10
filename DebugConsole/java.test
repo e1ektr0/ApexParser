@@ -1,9 +1,7 @@
 ﻿public class H_C_CustomSettings
 {
-	public string x = ident().
     public static Boolean triggersEnabled()
     {
-		var z = 1+1;
 		var x = Ident().
 		var z = 1+1;
 		var x = Ident().d
