@@ -97,9 +97,7 @@ enumConstant
     
 classTopLevelScope returns [IApexNode node]
     :
-       ^(CLASS_TOP_LEVEL_SCOPE {
-	 	node = new ApexClassNode(); 
-	} (classScopeDeclarations {((ApexClassNode)node).Add($classScopeDeclarations.node);})*)  
+       ^(CLASS_TOP_LEVEL_SCOPE {node = new ApexClassNode();} (classScopeDeclarations {((ApexClassNode)node).Add($classScopeDeclarations.node);})*)  
     ;
     
 classScopeDeclarations returns [IApexNode node]
@@ -109,12 +107,13 @@ classScopeDeclarations returns [IApexNode node]
     |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?){node = new ApexMethod($IDENT.Text, $modifierList.modifierList);}
     |   ^(VAR_DECLARATION modifierList type variableDeclaratorList){node = new ApexFieldList($type.type, $modifierList.modifierList, $variableDeclaratorList.fields);}
     |   ^(CONSTRUCTOR_DECL modifierList genericTypeParameterList? formalParameterList throwsClause? block){node = new ApexConstructor($modifierList.modifierList);}
-    |   ^(PROPERTY_DECL modifierList type IDENT propertyDeclaration ){node = new ApexProperty($type.type, $modifierList.modifierList);}
+    |   ^(PROPERTY_DECL modifierList type IDENT propertyDeclaration ){node = new ApexProperty($IDENT.Text, $type.type, $modifierList.modifierList, $propertyDeclaration.nodes);}
     |   typeDeclaration {node = $typeDeclaration.node;}
     ;
 
-propertyDeclaration 
+propertyDeclaration returns [List<IApexNode> nodes]
 :
+ {nodes = new List<IApexNode>();}
  ('{' modifier? getRule (SEMI|block) (modifier? setRule (SEMI|block))? '}')
  | ('{' modifier? setRule (SEMI|block) (modifier? getRule (SEMI|block))?  '}')
 ;
@@ -221,12 +220,12 @@ type returns [ApexType type]
     ;
 
 qualifiedTypeIdent  returns [ApexType type]
-    :   ^(QUALIFIED_TYPE_IDENT {type = new ApexType($QUALIFIED_TYPE_IDENT.Text);} (typeIdent {type.AddType($typeIdent.type);})+) 
+    :   ^(QUALIFIED_TYPE_IDENT (typeIdent {type =$typeIdent.type;})+) 
     ;
 
 typeIdent returns [ApexType type]
     :   
-    	^(IDENT {type = new ApexType($IDENT.Text);} (genericTypeArgumentList {type.AddTypes($genericTypeArgumentList.types);})?)
+    	^(IDENT {type = new ApexType($IDENT.Text);} (genericTypeArgumentList {type.AddRage($genericTypeArgumentList.types);})?)
     ;
 
 primitiveType
