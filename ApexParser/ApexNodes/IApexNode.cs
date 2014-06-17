@@ -13,12 +13,6 @@ namespace ApexParser.ApexNodes
 
     }
 
-
-    public class Statement : BaseApexNode
-    {
-
-    }
-
     public class Block : BaseApexNode
     {
 

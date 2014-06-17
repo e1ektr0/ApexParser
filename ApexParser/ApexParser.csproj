@@ -52,6 +52,7 @@
     <Compile Include="ApexNodes\Expression.cs" />
     <Compile Include="ApexNodes\IApexNode.cs" />
     <Compile Include="ApexNodes\Modifier.cs" />
+    <Compile Include="ApexNodes\Statement.cs" />
     <Compile Include="output\JavaLexer.cs" />
     <Compile Include="output\JavaParser.cs" />
     <Compile Include="output\JavaTreeParser.cs" />

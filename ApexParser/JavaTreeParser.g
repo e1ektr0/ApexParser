@@ -331,7 +331,7 @@ blockStatement returns [IApexNode node]
     	
     	localVariableDeclaration {node= new LocalVariableDeclaration();}
     |   typeDeclaration {node= $typeDeclaration.node;}
-    |   statement {node= new Statement();}
+    |   statement { node = $statement.node; }
     | 	brokenExpression  {node = new BrokenExpression();}
     ;
 brokenExpression  returns [IApexNode node] 
@@ -344,8 +344,12 @@ localVariableDeclaration returns [LocalVariableDeclaration varDeclaration]
     
         
 statement returns [IApexNode node]
-    :   block
-    |   ^(IF parenthesizedExpression statement statement?)
+    :   block { node = $block.node; }
+    |   { node = new IfStatement(); } ^(IF parenthesizedExpression 
+    	trueStatement = statement { var ifStatement = node as IfStatement; 
+    		ifStatement.BoolExpression = $parenthesizedExpression.node; 
+    		ifStatement.TrueStatement = $trueStatement.node; } 
+    	( elseStatement = statement { (node as IfStatement).ElseStatement = $elseStatement.node; })?)
     |   ^(FOR forInit forCondition forUpdater statement)
     |   ^(FOR_EACH localModifierList type IDENT expression statement) 
     |   ^(WHILE parenthesizedExpression statement)
@@ -358,7 +362,7 @@ statement returns [IApexNode node]
     |   ^(BREAK IDENT?)
     |   ^(CONTINUE IDENT?)
     |   ^(LABELED_STATEMENT IDENT statement)
-    |   expression
+    |   expression { node = $expression.node; }
     |   SEMI // Empty statement.
     ;
         
@@ -397,7 +401,7 @@ forUpdater
 // EXPRESSIONS
 
 parenthesizedExpression returns [IApexNode node]
-    :   ^(PARENTESIZED_EXPR expression) {node = $expr.node;}
+    :   ^(PARENTESIZED_EXPR expression) {node = $expression.node;}
     ;
     
 expression returns [IApexNode node]
