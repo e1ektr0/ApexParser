@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.5.1 C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g 2014-06-10 17:47:58
+// $ANTLR 3.5.1 C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g 2014-06-17 12:10:04
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -1240,7 +1240,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: classExtendsClause, classBody, genericTypeParameterList, implementsClause, CLASS, IDENT
+			// elements: classBody, IDENT, CLASS, classExtendsClause, genericTypeParameterList, implementsClause
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2549,7 +2549,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: enumBody, ENUM, IDENT, implementsClause
+			// elements: ENUM, IDENT, implementsClause, enumBody
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -3403,7 +3403,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: interfaceExtendsClause, genericTypeParameterList, IDENT, interfaceBody, INTERFACE
+			// elements: genericTypeParameterList, interfaceBody, interfaceExtendsClause, IDENT, INTERFACE
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -3924,7 +3924,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 	partial void EnterRule_classScopeDeclarations();
 	partial void LeaveRule_classScopeDeclarations();
 	// $ANTLR start "classScopeDeclarations"
-	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:371:1: classScopeDeclarations : ( block -> ^( CLASS_INSTANCE_INITIALIZER block ) | STATIC block -> ^( CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block ) | modifierList ( type IDENT propertyDeclaration -> ^( PROPERTY_DECL type IDENT propertyDeclaration ) | ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) | type classFieldDeclaratorList ( DOT )? ( SEMI )? -> ^( BROKEN_DECLARATION modifierList type classFieldDeclaratorList ) ) | typeDeclaration | SEMI !);
+	// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:371:1: classScopeDeclarations : ( block -> ^( CLASS_INSTANCE_INITIALIZER block ) | STATIC block -> ^( CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block ) | modifierList ( type IDENT propertyDeclaration -> ^( PROPERTY_DECL modifierList type IDENT propertyDeclaration ) | ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) | type classFieldDeclaratorList ( DOT )? ( SEMI )? -> ^( BROKEN_DECLARATION modifierList type classFieldDeclaratorList ) ) | typeDeclaration | SEMI !);
 	[GrammarRule("classScopeDeclarations")]
 	private AstParserRuleReturnScope<CommonTree, IToken> classScopeDeclarations()
 	{
@@ -4004,7 +4004,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 		{
 			if (state.backtracking > 0 && AlreadyParsedRule(input, 25)) { return retval; }
 
-			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:372:5: ( block -> ^( CLASS_INSTANCE_INITIALIZER block ) | STATIC block -> ^( CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block ) | modifierList ( type IDENT propertyDeclaration -> ^( PROPERTY_DECL type IDENT propertyDeclaration ) | ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) | type classFieldDeclaratorList ( DOT )? ( SEMI )? -> ^( BROKEN_DECLARATION modifierList type classFieldDeclaratorList ) ) | typeDeclaration | SEMI !)
+			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:372:5: ( block -> ^( CLASS_INSTANCE_INITIALIZER block ) | STATIC block -> ^( CLASS_STATIC_INITIALIZER[$STATIC, \"CLASS_STATIC_INITIALIZER\"] block ) | modifierList ( type IDENT propertyDeclaration -> ^( PROPERTY_DECL modifierList type IDENT propertyDeclaration ) | ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) | type classFieldDeclaratorList ( DOT )? ( SEMI )? -> ^( BROKEN_DECLARATION modifierList type classFieldDeclaratorList ) ) | typeDeclaration | SEMI !)
 			int alt38=5;
 			try { DebugEnterDecision(38, false);
 			switch (input.LA(1))
@@ -4537,7 +4537,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:374:9: modifierList ( type IDENT propertyDeclaration -> ^( PROPERTY_DECL type IDENT propertyDeclaration ) | ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) | type classFieldDeclaratorList ( DOT )? ( SEMI )? -> ^( BROKEN_DECLARATION modifierList type classFieldDeclaratorList ) )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:374:9: modifierList ( type IDENT propertyDeclaration -> ^( PROPERTY_DECL modifierList type IDENT propertyDeclaration ) | ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) | type classFieldDeclaratorList ( DOT )? ( SEMI )? -> ^( BROKEN_DECLARATION modifierList type classFieldDeclaratorList ) )
 				{
 				DebugLocation(374, 9);
 				PushFollow(Follow._modifierList_in_classScopeDeclarations5812);
@@ -4546,7 +4546,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_modifierList.Add(modifierList83.Tree);
 				DebugLocation(375, 9);
-				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:375:9: ( type IDENT propertyDeclaration -> ^( PROPERTY_DECL type IDENT propertyDeclaration ) | ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) | type classFieldDeclaratorList ( DOT )? ( SEMI )? -> ^( BROKEN_DECLARATION modifierList type classFieldDeclaratorList ) )
+				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:375:9: ( type IDENT propertyDeclaration -> ^( PROPERTY_DECL modifierList type IDENT propertyDeclaration ) | ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI ) -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block )? ) | VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI ) -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ( block )? ) |ident= IDENT formalParameterList ( throwsClause )? block -> ^( CONSTRUCTOR_DECL[$ident, \"CONSTRUCTOR_DECL\"] modifierList ( genericTypeParameterList )? formalParameterList ( throwsClause )? block ) ) | type classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) | type classFieldDeclaratorList ( DOT )? ( SEMI )? -> ^( BROKEN_DECLARATION modifierList type classFieldDeclaratorList ) )
 				int alt37=4;
 				try { DebugEnterSubRule(37);
 				try { DebugEnterDecision(37, false);
@@ -4659,7 +4659,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: type, IDENT, propertyDeclaration
+					// elements: modifierList, type, IDENT, propertyDeclaration
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4670,20 +4670,22 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.Tree:null);
 
 					root_0 = (CommonTree)adaptor.Nil();
-					// 376:41: -> ^( PROPERTY_DECL type IDENT propertyDeclaration )
+					// 376:41: -> ^( PROPERTY_DECL modifierList type IDENT propertyDeclaration )
 					{
 						DebugLocation(376, 44);
-						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:376:44: ^( PROPERTY_DECL type IDENT propertyDeclaration )
+						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:376:44: ^( PROPERTY_DECL modifierList type IDENT propertyDeclaration )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.Nil();
 						DebugLocation(376, 46);
 						root_1 = (CommonTree)adaptor.BecomeRoot((CommonTree)adaptor.Create(PROPERTY_DECL, "PROPERTY_DECL"), root_1);
 
 						DebugLocation(376, 60);
+						adaptor.AddChild(root_1, stream_modifierList.NextTree());
+						DebugLocation(376, 73);
 						adaptor.AddChild(root_1, stream_type.NextTree());
-						DebugLocation(376, 65);
+						DebugLocation(376, 78);
 						adaptor.AddChild(root_1, stream_IDENT.NextNode());
-						DebugLocation(376, 71);
+						DebugLocation(376, 84);
 						adaptor.AddChild(root_1, stream_propertyDeclaration.NextTree());
 
 						adaptor.AddChild(root_0, root_1);
@@ -4720,7 +4722,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:377:7: genericTypeParameterList
 						{
 						DebugLocation(377, 7);
-						PushFollow(Follow._genericTypeParameterList_in_classScopeDeclarations5858);
+						PushFollow(Follow._genericTypeParameterList_in_classScopeDeclarations5860);
 						genericTypeParameterList87=genericTypeParameterList();
 						PopFollow();
 						if (state.failed) return retval;
@@ -4794,17 +4796,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:14: type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI )
 						{
 						DebugLocation(379, 14);
-						PushFollow(Follow._type_in_classScopeDeclarations5891);
+						PushFollow(Follow._type_in_classScopeDeclarations5893);
 						type88=type();
 						PopFollow();
 						if (state.failed) return retval;
 						if (state.backtracking == 0) stream_type.Add(type88.Tree);
 						DebugLocation(379, 19);
-						IDENT89=(IToken)Match(input,IDENT,Follow._IDENT_in_classScopeDeclarations5893); if (state.failed) return retval; 
+						IDENT89=(IToken)Match(input,IDENT,Follow._IDENT_in_classScopeDeclarations5895); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(IDENT89);
 
 						DebugLocation(379, 25);
-						PushFollow(Follow._formalParameterList_in_classScopeDeclarations5895);
+						PushFollow(Follow._formalParameterList_in_classScopeDeclarations5897);
 						formalParameterList90=formalParameterList();
 						PopFollow();
 						if (state.failed) return retval;
@@ -4828,7 +4830,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:45: arrayDeclaratorList
 							{
 							DebugLocation(379, 45);
-							PushFollow(Follow._arrayDeclaratorList_in_classScopeDeclarations5897);
+							PushFollow(Follow._arrayDeclaratorList_in_classScopeDeclarations5899);
 							arrayDeclaratorList91=arrayDeclaratorList();
 							PopFollow();
 							if (state.failed) return retval;
@@ -4859,7 +4861,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:66: throwsClause
 							{
 							DebugLocation(379, 66);
-							PushFollow(Follow._throwsClause_in_classScopeDeclarations5900);
+							PushFollow(Follow._throwsClause_in_classScopeDeclarations5902);
 							throwsClause92=throwsClause();
 							PopFollow();
 							if (state.failed) return retval;
@@ -4901,7 +4903,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:81: block
 							{
 							DebugLocation(379, 81);
-							PushFollow(Follow._block_in_classScopeDeclarations5904);
+							PushFollow(Follow._block_in_classScopeDeclarations5906);
 							block93=block();
 							PopFollow();
 							if (state.failed) return retval;
@@ -4914,7 +4916,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:89: SEMI
 							{
 							DebugLocation(379, 89);
-							SEMI94=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations5908); if (state.failed) return retval; 
+							SEMI94=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations5910); if (state.failed) return retval; 
 							if (state.backtracking == 0) stream_SEMI.Add(SEMI94);
 
 
@@ -4928,7 +4930,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: modifierList, arrayDeclaratorList, formalParameterList, genericTypeParameterList, block, throwsClause, IDENT, type
+						// elements: block, type, modifierList, genericTypeParameterList, IDENT, throwsClause, formalParameterList, arrayDeclaratorList
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -5009,15 +5011,15 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:17: VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI )
 						{
 						DebugLocation(381, 17);
-						VOID95=(IToken)Match(input,VOID,Follow._VOID_in_classScopeDeclarations5970); if (state.failed) return retval; 
+						VOID95=(IToken)Match(input,VOID,Follow._VOID_in_classScopeDeclarations5972); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_VOID.Add(VOID95);
 
 						DebugLocation(381, 22);
-						IDENT96=(IToken)Match(input,IDENT,Follow._IDENT_in_classScopeDeclarations5972); if (state.failed) return retval; 
+						IDENT96=(IToken)Match(input,IDENT,Follow._IDENT_in_classScopeDeclarations5974); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(IDENT96);
 
 						DebugLocation(381, 28);
-						PushFollow(Follow._formalParameterList_in_classScopeDeclarations5974);
+						PushFollow(Follow._formalParameterList_in_classScopeDeclarations5976);
 						formalParameterList97=formalParameterList();
 						PopFollow();
 						if (state.failed) return retval;
@@ -5041,7 +5043,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:48: throwsClause
 							{
 							DebugLocation(381, 48);
-							PushFollow(Follow._throwsClause_in_classScopeDeclarations5976);
+							PushFollow(Follow._throwsClause_in_classScopeDeclarations5978);
 							throwsClause98=throwsClause();
 							PopFollow();
 							if (state.failed) return retval;
@@ -5083,7 +5085,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:63: block
 							{
 							DebugLocation(381, 63);
-							PushFollow(Follow._block_in_classScopeDeclarations5980);
+							PushFollow(Follow._block_in_classScopeDeclarations5982);
 							block99=block();
 							PopFollow();
 							if (state.failed) return retval;
@@ -5096,7 +5098,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:71: SEMI
 							{
 							DebugLocation(381, 71);
-							SEMI100=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations5984); if (state.failed) return retval; 
+							SEMI100=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations5986); if (state.failed) return retval; 
 							if (state.backtracking == 0) stream_SEMI.Add(SEMI100);
 
 
@@ -5110,7 +5112,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: block, formalParameterList, modifierList, throwsClause, IDENT, genericTypeParameterList
+						// elements: throwsClause, block, genericTypeParameterList, modifierList, IDENT, formalParameterList
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -5180,11 +5182,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:383:17: ident= IDENT formalParameterList ( throwsClause )? block
 						{
 						DebugLocation(383, 22);
-						ident=(IToken)Match(input,IDENT,Follow._IDENT_in_classScopeDeclarations6043); if (state.failed) return retval; 
+						ident=(IToken)Match(input,IDENT,Follow._IDENT_in_classScopeDeclarations6045); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(ident);
 
 						DebugLocation(383, 29);
-						PushFollow(Follow._formalParameterList_in_classScopeDeclarations6045);
+						PushFollow(Follow._formalParameterList_in_classScopeDeclarations6047);
 						formalParameterList101=formalParameterList();
 						PopFollow();
 						if (state.failed) return retval;
@@ -5208,7 +5210,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:383:49: throwsClause
 							{
 							DebugLocation(383, 49);
-							PushFollow(Follow._throwsClause_in_classScopeDeclarations6047);
+							PushFollow(Follow._throwsClause_in_classScopeDeclarations6049);
 							throwsClause102=throwsClause();
 							PopFollow();
 							if (state.failed) return retval;
@@ -5221,7 +5223,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						} finally { DebugExitSubRule(33); }
 
 						DebugLocation(383, 63);
-						PushFollow(Follow._block_in_classScopeDeclarations6050);
+						PushFollow(Follow._block_in_classScopeDeclarations6052);
 						block103=block();
 						PopFollow();
 						if (state.failed) return retval;
@@ -5230,7 +5232,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: throwsClause, genericTypeParameterList, formalParameterList, block, modifierList
+						// elements: modifierList, block, formalParameterList, genericTypeParameterList, throwsClause
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -5298,26 +5300,26 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:387:13: type classFieldDeclaratorList SEMI
 					{
 					DebugLocation(387, 13);
-					PushFollow(Follow._type_in_classScopeDeclarations6116);
+					PushFollow(Follow._type_in_classScopeDeclarations6118);
 					type104=type();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_type.Add(type104.Tree);
 					DebugLocation(387, 18);
-					PushFollow(Follow._classFieldDeclaratorList_in_classScopeDeclarations6118);
+					PushFollow(Follow._classFieldDeclaratorList_in_classScopeDeclarations6120);
 					classFieldDeclaratorList105=classFieldDeclaratorList();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_classFieldDeclaratorList.Add(classFieldDeclaratorList105.Tree);
 					DebugLocation(387, 43);
-					SEMI106=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations6120); if (state.failed) return retval; 
+					SEMI106=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations6122); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_SEMI.Add(SEMI106);
 
 
 
 					{
 					// AST REWRITE
-					// elements: modifierList, classFieldDeclaratorList, type
+					// elements: modifierList, type, classFieldDeclaratorList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5360,13 +5362,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:389:13: type classFieldDeclaratorList ( DOT )? ( SEMI )?
 					{
 					DebugLocation(389, 13);
-					PushFollow(Follow._type_in_classScopeDeclarations6159);
+					PushFollow(Follow._type_in_classScopeDeclarations6161);
 					type107=type();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_type.Add(type107.Tree);
 					DebugLocation(389, 18);
-					PushFollow(Follow._classFieldDeclaratorList_in_classScopeDeclarations6161);
+					PushFollow(Follow._classFieldDeclaratorList_in_classScopeDeclarations6163);
 					classFieldDeclaratorList108=classFieldDeclaratorList();
 					PopFollow();
 					if (state.failed) return retval;
@@ -5390,7 +5392,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:389:43: DOT
 						{
 						DebugLocation(389, 43);
-						DOT109=(IToken)Match(input,DOT,Follow._DOT_in_classScopeDeclarations6163); if (state.failed) return retval; 
+						DOT109=(IToken)Match(input,DOT,Follow._DOT_in_classScopeDeclarations6165); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_DOT.Add(DOT109);
 
 
@@ -5424,7 +5426,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:389:48: SEMI
 						{
 						DebugLocation(389, 48);
-						SEMI110=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations6166); if (state.failed) return retval; 
+						SEMI110=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations6168); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_SEMI.Add(SEMI110);
 
 
@@ -5490,7 +5492,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(392, 9);
-				PushFollow(Follow._typeDeclaration_in_classScopeDeclarations6212);
+				PushFollow(Follow._typeDeclaration_in_classScopeDeclarations6214);
 				typeDeclaration111=typeDeclaration();
 				PopFollow();
 				if (state.failed) return retval;
@@ -5505,7 +5507,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(393, 13);
-				SEMI112=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations6222); if (state.failed) return retval;
+				SEMI112=(IToken)Match(input,SEMI,Follow._SEMI_in_classScopeDeclarations6224); if (state.failed) return retval;
 
 				}
 				break;
@@ -6025,7 +6027,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:397:9: modifierList ( ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI -> ^( FUNCTION_METHOD_DECL modifierList ( genericTypeParameterList )? type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ) | VOID IDENT formalParameterList ( throwsClause )? SEMI -> ^( VOID_METHOD_DECL modifierList ( genericTypeParameterList )? IDENT formalParameterList ( throwsClause )? ) ) | type interfaceFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type interfaceFieldDeclaratorList ) )
 				{
 				DebugLocation(397, 9);
-				PushFollow(Follow._modifierList_in_interfaceScopeDeclarations6242);
+				PushFollow(Follow._modifierList_in_interfaceScopeDeclarations6244);
 				modifierList113=modifierList();
 				PopFollow();
 				if (state.failed) return retval;
@@ -6127,7 +6129,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:398:13: genericTypeParameterList
 						{
 						DebugLocation(398, 13);
-						PushFollow(Follow._genericTypeParameterList_in_interfaceScopeDeclarations6256);
+						PushFollow(Follow._genericTypeParameterList_in_interfaceScopeDeclarations6258);
 						genericTypeParameterList114=genericTypeParameterList();
 						PopFollow();
 						if (state.failed) return retval;
@@ -6169,17 +6171,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:399:17: type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI
 						{
 						DebugLocation(399, 17);
-						PushFollow(Follow._type_in_interfaceScopeDeclarations6275);
+						PushFollow(Follow._type_in_interfaceScopeDeclarations6277);
 						type115=type();
 						PopFollow();
 						if (state.failed) return retval;
 						if (state.backtracking == 0) stream_type.Add(type115.Tree);
 						DebugLocation(399, 22);
-						IDENT116=(IToken)Match(input,IDENT,Follow._IDENT_in_interfaceScopeDeclarations6277); if (state.failed) return retval; 
+						IDENT116=(IToken)Match(input,IDENT,Follow._IDENT_in_interfaceScopeDeclarations6279); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(IDENT116);
 
 						DebugLocation(399, 28);
-						PushFollow(Follow._formalParameterList_in_interfaceScopeDeclarations6279);
+						PushFollow(Follow._formalParameterList_in_interfaceScopeDeclarations6281);
 						formalParameterList117=formalParameterList();
 						PopFollow();
 						if (state.failed) return retval;
@@ -6203,7 +6205,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:399:48: arrayDeclaratorList
 							{
 							DebugLocation(399, 48);
-							PushFollow(Follow._arrayDeclaratorList_in_interfaceScopeDeclarations6281);
+							PushFollow(Follow._arrayDeclaratorList_in_interfaceScopeDeclarations6283);
 							arrayDeclaratorList118=arrayDeclaratorList();
 							PopFollow();
 							if (state.failed) return retval;
@@ -6234,7 +6236,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:399:69: throwsClause
 							{
 							DebugLocation(399, 69);
-							PushFollow(Follow._throwsClause_in_interfaceScopeDeclarations6284);
+							PushFollow(Follow._throwsClause_in_interfaceScopeDeclarations6286);
 							throwsClause119=throwsClause();
 							PopFollow();
 							if (state.failed) return retval;
@@ -6247,14 +6249,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						} finally { DebugExitSubRule(41); }
 
 						DebugLocation(399, 83);
-						SEMI120=(IToken)Match(input,SEMI,Follow._SEMI_in_interfaceScopeDeclarations6287); if (state.failed) return retval; 
+						SEMI120=(IToken)Match(input,SEMI,Follow._SEMI_in_interfaceScopeDeclarations6289); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_SEMI.Add(SEMI120);
 
 
 
 						{
 						// AST REWRITE
-						// elements: genericTypeParameterList, type, modifierList, throwsClause, formalParameterList, arrayDeclaratorList, IDENT
+						// elements: formalParameterList, throwsClause, genericTypeParameterList, type, arrayDeclaratorList, IDENT, modifierList
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -6326,15 +6328,15 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:401:17: VOID IDENT formalParameterList ( throwsClause )? SEMI
 						{
 						DebugLocation(401, 17);
-						VOID121=(IToken)Match(input,VOID,Follow._VOID_in_interfaceScopeDeclarations6345); if (state.failed) return retval; 
+						VOID121=(IToken)Match(input,VOID,Follow._VOID_in_interfaceScopeDeclarations6347); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_VOID.Add(VOID121);
 
 						DebugLocation(401, 22);
-						IDENT122=(IToken)Match(input,IDENT,Follow._IDENT_in_interfaceScopeDeclarations6347); if (state.failed) return retval; 
+						IDENT122=(IToken)Match(input,IDENT,Follow._IDENT_in_interfaceScopeDeclarations6349); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(IDENT122);
 
 						DebugLocation(401, 28);
-						PushFollow(Follow._formalParameterList_in_interfaceScopeDeclarations6349);
+						PushFollow(Follow._formalParameterList_in_interfaceScopeDeclarations6351);
 						formalParameterList123=formalParameterList();
 						PopFollow();
 						if (state.failed) return retval;
@@ -6358,7 +6360,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:401:48: throwsClause
 							{
 							DebugLocation(401, 48);
-							PushFollow(Follow._throwsClause_in_interfaceScopeDeclarations6351);
+							PushFollow(Follow._throwsClause_in_interfaceScopeDeclarations6353);
 							throwsClause124=throwsClause();
 							PopFollow();
 							if (state.failed) return retval;
@@ -6371,14 +6373,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						} finally { DebugExitSubRule(42); }
 
 						DebugLocation(401, 62);
-						SEMI125=(IToken)Match(input,SEMI,Follow._SEMI_in_interfaceScopeDeclarations6354); if (state.failed) return retval; 
+						SEMI125=(IToken)Match(input,SEMI,Follow._SEMI_in_interfaceScopeDeclarations6356); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_SEMI.Add(SEMI125);
 
 
 
 						{
 						// AST REWRITE
-						// elements: genericTypeParameterList, IDENT, modifierList, throwsClause, formalParameterList
+						// elements: throwsClause, formalParameterList, genericTypeParameterList, modifierList, IDENT
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -6446,26 +6448,26 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:404:13: type interfaceFieldDeclaratorList SEMI
 					{
 					DebugLocation(404, 13);
-					PushFollow(Follow._type_in_interfaceScopeDeclarations6417);
+					PushFollow(Follow._type_in_interfaceScopeDeclarations6419);
 					type126=type();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_type.Add(type126.Tree);
 					DebugLocation(404, 18);
-					PushFollow(Follow._interfaceFieldDeclaratorList_in_interfaceScopeDeclarations6419);
+					PushFollow(Follow._interfaceFieldDeclaratorList_in_interfaceScopeDeclarations6421);
 					interfaceFieldDeclaratorList127=interfaceFieldDeclaratorList();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_interfaceFieldDeclaratorList.Add(interfaceFieldDeclaratorList127.Tree);
 					DebugLocation(404, 47);
-					SEMI128=(IToken)Match(input,SEMI,Follow._SEMI_in_interfaceScopeDeclarations6421); if (state.failed) return retval; 
+					SEMI128=(IToken)Match(input,SEMI,Follow._SEMI_in_interfaceScopeDeclarations6423); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_SEMI.Add(SEMI128);
 
 
 
 					{
 					// AST REWRITE
-					// elements: interfaceFieldDeclaratorList, modifierList, type
+					// elements: modifierList, type, interfaceFieldDeclaratorList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6517,7 +6519,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(407, 9);
-				PushFollow(Follow._typeDeclaration_in_interfaceScopeDeclarations6466);
+				PushFollow(Follow._typeDeclaration_in_interfaceScopeDeclarations6468);
 				typeDeclaration129=typeDeclaration();
 				PopFollow();
 				if (state.failed) return retval;
@@ -6532,7 +6534,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(408, 13);
-				SEMI130=(IToken)Match(input,SEMI,Follow._SEMI_in_interfaceScopeDeclarations6476); if (state.failed) return retval;
+				SEMI130=(IToken)Match(input,SEMI,Follow._SEMI_in_interfaceScopeDeclarations6478); if (state.failed) return retval;
 
 				}
 				break;
@@ -6601,7 +6603,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:412:9: classFieldDeclarator ( COMMA classFieldDeclarator )*
 			{
 			DebugLocation(412, 9);
-			PushFollow(Follow._classFieldDeclarator_in_classFieldDeclaratorList6496);
+			PushFollow(Follow._classFieldDeclarator_in_classFieldDeclaratorList6498);
 			classFieldDeclarator131=classFieldDeclarator();
 			PopFollow();
 			if (state.failed) return retval;
@@ -6629,11 +6631,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:412:31: COMMA classFieldDeclarator
 					{
 					DebugLocation(412, 31);
-					COMMA132=(IToken)Match(input,COMMA,Follow._COMMA_in_classFieldDeclaratorList6499); if (state.failed) return retval; 
+					COMMA132=(IToken)Match(input,COMMA,Follow._COMMA_in_classFieldDeclaratorList6501); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_COMMA.Add(COMMA132);
 
 					DebugLocation(412, 37);
-					PushFollow(Follow._classFieldDeclarator_in_classFieldDeclaratorList6501);
+					PushFollow(Follow._classFieldDeclarator_in_classFieldDeclaratorList6503);
 					classFieldDeclarator133=classFieldDeclarator();
 					PopFollow();
 					if (state.failed) return retval;
@@ -6764,7 +6766,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:417:9: variableDeclaratorId ( ASSIGN variableInitializer )?
 			{
 			DebugLocation(417, 9);
-			PushFollow(Follow._variableDeclaratorId_in_classFieldDeclarator6540);
+			PushFollow(Follow._variableDeclaratorId_in_classFieldDeclarator6542);
 			variableDeclaratorId134=variableDeclaratorId();
 			PopFollow();
 			if (state.failed) return retval;
@@ -6788,11 +6790,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:417:31: ASSIGN variableInitializer
 				{
 				DebugLocation(417, 31);
-				ASSIGN135=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_classFieldDeclarator6543); if (state.failed) return retval; 
+				ASSIGN135=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_classFieldDeclarator6545); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_ASSIGN.Add(ASSIGN135);
 
 				DebugLocation(417, 38);
-				PushFollow(Follow._variableInitializer_in_classFieldDeclarator6545);
+				PushFollow(Follow._variableInitializer_in_classFieldDeclarator6547);
 				variableInitializer136=variableInitializer();
 				PopFollow();
 				if (state.failed) return retval;
@@ -6808,7 +6810,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: variableDeclaratorId, variableInitializer
+			// elements: variableInitializer, variableDeclaratorId
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -6914,7 +6916,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:422:9: interfaceFieldDeclarator ( COMMA interfaceFieldDeclarator )*
 			{
 			DebugLocation(422, 9);
-			PushFollow(Follow._interfaceFieldDeclarator_in_interfaceFieldDeclaratorList6590);
+			PushFollow(Follow._interfaceFieldDeclarator_in_interfaceFieldDeclaratorList6592);
 			interfaceFieldDeclarator137=interfaceFieldDeclarator();
 			PopFollow();
 			if (state.failed) return retval;
@@ -6942,11 +6944,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:422:35: COMMA interfaceFieldDeclarator
 					{
 					DebugLocation(422, 35);
-					COMMA138=(IToken)Match(input,COMMA,Follow._COMMA_in_interfaceFieldDeclaratorList6593); if (state.failed) return retval; 
+					COMMA138=(IToken)Match(input,COMMA,Follow._COMMA_in_interfaceFieldDeclaratorList6595); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_COMMA.Add(COMMA138);
 
 					DebugLocation(422, 41);
-					PushFollow(Follow._interfaceFieldDeclarator_in_interfaceFieldDeclaratorList6595);
+					PushFollow(Follow._interfaceFieldDeclarator_in_interfaceFieldDeclaratorList6597);
 					interfaceFieldDeclarator139=interfaceFieldDeclarator();
 					PopFollow();
 					if (state.failed) return retval;
@@ -7077,17 +7079,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:427:9: variableDeclaratorId ASSIGN variableInitializer
 			{
 			DebugLocation(427, 9);
-			PushFollow(Follow._variableDeclaratorId_in_interfaceFieldDeclarator6634);
+			PushFollow(Follow._variableDeclaratorId_in_interfaceFieldDeclarator6636);
 			variableDeclaratorId140=variableDeclaratorId();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_variableDeclaratorId.Add(variableDeclaratorId140.Tree);
 			DebugLocation(427, 30);
-			ASSIGN141=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_interfaceFieldDeclarator6636); if (state.failed) return retval; 
+			ASSIGN141=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_interfaceFieldDeclarator6638); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ASSIGN.Add(ASSIGN141);
 
 			DebugLocation(427, 37);
-			PushFollow(Follow._variableInitializer_in_interfaceFieldDeclarator6638);
+			PushFollow(Follow._variableInitializer_in_interfaceFieldDeclarator6640);
 			variableInitializer142=variableInitializer();
 			PopFollow();
 			if (state.failed) return retval;
@@ -7096,7 +7098,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: variableDeclaratorId, variableInitializer
+			// elements: variableInitializer, variableDeclaratorId
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -7194,7 +7196,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(432, 14);
-			IDENT143=(IToken)Match(input,IDENT,Follow._IDENT_in_variableDeclaratorId6680); if (state.failed) return retval;
+			IDENT143=(IToken)Match(input,IDENT,Follow._IDENT_in_variableDeclaratorId6682); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			IDENT143_tree = (CommonTree)adaptor.Create(IDENT143);
 			root_0 = (CommonTree)adaptor.BecomeRoot(IDENT143_tree, root_0);
@@ -7218,7 +7220,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:432:16: arrayDeclaratorList
 				{
 				DebugLocation(432, 16);
-				PushFollow(Follow._arrayDeclaratorList_in_variableDeclaratorId6683);
+				PushFollow(Follow._arrayDeclaratorList_in_variableDeclaratorId6685);
 				arrayDeclaratorList144=arrayDeclaratorList();
 				PopFollow();
 				if (state.failed) return retval;
@@ -7649,7 +7651,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(436, 9);
-				PushFollow(Follow._arrayInitializer_in_variableInitializer6703);
+				PushFollow(Follow._arrayInitializer_in_variableInitializer6705);
 				arrayInitializer145=arrayInitializer();
 				PopFollow();
 				if (state.failed) return retval;
@@ -7664,7 +7666,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(437, 9);
-				PushFollow(Follow._expression_in_variableInitializer6713);
+				PushFollow(Follow._expression_in_variableInitializer6715);
 				expression146=expression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -7677,7 +7679,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:438:9: brokenExpression
 				{
 				DebugLocation(438, 9);
-				PushFollow(Follow._brokenExpression_in_variableInitializer6723);
+				PushFollow(Follow._brokenExpression_in_variableInitializer6725);
 				brokenExpression147=brokenExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -7785,11 +7787,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:442:9: LBRACK RBRACK
 			{
 			DebugLocation(442, 9);
-			LBRACK148=(IToken)Match(input,LBRACK,Follow._LBRACK_in_arrayDeclarator6754); if (state.failed) return retval; 
+			LBRACK148=(IToken)Match(input,LBRACK,Follow._LBRACK_in_arrayDeclarator6756); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LBRACK.Add(LBRACK148);
 
 			DebugLocation(442, 16);
-			RBRACK149=(IToken)Match(input,RBRACK,Follow._RBRACK_in_arrayDeclarator6756); if (state.failed) return retval; 
+			RBRACK149=(IToken)Match(input,RBRACK,Follow._RBRACK_in_arrayDeclarator6758); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_RBRACK.Add(RBRACK149);
 
 
@@ -7916,7 +7918,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:447:9: arrayDeclarator
 					{
 					DebugLocation(447, 9);
-					PushFollow(Follow._arrayDeclarator_in_arrayDeclaratorList6790);
+					PushFollow(Follow._arrayDeclarator_in_arrayDeclaratorList6792);
 					arrayDeclarator150=arrayDeclarator();
 					PopFollow();
 					if (state.failed) return retval;
@@ -8060,7 +8062,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:452:9: LCURLY ( variableInitializer ( COMMA variableInitializer )* ( COMMA )? )? RCURLY
 			{
 			DebugLocation(452, 9);
-			LCURLY151=(IToken)Match(input,LCURLY,Follow._LCURLY_in_arrayInitializer6835); if (state.failed) return retval; 
+			LCURLY151=(IToken)Match(input,LCURLY,Follow._LCURLY_in_arrayInitializer6837); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LCURLY.Add(LCURLY151);
 
 			DebugLocation(452, 16);
@@ -8082,7 +8084,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:452:17: variableInitializer ( COMMA variableInitializer )* ( COMMA )?
 				{
 				DebugLocation(452, 17);
-				PushFollow(Follow._variableInitializer_in_arrayInitializer6838);
+				PushFollow(Follow._variableInitializer_in_arrayInitializer6840);
 				variableInitializer152=variableInitializer();
 				PopFollow();
 				if (state.failed) return retval;
@@ -8117,11 +8119,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:452:38: COMMA variableInitializer
 						{
 						DebugLocation(452, 38);
-						COMMA153=(IToken)Match(input,COMMA,Follow._COMMA_in_arrayInitializer6841); if (state.failed) return retval; 
+						COMMA153=(IToken)Match(input,COMMA,Follow._COMMA_in_arrayInitializer6843); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_COMMA.Add(COMMA153);
 
 						DebugLocation(452, 44);
-						PushFollow(Follow._variableInitializer_in_arrayInitializer6843);
+						PushFollow(Follow._variableInitializer_in_arrayInitializer6845);
 						variableInitializer154=variableInitializer();
 						PopFollow();
 						if (state.failed) return retval;
@@ -8159,7 +8161,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:452:66: COMMA
 					{
 					DebugLocation(452, 66);
-					COMMA155=(IToken)Match(input,COMMA,Follow._COMMA_in_arrayInitializer6847); if (state.failed) return retval; 
+					COMMA155=(IToken)Match(input,COMMA,Follow._COMMA_in_arrayInitializer6849); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_COMMA.Add(COMMA155);
 
 
@@ -8177,7 +8179,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(54); }
 
 			DebugLocation(452, 75);
-			RCURLY156=(IToken)Match(input,RCURLY,Follow._RCURLY_in_arrayInitializer6852); if (state.failed) return retval; 
+			RCURLY156=(IToken)Match(input,RCURLY,Follow._RCURLY_in_arrayInitializer6854); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_RCURLY.Add(RCURLY156);
 
 
@@ -8287,11 +8289,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:457:9: THROWS qualifiedIdentList
 			{
 			DebugLocation(457, 9);
-			THROWS157=(IToken)Match(input,THROWS,Follow._THROWS_in_throwsClause6894); if (state.failed) return retval; 
+			THROWS157=(IToken)Match(input,THROWS,Follow._THROWS_in_throwsClause6896); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_THROWS.Add(THROWS157);
 
 			DebugLocation(457, 16);
-			PushFollow(Follow._qualifiedIdentList_in_throwsClause6896);
+			PushFollow(Follow._qualifiedIdentList_in_throwsClause6898);
 			qualifiedIdentList158=qualifiedIdentList();
 			PopFollow();
 			if (state.failed) return retval;
@@ -8426,7 +8428,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:462:9: modifier
 					{
 					DebugLocation(462, 9);
-					PushFollow(Follow._modifier_in_modifierList6933);
+					PushFollow(Follow._modifier_in_modifierList6935);
 					modifier159=modifier();
 					PopFollow();
 					if (state.failed) return retval;
@@ -8685,7 +8687,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(467, 9);
-				PUBLIC160=(IToken)Match(input,PUBLIC,Follow._PUBLIC_in_modifier6974); if (state.failed) return retval;
+				PUBLIC160=(IToken)Match(input,PUBLIC,Follow._PUBLIC_in_modifier6976); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				PUBLIC160_tree = (CommonTree)adaptor.Create(PUBLIC160);
 				adaptor.AddChild(root_0, PUBLIC160_tree);
@@ -8700,7 +8702,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(468, 9);
-				OVERRIDE161=(IToken)Match(input,OVERRIDE,Follow._OVERRIDE_in_modifier6984); if (state.failed) return retval;
+				OVERRIDE161=(IToken)Match(input,OVERRIDE,Follow._OVERRIDE_in_modifier6986); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				OVERRIDE161_tree = (CommonTree)adaptor.Create(OVERRIDE161);
 				adaptor.AddChild(root_0, OVERRIDE161_tree);
@@ -8715,7 +8717,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(469, 9);
-				VIRTUAL162=(IToken)Match(input,VIRTUAL,Follow._VIRTUAL_in_modifier6994); if (state.failed) return retval;
+				VIRTUAL162=(IToken)Match(input,VIRTUAL,Follow._VIRTUAL_in_modifier6996); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				VIRTUAL162_tree = (CommonTree)adaptor.Create(VIRTUAL162);
 				adaptor.AddChild(root_0, VIRTUAL162_tree);
@@ -8730,7 +8732,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(470, 9);
-				WITH_SHARING163=(IToken)Match(input,WITH_SHARING,Follow._WITH_SHARING_in_modifier7004); if (state.failed) return retval;
+				WITH_SHARING163=(IToken)Match(input,WITH_SHARING,Follow._WITH_SHARING_in_modifier7006); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				WITH_SHARING163_tree = (CommonTree)adaptor.Create(WITH_SHARING163);
 				adaptor.AddChild(root_0, WITH_SHARING163_tree);
@@ -8745,7 +8747,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(471, 7);
-				WITHOUT_SHARING164=(IToken)Match(input,WITHOUT_SHARING,Follow._WITHOUT_SHARING_in_modifier7012); if (state.failed) return retval;
+				WITHOUT_SHARING164=(IToken)Match(input,WITHOUT_SHARING,Follow._WITHOUT_SHARING_in_modifier7014); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				WITHOUT_SHARING164_tree = (CommonTree)adaptor.Create(WITHOUT_SHARING164);
 				adaptor.AddChild(root_0, WITHOUT_SHARING164_tree);
@@ -8760,7 +8762,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(472, 9);
-				PROTECTED165=(IToken)Match(input,PROTECTED,Follow._PROTECTED_in_modifier7022); if (state.failed) return retval;
+				PROTECTED165=(IToken)Match(input,PROTECTED,Follow._PROTECTED_in_modifier7024); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				PROTECTED165_tree = (CommonTree)adaptor.Create(PROTECTED165);
 				adaptor.AddChild(root_0, PROTECTED165_tree);
@@ -8775,7 +8777,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(473, 9);
-				PRIVATE166=(IToken)Match(input,PRIVATE,Follow._PRIVATE_in_modifier7032); if (state.failed) return retval;
+				PRIVATE166=(IToken)Match(input,PRIVATE,Follow._PRIVATE_in_modifier7034); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				PRIVATE166_tree = (CommonTree)adaptor.Create(PRIVATE166);
 				adaptor.AddChild(root_0, PRIVATE166_tree);
@@ -8790,7 +8792,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(474, 9);
-				STATIC167=(IToken)Match(input,STATIC,Follow._STATIC_in_modifier7042); if (state.failed) return retval;
+				STATIC167=(IToken)Match(input,STATIC,Follow._STATIC_in_modifier7044); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				STATIC167_tree = (CommonTree)adaptor.Create(STATIC167);
 				adaptor.AddChild(root_0, STATIC167_tree);
@@ -8805,7 +8807,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(475, 9);
-				ABSTRACT168=(IToken)Match(input,ABSTRACT,Follow._ABSTRACT_in_modifier7052); if (state.failed) return retval;
+				ABSTRACT168=(IToken)Match(input,ABSTRACT,Follow._ABSTRACT_in_modifier7054); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				ABSTRACT168_tree = (CommonTree)adaptor.Create(ABSTRACT168);
 				adaptor.AddChild(root_0, ABSTRACT168_tree);
@@ -8820,7 +8822,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(476, 9);
-				NATIVE169=(IToken)Match(input,NATIVE,Follow._NATIVE_in_modifier7062); if (state.failed) return retval;
+				NATIVE169=(IToken)Match(input,NATIVE,Follow._NATIVE_in_modifier7064); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				NATIVE169_tree = (CommonTree)adaptor.Create(NATIVE169);
 				adaptor.AddChild(root_0, NATIVE169_tree);
@@ -8835,7 +8837,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(477, 9);
-				SYNCHRONIZED170=(IToken)Match(input,SYNCHRONIZED,Follow._SYNCHRONIZED_in_modifier7072); if (state.failed) return retval;
+				SYNCHRONIZED170=(IToken)Match(input,SYNCHRONIZED,Follow._SYNCHRONIZED_in_modifier7074); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				SYNCHRONIZED170_tree = (CommonTree)adaptor.Create(SYNCHRONIZED170);
 				adaptor.AddChild(root_0, SYNCHRONIZED170_tree);
@@ -8850,7 +8852,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(478, 9);
-				TRANSIENT171=(IToken)Match(input,TRANSIENT,Follow._TRANSIENT_in_modifier7082); if (state.failed) return retval;
+				TRANSIENT171=(IToken)Match(input,TRANSIENT,Follow._TRANSIENT_in_modifier7084); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				TRANSIENT171_tree = (CommonTree)adaptor.Create(TRANSIENT171);
 				adaptor.AddChild(root_0, TRANSIENT171_tree);
@@ -8865,7 +8867,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(479, 9);
-				VOLATILE172=(IToken)Match(input,VOLATILE,Follow._VOLATILE_in_modifier7092); if (state.failed) return retval;
+				VOLATILE172=(IToken)Match(input,VOLATILE,Follow._VOLATILE_in_modifier7094); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				VOLATILE172_tree = (CommonTree)adaptor.Create(VOLATILE172);
 				adaptor.AddChild(root_0, VOLATILE172_tree);
@@ -8880,7 +8882,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(480, 9);
-				STRICTFP173=(IToken)Match(input,STRICTFP,Follow._STRICTFP_in_modifier7102); if (state.failed) return retval;
+				STRICTFP173=(IToken)Match(input,STRICTFP,Follow._STRICTFP_in_modifier7104); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				STRICTFP173_tree = (CommonTree)adaptor.Create(STRICTFP173);
 				adaptor.AddChild(root_0, STRICTFP173_tree);
@@ -8895,7 +8897,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(481, 7);
-				GLOBAL174=(IToken)Match(input,GLOBAL,Follow._GLOBAL_in_modifier7110); if (state.failed) return retval;
+				GLOBAL174=(IToken)Match(input,GLOBAL,Follow._GLOBAL_in_modifier7112); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				GLOBAL174_tree = (CommonTree)adaptor.Create(GLOBAL174);
 				adaptor.AddChild(root_0, GLOBAL174_tree);
@@ -8910,7 +8912,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(482, 9);
-				TEST_METHOD175=(IToken)Match(input,TEST_METHOD,Follow._TEST_METHOD_in_modifier7120); if (state.failed) return retval;
+				TEST_METHOD175=(IToken)Match(input,TEST_METHOD,Follow._TEST_METHOD_in_modifier7122); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				TEST_METHOD175_tree = (CommonTree)adaptor.Create(TEST_METHOD175);
 				adaptor.AddChild(root_0, TEST_METHOD175_tree);
@@ -8925,7 +8927,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(483, 9);
-				PushFollow(Follow._localModifier_in_modifier7130);
+				PushFollow(Follow._localModifier_in_modifier7132);
 				localModifier176=localModifier();
 				PopFollow();
 				if (state.failed) return retval;
@@ -9016,7 +9018,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:487:9: localModifier
 					{
 					DebugLocation(487, 9);
-					PushFollow(Follow._localModifier_in_localModifierList7149);
+					PushFollow(Follow._localModifier_in_localModifierList7151);
 					localModifier177=localModifier();
 					PopFollow();
 					if (state.failed) return retval;
@@ -9165,7 +9167,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(492, 9);
-				FINAL178=(IToken)Match(input,FINAL,Follow._FINAL_in_localModifier7190); if (state.failed) return retval;
+				FINAL178=(IToken)Match(input,FINAL,Follow._FINAL_in_localModifier7192); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				FINAL178_tree = (CommonTree)adaptor.Create(FINAL178);
 				adaptor.AddChild(root_0, FINAL178_tree);
@@ -9180,7 +9182,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(493, 9);
-				PushFollow(Follow._annotation_in_localModifier7200);
+				PushFollow(Follow._annotation_in_localModifier7202);
 				annotation179=annotation();
 				PopFollow();
 				if (state.failed) return retval;
@@ -9274,7 +9276,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(497, 9);
-				PushFollow(Follow._simpleType_in_type7219);
+				PushFollow(Follow._simpleType_in_type7221);
 				simpleType180=simpleType();
 				PopFollow();
 				if (state.failed) return retval;
@@ -9289,7 +9291,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(498, 9);
-				PushFollow(Follow._objectType_in_type7229);
+				PushFollow(Follow._objectType_in_type7231);
 				objectType181=objectType();
 				PopFollow();
 				if (state.failed) return retval;
@@ -9360,7 +9362,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:502:9: primitiveType ( arrayDeclaratorList )?
 			{
 			DebugLocation(502, 9);
-			PushFollow(Follow._primitiveType_in_simpleType7249);
+			PushFollow(Follow._primitiveType_in_simpleType7251);
 			primitiveType182=primitiveType();
 			PopFollow();
 			if (state.failed) return retval;
@@ -9394,7 +9396,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:502:23: arrayDeclaratorList
 				{
 				DebugLocation(502, 23);
-				PushFollow(Follow._arrayDeclaratorList_in_simpleType7251);
+				PushFollow(Follow._arrayDeclaratorList_in_simpleType7253);
 				arrayDeclaratorList183=arrayDeclaratorList();
 				PopFollow();
 				if (state.failed) return retval;
@@ -9410,7 +9412,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: primitiveType, arrayDeclaratorList
+			// elements: arrayDeclaratorList, primitiveType
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -9514,7 +9516,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:507:9: qualifiedTypeIdent ( arrayDeclaratorList )?
 			{
 			DebugLocation(507, 9);
-			PushFollow(Follow._qualifiedTypeIdent_in_objectType7298);
+			PushFollow(Follow._qualifiedTypeIdent_in_objectType7300);
 			qualifiedTypeIdent184=qualifiedTypeIdent();
 			PopFollow();
 			if (state.failed) return retval;
@@ -9543,7 +9545,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:507:28: arrayDeclaratorList
 				{
 				DebugLocation(507, 28);
-				PushFollow(Follow._arrayDeclaratorList_in_objectType7300);
+				PushFollow(Follow._arrayDeclaratorList_in_objectType7302);
 				arrayDeclaratorList185=arrayDeclaratorList();
 				PopFollow();
 				if (state.failed) return retval;
@@ -9559,7 +9561,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: qualifiedTypeIdent, arrayDeclaratorList
+			// elements: arrayDeclaratorList, qualifiedTypeIdent
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -9663,7 +9665,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:512:9: qualifiedTypeIdentSimplified ( arrayDeclaratorList )?
 			{
 			DebugLocation(512, 9);
-			PushFollow(Follow._qualifiedTypeIdentSimplified_in_objectTypeSimplified7340);
+			PushFollow(Follow._qualifiedTypeIdentSimplified_in_objectTypeSimplified7342);
 			qualifiedTypeIdentSimplified186=qualifiedTypeIdentSimplified();
 			PopFollow();
 			if (state.failed) return retval;
@@ -9687,7 +9689,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:512:38: arrayDeclaratorList
 				{
 				DebugLocation(512, 38);
-				PushFollow(Follow._arrayDeclaratorList_in_objectTypeSimplified7342);
+				PushFollow(Follow._arrayDeclaratorList_in_objectTypeSimplified7344);
 				arrayDeclaratorList187=arrayDeclaratorList();
 				PopFollow();
 				if (state.failed) return retval;
@@ -9809,7 +9811,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:517:9: typeIdent ( DOT typeIdent )*
 			{
 			DebugLocation(517, 9);
-			PushFollow(Follow._typeIdent_in_qualifiedTypeIdent7382);
+			PushFollow(Follow._typeIdent_in_qualifiedTypeIdent7384);
 			typeIdent188=typeIdent();
 			PopFollow();
 			if (state.failed) return retval;
@@ -9844,11 +9846,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:517:20: DOT typeIdent
 					{
 					DebugLocation(517, 20);
-					DOT189=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedTypeIdent7385); if (state.failed) return retval; 
+					DOT189=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedTypeIdent7387); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_DOT.Add(DOT189);
 
 					DebugLocation(517, 24);
-					PushFollow(Follow._typeIdent_in_qualifiedTypeIdent7387);
+					PushFollow(Follow._typeIdent_in_qualifiedTypeIdent7389);
 					typeIdent190=typeIdent();
 					PopFollow();
 					if (state.failed) return retval;
@@ -9978,7 +9980,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:522:9: typeIdentSimplified ( DOT typeIdentSimplified )*
 			{
 			DebugLocation(522, 9);
-			PushFollow(Follow._typeIdentSimplified_in_qualifiedTypeIdentSimplified7427);
+			PushFollow(Follow._typeIdentSimplified_in_qualifiedTypeIdentSimplified7429);
 			typeIdentSimplified191=typeIdentSimplified();
 			PopFollow();
 			if (state.failed) return retval;
@@ -10006,11 +10008,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:522:30: DOT typeIdentSimplified
 					{
 					DebugLocation(522, 30);
-					DOT192=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedTypeIdentSimplified7430); if (state.failed) return retval; 
+					DOT192=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedTypeIdentSimplified7432); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_DOT.Add(DOT192);
 
 					DebugLocation(522, 34);
-					PushFollow(Follow._typeIdentSimplified_in_qualifiedTypeIdentSimplified7432);
+					PushFollow(Follow._typeIdentSimplified_in_qualifiedTypeIdentSimplified7434);
 					typeIdentSimplified193=typeIdentSimplified();
 					PopFollow();
 					if (state.failed) return retval;
@@ -10139,7 +10141,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(527, 14);
-			IDENT194=(IToken)Match(input,IDENT,Follow._IDENT_in_typeIdent7472); if (state.failed) return retval;
+			IDENT194=(IToken)Match(input,IDENT,Follow._IDENT_in_typeIdent7474); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			IDENT194_tree = (CommonTree)adaptor.Create(IDENT194);
 			root_0 = (CommonTree)adaptor.BecomeRoot(IDENT194_tree, root_0);
@@ -10203,7 +10205,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:527:16: genericTypeArgumentList
 				{
 				DebugLocation(527, 16);
-				PushFollow(Follow._genericTypeArgumentList_in_typeIdent7475);
+				PushFollow(Follow._genericTypeArgumentList_in_typeIdent7477);
 				genericTypeArgumentList195=genericTypeArgumentList();
 				PopFollow();
 				if (state.failed) return retval;
@@ -10280,7 +10282,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(531, 14);
-			IDENT196=(IToken)Match(input,IDENT,Follow._IDENT_in_typeIdentSimplified7495); if (state.failed) return retval;
+			IDENT196=(IToken)Match(input,IDENT,Follow._IDENT_in_typeIdentSimplified7497); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			IDENT196_tree = (CommonTree)adaptor.Create(IDENT196);
 			root_0 = (CommonTree)adaptor.BecomeRoot(IDENT196_tree, root_0);
@@ -10304,7 +10306,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:531:16: genericTypeArgumentListSimplified
 				{
 				DebugLocation(531, 16);
-				PushFollow(Follow._genericTypeArgumentListSimplified_in_typeIdentSimplified7498);
+				PushFollow(Follow._genericTypeArgumentListSimplified_in_typeIdentSimplified7500);
 				genericTypeArgumentListSimplified197=genericTypeArgumentListSimplified();
 				PopFollow();
 				if (state.failed) return retval;
@@ -10467,11 +10469,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:547:9: LESS_THAN genericTypeArgument ( COMMA genericTypeArgument )* genericTypeListClosing
 			{
 			DebugLocation(547, 9);
-			LESS_THAN199=(IToken)Match(input,LESS_THAN,Follow._LESS_THAN_in_genericTypeArgumentList7613); if (state.failed) return retval; 
+			LESS_THAN199=(IToken)Match(input,LESS_THAN,Follow._LESS_THAN_in_genericTypeArgumentList7615); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LESS_THAN.Add(LESS_THAN199);
 
 			DebugLocation(547, 19);
-			PushFollow(Follow._genericTypeArgument_in_genericTypeArgumentList7615);
+			PushFollow(Follow._genericTypeArgument_in_genericTypeArgumentList7617);
 			genericTypeArgument200=genericTypeArgument();
 			PopFollow();
 			if (state.failed) return retval;
@@ -10506,11 +10508,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:547:40: COMMA genericTypeArgument
 					{
 					DebugLocation(547, 40);
-					COMMA201=(IToken)Match(input,COMMA,Follow._COMMA_in_genericTypeArgumentList7618); if (state.failed) return retval; 
+					COMMA201=(IToken)Match(input,COMMA,Follow._COMMA_in_genericTypeArgumentList7620); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_COMMA.Add(COMMA201);
 
 					DebugLocation(547, 46);
-					PushFollow(Follow._genericTypeArgument_in_genericTypeArgumentList7620);
+					PushFollow(Follow._genericTypeArgument_in_genericTypeArgumentList7622);
 					genericTypeArgument202=genericTypeArgument();
 					PopFollow();
 					if (state.failed) return retval;
@@ -10530,7 +10532,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(67); }
 
 			DebugLocation(547, 68);
-			PushFollow(Follow._genericTypeListClosing_in_genericTypeArgumentList7624);
+			PushFollow(Follow._genericTypeListClosing_in_genericTypeArgumentList7626);
 			genericTypeListClosing203=genericTypeListClosing();
 			PopFollow();
 			if (state.failed) return retval;
@@ -10671,7 +10673,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(552, 9);
-				PushFollow(Follow._type_in_genericTypeArgument7662);
+				PushFollow(Follow._type_in_genericTypeArgument7664);
 				type204=type();
 				PopFollow();
 				if (state.failed) return retval;
@@ -10684,7 +10686,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:553:9: QUESTION ( genericWildcardBoundType )?
 				{
 				DebugLocation(553, 9);
-				QUESTION205=(IToken)Match(input,QUESTION,Follow._QUESTION_in_genericTypeArgument7672); if (state.failed) return retval; 
+				QUESTION205=(IToken)Match(input,QUESTION,Follow._QUESTION_in_genericTypeArgument7674); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_QUESTION.Add(QUESTION205);
 
 				DebugLocation(553, 18);
@@ -10734,7 +10736,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:553:18: genericWildcardBoundType
 					{
 					DebugLocation(553, 18);
-					PushFollow(Follow._genericWildcardBoundType_in_genericTypeArgument7674);
+					PushFollow(Follow._genericWildcardBoundType_in_genericTypeArgument7676);
 					genericWildcardBoundType206=genericWildcardBoundType();
 					PopFollow();
 					if (state.failed) return retval;
@@ -10750,7 +10752,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: QUESTION, genericWildcardBoundType
+				// elements: genericWildcardBoundType, QUESTION
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -10873,7 +10875,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			}
 
 			DebugLocation(558, 28);
-			PushFollow(Follow._type_in_genericWildcardBoundType7725);
+			PushFollow(Follow._type_in_genericWildcardBoundType7727);
 			type208=type();
 			PopFollow();
 			if (state.failed) return retval;
@@ -10949,11 +10951,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:562:9: LESS_THAN genericTypeArgumentSimplified ( COMMA genericTypeArgumentSimplified )* genericTypeListClosing
 			{
 			DebugLocation(562, 9);
-			LESS_THAN209=(IToken)Match(input,LESS_THAN,Follow._LESS_THAN_in_genericTypeArgumentListSimplified7744); if (state.failed) return retval; 
+			LESS_THAN209=(IToken)Match(input,LESS_THAN,Follow._LESS_THAN_in_genericTypeArgumentListSimplified7746); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LESS_THAN.Add(LESS_THAN209);
 
 			DebugLocation(562, 19);
-			PushFollow(Follow._genericTypeArgumentSimplified_in_genericTypeArgumentListSimplified7746);
+			PushFollow(Follow._genericTypeArgumentSimplified_in_genericTypeArgumentListSimplified7748);
 			genericTypeArgumentSimplified210=genericTypeArgumentSimplified();
 			PopFollow();
 			if (state.failed) return retval;
@@ -10981,11 +10983,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:562:50: COMMA genericTypeArgumentSimplified
 					{
 					DebugLocation(562, 50);
-					COMMA211=(IToken)Match(input,COMMA,Follow._COMMA_in_genericTypeArgumentListSimplified7749); if (state.failed) return retval; 
+					COMMA211=(IToken)Match(input,COMMA,Follow._COMMA_in_genericTypeArgumentListSimplified7751); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_COMMA.Add(COMMA211);
 
 					DebugLocation(562, 56);
-					PushFollow(Follow._genericTypeArgumentSimplified_in_genericTypeArgumentListSimplified7751);
+					PushFollow(Follow._genericTypeArgumentSimplified_in_genericTypeArgumentListSimplified7753);
 					genericTypeArgumentSimplified212=genericTypeArgumentSimplified();
 					PopFollow();
 					if (state.failed) return retval;
@@ -11005,7 +11007,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(70); }
 
 			DebugLocation(562, 88);
-			PushFollow(Follow._genericTypeListClosing_in_genericTypeArgumentListSimplified7755);
+			PushFollow(Follow._genericTypeListClosing_in_genericTypeArgumentListSimplified7757);
 			genericTypeListClosing213=genericTypeListClosing();
 			PopFollow();
 			if (state.failed) return retval;
@@ -11143,7 +11145,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(567, 9);
-				PushFollow(Follow._type_in_genericTypeArgumentSimplified7797);
+				PushFollow(Follow._type_in_genericTypeArgumentSimplified7799);
 				type214=type();
 				PopFollow();
 				if (state.failed) return retval;
@@ -11158,7 +11160,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(568, 9);
-				QUESTION215=(IToken)Match(input,QUESTION,Follow._QUESTION_in_genericTypeArgumentSimplified7807); if (state.failed) return retval;
+				QUESTION215=(IToken)Match(input,QUESTION,Follow._QUESTION_in_genericTypeArgumentSimplified7809); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				QUESTION215_tree = (CommonTree)adaptor.Create(QUESTION215);
 				adaptor.AddChild(root_0, QUESTION215_tree);
@@ -11231,7 +11233,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(572, 9);
-			PushFollow(Follow._qualifiedIdentifier_in_qualifiedIdentList7830);
+			PushFollow(Follow._qualifiedIdentifier_in_qualifiedIdentList7832);
 			qualifiedIdentifier216=qualifiedIdentifier();
 			PopFollow();
 			if (state.failed) return retval;
@@ -11259,9 +11261,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:572:30: COMMA ! qualifiedIdentifier
 					{
 					DebugLocation(572, 35);
-					COMMA217=(IToken)Match(input,COMMA,Follow._COMMA_in_qualifiedIdentList7833); if (state.failed) return retval;
+					COMMA217=(IToken)Match(input,COMMA,Follow._COMMA_in_qualifiedIdentList7835); if (state.failed) return retval;
 					DebugLocation(572, 37);
-					PushFollow(Follow._qualifiedIdentifier_in_qualifiedIdentList7836);
+					PushFollow(Follow._qualifiedIdentifier_in_qualifiedIdentList7838);
 					qualifiedIdentifier218=qualifiedIdentifier();
 					PopFollow();
 					if (state.failed) return retval;
@@ -11357,7 +11359,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:576:9: LPAREN ( formalParameterStandardDecl ( COMMA formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )? -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] ( formalParameterStandardDecl )+ ( formalParameterVarArgDecl )? ) | formalParameterVarArgDecl -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] formalParameterVarArgDecl ) | -> ^( FORMAL_PARAM_LIST[$LPAREN, \"FORMAL_PARAM_LIST\"] ) ) RPAREN
 			{
 			DebugLocation(576, 9);
-			LPAREN219=(IToken)Match(input,LPAREN,Follow._LPAREN_in_formalParameterList7861); if (state.failed) return retval; 
+			LPAREN219=(IToken)Match(input,LPAREN,Follow._LPAREN_in_formalParameterList7863); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LPAREN.Add(LPAREN219);
 
 			DebugLocation(577, 9);
@@ -11480,7 +11482,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:578:13: formalParameterStandardDecl ( COMMA formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )?
 				{
 				DebugLocation(578, 13);
-				PushFollow(Follow._formalParameterStandardDecl_in_formalParameterList7889);
+				PushFollow(Follow._formalParameterStandardDecl_in_formalParameterList7891);
 				formalParameterStandardDecl220=formalParameterStandardDecl();
 				PopFollow();
 				if (state.failed) return retval;
@@ -11515,11 +11517,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:578:42: COMMA formalParameterStandardDecl
 						{
 						DebugLocation(578, 42);
-						COMMA221=(IToken)Match(input,COMMA,Follow._COMMA_in_formalParameterList7892); if (state.failed) return retval; 
+						COMMA221=(IToken)Match(input,COMMA,Follow._COMMA_in_formalParameterList7894); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_COMMA.Add(COMMA221);
 
 						DebugLocation(578, 48);
-						PushFollow(Follow._formalParameterStandardDecl_in_formalParameterList7894);
+						PushFollow(Follow._formalParameterStandardDecl_in_formalParameterList7896);
 						formalParameterStandardDecl222=formalParameterStandardDecl();
 						PopFollow();
 						if (state.failed) return retval;
@@ -11557,11 +11559,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:578:79: COMMA formalParameterVarArgDecl
 					{
 					DebugLocation(578, 79);
-					COMMA223=(IToken)Match(input,COMMA,Follow._COMMA_in_formalParameterList7899); if (state.failed) return retval; 
+					COMMA223=(IToken)Match(input,COMMA,Follow._COMMA_in_formalParameterList7901); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_COMMA.Add(COMMA223);
 
 					DebugLocation(578, 85);
-					PushFollow(Follow._formalParameterVarArgDecl_in_formalParameterList7901);
+					PushFollow(Follow._formalParameterVarArgDecl_in_formalParameterList7903);
 					formalParameterVarArgDecl224=formalParameterVarArgDecl();
 					PopFollow();
 					if (state.failed) return retval;
@@ -11635,7 +11637,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:581:13: formalParameterVarArgDecl
 				{
 				DebugLocation(581, 13);
-				PushFollow(Follow._formalParameterVarArgDecl_in_formalParameterList7958);
+				PushFollow(Follow._formalParameterVarArgDecl_in_formalParameterList7960);
 				formalParameterVarArgDecl225=formalParameterVarArgDecl();
 				PopFollow();
 				if (state.failed) return retval;
@@ -11721,7 +11723,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(75); }
 
 			DebugLocation(586, 9);
-			RPAREN226=(IToken)Match(input,RPAREN,Follow._RPAREN_in_formalParameterList8035); if (state.failed) return retval; 
+			RPAREN226=(IToken)Match(input,RPAREN,Follow._RPAREN_in_formalParameterList8037); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_RPAREN.Add(RPAREN226);
 
 
@@ -11790,19 +11792,19 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:590:9: localModifierList type variableDeclaratorId
 			{
 			DebugLocation(590, 9);
-			PushFollow(Follow._localModifierList_in_formalParameterStandardDecl8058);
+			PushFollow(Follow._localModifierList_in_formalParameterStandardDecl8060);
 			localModifierList227=localModifierList();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_localModifierList.Add(localModifierList227.Tree);
 			DebugLocation(590, 27);
-			PushFollow(Follow._type_in_formalParameterStandardDecl8060);
+			PushFollow(Follow._type_in_formalParameterStandardDecl8062);
 			type228=type();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_type.Add(type228.Tree);
 			DebugLocation(590, 32);
-			PushFollow(Follow._variableDeclaratorId_in_formalParameterStandardDecl8062);
+			PushFollow(Follow._variableDeclaratorId_in_formalParameterStandardDecl8064);
 			variableDeclaratorId229=variableDeclaratorId();
 			PopFollow();
 			if (state.failed) return retval;
@@ -11811,7 +11813,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: variableDeclaratorId, localModifierList, type
+			// elements: localModifierList, variableDeclaratorId, type
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -11915,23 +11917,23 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:595:9: localModifierList type ELLIPSIS variableDeclaratorId
 			{
 			DebugLocation(595, 9);
-			PushFollow(Follow._localModifierList_in_formalParameterVarArgDecl8106);
+			PushFollow(Follow._localModifierList_in_formalParameterVarArgDecl8108);
 			localModifierList230=localModifierList();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_localModifierList.Add(localModifierList230.Tree);
 			DebugLocation(595, 27);
-			PushFollow(Follow._type_in_formalParameterVarArgDecl8108);
+			PushFollow(Follow._type_in_formalParameterVarArgDecl8110);
 			type231=type();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_type.Add(type231.Tree);
 			DebugLocation(595, 32);
-			ELLIPSIS232=(IToken)Match(input,ELLIPSIS,Follow._ELLIPSIS_in_formalParameterVarArgDecl8110); if (state.failed) return retval; 
+			ELLIPSIS232=(IToken)Match(input,ELLIPSIS,Follow._ELLIPSIS_in_formalParameterVarArgDecl8112); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_ELLIPSIS.Add(ELLIPSIS232);
 
 			DebugLocation(595, 41);
-			PushFollow(Follow._variableDeclaratorId_in_formalParameterVarArgDecl8112);
+			PushFollow(Follow._variableDeclaratorId_in_formalParameterVarArgDecl8114);
 			variableDeclaratorId233=variableDeclaratorId();
 			PopFollow();
 			if (state.failed) return retval;
@@ -11940,7 +11942,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: type, localModifierList, variableDeclaratorId
+			// elements: localModifierList, type, variableDeclaratorId
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -12048,7 +12050,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:600:13: IDENT
 			{
 			DebugLocation(600, 13);
-			IDENT234=(IToken)Match(input,IDENT,Follow._IDENT_in_qualifiedIdentifier8160); if (state.failed) return retval; 
+			IDENT234=(IToken)Match(input,IDENT,Follow._IDENT_in_qualifiedIdentifier8162); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_IDENT.Add(IDENT234);
 
 
@@ -12116,18 +12118,18 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:602:13: DOT ident= IDENT
 					{
 					DebugLocation(602, 13);
-					DOT235=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedIdentifier8203); if (state.failed) return retval; 
+					DOT235=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedIdentifier8205); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_DOT.Add(DOT235);
 
 					DebugLocation(602, 22);
-					ident=(IToken)Match(input,IDENT,Follow._IDENT_in_qualifiedIdentifier8207); if (state.failed) return retval; 
+					ident=(IToken)Match(input,IDENT,Follow._IDENT_in_qualifiedIdentifier8209); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_IDENT.Add(ident);
 
 
 
 					{
 					// AST REWRITE
-					// elements: qualifiedIdentifier, ident, DOT
+					// elements: qualifiedIdentifier, DOT, ident
 					// token labels: ident
 					// rule labels: retval
 					// token list labels: 
@@ -12273,7 +12275,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:609:9: annotation
 					{
 					DebugLocation(609, 9);
-					PushFollow(Follow._annotation_in_annotationList8260);
+					PushFollow(Follow._annotation_in_annotationList8262);
 					annotation236=annotation();
 					PopFollow();
 					if (state.failed) return retval;
@@ -12400,13 +12402,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(614, 11);
-			AT237=(IToken)Match(input,AT,Follow._AT_in_annotation8298); if (state.failed) return retval;
+			AT237=(IToken)Match(input,AT,Follow._AT_in_annotation8300); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			AT237_tree = (CommonTree)adaptor.Create(AT237);
 			root_0 = (CommonTree)adaptor.BecomeRoot(AT237_tree, root_0);
 			}
 			DebugLocation(614, 13);
-			PushFollow(Follow._qualifiedIdentifier_in_annotation8301);
+			PushFollow(Follow._qualifiedIdentifier_in_annotation8303);
 			qualifiedIdentifier238=qualifiedIdentifier();
 			PopFollow();
 			if (state.failed) return retval;
@@ -12430,7 +12432,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:614:33: annotationInit
 				{
 				DebugLocation(614, 33);
-				PushFollow(Follow._annotationInit_in_annotation8303);
+				PushFollow(Follow._annotationInit_in_annotation8305);
 				annotationInit239=annotationInit();
 				PopFollow();
 				if (state.failed) return retval;
@@ -12510,17 +12512,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:618:9: LPAREN annotationInitializers RPAREN
 			{
 			DebugLocation(618, 9);
-			LPAREN240=(IToken)Match(input,LPAREN,Follow._LPAREN_in_annotationInit8327); if (state.failed) return retval; 
+			LPAREN240=(IToken)Match(input,LPAREN,Follow._LPAREN_in_annotationInit8329); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LPAREN.Add(LPAREN240);
 
 			DebugLocation(618, 16);
-			PushFollow(Follow._annotationInitializers_in_annotationInit8329);
+			PushFollow(Follow._annotationInitializers_in_annotationInit8331);
 			annotationInitializers241=annotationInitializers();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_annotationInitializers.Add(annotationInitializers241.Tree);
 			DebugLocation(618, 39);
-			RPAREN242=(IToken)Match(input,RPAREN,Follow._RPAREN_in_annotationInit8331); if (state.failed) return retval; 
+			RPAREN242=(IToken)Match(input,RPAREN,Follow._RPAREN_in_annotationInit8333); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_RPAREN.Add(RPAREN242);
 
 
@@ -12665,7 +12667,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:623:9: annotationInitializer ( COMMA annotationInitializer )*
 				{
 				DebugLocation(623, 9);
-				PushFollow(Follow._annotationInitializer_in_annotationInitializers8368);
+				PushFollow(Follow._annotationInitializer_in_annotationInitializers8370);
 				annotationInitializer243=annotationInitializer();
 				PopFollow();
 				if (state.failed) return retval;
@@ -12693,11 +12695,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:623:32: COMMA annotationInitializer
 						{
 						DebugLocation(623, 32);
-						COMMA244=(IToken)Match(input,COMMA,Follow._COMMA_in_annotationInitializers8371); if (state.failed) return retval; 
+						COMMA244=(IToken)Match(input,COMMA,Follow._COMMA_in_annotationInitializers8373); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_COMMA.Add(COMMA244);
 
 						DebugLocation(623, 38);
-						PushFollow(Follow._annotationInitializer_in_annotationInitializers8373);
+						PushFollow(Follow._annotationInitializer_in_annotationInitializers8375);
 						annotationInitializer245=annotationInitializer();
 						PopFollow();
 						if (state.failed) return retval;
@@ -12769,7 +12771,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:625:9: annotationElementValue
 				{
 				DebugLocation(625, 9);
-				PushFollow(Follow._annotationElementValue_in_annotationInitializers8403);
+				PushFollow(Follow._annotationElementValue_in_annotationInitializers8405);
 				annotationElementValue246=annotationElementValue();
 				PopFollow();
 				if (state.failed) return retval;
@@ -12878,15 +12880,15 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(630, 14);
-			IDENT247=(IToken)Match(input,IDENT,Follow._IDENT_in_annotationInitializer8444); if (state.failed) return retval;
+			IDENT247=(IToken)Match(input,IDENT,Follow._IDENT_in_annotationInitializer8446); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			IDENT247_tree = (CommonTree)adaptor.Create(IDENT247);
 			root_0 = (CommonTree)adaptor.BecomeRoot(IDENT247_tree, root_0);
 			}
 			DebugLocation(630, 22);
-			ASSIGN248=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_annotationInitializer8447); if (state.failed) return retval;
+			ASSIGN248=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_annotationInitializer8449); if (state.failed) return retval;
 			DebugLocation(630, 24);
-			PushFollow(Follow._annotationElementValue_in_annotationInitializer8450);
+			PushFollow(Follow._annotationElementValue_in_annotationInitializer8452);
 			annotationElementValue249=annotationElementValue();
 			PopFollow();
 			if (state.failed) return retval;
@@ -13018,7 +13020,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(634, 9);
-				PushFollow(Follow._annotationElementValueExpression_in_annotationElementValue8473);
+				PushFollow(Follow._annotationElementValueExpression_in_annotationElementValue8475);
 				annotationElementValueExpression250=annotationElementValueExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -13033,7 +13035,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(635, 9);
-				PushFollow(Follow._annotation_in_annotationElementValue8483);
+				PushFollow(Follow._annotation_in_annotationElementValue8485);
 				annotation251=annotation();
 				PopFollow();
 				if (state.failed) return retval;
@@ -13048,7 +13050,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(636, 9);
-				PushFollow(Follow._annotationElementValueArrayInitializer_in_annotationElementValue8493);
+				PushFollow(Follow._annotationElementValueArrayInitializer_in_annotationElementValue8495);
 				annotationElementValueArrayInitializer252=annotationElementValueArrayInitializer();
 				PopFollow();
 				if (state.failed) return retval;
@@ -13117,7 +13119,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:640:9: conditionalExpression
 			{
 			DebugLocation(640, 9);
-			PushFollow(Follow._conditionalExpression_in_annotationElementValueExpression8516);
+			PushFollow(Follow._conditionalExpression_in_annotationElementValueExpression8518);
 			conditionalExpression253=conditionalExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -13231,7 +13233,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:645:9: LCURLY ( annotationElementValue ( COMMA annotationElementValue )* )? ( COMMA )? RCURLY
 			{
 			DebugLocation(645, 9);
-			LCURLY254=(IToken)Match(input,LCURLY,Follow._LCURLY_in_annotationElementValueArrayInitializer8556); if (state.failed) return retval; 
+			LCURLY254=(IToken)Match(input,LCURLY,Follow._LCURLY_in_annotationElementValueArrayInitializer8558); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LCURLY.Add(LCURLY254);
 
 			DebugLocation(645, 16);
@@ -13253,7 +13255,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:645:17: annotationElementValue ( COMMA annotationElementValue )*
 				{
 				DebugLocation(645, 17);
-				PushFollow(Follow._annotationElementValue_in_annotationElementValueArrayInitializer8559);
+				PushFollow(Follow._annotationElementValue_in_annotationElementValueArrayInitializer8561);
 				annotationElementValue255=annotationElementValue();
 				PopFollow();
 				if (state.failed) return retval;
@@ -13288,11 +13290,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:645:41: COMMA annotationElementValue
 						{
 						DebugLocation(645, 41);
-						COMMA256=(IToken)Match(input,COMMA,Follow._COMMA_in_annotationElementValueArrayInitializer8562); if (state.failed) return retval; 
+						COMMA256=(IToken)Match(input,COMMA,Follow._COMMA_in_annotationElementValueArrayInitializer8564); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_COMMA.Add(COMMA256);
 
 						DebugLocation(645, 47);
-						PushFollow(Follow._annotationElementValue_in_annotationElementValueArrayInitializer8564);
+						PushFollow(Follow._annotationElementValue_in_annotationElementValueArrayInitializer8566);
 						annotationElementValue257=annotationElementValue();
 						PopFollow();
 						if (state.failed) return retval;
@@ -13337,7 +13339,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:645:75: COMMA
 				{
 				DebugLocation(645, 75);
-				COMMA258=(IToken)Match(input,COMMA,Follow._COMMA_in_annotationElementValueArrayInitializer8571); if (state.failed) return retval; 
+				COMMA258=(IToken)Match(input,COMMA,Follow._COMMA_in_annotationElementValueArrayInitializer8573); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_COMMA.Add(COMMA258);
 
 
@@ -13348,7 +13350,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(84); }
 
 			DebugLocation(645, 83);
-			RCURLY259=(IToken)Match(input,RCURLY,Follow._RCURLY_in_annotationElementValueArrayInitializer8575); if (state.failed) return retval; 
+			RCURLY259=(IToken)Match(input,RCURLY,Follow._RCURLY_in_annotationElementValueArrayInitializer8577); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_RCURLY.Add(RCURLY259);
 
 
@@ -13464,19 +13466,19 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:650:9: AT INTERFACE IDENT annotationBody
 			{
 			DebugLocation(650, 9);
-			AT260=(IToken)Match(input,AT,Follow._AT_in_annotationTypeDeclaration8618); if (state.failed) return retval; 
+			AT260=(IToken)Match(input,AT,Follow._AT_in_annotationTypeDeclaration8620); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_AT.Add(AT260);
 
 			DebugLocation(650, 12);
-			INTERFACE261=(IToken)Match(input,INTERFACE,Follow._INTERFACE_in_annotationTypeDeclaration8620); if (state.failed) return retval; 
+			INTERFACE261=(IToken)Match(input,INTERFACE,Follow._INTERFACE_in_annotationTypeDeclaration8622); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_INTERFACE.Add(INTERFACE261);
 
 			DebugLocation(650, 22);
-			IDENT262=(IToken)Match(input,IDENT,Follow._IDENT_in_annotationTypeDeclaration8622); if (state.failed) return retval; 
+			IDENT262=(IToken)Match(input,IDENT,Follow._IDENT_in_annotationTypeDeclaration8624); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_IDENT.Add(IDENT262);
 
 			DebugLocation(650, 28);
-			PushFollow(Follow._annotationBody_in_annotationTypeDeclaration8624);
+			PushFollow(Follow._annotationBody_in_annotationTypeDeclaration8626);
 			annotationBody263=annotationBody();
 			PopFollow();
 			if (state.failed) return retval;
@@ -13485,7 +13487,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: IDENT, AT, annotationBody
+			// elements: IDENT, annotationBody, AT
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -13588,7 +13590,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:655:9: LCURLY ( annotationScopeDeclarations )* RCURLY
 			{
 			DebugLocation(655, 9);
-			LCURLY264=(IToken)Match(input,LCURLY,Follow._LCURLY_in_annotationBody8667); if (state.failed) return retval; 
+			LCURLY264=(IToken)Match(input,LCURLY,Follow._LCURLY_in_annotationBody8669); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LCURLY.Add(LCURLY264);
 
 			DebugLocation(655, 16);
@@ -13614,7 +13616,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:655:16: annotationScopeDeclarations
 					{
 					DebugLocation(655, 16);
-					PushFollow(Follow._annotationScopeDeclarations_in_annotationBody8669);
+					PushFollow(Follow._annotationScopeDeclarations_in_annotationBody8671);
 					annotationScopeDeclarations265=annotationScopeDeclarations();
 					PopFollow();
 					if (state.failed) return retval;
@@ -13634,7 +13636,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(85); }
 
 			DebugLocation(655, 45);
-			RCURLY266=(IToken)Match(input,RCURLY,Follow._RCURLY_in_annotationBody8672); if (state.failed) return retval; 
+			RCURLY266=(IToken)Match(input,RCURLY,Follow._RCURLY_in_annotationBody8674); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_RCURLY.Add(RCURLY266);
 
 
@@ -14177,13 +14179,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:660:9: modifierList type ( IDENT LPAREN RPAREN ( annotationDefaultValue )? SEMI -> ^( ANNOTATION_METHOD_DECL modifierList type IDENT ( annotationDefaultValue )? ) | classFieldDeclaratorList SEMI -> ^( VAR_DECLARATION modifierList type classFieldDeclaratorList ) )
 				{
 				DebugLocation(660, 9);
-				PushFollow(Follow._modifierList_in_annotationScopeDeclarations8714);
+				PushFollow(Follow._modifierList_in_annotationScopeDeclarations8716);
 				modifierList267=modifierList();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_modifierList.Add(modifierList267.Tree);
 				DebugLocation(660, 22);
-				PushFollow(Follow._type_in_annotationScopeDeclarations8716);
+				PushFollow(Follow._type_in_annotationScopeDeclarations8718);
 				type268=type();
 				PopFollow();
 				if (state.failed) return retval;
@@ -14230,15 +14232,15 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:661:13: IDENT LPAREN RPAREN ( annotationDefaultValue )? SEMI
 					{
 					DebugLocation(661, 13);
-					IDENT269=(IToken)Match(input,IDENT,Follow._IDENT_in_annotationScopeDeclarations8730); if (state.failed) return retval; 
+					IDENT269=(IToken)Match(input,IDENT,Follow._IDENT_in_annotationScopeDeclarations8732); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_IDENT.Add(IDENT269);
 
 					DebugLocation(661, 19);
-					LPAREN270=(IToken)Match(input,LPAREN,Follow._LPAREN_in_annotationScopeDeclarations8732); if (state.failed) return retval; 
+					LPAREN270=(IToken)Match(input,LPAREN,Follow._LPAREN_in_annotationScopeDeclarations8734); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_LPAREN.Add(LPAREN270);
 
 					DebugLocation(661, 26);
-					RPAREN271=(IToken)Match(input,RPAREN,Follow._RPAREN_in_annotationScopeDeclarations8734); if (state.failed) return retval; 
+					RPAREN271=(IToken)Match(input,RPAREN,Follow._RPAREN_in_annotationScopeDeclarations8736); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_RPAREN.Add(RPAREN271);
 
 					DebugLocation(661, 33);
@@ -14260,7 +14262,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:661:33: annotationDefaultValue
 						{
 						DebugLocation(661, 33);
-						PushFollow(Follow._annotationDefaultValue_in_annotationScopeDeclarations8736);
+						PushFollow(Follow._annotationDefaultValue_in_annotationScopeDeclarations8738);
 						annotationDefaultValue272=annotationDefaultValue();
 						PopFollow();
 						if (state.failed) return retval;
@@ -14273,14 +14275,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(86); }
 
 					DebugLocation(661, 57);
-					SEMI273=(IToken)Match(input,SEMI,Follow._SEMI_in_annotationScopeDeclarations8739); if (state.failed) return retval; 
+					SEMI273=(IToken)Match(input,SEMI,Follow._SEMI_in_annotationScopeDeclarations8741); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_SEMI.Add(SEMI273);
 
 
 
 					{
 					// AST REWRITE
-					// elements: annotationDefaultValue, modifierList, type, IDENT
+					// elements: modifierList, IDENT, type, annotationDefaultValue
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -14332,20 +14334,20 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:663:13: classFieldDeclaratorList SEMI
 					{
 					DebugLocation(663, 13);
-					PushFollow(Follow._classFieldDeclaratorList_in_annotationScopeDeclarations8781);
+					PushFollow(Follow._classFieldDeclaratorList_in_annotationScopeDeclarations8783);
 					classFieldDeclaratorList274=classFieldDeclaratorList();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_classFieldDeclaratorList.Add(classFieldDeclaratorList274.Tree);
 					DebugLocation(663, 38);
-					SEMI275=(IToken)Match(input,SEMI,Follow._SEMI_in_annotationScopeDeclarations8783); if (state.failed) return retval; 
+					SEMI275=(IToken)Match(input,SEMI,Follow._SEMI_in_annotationScopeDeclarations8785); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_SEMI.Add(SEMI275);
 
 
 
 					{
 					// AST REWRITE
-					// elements: type, modifierList, classFieldDeclaratorList
+					// elements: classFieldDeclaratorList, modifierList, type
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -14397,7 +14399,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(666, 9);
-				PushFollow(Follow._typeDeclaration_in_annotationScopeDeclarations8828);
+				PushFollow(Follow._typeDeclaration_in_annotationScopeDeclarations8830);
 				typeDeclaration276=typeDeclaration();
 				PopFollow();
 				if (state.failed) return retval;
@@ -14469,13 +14471,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(670, 16);
-			DEFAULT277=(IToken)Match(input,DEFAULT,Follow._DEFAULT_in_annotationDefaultValue8851); if (state.failed) return retval;
+			DEFAULT277=(IToken)Match(input,DEFAULT,Follow._DEFAULT_in_annotationDefaultValue8853); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			DEFAULT277_tree = (CommonTree)adaptor.Create(DEFAULT277);
 			root_0 = (CommonTree)adaptor.BecomeRoot(DEFAULT277_tree, root_0);
 			}
 			DebugLocation(670, 18);
-			PushFollow(Follow._annotationElementValue_in_annotationDefaultValue8854);
+			PushFollow(Follow._annotationElementValue_in_annotationDefaultValue8856);
 			annotationElementValue278=annotationElementValue();
 			PopFollow();
 			if (state.failed) return retval;
@@ -15006,13 +15008,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(676, 9);
-				PushFollow(Follow._localVariableDeclaration_in_blockStatement8875);
+				PushFollow(Follow._localVariableDeclaration_in_blockStatement8877);
 				localVariableDeclaration279=localVariableDeclaration();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) adaptor.AddChild(root_0, localVariableDeclaration279.Tree);
 				DebugLocation(676, 38);
-				SEMI280=(IToken)Match(input,SEMI,Follow._SEMI_in_blockStatement8877); if (state.failed) return retval;
+				SEMI280=(IToken)Match(input,SEMI,Follow._SEMI_in_blockStatement8879); if (state.failed) return retval;
 
 				}
 				break;
@@ -15023,7 +15025,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(677, 9);
-				PushFollow(Follow._typeDeclaration_in_blockStatement8888);
+				PushFollow(Follow._typeDeclaration_in_blockStatement8890);
 				typeDeclaration281=typeDeclaration();
 				PopFollow();
 				if (state.failed) return retval;
@@ -15038,7 +15040,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(678, 9);
-				PushFollow(Follow._statement_in_blockStatement8898);
+				PushFollow(Follow._statement_in_blockStatement8900);
 				statement282=statement();
 				PopFollow();
 				if (state.failed) return retval;
@@ -15051,7 +15053,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:679:8: brokenExpression
 				{
 				DebugLocation(679, 8);
-				PushFollow(Follow._brokenExpression_in_blockStatement8907);
+				PushFollow(Follow._brokenExpression_in_blockStatement8909);
 				brokenExpression283=brokenExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -15191,7 +15193,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:683:0: LPAREN
 					{
 					DebugLocation(683, 1);
-					LPAREN284=(IToken)Match(input,LPAREN,Follow._LPAREN_in_brokenExpression8927); if (state.failed) return retval;
+					LPAREN284=(IToken)Match(input,LPAREN,Follow._LPAREN_in_brokenExpression8929); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					LPAREN284_tree = (CommonTree)adaptor.Create(LPAREN284);
 					adaptor.AddChild(root_0, LPAREN284_tree);
@@ -15211,7 +15213,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(90); }
 
 			DebugLocation(683, 9);
-			PushFollow(Follow._expression_in_brokenExpression8930);
+			PushFollow(Follow._expression_in_brokenExpression8932);
 			expression285=expression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -15240,7 +15242,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:683:20: DOT
 				{
 				DebugLocation(683, 20);
-				DOT286=(IToken)Match(input,DOT,Follow._DOT_in_brokenExpression8932); if (state.failed) return retval;
+				DOT286=(IToken)Match(input,DOT,Follow._DOT_in_brokenExpression8934); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				DOT286_tree = (CommonTree)adaptor.Create(DOT286);
 				adaptor.AddChild(root_0, DOT286_tree);
@@ -15276,7 +15278,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:683:25: SEMI
 				{
 				DebugLocation(683, 25);
-				SEMI287=(IToken)Match(input,SEMI,Follow._SEMI_in_brokenExpression8935); if (state.failed) return retval;
+				SEMI287=(IToken)Match(input,SEMI,Follow._SEMI_in_brokenExpression8937); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				SEMI287_tree = (CommonTree)adaptor.Create(SEMI287);
 				adaptor.AddChild(root_0, SEMI287_tree);
@@ -15354,19 +15356,19 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(687, 4);
-			PushFollow(Follow._dmlOperator_in_dmlOperation8947);
+			PushFollow(Follow._dmlOperator_in_dmlOperation8949);
 			dmlOperator288=dmlOperator();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, dmlOperator288.Tree);
 			DebugLocation(687, 16);
-			PushFollow(Follow._expression_in_dmlOperation8949);
+			PushFollow(Follow._expression_in_dmlOperation8951);
 			expression289=expression();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, expression289.Tree);
 			DebugLocation(687, 27);
-			SEMI290=(IToken)Match(input,SEMI,Follow._SEMI_in_dmlOperation8951); if (state.failed) return retval;
+			SEMI290=(IToken)Match(input,SEMI,Follow._SEMI_in_dmlOperation8953); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			SEMI290_tree = (CommonTree)adaptor.Create(SEMI290);
 			adaptor.AddChild(root_0, SEMI290_tree);
@@ -15495,7 +15497,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					throw new FailedPredicateException(input, "dmlOperator", "input.LT(1).Text == \"insert\"");
 				}
 				DebugLocation(691, 40);
-				IDENT291=(IToken)Match(input,IDENT,Follow._IDENT_in_dmlOperator8970); if (state.failed) return retval;
+				IDENT291=(IToken)Match(input,IDENT,Follow._IDENT_in_dmlOperator8972); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				IDENT291_tree = (CommonTree)adaptor.Create(IDENT291);
 				adaptor.AddChild(root_0, IDENT291_tree);
@@ -15524,7 +15526,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					throw new FailedPredicateException(input, "dmlOperator", "input.LT(1).Text == \"update\"");
 				}
 				DebugLocation(692, 40);
-				IDENT292=(IToken)Match(input,IDENT,Follow._IDENT_in_dmlOperator8983); if (state.failed) return retval;
+				IDENT292=(IToken)Match(input,IDENT,Follow._IDENT_in_dmlOperator8985); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				IDENT292_tree = (CommonTree)adaptor.Create(IDENT292);
 				adaptor.AddChild(root_0, IDENT292_tree);
@@ -15553,7 +15555,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					throw new FailedPredicateException(input, "dmlOperator", "input.LT(1).Text == \"delete\"");
 				}
 				DebugLocation(693, 40);
-				IDENT293=(IToken)Match(input,IDENT,Follow._IDENT_in_dmlOperator8996); if (state.failed) return retval;
+				IDENT293=(IToken)Match(input,IDENT,Follow._IDENT_in_dmlOperator8998); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				IDENT293_tree = (CommonTree)adaptor.Create(IDENT293);
 				adaptor.AddChild(root_0, IDENT293_tree);
@@ -15582,7 +15584,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					throw new FailedPredicateException(input, "dmlOperator", "input.LT(1).Text == \"upsert\"");
 				}
 				DebugLocation(694, 40);
-				IDENT294=(IToken)Match(input,IDENT,Follow._IDENT_in_dmlOperator9009); if (state.failed) return retval;
+				IDENT294=(IToken)Match(input,IDENT,Follow._IDENT_in_dmlOperator9011); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				IDENT294_tree = (CommonTree)adaptor.Create(IDENT294);
 				adaptor.AddChild(root_0, IDENT294_tree);
@@ -15660,7 +15662,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:698:9: LCURLY ( ( blockStatement )* -> ^( BLOCK_SCOPE[$LCURLY, \"BLOCK_SCOPE\"] ( blockStatement )* ) ) RCURLY
 			{
 			DebugLocation(698, 9);
-			LCURLY295=(IToken)Match(input,LCURLY,Follow._LCURLY_in_block9030); if (state.failed) return retval; 
+			LCURLY295=(IToken)Match(input,LCURLY,Follow._LCURLY_in_block9032); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LCURLY.Add(LCURLY295);
 
 			DebugLocation(699, 5);
@@ -15691,7 +15693,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:700:2: blockStatement
 					{
 					DebugLocation(700, 2);
-					PushFollow(Follow._blockStatement_in_block9040);
+					PushFollow(Follow._blockStatement_in_block9042);
 					blockStatement296=blockStatement();
 					PopFollow();
 					if (state.failed) return retval;
@@ -15756,7 +15758,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			}
 
 			DebugLocation(702, 6);
-			RCURLY297=(IToken)Match(input,RCURLY,Follow._RCURLY_in_block9064); if (state.failed) return retval; 
+			RCURLY297=(IToken)Match(input,RCURLY,Follow._RCURLY_in_block9066); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_RCURLY.Add(RCURLY297);
 
 
@@ -15825,19 +15827,19 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:709:9: localModifierList type classFieldDeclaratorList
 			{
 			DebugLocation(709, 9);
-			PushFollow(Follow._localModifierList_in_localVariableDeclaration9094);
+			PushFollow(Follow._localModifierList_in_localVariableDeclaration9096);
 			localModifierList298=localModifierList();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_localModifierList.Add(localModifierList298.Tree);
 			DebugLocation(709, 27);
-			PushFollow(Follow._type_in_localVariableDeclaration9096);
+			PushFollow(Follow._type_in_localVariableDeclaration9098);
 			type299=type();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_type.Add(type299.Tree);
 			DebugLocation(709, 32);
-			PushFollow(Follow._classFieldDeclaratorList_in_localVariableDeclaration9098);
+			PushFollow(Follow._classFieldDeclaratorList_in_localVariableDeclaration9100);
 			classFieldDeclaratorList300=classFieldDeclaratorList();
 			PopFollow();
 			if (state.failed) return retval;
@@ -15846,7 +15848,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: type, localModifierList, classFieldDeclaratorList
+			// elements: type, classFieldDeclaratorList, localModifierList
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -16491,7 +16493,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(715, 9);
-				PushFollow(Follow._block_in_statement9151);
+				PushFollow(Follow._block_in_statement9153);
 				block301=block();
 				PopFollow();
 				if (state.failed) return retval;
@@ -16504,17 +16506,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:716:9: IF parenthesizedExpression ifStat= statement ( ELSE elseStat= statement -> ^( IF parenthesizedExpression $ifStat $elseStat) | -> ^( IF parenthesizedExpression $ifStat) )
 				{
 				DebugLocation(716, 9);
-				IF302=(IToken)Match(input,IF,Follow._IF_in_statement9161); if (state.failed) return retval; 
+				IF302=(IToken)Match(input,IF,Follow._IF_in_statement9163); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_IF.Add(IF302);
 
 				DebugLocation(716, 12);
-				PushFollow(Follow._parenthesizedExpression_in_statement9163);
+				PushFollow(Follow._parenthesizedExpression_in_statement9165);
 				parenthesizedExpression303=parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_parenthesizedExpression.Add(parenthesizedExpression303.Tree);
 				DebugLocation(716, 42);
-				PushFollow(Follow._statement_in_statement9167);
+				PushFollow(Follow._statement_in_statement9169);
 				ifStat=statement();
 				PopFollow();
 				if (state.failed) return retval;
@@ -16565,11 +16567,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:717:13: ELSE elseStat= statement
 					{
 					DebugLocation(717, 13);
-					ELSE304=(IToken)Match(input,ELSE,Follow._ELSE_in_statement9182); if (state.failed) return retval; 
+					ELSE304=(IToken)Match(input,ELSE,Follow._ELSE_in_statement9184); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_ELSE.Add(ELSE304);
 
 					DebugLocation(717, 26);
-					PushFollow(Follow._statement_in_statement9186);
+					PushFollow(Follow._statement_in_statement9188);
 					elseStat=statement();
 					PopFollow();
 					if (state.failed) return retval;
@@ -16578,7 +16580,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: parenthesizedExpression, IF, elseStat, ifStat
+					// elements: ifStat, parenthesizedExpression, elseStat, IF
 					// token labels: 
 					// rule labels: retval, ifStat, elseStat
 					// token list labels: 
@@ -16625,7 +16627,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: parenthesizedExpression, IF, ifStat
+					// elements: IF, parenthesizedExpression, ifStat
 					// token labels: 
 					// rule labels: retval, ifStat
 					// token list labels: 
@@ -16674,11 +16676,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:720:9: FOR LPAREN ( forInit SEMI forCondition SEMI forUpdater RPAREN statement -> ^( FOR forInit forCondition forUpdater statement ) | localModifierList type IDENT COLON expression RPAREN statement -> ^( FOR_EACH[$FOR, \"FOR_EACH\"] localModifierList type IDENT expression statement ) )
 				{
 				DebugLocation(720, 9);
-				FOR305=(IToken)Match(input,FOR,Follow._FOR_in_statement9352); if (state.failed) return retval; 
+				FOR305=(IToken)Match(input,FOR,Follow._FOR_in_statement9354); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_FOR.Add(FOR305);
 
 				DebugLocation(720, 13);
-				LPAREN306=(IToken)Match(input,LPAREN,Follow._LPAREN_in_statement9354); if (state.failed) return retval; 
+				LPAREN306=(IToken)Match(input,LPAREN,Follow._LPAREN_in_statement9356); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_LPAREN.Add(LPAREN306);
 
 				DebugLocation(721, 9);
@@ -16823,37 +16825,37 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:721:13: forInit SEMI forCondition SEMI forUpdater RPAREN statement
 					{
 					DebugLocation(721, 13);
-					PushFollow(Follow._forInit_in_statement9369);
+					PushFollow(Follow._forInit_in_statement9371);
 					forInit307=forInit();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_forInit.Add(forInit307.Tree);
 					DebugLocation(721, 21);
-					SEMI308=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9371); if (state.failed) return retval; 
+					SEMI308=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9373); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_SEMI.Add(SEMI308);
 
 					DebugLocation(721, 26);
-					PushFollow(Follow._forCondition_in_statement9373);
+					PushFollow(Follow._forCondition_in_statement9375);
 					forCondition309=forCondition();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_forCondition.Add(forCondition309.Tree);
 					DebugLocation(721, 39);
-					SEMI310=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9375); if (state.failed) return retval; 
+					SEMI310=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9377); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_SEMI.Add(SEMI310);
 
 					DebugLocation(721, 44);
-					PushFollow(Follow._forUpdater_in_statement9377);
+					PushFollow(Follow._forUpdater_in_statement9379);
 					forUpdater311=forUpdater();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_forUpdater.Add(forUpdater311.Tree);
 					DebugLocation(721, 55);
-					RPAREN312=(IToken)Match(input,RPAREN,Follow._RPAREN_in_statement9379); if (state.failed) return retval; 
+					RPAREN312=(IToken)Match(input,RPAREN,Follow._RPAREN_in_statement9381); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_RPAREN.Add(RPAREN312);
 
 					DebugLocation(721, 62);
-					PushFollow(Follow._statement_in_statement9381);
+					PushFollow(Follow._statement_in_statement9383);
 					statement313=statement();
 					PopFollow();
 					if (state.failed) return retval;
@@ -16862,7 +16864,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: statement, forInit, forCondition, forUpdater, FOR
+					// elements: statement, FOR, forUpdater, forCondition, forInit
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -16907,37 +16909,37 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:722:13: localModifierList type IDENT COLON expression RPAREN statement
 					{
 					DebugLocation(722, 13);
-					PushFollow(Follow._localModifierList_in_statement9416);
+					PushFollow(Follow._localModifierList_in_statement9418);
 					localModifierList314=localModifierList();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_localModifierList.Add(localModifierList314.Tree);
 					DebugLocation(722, 31);
-					PushFollow(Follow._type_in_statement9418);
+					PushFollow(Follow._type_in_statement9420);
 					type315=type();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_type.Add(type315.Tree);
 					DebugLocation(722, 36);
-					IDENT316=(IToken)Match(input,IDENT,Follow._IDENT_in_statement9420); if (state.failed) return retval; 
+					IDENT316=(IToken)Match(input,IDENT,Follow._IDENT_in_statement9422); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_IDENT.Add(IDENT316);
 
 					DebugLocation(722, 42);
-					COLON317=(IToken)Match(input,COLON,Follow._COLON_in_statement9422); if (state.failed) return retval; 
+					COLON317=(IToken)Match(input,COLON,Follow._COLON_in_statement9424); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_COLON.Add(COLON317);
 
 					DebugLocation(722, 48);
-					PushFollow(Follow._expression_in_statement9424);
+					PushFollow(Follow._expression_in_statement9426);
 					expression318=expression();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_expression.Add(expression318.Tree);
 					DebugLocation(722, 59);
-					RPAREN319=(IToken)Match(input,RPAREN,Follow._RPAREN_in_statement9426); if (state.failed) return retval; 
+					RPAREN319=(IToken)Match(input,RPAREN,Follow._RPAREN_in_statement9428); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_RPAREN.Add(RPAREN319);
 
 					DebugLocation(722, 66);
-					PushFollow(Follow._statement_in_statement9428);
+					PushFollow(Follow._statement_in_statement9430);
 					statement320=statement();
 					PopFollow();
 					if (state.failed) return retval;
@@ -16946,7 +16948,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: IDENT, localModifierList, expression, statement, type
+					// elements: expression, type, localModifierList, IDENT, statement
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -17000,17 +17002,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:724:9: WHILE parenthesizedExpression statement
 				{
 				DebugLocation(724, 9);
-				WHILE321=(IToken)Match(input,WHILE,Follow._WHILE_in_statement9468); if (state.failed) return retval; 
+				WHILE321=(IToken)Match(input,WHILE,Follow._WHILE_in_statement9470); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_WHILE.Add(WHILE321);
 
 				DebugLocation(724, 15);
-				PushFollow(Follow._parenthesizedExpression_in_statement9470);
+				PushFollow(Follow._parenthesizedExpression_in_statement9472);
 				parenthesizedExpression322=parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_parenthesizedExpression.Add(parenthesizedExpression322.Tree);
 				DebugLocation(724, 39);
-				PushFollow(Follow._statement_in_statement9472);
+				PushFollow(Follow._statement_in_statement9474);
 				statement323=statement();
 				PopFollow();
 				if (state.failed) return retval;
@@ -17019,7 +17021,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: WHILE, parenthesizedExpression, statement
+				// elements: WHILE, statement, parenthesizedExpression
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -17060,34 +17062,34 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:725:9: DO statement WHILE parenthesizedExpression SEMI
 				{
 				DebugLocation(725, 9);
-				DO324=(IToken)Match(input,DO,Follow._DO_in_statement9521); if (state.failed) return retval; 
+				DO324=(IToken)Match(input,DO,Follow._DO_in_statement9523); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DO.Add(DO324);
 
 				DebugLocation(725, 12);
-				PushFollow(Follow._statement_in_statement9523);
+				PushFollow(Follow._statement_in_statement9525);
 				statement325=statement();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_statement.Add(statement325.Tree);
 				DebugLocation(725, 22);
-				WHILE326=(IToken)Match(input,WHILE,Follow._WHILE_in_statement9525); if (state.failed) return retval; 
+				WHILE326=(IToken)Match(input,WHILE,Follow._WHILE_in_statement9527); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_WHILE.Add(WHILE326);
 
 				DebugLocation(725, 28);
-				PushFollow(Follow._parenthesizedExpression_in_statement9527);
+				PushFollow(Follow._parenthesizedExpression_in_statement9529);
 				parenthesizedExpression327=parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_parenthesizedExpression.Add(parenthesizedExpression327.Tree);
 				DebugLocation(725, 52);
-				SEMI328=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9529); if (state.failed) return retval; 
+				SEMI328=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9531); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SEMI.Add(SEMI328);
 
 
 
 				{
 				// AST REWRITE
-				// elements: parenthesizedExpression, statement, DO
+				// elements: DO, parenthesizedExpression, statement
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -17128,11 +17130,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:726:9: TRY block ( catches ( finallyClause )? | finallyClause )
 				{
 				DebugLocation(726, 9);
-				TRY329=(IToken)Match(input,TRY,Follow._TRY_in_statement9570); if (state.failed) return retval; 
+				TRY329=(IToken)Match(input,TRY,Follow._TRY_in_statement9572); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_TRY.Add(TRY329);
 
 				DebugLocation(726, 13);
-				PushFollow(Follow._block_in_statement9572);
+				PushFollow(Follow._block_in_statement9574);
 				block330=block();
 				PopFollow();
 				if (state.failed) return retval;
@@ -17167,7 +17169,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:726:20: catches ( finallyClause )?
 					{
 					DebugLocation(726, 20);
-					PushFollow(Follow._catches_in_statement9575);
+					PushFollow(Follow._catches_in_statement9577);
 					catches331=catches();
 					PopFollow();
 					if (state.failed) return retval;
@@ -17191,7 +17193,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:726:28: finallyClause
 						{
 						DebugLocation(726, 28);
-						PushFollow(Follow._finallyClause_in_statement9577);
+						PushFollow(Follow._finallyClause_in_statement9579);
 						finallyClause332=finallyClause();
 						PopFollow();
 						if (state.failed) return retval;
@@ -17211,7 +17213,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:726:45: finallyClause
 					{
 					DebugLocation(726, 45);
-					PushFollow(Follow._finallyClause_in_statement9582);
+					PushFollow(Follow._finallyClause_in_statement9584);
 					finallyClause333=finallyClause();
 					PopFollow();
 					if (state.failed) return retval;
@@ -17227,7 +17229,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: finallyClause, catches, TRY, block
+				// elements: TRY, finallyClause, catches, block
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -17284,34 +17286,34 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:727:9: SWITCH parenthesizedExpression LCURLY switchBlockLabels RCURLY
 				{
 				DebugLocation(727, 9);
-				SWITCH334=(IToken)Match(input,SWITCH,Follow._SWITCH_in_statement9625); if (state.failed) return retval; 
+				SWITCH334=(IToken)Match(input,SWITCH,Follow._SWITCH_in_statement9627); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SWITCH.Add(SWITCH334);
 
 				DebugLocation(727, 16);
-				PushFollow(Follow._parenthesizedExpression_in_statement9627);
+				PushFollow(Follow._parenthesizedExpression_in_statement9629);
 				parenthesizedExpression335=parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_parenthesizedExpression.Add(parenthesizedExpression335.Tree);
 				DebugLocation(727, 40);
-				LCURLY336=(IToken)Match(input,LCURLY,Follow._LCURLY_in_statement9629); if (state.failed) return retval; 
+				LCURLY336=(IToken)Match(input,LCURLY,Follow._LCURLY_in_statement9631); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_LCURLY.Add(LCURLY336);
 
 				DebugLocation(727, 47);
-				PushFollow(Follow._switchBlockLabels_in_statement9631);
+				PushFollow(Follow._switchBlockLabels_in_statement9633);
 				switchBlockLabels337=switchBlockLabels();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_switchBlockLabels.Add(switchBlockLabels337.Tree);
 				DebugLocation(727, 65);
-				RCURLY338=(IToken)Match(input,RCURLY,Follow._RCURLY_in_statement9633); if (state.failed) return retval; 
+				RCURLY338=(IToken)Match(input,RCURLY,Follow._RCURLY_in_statement9635); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_RCURLY.Add(RCURLY338);
 
 
 
 				{
 				// AST REWRITE
-				// elements: parenthesizedExpression, switchBlockLabels, SWITCH
+				// elements: switchBlockLabels, parenthesizedExpression, SWITCH
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -17352,17 +17354,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:728:9: SYNCHRONIZED parenthesizedExpression block
 				{
 				DebugLocation(728, 9);
-				SYNCHRONIZED339=(IToken)Match(input,SYNCHRONIZED,Follow._SYNCHRONIZED_in_statement9659); if (state.failed) return retval; 
+				SYNCHRONIZED339=(IToken)Match(input,SYNCHRONIZED,Follow._SYNCHRONIZED_in_statement9661); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SYNCHRONIZED.Add(SYNCHRONIZED339);
 
 				DebugLocation(728, 22);
-				PushFollow(Follow._parenthesizedExpression_in_statement9661);
+				PushFollow(Follow._parenthesizedExpression_in_statement9663);
 				parenthesizedExpression340=parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_parenthesizedExpression.Add(parenthesizedExpression340.Tree);
 				DebugLocation(728, 46);
-				PushFollow(Follow._block_in_statement9663);
+				PushFollow(Follow._block_in_statement9665);
 				block341=block();
 				PopFollow();
 				if (state.failed) return retval;
@@ -17371,7 +17373,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: parenthesizedExpression, block, SYNCHRONIZED
+				// elements: SYNCHRONIZED, block, parenthesizedExpression
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -17412,7 +17414,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:729:9: RETURN ( expression )? SEMI
 				{
 				DebugLocation(729, 9);
-				RETURN342=(IToken)Match(input,RETURN,Follow._RETURN_in_statement9709); if (state.failed) return retval; 
+				RETURN342=(IToken)Match(input,RETURN,Follow._RETURN_in_statement9711); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_RETURN.Add(RETURN342);
 
 				DebugLocation(729, 16);
@@ -17434,7 +17436,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:729:16: expression
 					{
 					DebugLocation(729, 16);
-					PushFollow(Follow._expression_in_statement9711);
+					PushFollow(Follow._expression_in_statement9713);
 					expression343=expression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -17447,7 +17449,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(99); }
 
 				DebugLocation(729, 28);
-				SEMI344=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9714); if (state.failed) return retval; 
+				SEMI344=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9716); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SEMI.Add(SEMI344);
 
 
@@ -17500,24 +17502,24 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:730:9: THROW expression SEMI
 				{
 				DebugLocation(730, 9);
-				THROW345=(IToken)Match(input,THROW,Follow._THROW_in_statement9778); if (state.failed) return retval; 
+				THROW345=(IToken)Match(input,THROW,Follow._THROW_in_statement9780); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_THROW.Add(THROW345);
 
 				DebugLocation(730, 15);
-				PushFollow(Follow._expression_in_statement9780);
+				PushFollow(Follow._expression_in_statement9782);
 				expression346=expression();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_expression.Add(expression346.Tree);
 				DebugLocation(730, 26);
-				SEMI347=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9782); if (state.failed) return retval; 
+				SEMI347=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9784); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SEMI.Add(SEMI347);
 
 
 
 				{
 				// AST REWRITE
-				// elements: expression, THROW
+				// elements: THROW, expression
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -17556,7 +17558,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:731:9: BREAK ( IDENT )? SEMI
 				{
 				DebugLocation(731, 9);
-				BREAK348=(IToken)Match(input,BREAK,Follow._BREAK_in_statement9847); if (state.failed) return retval; 
+				BREAK348=(IToken)Match(input,BREAK,Follow._BREAK_in_statement9849); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_BREAK.Add(BREAK348);
 
 				DebugLocation(731, 15);
@@ -17578,7 +17580,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:731:15: IDENT
 					{
 					DebugLocation(731, 15);
-					IDENT349=(IToken)Match(input,IDENT,Follow._IDENT_in_statement9849); if (state.failed) return retval; 
+					IDENT349=(IToken)Match(input,IDENT,Follow._IDENT_in_statement9851); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_IDENT.Add(IDENT349);
 
 
@@ -17589,14 +17591,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(100); }
 
 				DebugLocation(731, 22);
-				SEMI350=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9852); if (state.failed) return retval; 
+				SEMI350=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9854); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SEMI.Add(SEMI350);
 
 
 
 				{
 				// AST REWRITE
-				// elements: BREAK, IDENT
+				// elements: IDENT, BREAK
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -17642,7 +17644,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:732:9: CONTINUE ( IDENT )? SEMI
 				{
 				DebugLocation(732, 9);
-				CONTINUE351=(IToken)Match(input,CONTINUE,Follow._CONTINUE_in_statement9922); if (state.failed) return retval; 
+				CONTINUE351=(IToken)Match(input,CONTINUE,Follow._CONTINUE_in_statement9924); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_CONTINUE.Add(CONTINUE351);
 
 				DebugLocation(732, 18);
@@ -17664,7 +17666,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:732:18: IDENT
 					{
 					DebugLocation(732, 18);
-					IDENT352=(IToken)Match(input,IDENT,Follow._IDENT_in_statement9924); if (state.failed) return retval; 
+					IDENT352=(IToken)Match(input,IDENT,Follow._IDENT_in_statement9926); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_IDENT.Add(IDENT352);
 
 
@@ -17675,7 +17677,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(101); }
 
 				DebugLocation(732, 25);
-				SEMI353=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9927); if (state.failed) return retval; 
+				SEMI353=(IToken)Match(input,SEMI,Follow._SEMI_in_statement9929); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SEMI.Add(SEMI353);
 
 
@@ -17728,15 +17730,15 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:733:9: IDENT COLON statement
 				{
 				DebugLocation(733, 9);
-				IDENT354=(IToken)Match(input,IDENT,Follow._IDENT_in_statement9994); if (state.failed) return retval; 
+				IDENT354=(IToken)Match(input,IDENT,Follow._IDENT_in_statement9996); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_IDENT.Add(IDENT354);
 
 				DebugLocation(733, 15);
-				COLON355=(IToken)Match(input,COLON,Follow._COLON_in_statement9996); if (state.failed) return retval; 
+				COLON355=(IToken)Match(input,COLON,Follow._COLON_in_statement9998); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_COLON.Add(COLON355);
 
 				DebugLocation(733, 21);
-				PushFollow(Follow._statement_in_statement9998);
+				PushFollow(Follow._statement_in_statement10000);
 				statement356=statement();
 				PopFollow();
 				if (state.failed) return retval;
@@ -17745,7 +17747,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: IDENT, statement
+				// elements: statement, IDENT
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -17788,7 +17790,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(734, 9);
-				PushFollow(Follow._dmlOperation_in_statement10065);
+				PushFollow(Follow._dmlOperation_in_statement10067);
 				dmlOperation357=dmlOperation();
 				PopFollow();
 				if (state.failed) return retval;
@@ -17803,13 +17805,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(735, 9);
-				PushFollow(Follow._expression_in_statement10075);
+				PushFollow(Follow._expression_in_statement10077);
 				expression358=expression();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) adaptor.AddChild(root_0, expression358.Tree);
 				DebugLocation(735, 24);
-				SEMI359=(IToken)Match(input,SEMI,Follow._SEMI_in_statement10077); if (state.failed) return retval;
+				SEMI359=(IToken)Match(input,SEMI,Follow._SEMI_in_statement10079); if (state.failed) return retval;
 
 				}
 				break;
@@ -17826,7 +17828,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					throw new FailedPredicateException(input, "statement", "input.LT(1).Text == \"system\" && input.LT(2).Text == \".\" && input.LT(3).Text == \"runas\"");
 				}
 				DebugLocation(736, 99);
-				PushFollow(Follow._expression_in_statement10090);
+				PushFollow(Follow._expression_in_statement10092);
 				expression360=expression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -17841,7 +17843,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(737, 9);
-				SEMI361=(IToken)Match(input,SEMI,Follow._SEMI_in_statement10100); if (state.failed) return retval;
+				SEMI361=(IToken)Match(input,SEMI,Follow._SEMI_in_statement10102); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				SEMI361_tree = (CommonTree)adaptor.Create(SEMI361);
 				adaptor.AddChild(root_0, SEMI361_tree);
@@ -17933,7 +17935,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:741:9: catchClause
 					{
 					DebugLocation(741, 9);
-					PushFollow(Follow._catchClause_in_catches10139);
+					PushFollow(Follow._catchClause_in_catches10141);
 					catchClause362=catchClause();
 					PopFollow();
 					if (state.failed) return retval;
@@ -18073,23 +18075,23 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(746, 14);
-			CATCH363=(IToken)Match(input,CATCH,Follow._CATCH_in_catchClause10181); if (state.failed) return retval;
+			CATCH363=(IToken)Match(input,CATCH,Follow._CATCH_in_catchClause10183); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			CATCH363_tree = (CommonTree)adaptor.Create(CATCH363);
 			root_0 = (CommonTree)adaptor.BecomeRoot(CATCH363_tree, root_0);
 			}
 			DebugLocation(746, 22);
-			LPAREN364=(IToken)Match(input,LPAREN,Follow._LPAREN_in_catchClause10184); if (state.failed) return retval;
+			LPAREN364=(IToken)Match(input,LPAREN,Follow._LPAREN_in_catchClause10186); if (state.failed) return retval;
 			DebugLocation(746, 24);
-			PushFollow(Follow._formalParameterStandardDecl_in_catchClause10187);
+			PushFollow(Follow._formalParameterStandardDecl_in_catchClause10189);
 			formalParameterStandardDecl365=formalParameterStandardDecl();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, formalParameterStandardDecl365.Tree);
 			DebugLocation(746, 58);
-			RPAREN366=(IToken)Match(input,RPAREN,Follow._RPAREN_in_catchClause10189); if (state.failed) return retval;
+			RPAREN366=(IToken)Match(input,RPAREN,Follow._RPAREN_in_catchClause10191); if (state.failed) return retval;
 			DebugLocation(746, 60);
-			PushFollow(Follow._block_in_catchClause10192);
+			PushFollow(Follow._block_in_catchClause10194);
 			block367=block();
 			PopFollow();
 			if (state.failed) return retval;
@@ -18159,11 +18161,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:750:9: FINALLY block
 			{
 			DebugLocation(750, 9);
-			FINALLY368=(IToken)Match(input,FINALLY,Follow._FINALLY_in_finallyClause10211); if (state.failed) return retval; 
+			FINALLY368=(IToken)Match(input,FINALLY,Follow._FINALLY_in_finallyClause10213); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_FINALLY.Add(FINALLY368);
 
 			DebugLocation(750, 17);
-			PushFollow(Follow._block_in_finallyClause10213);
+			PushFollow(Follow._block_in_finallyClause10215);
 			block369=block();
 			PopFollow();
 			if (state.failed) return retval;
@@ -18258,7 +18260,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:755:9: switchCaseLabels ( switchDefaultLabel )? switchCaseLabels
 			{
 			DebugLocation(755, 9);
-			PushFollow(Follow._switchCaseLabels_in_switchBlockLabels10245);
+			PushFollow(Follow._switchCaseLabels_in_switchBlockLabels10247);
 			switchCaseLabels370=switchCaseLabels();
 			PopFollow();
 			if (state.failed) return retval;
@@ -18282,7 +18284,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:755:26: switchDefaultLabel
 				{
 				DebugLocation(755, 26);
-				PushFollow(Follow._switchDefaultLabel_in_switchBlockLabels10247);
+				PushFollow(Follow._switchDefaultLabel_in_switchBlockLabels10249);
 				switchDefaultLabel371=switchDefaultLabel();
 				PopFollow();
 				if (state.failed) return retval;
@@ -18295,7 +18297,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(104); }
 
 			DebugLocation(755, 46);
-			PushFollow(Follow._switchCaseLabels_in_switchBlockLabels10250);
+			PushFollow(Follow._switchCaseLabels_in_switchBlockLabels10252);
 			switchCaseLabels372=switchCaseLabels();
 			PopFollow();
 			if (state.failed) return retval;
@@ -18304,7 +18306,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: switchCaseLabels, switchDefaultLabel, switchCaseLabels
+			// elements: switchCaseLabels, switchCaseLabels, switchDefaultLabel
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -18438,7 +18440,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:760:9: switchCaseLabel
 					{
 					DebugLocation(760, 9);
-					PushFollow(Follow._switchCaseLabel_in_switchCaseLabels10295);
+					PushFollow(Follow._switchCaseLabel_in_switchCaseLabels10297);
 					switchCaseLabel373=switchCaseLabel();
 					PopFollow();
 					if (state.failed) return retval;
@@ -18525,19 +18527,19 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(764, 13);
-			CASE374=(IToken)Match(input,CASE,Follow._CASE_in_switchCaseLabel10323); if (state.failed) return retval;
+			CASE374=(IToken)Match(input,CASE,Follow._CASE_in_switchCaseLabel10325); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			CASE374_tree = (CommonTree)adaptor.Create(CASE374);
 			root_0 = (CommonTree)adaptor.BecomeRoot(CASE374_tree, root_0);
 			}
 			DebugLocation(764, 15);
-			PushFollow(Follow._expression_in_switchCaseLabel10326);
+			PushFollow(Follow._expression_in_switchCaseLabel10328);
 			expression375=expression();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, expression375.Tree);
 			DebugLocation(764, 31);
-			COLON376=(IToken)Match(input,COLON,Follow._COLON_in_switchCaseLabel10328); if (state.failed) return retval;
+			COLON376=(IToken)Match(input,COLON,Follow._COLON_in_switchCaseLabel10330); if (state.failed) return retval;
 			DebugLocation(764, 33);
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:764:33: ( blockStatement )*
 			try { DebugEnterSubRule(106);
@@ -18561,7 +18563,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:764:33: blockStatement
 					{
 					DebugLocation(764, 33);
-					PushFollow(Follow._blockStatement_in_switchCaseLabel10331);
+					PushFollow(Follow._blockStatement_in_switchCaseLabel10333);
 					blockStatement377=blockStatement();
 					PopFollow();
 					if (state.failed) return retval;
@@ -18647,13 +18649,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(768, 16);
-			DEFAULT378=(IToken)Match(input,DEFAULT,Follow._DEFAULT_in_switchDefaultLabel10355); if (state.failed) return retval;
+			DEFAULT378=(IToken)Match(input,DEFAULT,Follow._DEFAULT_in_switchDefaultLabel10357); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			DEFAULT378_tree = (CommonTree)adaptor.Create(DEFAULT378);
 			root_0 = (CommonTree)adaptor.BecomeRoot(DEFAULT378_tree, root_0);
 			}
 			DebugLocation(768, 23);
-			COLON379=(IToken)Match(input,COLON,Follow._COLON_in_switchDefaultLabel10358); if (state.failed) return retval;
+			COLON379=(IToken)Match(input,COLON,Follow._COLON_in_switchDefaultLabel10360); if (state.failed) return retval;
 			DebugLocation(768, 25);
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:768:25: ( blockStatement )*
 			try { DebugEnterSubRule(107);
@@ -18677,7 +18679,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:768:25: blockStatement
 					{
 					DebugLocation(768, 25);
-					PushFollow(Follow._blockStatement_in_switchDefaultLabel10361);
+					PushFollow(Follow._blockStatement_in_switchDefaultLabel10363);
 					blockStatement380=blockStatement();
 					PopFollow();
 					if (state.failed) return retval;
@@ -18863,7 +18865,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:772:9: localVariableDeclaration
 				{
 				DebugLocation(772, 9);
-				PushFollow(Follow._localVariableDeclaration_in_forInit10385);
+				PushFollow(Follow._localVariableDeclaration_in_forInit10387);
 				localVariableDeclaration381=localVariableDeclaration();
 				PopFollow();
 				if (state.failed) return retval;
@@ -18911,7 +18913,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:773:9: expressionList
 				{
 				DebugLocation(773, 9);
-				PushFollow(Follow._expressionList_in_forInit10407);
+				PushFollow(Follow._expressionList_in_forInit10409);
 				expressionList382=expressionList();
 				PopFollow();
 				if (state.failed) return retval;
@@ -19071,7 +19073,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:778:9: expression
 				{
 				DebugLocation(778, 9);
-				PushFollow(Follow._expression_in_forCondition10495);
+				PushFollow(Follow._expression_in_forCondition10497);
 				expression383=expression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -19205,7 +19207,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:783:9: expressionList
 				{
 				DebugLocation(783, 9);
-				PushFollow(Follow._expressionList_in_forUpdater10537);
+				PushFollow(Follow._expressionList_in_forUpdater10539);
 				expressionList384=expressionList();
 				PopFollow();
 				if (state.failed) return retval;
@@ -19327,17 +19329,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:790:9: LPAREN expression RPAREN
 			{
 			DebugLocation(790, 9);
-			LPAREN385=(IToken)Match(input,LPAREN,Follow._LPAREN_in_parenthesizedExpression10577); if (state.failed) return retval; 
+			LPAREN385=(IToken)Match(input,LPAREN,Follow._LPAREN_in_parenthesizedExpression10579); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LPAREN.Add(LPAREN385);
 
 			DebugLocation(790, 16);
-			PushFollow(Follow._expression_in_parenthesizedExpression10579);
+			PushFollow(Follow._expression_in_parenthesizedExpression10581);
 			expression386=expression();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) stream_expression.Add(expression386.Tree);
 			DebugLocation(790, 27);
-			RPAREN387=(IToken)Match(input,RPAREN,Follow._RPAREN_in_parenthesizedExpression10581); if (state.failed) return retval; 
+			RPAREN387=(IToken)Match(input,RPAREN,Follow._RPAREN_in_parenthesizedExpression10583); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_RPAREN.Add(RPAREN387);
 
 
@@ -19441,7 +19443,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(795, 9);
-			PushFollow(Follow._expression_in_expressionList10622);
+			PushFollow(Follow._expression_in_expressionList10624);
 			expression388=expression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -19469,9 +19471,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:795:21: COMMA ! expression
 					{
 					DebugLocation(795, 26);
-					COMMA389=(IToken)Match(input,COMMA,Follow._COMMA_in_expressionList10625); if (state.failed) return retval;
+					COMMA389=(IToken)Match(input,COMMA,Follow._COMMA_in_expressionList10627); if (state.failed) return retval;
 					DebugLocation(795, 28);
-					PushFollow(Follow._expression_in_expressionList10628);
+					PushFollow(Follow._expression_in_expressionList10630);
 					expression390=expression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -19557,7 +19559,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:800:3: assignmentExpression
 			{
 			DebugLocation(800, 3);
-			PushFollow(Follow._assignmentExpression_in_expression10652);
+			PushFollow(Follow._assignmentExpression_in_expression10654);
 			assignmentExpression391=assignmentExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -19688,7 +19690,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(804, 9);
-			PushFollow(Follow._conditionalExpression_in_assignmentExpression10682);
+			PushFollow(Follow._conditionalExpression_in_assignmentExpression10684);
 			conditionalExpression392=conditionalExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -19795,7 +19797,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:805:17: ASSIGN ^
 					{
 					DebugLocation(805, 23);
-					ASSIGN393=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_assignmentExpression10701); if (state.failed) return retval;
+					ASSIGN393=(IToken)Match(input,ASSIGN,Follow._ASSIGN_in_assignmentExpression10703); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					ASSIGN393_tree = (CommonTree)adaptor.Create(ASSIGN393);
 					root_0 = (CommonTree)adaptor.BecomeRoot(ASSIGN393_tree, root_0);
@@ -19808,7 +19810,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:806:17: PLUS_ASSIGN ^
 					{
 					DebugLocation(806, 28);
-					PLUS_ASSIGN394=(IToken)Match(input,PLUS_ASSIGN,Follow._PLUS_ASSIGN_in_assignmentExpression10720); if (state.failed) return retval;
+					PLUS_ASSIGN394=(IToken)Match(input,PLUS_ASSIGN,Follow._PLUS_ASSIGN_in_assignmentExpression10722); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					PLUS_ASSIGN394_tree = (CommonTree)adaptor.Create(PLUS_ASSIGN394);
 					root_0 = (CommonTree)adaptor.BecomeRoot(PLUS_ASSIGN394_tree, root_0);
@@ -19821,7 +19823,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:807:17: MINUS_ASSIGN ^
 					{
 					DebugLocation(807, 29);
-					MINUS_ASSIGN395=(IToken)Match(input,MINUS_ASSIGN,Follow._MINUS_ASSIGN_in_assignmentExpression10739); if (state.failed) return retval;
+					MINUS_ASSIGN395=(IToken)Match(input,MINUS_ASSIGN,Follow._MINUS_ASSIGN_in_assignmentExpression10741); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					MINUS_ASSIGN395_tree = (CommonTree)adaptor.Create(MINUS_ASSIGN395);
 					root_0 = (CommonTree)adaptor.BecomeRoot(MINUS_ASSIGN395_tree, root_0);
@@ -19834,7 +19836,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:808:17: STAR_ASSIGN ^
 					{
 					DebugLocation(808, 28);
-					STAR_ASSIGN396=(IToken)Match(input,STAR_ASSIGN,Follow._STAR_ASSIGN_in_assignmentExpression10758); if (state.failed) return retval;
+					STAR_ASSIGN396=(IToken)Match(input,STAR_ASSIGN,Follow._STAR_ASSIGN_in_assignmentExpression10760); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					STAR_ASSIGN396_tree = (CommonTree)adaptor.Create(STAR_ASSIGN396);
 					root_0 = (CommonTree)adaptor.BecomeRoot(STAR_ASSIGN396_tree, root_0);
@@ -19847,7 +19849,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:809:17: DIV_ASSIGN ^
 					{
 					DebugLocation(809, 27);
-					DIV_ASSIGN397=(IToken)Match(input,DIV_ASSIGN,Follow._DIV_ASSIGN_in_assignmentExpression10777); if (state.failed) return retval;
+					DIV_ASSIGN397=(IToken)Match(input,DIV_ASSIGN,Follow._DIV_ASSIGN_in_assignmentExpression10779); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					DIV_ASSIGN397_tree = (CommonTree)adaptor.Create(DIV_ASSIGN397);
 					root_0 = (CommonTree)adaptor.BecomeRoot(DIV_ASSIGN397_tree, root_0);
@@ -19860,7 +19862,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:810:17: AND_ASSIGN ^
 					{
 					DebugLocation(810, 27);
-					AND_ASSIGN398=(IToken)Match(input,AND_ASSIGN,Follow._AND_ASSIGN_in_assignmentExpression10796); if (state.failed) return retval;
+					AND_ASSIGN398=(IToken)Match(input,AND_ASSIGN,Follow._AND_ASSIGN_in_assignmentExpression10798); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					AND_ASSIGN398_tree = (CommonTree)adaptor.Create(AND_ASSIGN398);
 					root_0 = (CommonTree)adaptor.BecomeRoot(AND_ASSIGN398_tree, root_0);
@@ -19873,7 +19875,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:811:17: OR_ASSIGN ^
 					{
 					DebugLocation(811, 26);
-					OR_ASSIGN399=(IToken)Match(input,OR_ASSIGN,Follow._OR_ASSIGN_in_assignmentExpression10815); if (state.failed) return retval;
+					OR_ASSIGN399=(IToken)Match(input,OR_ASSIGN,Follow._OR_ASSIGN_in_assignmentExpression10817); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					OR_ASSIGN399_tree = (CommonTree)adaptor.Create(OR_ASSIGN399);
 					root_0 = (CommonTree)adaptor.BecomeRoot(OR_ASSIGN399_tree, root_0);
@@ -19886,7 +19888,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:812:17: XOR_ASSIGN ^
 					{
 					DebugLocation(812, 27);
-					XOR_ASSIGN400=(IToken)Match(input,XOR_ASSIGN,Follow._XOR_ASSIGN_in_assignmentExpression10834); if (state.failed) return retval;
+					XOR_ASSIGN400=(IToken)Match(input,XOR_ASSIGN,Follow._XOR_ASSIGN_in_assignmentExpression10836); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					XOR_ASSIGN400_tree = (CommonTree)adaptor.Create(XOR_ASSIGN400);
 					root_0 = (CommonTree)adaptor.BecomeRoot(XOR_ASSIGN400_tree, root_0);
@@ -19899,7 +19901,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:813:17: MOD_ASSIGN ^
 					{
 					DebugLocation(813, 27);
-					MOD_ASSIGN401=(IToken)Match(input,MOD_ASSIGN,Follow._MOD_ASSIGN_in_assignmentExpression10853); if (state.failed) return retval;
+					MOD_ASSIGN401=(IToken)Match(input,MOD_ASSIGN,Follow._MOD_ASSIGN_in_assignmentExpression10855); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					MOD_ASSIGN401_tree = (CommonTree)adaptor.Create(MOD_ASSIGN401);
 					root_0 = (CommonTree)adaptor.BecomeRoot(MOD_ASSIGN401_tree, root_0);
@@ -19912,7 +19914,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:814:17: SHIFT_LEFT_ASSIGN ^
 					{
 					DebugLocation(814, 34);
-					SHIFT_LEFT_ASSIGN402=(IToken)Match(input,SHIFT_LEFT_ASSIGN,Follow._SHIFT_LEFT_ASSIGN_in_assignmentExpression10872); if (state.failed) return retval;
+					SHIFT_LEFT_ASSIGN402=(IToken)Match(input,SHIFT_LEFT_ASSIGN,Follow._SHIFT_LEFT_ASSIGN_in_assignmentExpression10874); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					SHIFT_LEFT_ASSIGN402_tree = (CommonTree)adaptor.Create(SHIFT_LEFT_ASSIGN402);
 					root_0 = (CommonTree)adaptor.BecomeRoot(SHIFT_LEFT_ASSIGN402_tree, root_0);
@@ -19925,7 +19927,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:815:17: SHIFT_RIGHT_ASSIGN ^
 					{
 					DebugLocation(815, 35);
-					SHIFT_RIGHT_ASSIGN403=(IToken)Match(input,SHIFT_RIGHT_ASSIGN,Follow._SHIFT_RIGHT_ASSIGN_in_assignmentExpression10891); if (state.failed) return retval;
+					SHIFT_RIGHT_ASSIGN403=(IToken)Match(input,SHIFT_RIGHT_ASSIGN,Follow._SHIFT_RIGHT_ASSIGN_in_assignmentExpression10893); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					SHIFT_RIGHT_ASSIGN403_tree = (CommonTree)adaptor.Create(SHIFT_RIGHT_ASSIGN403);
 					root_0 = (CommonTree)adaptor.BecomeRoot(SHIFT_RIGHT_ASSIGN403_tree, root_0);
@@ -19938,7 +19940,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:816:17: BIT_SHIFT_RIGHT_ASSIGN ^
 					{
 					DebugLocation(816, 39);
-					BIT_SHIFT_RIGHT_ASSIGN404=(IToken)Match(input,BIT_SHIFT_RIGHT_ASSIGN,Follow._BIT_SHIFT_RIGHT_ASSIGN_in_assignmentExpression10910); if (state.failed) return retval;
+					BIT_SHIFT_RIGHT_ASSIGN404=(IToken)Match(input,BIT_SHIFT_RIGHT_ASSIGN,Follow._BIT_SHIFT_RIGHT_ASSIGN_in_assignmentExpression10912); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					BIT_SHIFT_RIGHT_ASSIGN404_tree = (CommonTree)adaptor.Create(BIT_SHIFT_RIGHT_ASSIGN404);
 					root_0 = (CommonTree)adaptor.BecomeRoot(BIT_SHIFT_RIGHT_ASSIGN404_tree, root_0);
@@ -19951,7 +19953,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(112); }
 
 				DebugLocation(818, 9);
-				PushFollow(Follow._assignmentExpression_in_assignmentExpression10932);
+				PushFollow(Follow._assignmentExpression_in_assignmentExpression10934);
 				assignmentExpression405=assignmentExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -20032,7 +20034,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(822, 9);
-			PushFollow(Follow._logicalOrExpression_in_conditionalExpression10957);
+			PushFollow(Follow._logicalOrExpression_in_conditionalExpression10959);
 			logicalOrExpression406=logicalOrExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -20056,21 +20058,21 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:822:30: QUESTION ^ assignmentExpression COLON ! conditionalExpression
 				{
 				DebugLocation(822, 38);
-				QUESTION407=(IToken)Match(input,QUESTION,Follow._QUESTION_in_conditionalExpression10960); if (state.failed) return retval;
+				QUESTION407=(IToken)Match(input,QUESTION,Follow._QUESTION_in_conditionalExpression10962); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				QUESTION407_tree = (CommonTree)adaptor.Create(QUESTION407);
 				root_0 = (CommonTree)adaptor.BecomeRoot(QUESTION407_tree, root_0);
 				}
 				DebugLocation(822, 40);
-				PushFollow(Follow._assignmentExpression_in_conditionalExpression10963);
+				PushFollow(Follow._assignmentExpression_in_conditionalExpression10965);
 				assignmentExpression408=assignmentExpression();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) adaptor.AddChild(root_0, assignmentExpression408.Tree);
 				DebugLocation(822, 66);
-				COLON409=(IToken)Match(input,COLON,Follow._COLON_in_conditionalExpression10965); if (state.failed) return retval;
+				COLON409=(IToken)Match(input,COLON,Follow._COLON_in_conditionalExpression10967); if (state.failed) return retval;
 				DebugLocation(822, 68);
-				PushFollow(Follow._conditionalExpression_in_conditionalExpression10968);
+				PushFollow(Follow._conditionalExpression_in_conditionalExpression10970);
 				conditionalExpression410=conditionalExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -20148,7 +20150,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(826, 9);
-			PushFollow(Follow._logicalAndExpression_in_logicalOrExpression10989);
+			PushFollow(Follow._logicalAndExpression_in_logicalOrExpression10991);
 			logicalAndExpression411=logicalAndExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -20176,13 +20178,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:826:31: LOGICAL_OR ^ logicalAndExpression
 					{
 					DebugLocation(826, 41);
-					LOGICAL_OR412=(IToken)Match(input,LOGICAL_OR,Follow._LOGICAL_OR_in_logicalOrExpression10992); if (state.failed) return retval;
+					LOGICAL_OR412=(IToken)Match(input,LOGICAL_OR,Follow._LOGICAL_OR_in_logicalOrExpression10994); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					LOGICAL_OR412_tree = (CommonTree)adaptor.Create(LOGICAL_OR412);
 					root_0 = (CommonTree)adaptor.BecomeRoot(LOGICAL_OR412_tree, root_0);
 					}
 					DebugLocation(826, 43);
-					PushFollow(Follow._logicalAndExpression_in_logicalOrExpression10995);
+					PushFollow(Follow._logicalAndExpression_in_logicalOrExpression10997);
 					logicalAndExpression413=logicalAndExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -20267,7 +20269,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(830, 9);
-			PushFollow(Follow._inclusiveOrExpression_in_logicalAndExpression11016);
+			PushFollow(Follow._inclusiveOrExpression_in_logicalAndExpression11018);
 			inclusiveOrExpression414=inclusiveOrExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -20295,13 +20297,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:830:32: LOGICAL_AND ^ inclusiveOrExpression
 					{
 					DebugLocation(830, 43);
-					LOGICAL_AND415=(IToken)Match(input,LOGICAL_AND,Follow._LOGICAL_AND_in_logicalAndExpression11019); if (state.failed) return retval;
+					LOGICAL_AND415=(IToken)Match(input,LOGICAL_AND,Follow._LOGICAL_AND_in_logicalAndExpression11021); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					LOGICAL_AND415_tree = (CommonTree)adaptor.Create(LOGICAL_AND415);
 					root_0 = (CommonTree)adaptor.BecomeRoot(LOGICAL_AND415_tree, root_0);
 					}
 					DebugLocation(830, 45);
-					PushFollow(Follow._inclusiveOrExpression_in_logicalAndExpression11022);
+					PushFollow(Follow._inclusiveOrExpression_in_logicalAndExpression11024);
 					inclusiveOrExpression416=inclusiveOrExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -20386,7 +20388,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(834, 9);
-			PushFollow(Follow._exclusiveOrExpression_in_inclusiveOrExpression11043);
+			PushFollow(Follow._exclusiveOrExpression_in_inclusiveOrExpression11045);
 			exclusiveOrExpression417=exclusiveOrExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -20414,13 +20416,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:834:32: OR ^ exclusiveOrExpression
 					{
 					DebugLocation(834, 34);
-					OR418=(IToken)Match(input,OR,Follow._OR_in_inclusiveOrExpression11046); if (state.failed) return retval;
+					OR418=(IToken)Match(input,OR,Follow._OR_in_inclusiveOrExpression11048); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					OR418_tree = (CommonTree)adaptor.Create(OR418);
 					root_0 = (CommonTree)adaptor.BecomeRoot(OR418_tree, root_0);
 					}
 					DebugLocation(834, 36);
-					PushFollow(Follow._exclusiveOrExpression_in_inclusiveOrExpression11049);
+					PushFollow(Follow._exclusiveOrExpression_in_inclusiveOrExpression11051);
 					exclusiveOrExpression419=exclusiveOrExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -20505,7 +20507,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(838, 9);
-			PushFollow(Follow._andExpression_in_exclusiveOrExpression11070);
+			PushFollow(Follow._andExpression_in_exclusiveOrExpression11072);
 			andExpression420=andExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -20533,13 +20535,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:838:24: XOR ^ andExpression
 					{
 					DebugLocation(838, 27);
-					XOR421=(IToken)Match(input,XOR,Follow._XOR_in_exclusiveOrExpression11073); if (state.failed) return retval;
+					XOR421=(IToken)Match(input,XOR,Follow._XOR_in_exclusiveOrExpression11075); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					XOR421_tree = (CommonTree)adaptor.Create(XOR421);
 					root_0 = (CommonTree)adaptor.BecomeRoot(XOR421_tree, root_0);
 					}
 					DebugLocation(838, 29);
-					PushFollow(Follow._andExpression_in_exclusiveOrExpression11076);
+					PushFollow(Follow._andExpression_in_exclusiveOrExpression11078);
 					andExpression422=andExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -20624,7 +20626,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(842, 9);
-			PushFollow(Follow._equalityExpression_in_andExpression11097);
+			PushFollow(Follow._equalityExpression_in_andExpression11099);
 			equalityExpression423=equalityExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -20652,13 +20654,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:842:29: AND ^ equalityExpression
 					{
 					DebugLocation(842, 32);
-					AND424=(IToken)Match(input,AND,Follow._AND_in_andExpression11100); if (state.failed) return retval;
+					AND424=(IToken)Match(input,AND,Follow._AND_in_andExpression11102); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					AND424_tree = (CommonTree)adaptor.Create(AND424);
 					root_0 = (CommonTree)adaptor.BecomeRoot(AND424_tree, root_0);
 					}
 					DebugLocation(842, 34);
-					PushFollow(Follow._equalityExpression_in_andExpression11103);
+					PushFollow(Follow._equalityExpression_in_andExpression11105);
 					equalityExpression425=equalityExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -20745,7 +20747,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(846, 9);
-			PushFollow(Follow._instanceOfExpression_in_equalityExpression11124);
+			PushFollow(Follow._instanceOfExpression_in_equalityExpression11126);
 			instanceOfExpression426=instanceOfExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -20802,7 +20804,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:847:17: EQUAL ^
 						{
 						DebugLocation(847, 22);
-						EQUAL427=(IToken)Match(input,EQUAL,Follow._EQUAL_in_equalityExpression11143); if (state.failed) return retval;
+						EQUAL427=(IToken)Match(input,EQUAL,Follow._EQUAL_in_equalityExpression11145); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						EQUAL427_tree = (CommonTree)adaptor.Create(EQUAL427);
 						root_0 = (CommonTree)adaptor.BecomeRoot(EQUAL427_tree, root_0);
@@ -20815,7 +20817,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:848:17: NOT_EQUAL ^
 						{
 						DebugLocation(848, 26);
-						NOT_EQUAL428=(IToken)Match(input,NOT_EQUAL,Follow._NOT_EQUAL_in_equalityExpression11162); if (state.failed) return retval;
+						NOT_EQUAL428=(IToken)Match(input,NOT_EQUAL,Follow._NOT_EQUAL_in_equalityExpression11164); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						NOT_EQUAL428_tree = (CommonTree)adaptor.Create(NOT_EQUAL428);
 						root_0 = (CommonTree)adaptor.BecomeRoot(NOT_EQUAL428_tree, root_0);
@@ -20828,7 +20830,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(120); }
 
 					DebugLocation(850, 13);
-					PushFollow(Follow._instanceOfExpression_in_equalityExpression11192);
+					PushFollow(Follow._instanceOfExpression_in_equalityExpression11194);
 					instanceOfExpression429=instanceOfExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -20913,7 +20915,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(855, 9);
-			PushFollow(Follow._relationalExpression_in_instanceOfExpression11222);
+			PushFollow(Follow._relationalExpression_in_instanceOfExpression11224);
 			relationalExpression430=relationalExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -20937,13 +20939,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:855:31: INSTANCEOF ^ type
 				{
 				DebugLocation(855, 41);
-				INSTANCEOF431=(IToken)Match(input,INSTANCEOF,Follow._INSTANCEOF_in_instanceOfExpression11225); if (state.failed) return retval;
+				INSTANCEOF431=(IToken)Match(input,INSTANCEOF,Follow._INSTANCEOF_in_instanceOfExpression11227); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				INSTANCEOF431_tree = (CommonTree)adaptor.Create(INSTANCEOF431);
 				root_0 = (CommonTree)adaptor.BecomeRoot(INSTANCEOF431_tree, root_0);
 				}
 				DebugLocation(855, 43);
-				PushFollow(Follow._type_in_instanceOfExpression11228);
+				PushFollow(Follow._type_in_instanceOfExpression11230);
 				type432=type();
 				PopFollow();
 				if (state.failed) return retval;
@@ -21027,7 +21029,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(859, 9);
-			PushFollow(Follow._shiftExpression_in_relationalExpression11249);
+			PushFollow(Follow._shiftExpression_in_relationalExpression11251);
 			shiftExpression433=shiftExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -21099,7 +21101,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:860:17: LESS_OR_EQUAL ^
 						{
 						DebugLocation(860, 30);
-						LESS_OR_EQUAL434=(IToken)Match(input,LESS_OR_EQUAL,Follow._LESS_OR_EQUAL_in_relationalExpression11268); if (state.failed) return retval;
+						LESS_OR_EQUAL434=(IToken)Match(input,LESS_OR_EQUAL,Follow._LESS_OR_EQUAL_in_relationalExpression11270); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						LESS_OR_EQUAL434_tree = (CommonTree)adaptor.Create(LESS_OR_EQUAL434);
 						root_0 = (CommonTree)adaptor.BecomeRoot(LESS_OR_EQUAL434_tree, root_0);
@@ -21112,7 +21114,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:861:17: GREATER_OR_EQUAL ^
 						{
 						DebugLocation(861, 33);
-						GREATER_OR_EQUAL435=(IToken)Match(input,GREATER_OR_EQUAL,Follow._GREATER_OR_EQUAL_in_relationalExpression11287); if (state.failed) return retval;
+						GREATER_OR_EQUAL435=(IToken)Match(input,GREATER_OR_EQUAL,Follow._GREATER_OR_EQUAL_in_relationalExpression11289); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						GREATER_OR_EQUAL435_tree = (CommonTree)adaptor.Create(GREATER_OR_EQUAL435);
 						root_0 = (CommonTree)adaptor.BecomeRoot(GREATER_OR_EQUAL435_tree, root_0);
@@ -21125,7 +21127,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:862:17: LESS_THAN ^
 						{
 						DebugLocation(862, 26);
-						LESS_THAN436=(IToken)Match(input,LESS_THAN,Follow._LESS_THAN_in_relationalExpression11306); if (state.failed) return retval;
+						LESS_THAN436=(IToken)Match(input,LESS_THAN,Follow._LESS_THAN_in_relationalExpression11308); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						LESS_THAN436_tree = (CommonTree)adaptor.Create(LESS_THAN436);
 						root_0 = (CommonTree)adaptor.BecomeRoot(LESS_THAN436_tree, root_0);
@@ -21138,7 +21140,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:863:17: GREATER_THAN ^
 						{
 						DebugLocation(863, 29);
-						GREATER_THAN437=(IToken)Match(input,GREATER_THAN,Follow._GREATER_THAN_in_relationalExpression11325); if (state.failed) return retval;
+						GREATER_THAN437=(IToken)Match(input,GREATER_THAN,Follow._GREATER_THAN_in_relationalExpression11327); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						GREATER_THAN437_tree = (CommonTree)adaptor.Create(GREATER_THAN437);
 						root_0 = (CommonTree)adaptor.BecomeRoot(GREATER_THAN437_tree, root_0);
@@ -21151,7 +21153,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(123); }
 
 					DebugLocation(865, 13);
-					PushFollow(Follow._shiftExpression_in_relationalExpression11354);
+					PushFollow(Follow._shiftExpression_in_relationalExpression11356);
 					shiftExpression438=shiftExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -21240,7 +21242,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(870, 9);
-			PushFollow(Follow._additiveExpression_in_shiftExpression11388);
+			PushFollow(Follow._additiveExpression_in_shiftExpression11390);
 			additiveExpression439=additiveExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -21306,7 +21308,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:871:17: BIT_SHIFT_RIGHT ^
 						{
 						DebugLocation(871, 32);
-						BIT_SHIFT_RIGHT440=(IToken)Match(input,BIT_SHIFT_RIGHT,Follow._BIT_SHIFT_RIGHT_in_shiftExpression11406); if (state.failed) return retval;
+						BIT_SHIFT_RIGHT440=(IToken)Match(input,BIT_SHIFT_RIGHT,Follow._BIT_SHIFT_RIGHT_in_shiftExpression11408); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						BIT_SHIFT_RIGHT440_tree = (CommonTree)adaptor.Create(BIT_SHIFT_RIGHT440);
 						root_0 = (CommonTree)adaptor.BecomeRoot(BIT_SHIFT_RIGHT440_tree, root_0);
@@ -21319,7 +21321,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:872:17: SHIFT_RIGHT ^
 						{
 						DebugLocation(872, 28);
-						SHIFT_RIGHT441=(IToken)Match(input,SHIFT_RIGHT,Follow._SHIFT_RIGHT_in_shiftExpression11425); if (state.failed) return retval;
+						SHIFT_RIGHT441=(IToken)Match(input,SHIFT_RIGHT,Follow._SHIFT_RIGHT_in_shiftExpression11427); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						SHIFT_RIGHT441_tree = (CommonTree)adaptor.Create(SHIFT_RIGHT441);
 						root_0 = (CommonTree)adaptor.BecomeRoot(SHIFT_RIGHT441_tree, root_0);
@@ -21332,7 +21334,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:873:17: SHIFT_LEFT ^
 						{
 						DebugLocation(873, 27);
-						SHIFT_LEFT442=(IToken)Match(input,SHIFT_LEFT,Follow._SHIFT_LEFT_in_shiftExpression11444); if (state.failed) return retval;
+						SHIFT_LEFT442=(IToken)Match(input,SHIFT_LEFT,Follow._SHIFT_LEFT_in_shiftExpression11446); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						SHIFT_LEFT442_tree = (CommonTree)adaptor.Create(SHIFT_LEFT442);
 						root_0 = (CommonTree)adaptor.BecomeRoot(SHIFT_LEFT442_tree, root_0);
@@ -21345,7 +21347,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(125); }
 
 					DebugLocation(875, 13);
-					PushFollow(Follow._additiveExpression_in_shiftExpression11473);
+					PushFollow(Follow._additiveExpression_in_shiftExpression11475);
 					additiveExpression443=additiveExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -21432,7 +21434,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(880, 9);
-			PushFollow(Follow._multiplicativeExpression_in_additiveExpression11503);
+			PushFollow(Follow._multiplicativeExpression_in_additiveExpression11505);
 			multiplicativeExpression444=multiplicativeExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -21490,7 +21492,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:881:17: PLUS ^
 						{
 						DebugLocation(881, 21);
-						PLUS445=(IToken)Match(input,PLUS,Follow._PLUS_in_additiveExpression11521); if (state.failed) return retval;
+						PLUS445=(IToken)Match(input,PLUS,Follow._PLUS_in_additiveExpression11523); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						PLUS445_tree = (CommonTree)adaptor.Create(PLUS445);
 						root_0 = (CommonTree)adaptor.BecomeRoot(PLUS445_tree, root_0);
@@ -21503,7 +21505,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:882:17: MINUS ^
 						{
 						DebugLocation(882, 22);
-						MINUS446=(IToken)Match(input,MINUS,Follow._MINUS_in_additiveExpression11540); if (state.failed) return retval;
+						MINUS446=(IToken)Match(input,MINUS,Follow._MINUS_in_additiveExpression11542); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						MINUS446_tree = (CommonTree)adaptor.Create(MINUS446);
 						root_0 = (CommonTree)adaptor.BecomeRoot(MINUS446_tree, root_0);
@@ -21516,7 +21518,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(127); }
 
 					DebugLocation(884, 13);
-					PushFollow(Follow._multiplicativeExpression_in_additiveExpression11569);
+					PushFollow(Follow._multiplicativeExpression_in_additiveExpression11571);
 					multiplicativeExpression447=multiplicativeExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -21605,7 +21607,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(889, 9);
-			PushFollow(Follow._unaryExpression_in_multiplicativeExpression11599);
+			PushFollow(Follow._unaryExpression_in_multiplicativeExpression11601);
 			unaryExpression448=unaryExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -21671,7 +21673,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:890:17: STAR ^
 						{
 						DebugLocation(890, 21);
-						STAR449=(IToken)Match(input,STAR,Follow._STAR_in_multiplicativeExpression11618); if (state.failed) return retval;
+						STAR449=(IToken)Match(input,STAR,Follow._STAR_in_multiplicativeExpression11620); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						STAR449_tree = (CommonTree)adaptor.Create(STAR449);
 						root_0 = (CommonTree)adaptor.BecomeRoot(STAR449_tree, root_0);
@@ -21684,7 +21686,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:891:17: DIV ^
 						{
 						DebugLocation(891, 20);
-						DIV450=(IToken)Match(input,DIV,Follow._DIV_in_multiplicativeExpression11637); if (state.failed) return retval;
+						DIV450=(IToken)Match(input,DIV,Follow._DIV_in_multiplicativeExpression11639); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						DIV450_tree = (CommonTree)adaptor.Create(DIV450);
 						root_0 = (CommonTree)adaptor.BecomeRoot(DIV450_tree, root_0);
@@ -21697,7 +21699,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:892:17: MOD ^
 						{
 						DebugLocation(892, 20);
-						MOD451=(IToken)Match(input,MOD,Follow._MOD_in_multiplicativeExpression11656); if (state.failed) return retval;
+						MOD451=(IToken)Match(input,MOD,Follow._MOD_in_multiplicativeExpression11658); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						MOD451_tree = (CommonTree)adaptor.Create(MOD451);
 						root_0 = (CommonTree)adaptor.BecomeRoot(MOD451_tree, root_0);
@@ -21710,7 +21712,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(129); }
 
 					DebugLocation(894, 13);
-					PushFollow(Follow._unaryExpression_in_multiplicativeExpression11685);
+					PushFollow(Follow._unaryExpression_in_multiplicativeExpression11687);
 					unaryExpression452=unaryExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -21876,11 +21878,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:899:9: PLUS unaryExpression
 				{
 				DebugLocation(899, 9);
-				PLUS453=(IToken)Match(input,PLUS,Follow._PLUS_in_unaryExpression11719); if (state.failed) return retval; 
+				PLUS453=(IToken)Match(input,PLUS,Follow._PLUS_in_unaryExpression11721); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_PLUS.Add(PLUS453);
 
 				DebugLocation(899, 14);
-				PushFollow(Follow._unaryExpression_in_unaryExpression11721);
+				PushFollow(Follow._unaryExpression_in_unaryExpression11723);
 				unaryExpression454=unaryExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -21928,11 +21930,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:900:9: MINUS unaryExpression
 				{
 				DebugLocation(900, 9);
-				MINUS455=(IToken)Match(input,MINUS,Follow._MINUS_in_unaryExpression11748); if (state.failed) return retval; 
+				MINUS455=(IToken)Match(input,MINUS,Follow._MINUS_in_unaryExpression11750); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_MINUS.Add(MINUS455);
 
 				DebugLocation(900, 15);
-				PushFollow(Follow._unaryExpression_in_unaryExpression11750);
+				PushFollow(Follow._unaryExpression_in_unaryExpression11752);
 				unaryExpression456=unaryExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -21980,11 +21982,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:901:9: INC postfixedExpression
 				{
 				DebugLocation(901, 9);
-				INC457=(IToken)Match(input,INC,Follow._INC_in_unaryExpression11776); if (state.failed) return retval; 
+				INC457=(IToken)Match(input,INC,Follow._INC_in_unaryExpression11778); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_INC.Add(INC457);
 
 				DebugLocation(901, 13);
-				PushFollow(Follow._postfixedExpression_in_unaryExpression11778);
+				PushFollow(Follow._postfixedExpression_in_unaryExpression11780);
 				postfixedExpression458=postfixedExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -22032,11 +22034,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:902:9: DEC postfixedExpression
 				{
 				DebugLocation(902, 9);
-				DEC459=(IToken)Match(input,DEC,Follow._DEC_in_unaryExpression11802); if (state.failed) return retval; 
+				DEC459=(IToken)Match(input,DEC,Follow._DEC_in_unaryExpression11804); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DEC.Add(DEC459);
 
 				DebugLocation(902, 13);
-				PushFollow(Follow._postfixedExpression_in_unaryExpression11804);
+				PushFollow(Follow._postfixedExpression_in_unaryExpression11806);
 				postfixedExpression460=postfixedExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -22086,7 +22088,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(903, 9);
-				PushFollow(Follow._unaryExpressionNotPlusMinus_in_unaryExpression11828);
+				PushFollow(Follow._unaryExpressionNotPlusMinus_in_unaryExpression11830);
 				unaryExpressionNotPlusMinus461=unaryExpressionNotPlusMinus();
 				PopFollow();
 				if (state.failed) return retval;
@@ -22248,11 +22250,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:907:9: NOT unaryExpression
 				{
 				DebugLocation(907, 9);
-				NOT462=(IToken)Match(input,NOT,Follow._NOT_in_unaryExpressionNotPlusMinus11847); if (state.failed) return retval; 
+				NOT462=(IToken)Match(input,NOT,Follow._NOT_in_unaryExpressionNotPlusMinus11849); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_NOT.Add(NOT462);
 
 				DebugLocation(907, 13);
-				PushFollow(Follow._unaryExpression_in_unaryExpressionNotPlusMinus11849);
+				PushFollow(Follow._unaryExpression_in_unaryExpressionNotPlusMinus11851);
 				unaryExpression463=unaryExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -22300,11 +22302,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:908:9: LOGICAL_NOT unaryExpression
 				{
 				DebugLocation(908, 9);
-				LOGICAL_NOT464=(IToken)Match(input,LOGICAL_NOT,Follow._LOGICAL_NOT_in_unaryExpressionNotPlusMinus11896); if (state.failed) return retval; 
+				LOGICAL_NOT464=(IToken)Match(input,LOGICAL_NOT,Follow._LOGICAL_NOT_in_unaryExpressionNotPlusMinus11898); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_LOGICAL_NOT.Add(LOGICAL_NOT464);
 
 				DebugLocation(908, 21);
-				PushFollow(Follow._unaryExpression_in_unaryExpressionNotPlusMinus11898);
+				PushFollow(Follow._unaryExpression_in_unaryExpressionNotPlusMinus11900);
 				unaryExpression465=unaryExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -22352,21 +22354,21 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:909:9: LPAREN type RPAREN unaryExpression
 				{
 				DebugLocation(909, 9);
-				LPAREN466=(IToken)Match(input,LPAREN,Follow._LPAREN_in_unaryExpressionNotPlusMinus11937); if (state.failed) return retval; 
+				LPAREN466=(IToken)Match(input,LPAREN,Follow._LPAREN_in_unaryExpressionNotPlusMinus11939); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_LPAREN.Add(LPAREN466);
 
 				DebugLocation(909, 16);
-				PushFollow(Follow._type_in_unaryExpressionNotPlusMinus11939);
+				PushFollow(Follow._type_in_unaryExpressionNotPlusMinus11941);
 				type467=type();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_type.Add(type467.Tree);
 				DebugLocation(909, 21);
-				RPAREN468=(IToken)Match(input,RPAREN,Follow._RPAREN_in_unaryExpressionNotPlusMinus11941); if (state.failed) return retval; 
+				RPAREN468=(IToken)Match(input,RPAREN,Follow._RPAREN_in_unaryExpressionNotPlusMinus11943); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_RPAREN.Add(RPAREN468);
 
 				DebugLocation(909, 28);
-				PushFollow(Follow._unaryExpression_in_unaryExpressionNotPlusMinus11943);
+				PushFollow(Follow._unaryExpression_in_unaryExpressionNotPlusMinus11945);
 				unaryExpression469=unaryExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -22418,7 +22420,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(910, 9);
-				PushFollow(Follow._postfixedExpression_in_unaryExpressionNotPlusMinus11978);
+				PushFollow(Follow._postfixedExpression_in_unaryExpressionNotPlusMinus11980);
 				postfixedExpression470=postfixedExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -22532,7 +22534,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:915:13: primaryExpression
 			{
 			DebugLocation(915, 13);
-			PushFollow(Follow._primaryExpression_in_postfixedExpression12014);
+			PushFollow(Follow._primaryExpression_in_postfixedExpression12016);
 			primaryExpression471=primaryExpression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -22589,7 +22591,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:918:13: outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT -> ^( DOT $postfixedExpression IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression ( genericTypeArgumentListSimplified )? arguments ) )? | THIS -> ^( DOT $postfixedExpression THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] $postfixedExpression arguments ) | ( SUPER innerDot= DOT IDENT -> ^( $innerDot ^( $outerDot $postfixedExpression SUPER ) IDENT ) ) ( arguments -> ^( METHOD_CALL $postfixedExpression arguments ) )? | innerNewExpression -> ^( DOT $postfixedExpression innerNewExpression ) )
 					{
 					DebugLocation(918, 21);
-					outerDot=(IToken)Match(input,DOT,Follow._DOT_in_postfixedExpression12076); if (state.failed) return retval; 
+					outerDot=(IToken)Match(input,DOT,Follow._DOT_in_postfixedExpression12078); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_DOT.Add(outerDot);
 
 					DebugLocation(919, 13);
@@ -22676,7 +22678,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:919:21: genericTypeArgumentListSimplified
 							{
 							DebugLocation(919, 21);
-							PushFollow(Follow._genericTypeArgumentListSimplified_in_postfixedExpression12126);
+							PushFollow(Follow._genericTypeArgumentListSimplified_in_postfixedExpression12128);
 							genericTypeArgumentListSimplified472=genericTypeArgumentListSimplified();
 							PopFollow();
 							if (state.failed) return retval;
@@ -22689,14 +22691,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						} finally { DebugExitSubRule(133); }
 
 						DebugLocation(921, 21);
-						IDENT473=(IToken)Match(input,IDENT,Follow._IDENT_in_postfixedExpression12208); if (state.failed) return retval; 
+						IDENT473=(IToken)Match(input,IDENT,Follow._IDENT_in_postfixedExpression12210); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(IDENT473);
 
 
 
 						{
 						// AST REWRITE
-						// elements: DOT, IDENT, postfixedExpression
+						// elements: IDENT, postfixedExpression, DOT
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -22754,7 +22756,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:923:21: arguments
 							{
 							DebugLocation(923, 21);
-							PushFollow(Follow._arguments_in_postfixedExpression12287);
+							PushFollow(Follow._arguments_in_postfixedExpression12289);
 							arguments474=arguments();
 							PopFollow();
 							if (state.failed) return retval;
@@ -22820,14 +22822,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:925:17: THIS
 						{
 						DebugLocation(925, 17);
-						THIS475=(IToken)Match(input,THIS,Follow._THIS_in_postfixedExpression12360); if (state.failed) return retval; 
+						THIS475=(IToken)Match(input,THIS,Follow._THIS_in_postfixedExpression12362); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_THIS.Add(THIS475);
 
 
 
 						{
 						// AST REWRITE
-						// elements: DOT, THIS, postfixedExpression
+						// elements: THIS, postfixedExpression, DOT
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -22868,11 +22870,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:926:17: Super= SUPER arguments
 						{
 						DebugLocation(926, 22);
-						Super=(IToken)Match(input,SUPER,Follow._SUPER_in_postfixedExpression12423); if (state.failed) return retval; 
+						Super=(IToken)Match(input,SUPER,Follow._SUPER_in_postfixedExpression12425); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_SUPER.Add(Super);
 
 						DebugLocation(926, 29);
-						PushFollow(Follow._arguments_in_postfixedExpression12425);
+						PushFollow(Follow._arguments_in_postfixedExpression12427);
 						arguments476=arguments();
 						PopFollow();
 						if (state.failed) return retval;
@@ -22927,22 +22929,22 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:927:21: SUPER innerDot= DOT IDENT
 						{
 						DebugLocation(927, 21);
-						SUPER477=(IToken)Match(input,SUPER,Follow._SUPER_in_postfixedExpression12478); if (state.failed) return retval; 
+						SUPER477=(IToken)Match(input,SUPER,Follow._SUPER_in_postfixedExpression12480); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_SUPER.Add(SUPER477);
 
 						DebugLocation(927, 35);
-						innerDot=(IToken)Match(input,DOT,Follow._DOT_in_postfixedExpression12482); if (state.failed) return retval; 
+						innerDot=(IToken)Match(input,DOT,Follow._DOT_in_postfixedExpression12484); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_DOT.Add(innerDot);
 
 						DebugLocation(927, 40);
-						IDENT478=(IToken)Match(input,IDENT,Follow._IDENT_in_postfixedExpression12484); if (state.failed) return retval; 
+						IDENT478=(IToken)Match(input,IDENT,Follow._IDENT_in_postfixedExpression12486); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(IDENT478);
 
 
 
 						{
 						// AST REWRITE
-						// elements: IDENT, postfixedExpression, innerDot, outerDot, SUPER
+						// elements: innerDot, SUPER, outerDot, IDENT, postfixedExpression
 						// token labels: outerDot, innerDot
 						// rule labels: retval
 						// token list labels: 
@@ -23014,7 +23016,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 							// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:929:21: arguments
 							{
 							DebugLocation(929, 21);
-							PushFollow(Follow._arguments_in_postfixedExpression12551);
+							PushFollow(Follow._arguments_in_postfixedExpression12553);
 							arguments479=arguments();
 							PopFollow();
 							if (state.failed) return retval;
@@ -23071,7 +23073,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:931:17: innerNewExpression
 						{
 						DebugLocation(931, 17);
-						PushFollow(Follow._innerNewExpression_in_postfixedExpression12622);
+						PushFollow(Follow._innerNewExpression_in_postfixedExpression12624);
 						innerNewExpression480=innerNewExpression();
 						PopFollow();
 						if (state.failed) return retval;
@@ -23080,7 +23082,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: postfixedExpression, DOT, innerNewExpression
+						// elements: DOT, postfixedExpression, innerNewExpression
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -23128,17 +23130,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:933:13: LBRACK expression RBRACK
 					{
 					DebugLocation(933, 13);
-					LBRACK481=(IToken)Match(input,LBRACK,Follow._LBRACK_in_postfixedExpression12679); if (state.failed) return retval; 
+					LBRACK481=(IToken)Match(input,LBRACK,Follow._LBRACK_in_postfixedExpression12681); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_LBRACK.Add(LBRACK481);
 
 					DebugLocation(933, 20);
-					PushFollow(Follow._expression_in_postfixedExpression12681);
+					PushFollow(Follow._expression_in_postfixedExpression12683);
 					expression482=expression();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) stream_expression.Add(expression482.Tree);
 					DebugLocation(933, 31);
-					RBRACK483=(IToken)Match(input,RBRACK,Follow._RBRACK_in_postfixedExpression12683); if (state.failed) return retval; 
+					RBRACK483=(IToken)Match(input,RBRACK,Follow._RBRACK_in_postfixedExpression12685); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_RBRACK.Add(RBRACK483);
 
 
@@ -23214,7 +23216,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:936:13: INC
 				{
 				DebugLocation(936, 13);
-				INC484=(IToken)Match(input,INC,Follow._INC_in_postfixedExpression12744); if (state.failed) return retval; 
+				INC484=(IToken)Match(input,INC,Follow._INC_in_postfixedExpression12746); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_INC.Add(INC484);
 
 
@@ -23260,7 +23262,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:937:13: DEC
 				{
 				DebugLocation(937, 13);
-				DEC485=(IToken)Match(input,DEC,Follow._DEC_in_postfixedExpression12768); if (state.failed) return retval; 
+				DEC485=(IToken)Match(input,DEC,Follow._DEC_in_postfixedExpression12770); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DEC.Add(DEC485);
 
 
@@ -23515,7 +23517,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(942, 9);
-				PushFollow(Follow._parenthesizedExpression_in_primaryExpression12816);
+				PushFollow(Follow._parenthesizedExpression_in_primaryExpression12818);
 				parenthesizedExpression486=parenthesizedExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -23530,7 +23532,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(943, 9);
-				PushFollow(Follow._literal_in_primaryExpression12826);
+				PushFollow(Follow._literal_in_primaryExpression12828);
 				literal487=literal();
 				PopFollow();
 				if (state.failed) return retval;
@@ -23545,7 +23547,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(944, 9);
-				PushFollow(Follow._newExpression_in_primaryExpression12836);
+				PushFollow(Follow._newExpression_in_primaryExpression12838);
 				newExpression488=newExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -23560,7 +23562,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(945, 9);
-				PushFollow(Follow._qualifiedIdentExpression_in_primaryExpression12846);
+				PushFollow(Follow._qualifiedIdentExpression_in_primaryExpression12848);
 				qualifiedIdentExpression489=qualifiedIdentExpression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -23573,7 +23575,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:946:9: genericTypeArgumentListSimplified ( SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) ) | IDENT arguments -> ^( METHOD_CALL IDENT genericTypeArgumentListSimplified arguments ) | THIS arguments -> ^( THIS_CONSTRUCTOR_CALL[$THIS, \"THIS_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) )
 				{
 				DebugLocation(946, 9);
-				PushFollow(Follow._genericTypeArgumentListSimplified_in_primaryExpression12856);
+				PushFollow(Follow._genericTypeArgumentListSimplified_in_primaryExpression12858);
 				genericTypeArgumentListSimplified490=genericTypeArgumentListSimplified();
 				PopFollow();
 				if (state.failed) return retval;
@@ -23617,7 +23619,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:947:13: SUPER ( arguments -> ^( SUPER_CONSTRUCTOR_CALL[$SUPER, \"SUPER_CONSTRUCTOR_CALL\"] genericTypeArgumentListSimplified arguments ) | DOT IDENT arguments -> ^( METHOD_CALL ^( DOT SUPER IDENT ) genericTypeArgumentListSimplified arguments ) )
 					{
 					DebugLocation(947, 13);
-					SUPER491=(IToken)Match(input,SUPER,Follow._SUPER_in_primaryExpression12871); if (state.failed) return retval; 
+					SUPER491=(IToken)Match(input,SUPER,Follow._SUPER_in_primaryExpression12873); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_SUPER.Add(SUPER491);
 
 					DebugLocation(948, 13);
@@ -23650,7 +23652,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:948:17: arguments
 						{
 						DebugLocation(948, 17);
-						PushFollow(Follow._arguments_in_primaryExpression12889);
+						PushFollow(Follow._arguments_in_primaryExpression12891);
 						arguments492=arguments();
 						PopFollow();
 						if (state.failed) return retval;
@@ -23659,7 +23661,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: arguments, genericTypeArgumentListSimplified
+						// elements: genericTypeArgumentListSimplified, arguments
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -23700,15 +23702,15 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:949:17: DOT IDENT arguments
 						{
 						DebugLocation(949, 17);
-						DOT493=(IToken)Match(input,DOT,Follow._DOT_in_primaryExpression12949); if (state.failed) return retval; 
+						DOT493=(IToken)Match(input,DOT,Follow._DOT_in_primaryExpression12951); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_DOT.Add(DOT493);
 
 						DebugLocation(949, 21);
-						IDENT494=(IToken)Match(input,IDENT,Follow._IDENT_in_primaryExpression12951); if (state.failed) return retval; 
+						IDENT494=(IToken)Match(input,IDENT,Follow._IDENT_in_primaryExpression12953); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(IDENT494);
 
 						DebugLocation(949, 27);
-						PushFollow(Follow._arguments_in_primaryExpression12953);
+						PushFollow(Follow._arguments_in_primaryExpression12955);
 						arguments495=arguments();
 						PopFollow();
 						if (state.failed) return retval;
@@ -23717,7 +23719,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: IDENT, SUPER, genericTypeArgumentListSimplified, DOT, arguments
+						// elements: DOT, arguments, SUPER, genericTypeArgumentListSimplified, IDENT
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -23779,11 +23781,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:951:13: IDENT arguments
 					{
 					DebugLocation(951, 13);
-					IDENT496=(IToken)Match(input,IDENT,Follow._IDENT_in_primaryExpression13020); if (state.failed) return retval; 
+					IDENT496=(IToken)Match(input,IDENT,Follow._IDENT_in_primaryExpression13022); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_IDENT.Add(IDENT496);
 
 					DebugLocation(951, 19);
-					PushFollow(Follow._arguments_in_primaryExpression13022);
+					PushFollow(Follow._arguments_in_primaryExpression13024);
 					arguments497=arguments();
 					PopFollow();
 					if (state.failed) return retval;
@@ -23792,7 +23794,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: genericTypeArgumentListSimplified, IDENT, arguments
+					// elements: arguments, IDENT, genericTypeArgumentListSimplified
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -23835,11 +23837,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:952:13: THIS arguments
 					{
 					DebugLocation(952, 13);
-					THIS498=(IToken)Match(input,THIS,Follow._THIS_in_primaryExpression13075); if (state.failed) return retval; 
+					THIS498=(IToken)Match(input,THIS,Follow._THIS_in_primaryExpression13077); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_THIS.Add(THIS498);
 
 					DebugLocation(952, 18);
-					PushFollow(Follow._arguments_in_primaryExpression13077);
+					PushFollow(Follow._arguments_in_primaryExpression13079);
 					arguments499=arguments();
 					PopFollow();
 					if (state.failed) return retval;
@@ -23901,7 +23903,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:955:13: THIS
 				{
 				DebugLocation(955, 13);
-				THIS500=(IToken)Match(input,THIS,Follow._THIS_in_primaryExpression13150); if (state.failed) return retval; 
+				THIS500=(IToken)Match(input,THIS,Follow._THIS_in_primaryExpression13152); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_THIS.Add(THIS500);
 
 
@@ -23954,7 +23956,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:957:13: arguments
 					{
 					DebugLocation(957, 13);
-					PushFollow(Follow._arguments_in_primaryExpression13218);
+					PushFollow(Follow._arguments_in_primaryExpression13220);
 					arguments501=arguments();
 					PopFollow();
 					if (state.failed) return retval;
@@ -24009,11 +24011,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:959:9: SUPER arguments
 				{
 				DebugLocation(959, 9);
-				SUPER502=(IToken)Match(input,SUPER,Follow._SUPER_in_primaryExpression13283); if (state.failed) return retval; 
+				SUPER502=(IToken)Match(input,SUPER,Follow._SUPER_in_primaryExpression13285); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SUPER.Add(SUPER502);
 
 				DebugLocation(959, 15);
-				PushFollow(Follow._arguments_in_primaryExpression13285);
+				PushFollow(Follow._arguments_in_primaryExpression13287);
 				arguments503=arguments();
 				PopFollow();
 				if (state.failed) return retval;
@@ -24066,15 +24068,15 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:960:13: SUPER DOT IDENT
 				{
 				DebugLocation(960, 13);
-				SUPER504=(IToken)Match(input,SUPER,Follow._SUPER_in_primaryExpression13341); if (state.failed) return retval; 
+				SUPER504=(IToken)Match(input,SUPER,Follow._SUPER_in_primaryExpression13343); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_SUPER.Add(SUPER504);
 
 				DebugLocation(960, 19);
-				DOT505=(IToken)Match(input,DOT,Follow._DOT_in_primaryExpression13343); if (state.failed) return retval; 
+				DOT505=(IToken)Match(input,DOT,Follow._DOT_in_primaryExpression13345); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DOT.Add(DOT505);
 
 				DebugLocation(960, 23);
-				IDENT506=(IToken)Match(input,IDENT,Follow._IDENT_in_primaryExpression13345); if (state.failed) return retval; 
+				IDENT506=(IToken)Match(input,IDENT,Follow._IDENT_in_primaryExpression13347); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_IDENT.Add(IDENT506);
 
 
@@ -24102,7 +24104,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:962:13: arguments
 					{
 					DebugLocation(962, 13);
-					PushFollow(Follow._arguments_in_primaryExpression13369);
+					PushFollow(Follow._arguments_in_primaryExpression13371);
 					arguments507=arguments();
 					PopFollow();
 					if (state.failed) return retval;
@@ -24111,7 +24113,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: SUPER, arguments, DOT, IDENT
+					// elements: arguments, IDENT, SUPER, DOT
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -24166,7 +24168,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: IDENT, SUPER, DOT
+					// elements: SUPER, DOT, IDENT
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -24219,7 +24221,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:965:13: primitiveType
 				{
 				DebugLocation(965, 13);
-				PushFollow(Follow._primitiveType_in_primaryExpression13511);
+				PushFollow(Follow._primitiveType_in_primaryExpression13513);
 				primitiveType508=primitiveType();
 				PopFollow();
 				if (state.failed) return retval;
@@ -24275,7 +24277,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:967:13: arrayDeclarator
 						{
 						DebugLocation(967, 13);
-						PushFollow(Follow._arrayDeclarator_in_primaryExpression13570);
+						PushFollow(Follow._arrayDeclarator_in_primaryExpression13572);
 						arrayDeclarator509=arrayDeclarator();
 						PopFollow();
 						if (state.failed) return retval;
@@ -24330,18 +24332,18 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(143); }
 
 				DebugLocation(969, 9);
-				DOT510=(IToken)Match(input,DOT,Follow._DOT_in_primaryExpression13633); if (state.failed) return retval; 
+				DOT510=(IToken)Match(input,DOT,Follow._DOT_in_primaryExpression13635); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DOT.Add(DOT510);
 
 				DebugLocation(969, 13);
-				CLASS511=(IToken)Match(input,CLASS,Follow._CLASS_in_primaryExpression13635); if (state.failed) return retval; 
+				CLASS511=(IToken)Match(input,CLASS,Follow._CLASS_in_primaryExpression13637); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_CLASS.Add(CLASS511);
 
 
 
 				{
 				// AST REWRITE
-				// elements: DOT, primaryExpression, CLASS
+				// elements: DOT, CLASS, primaryExpression
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -24382,22 +24384,22 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:970:9: VOID DOT CLASS
 				{
 				DebugLocation(970, 9);
-				VOID512=(IToken)Match(input,VOID,Follow._VOID_in_primaryExpression13695); if (state.failed) return retval; 
+				VOID512=(IToken)Match(input,VOID,Follow._VOID_in_primaryExpression13697); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_VOID.Add(VOID512);
 
 				DebugLocation(970, 14);
-				DOT513=(IToken)Match(input,DOT,Follow._DOT_in_primaryExpression13697); if (state.failed) return retval; 
+				DOT513=(IToken)Match(input,DOT,Follow._DOT_in_primaryExpression13699); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DOT.Add(DOT513);
 
 				DebugLocation(970, 18);
-				CLASS514=(IToken)Match(input,CLASS,Follow._CLASS_in_primaryExpression13699); if (state.failed) return retval; 
+				CLASS514=(IToken)Match(input,CLASS,Follow._CLASS_in_primaryExpression13701); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_CLASS.Add(CLASS514);
 
 
 
 				{
 				// AST REWRITE
-				// elements: CLASS, VOID, DOT
+				// elements: CLASS, DOT, VOID
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -24538,7 +24540,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:975:13: qualifiedIdentifier
 			{
 			DebugLocation(975, 13);
-			PushFollow(Follow._qualifiedIdentifier_in_qualifiedIdentExpression13779);
+			PushFollow(Follow._qualifiedIdentifier_in_qualifiedIdentExpression13781);
 			qualifiedIdentifier515=qualifiedIdentifier();
 			PopFollow();
 			if (state.failed) return retval;
@@ -24616,7 +24618,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:978:17: arrayDeclarator
 						{
 						DebugLocation(978, 17);
-						PushFollow(Follow._arrayDeclarator_in_qualifiedIdentExpression13849);
+						PushFollow(Follow._arrayDeclarator_in_qualifiedIdentExpression13851);
 						arrayDeclarator516=arrayDeclarator();
 						PopFollow();
 						if (state.failed) return retval;
@@ -24625,7 +24627,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: qualifiedIdentExpression, arrayDeclarator
+						// elements: arrayDeclarator, qualifiedIdentExpression
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -24682,18 +24684,18 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:980:17: DOT CLASS
 				{
 				DebugLocation(980, 17);
-				DOT517=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedIdentExpression13917); if (state.failed) return retval; 
+				DOT517=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedIdentExpression13919); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DOT.Add(DOT517);
 
 				DebugLocation(980, 21);
-				CLASS518=(IToken)Match(input,CLASS,Follow._CLASS_in_qualifiedIdentExpression13919); if (state.failed) return retval; 
+				CLASS518=(IToken)Match(input,CLASS,Follow._CLASS_in_qualifiedIdentExpression13921); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_CLASS.Add(CLASS518);
 
 
 
 				{
 				// AST REWRITE
-				// elements: CLASS, DOT, qualifiedIdentExpression
+				// elements: DOT, CLASS, qualifiedIdentExpression
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -24737,7 +24739,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:982:13: arguments ( block )?
 				{
 				DebugLocation(982, 13);
-				PushFollow(Follow._arguments_in_qualifiedIdentExpression13989);
+				PushFollow(Follow._arguments_in_qualifiedIdentExpression13991);
 				arguments519=arguments();
 				PopFollow();
 				if (state.failed) return retval;
@@ -24764,7 +24766,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:982:23: block
 					{
 					DebugLocation(982, 23);
-					PushFollow(Follow._block_in_qualifiedIdentExpression13991);
+					PushFollow(Follow._block_in_qualifiedIdentExpression13993);
 					block520=block();
 					PopFollow();
 					if (state.failed) return retval;
@@ -24780,7 +24782,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 				{
 				// AST REWRITE
-				// elements: arguments, qualifiedIdentifier
+				// elements: qualifiedIdentifier, arguments
 				// token labels: 
 				// rule labels: retval
 				// token list labels: 
@@ -24821,7 +24823,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:983:13: outerDot= DOT ( CLASS -> ^( DOT qualifiedIdentifier CLASS ) | genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) ) | THIS -> ^( DOT qualifiedIdentifier THIS ) |Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier arguments ) | innerNewExpression -> ^( DOT qualifiedIdentifier innerNewExpression ) )
 				{
 				DebugLocation(983, 21);
-				outerDot=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedIdentExpression14052); if (state.failed) return retval; 
+				outerDot=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedIdentExpression14054); if (state.failed) return retval; 
 				if (state.backtracking == 0) stream_DOT.Add(outerDot);
 
 				DebugLocation(984, 13);
@@ -24873,14 +24875,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:984:17: CLASS
 					{
 					DebugLocation(984, 17);
-					CLASS521=(IToken)Match(input,CLASS,Follow._CLASS_in_qualifiedIdentExpression14070); if (state.failed) return retval; 
+					CLASS521=(IToken)Match(input,CLASS,Follow._CLASS_in_qualifiedIdentExpression14072); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_CLASS.Add(CLASS521);
 
 
 
 					{
 					// AST REWRITE
-					// elements: qualifiedIdentifier, DOT, CLASS
+					// elements: DOT, qualifiedIdentifier, CLASS
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -24921,7 +24923,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:985:17: genericTypeArgumentListSimplified (Super= SUPER arguments -> ^( SUPER_CONSTRUCTOR_CALL[$Super, \"SUPER_CONSTRUCTOR_CALL\"] qualifiedIdentifier genericTypeArgumentListSimplified arguments ) | SUPER innerDot= DOT IDENT arguments -> ^( METHOD_CALL ^( $innerDot ^( $outerDot qualifiedIdentifier SUPER ) IDENT ) genericTypeArgumentListSimplified arguments ) | IDENT arguments -> ^( METHOD_CALL ^( DOT qualifiedIdentifier IDENT ) genericTypeArgumentListSimplified arguments ) )
 					{
 					DebugLocation(985, 17);
-					PushFollow(Follow._genericTypeArgumentListSimplified_in_qualifiedIdentExpression14133);
+					PushFollow(Follow._genericTypeArgumentListSimplified_in_qualifiedIdentExpression14135);
 					genericTypeArgumentListSimplified522=genericTypeArgumentListSimplified();
 					PopFollow();
 					if (state.failed) return retval;
@@ -24972,11 +24974,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:986:21: Super= SUPER arguments
 						{
 						DebugLocation(986, 26);
-						Super=(IToken)Match(input,SUPER,Follow._SUPER_in_qualifiedIdentExpression14158); if (state.failed) return retval; 
+						Super=(IToken)Match(input,SUPER,Follow._SUPER_in_qualifiedIdentExpression14160); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_SUPER.Add(Super);
 
 						DebugLocation(986, 33);
-						PushFollow(Follow._arguments_in_qualifiedIdentExpression14160);
+						PushFollow(Follow._arguments_in_qualifiedIdentExpression14162);
 						arguments523=arguments();
 						PopFollow();
 						if (state.failed) return retval;
@@ -24985,7 +24987,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: qualifiedIdentifier, genericTypeArgumentListSimplified, arguments
+						// elements: arguments, qualifiedIdentifier, genericTypeArgumentListSimplified
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -25028,19 +25030,19 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:987:21: SUPER innerDot= DOT IDENT arguments
 						{
 						DebugLocation(987, 21);
-						SUPER524=(IToken)Match(input,SUPER,Follow._SUPER_in_qualifiedIdentExpression14210); if (state.failed) return retval; 
+						SUPER524=(IToken)Match(input,SUPER,Follow._SUPER_in_qualifiedIdentExpression14212); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_SUPER.Add(SUPER524);
 
 						DebugLocation(987, 35);
-						innerDot=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedIdentExpression14214); if (state.failed) return retval; 
+						innerDot=(IToken)Match(input,DOT,Follow._DOT_in_qualifiedIdentExpression14216); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_DOT.Add(innerDot);
 
 						DebugLocation(987, 40);
-						IDENT525=(IToken)Match(input,IDENT,Follow._IDENT_in_qualifiedIdentExpression14216); if (state.failed) return retval; 
+						IDENT525=(IToken)Match(input,IDENT,Follow._IDENT_in_qualifiedIdentExpression14218); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(IDENT525);
 
 						DebugLocation(987, 46);
-						PushFollow(Follow._arguments_in_qualifiedIdentExpression14218);
+						PushFollow(Follow._arguments_in_qualifiedIdentExpression14220);
 						arguments526=arguments();
 						PopFollow();
 						if (state.failed) return retval;
@@ -25049,7 +25051,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: outerDot, innerDot, IDENT, qualifiedIdentifier, genericTypeArgumentListSimplified, arguments, SUPER
+						// elements: SUPER, outerDot, arguments, innerDot, IDENT, genericTypeArgumentListSimplified, qualifiedIdentifier
 						// token labels: outerDot, innerDot
 						// rule labels: retval
 						// token list labels: 
@@ -25118,11 +25120,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:988:21: IDENT arguments
 						{
 						DebugLocation(988, 21);
-						IDENT527=(IToken)Match(input,IDENT,Follow._IDENT_in_qualifiedIdentExpression14268); if (state.failed) return retval; 
+						IDENT527=(IToken)Match(input,IDENT,Follow._IDENT_in_qualifiedIdentExpression14270); if (state.failed) return retval; 
 						if (state.backtracking == 0) stream_IDENT.Add(IDENT527);
 
 						DebugLocation(988, 27);
-						PushFollow(Follow._arguments_in_qualifiedIdentExpression14270);
+						PushFollow(Follow._arguments_in_qualifiedIdentExpression14272);
 						arguments528=arguments();
 						PopFollow();
 						if (state.failed) return retval;
@@ -25131,7 +25133,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 						{
 						// AST REWRITE
-						// elements: DOT, genericTypeArgumentListSimplified, qualifiedIdentifier, IDENT, arguments
+						// elements: qualifiedIdentifier, IDENT, DOT, genericTypeArgumentListSimplified, arguments
 						// token labels: 
 						// rule labels: retval
 						// token list labels: 
@@ -25193,14 +25195,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:990:17: THIS
 					{
 					DebugLocation(990, 17);
-					THIS529=(IToken)Match(input,THIS,Follow._THIS_in_qualifiedIdentExpression14345); if (state.failed) return retval; 
+					THIS529=(IToken)Match(input,THIS,Follow._THIS_in_qualifiedIdentExpression14347); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_THIS.Add(THIS529);
 
 
 
 					{
 					// AST REWRITE
-					// elements: DOT, THIS, qualifiedIdentifier
+					// elements: qualifiedIdentifier, DOT, THIS
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -25241,11 +25243,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:991:17: Super= SUPER arguments
 					{
 					DebugLocation(991, 22);
-					Super=(IToken)Match(input,SUPER,Follow._SUPER_in_qualifiedIdentExpression14411); if (state.failed) return retval; 
+					Super=(IToken)Match(input,SUPER,Follow._SUPER_in_qualifiedIdentExpression14413); if (state.failed) return retval; 
 					if (state.backtracking == 0) stream_SUPER.Add(Super);
 
 					DebugLocation(991, 29);
-					PushFollow(Follow._arguments_in_qualifiedIdentExpression14413);
+					PushFollow(Follow._arguments_in_qualifiedIdentExpression14415);
 					arguments530=arguments();
 					PopFollow();
 					if (state.failed) return retval;
@@ -25254,7 +25256,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: qualifiedIdentifier, arguments
+					// elements: arguments, qualifiedIdentifier
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -25295,7 +25297,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:992:17: innerNewExpression
 					{
 					DebugLocation(992, 17);
-					PushFollow(Follow._innerNewExpression_in_qualifiedIdentExpression14461);
+					PushFollow(Follow._innerNewExpression_in_qualifiedIdentExpression14463);
 					innerNewExpression531=innerNewExpression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -25427,25 +25429,25 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(998, 2);
-			LCURLY532=(IToken)Match(input,LCURLY,Follow._LCURLY_in_mapDeclaration14531); if (state.failed) return retval;
+			LCURLY532=(IToken)Match(input,LCURLY,Follow._LCURLY_in_mapDeclaration14533); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			LCURLY532_tree = (CommonTree)adaptor.Create(LCURLY532);
 			adaptor.AddChild(root_0, LCURLY532_tree);
 			}
 			DebugLocation(998, 9);
-			PushFollow(Follow._expression_in_mapDeclaration14533);
+			PushFollow(Follow._expression_in_mapDeclaration14535);
 			expression533=expression();
 			PopFollow();
 			if (state.failed) return retval;
 			if (state.backtracking == 0) adaptor.AddChild(root_0, expression533.Tree);
 			DebugLocation(998, 20);
-			string_literal534=(IToken)Match(input,194,Follow._194_in_mapDeclaration14535); if (state.failed) return retval;
+			string_literal534=(IToken)Match(input,194,Follow._194_in_mapDeclaration14537); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			string_literal534_tree = (CommonTree)adaptor.Create(string_literal534);
 			adaptor.AddChild(root_0, string_literal534_tree);
 			}
 			DebugLocation(998, 25);
-			PushFollow(Follow._expression_in_mapDeclaration14537);
+			PushFollow(Follow._expression_in_mapDeclaration14539);
 			expression535=expression();
 			PopFollow();
 			if (state.failed) return retval;
@@ -25473,25 +25475,25 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:998:37: COMMA expression '=>' expression
 					{
 					DebugLocation(998, 37);
-					COMMA536=(IToken)Match(input,COMMA,Follow._COMMA_in_mapDeclaration14540); if (state.failed) return retval;
+					COMMA536=(IToken)Match(input,COMMA,Follow._COMMA_in_mapDeclaration14542); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					COMMA536_tree = (CommonTree)adaptor.Create(COMMA536);
 					adaptor.AddChild(root_0, COMMA536_tree);
 					}
 					DebugLocation(998, 44);
-					PushFollow(Follow._expression_in_mapDeclaration14543);
+					PushFollow(Follow._expression_in_mapDeclaration14545);
 					expression537=expression();
 					PopFollow();
 					if (state.failed) return retval;
 					if (state.backtracking == 0) adaptor.AddChild(root_0, expression537.Tree);
 					DebugLocation(998, 55);
-					string_literal538=(IToken)Match(input,194,Follow._194_in_mapDeclaration14545); if (state.failed) return retval;
+					string_literal538=(IToken)Match(input,194,Follow._194_in_mapDeclaration14547); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					string_literal538_tree = (CommonTree)adaptor.Create(string_literal538);
 					adaptor.AddChild(root_0, string_literal538_tree);
 					}
 					DebugLocation(998, 60);
-					PushFollow(Follow._expression_in_mapDeclaration14547);
+					PushFollow(Follow._expression_in_mapDeclaration14549);
 					expression539=expression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -25511,7 +25513,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(150); }
 
 			DebugLocation(998, 74);
-			RCURLY540=(IToken)Match(input,RCURLY,Follow._RCURLY_in_mapDeclaration14552); if (state.failed) return retval;
+			RCURLY540=(IToken)Match(input,RCURLY,Follow._RCURLY_in_mapDeclaration14554); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			RCURLY540_tree = (CommonTree)adaptor.Create(RCURLY540);
 			adaptor.AddChild(root_0, RCURLY540_tree);
@@ -25586,7 +25588,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(1002, 2);
-			LCURLY541=(IToken)Match(input,LCURLY,Follow._LCURLY_in_setDeclaration14562); if (state.failed) return retval;
+			LCURLY541=(IToken)Match(input,LCURLY,Follow._LCURLY_in_setDeclaration14564); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			LCURLY541_tree = (CommonTree)adaptor.Create(LCURLY541);
 			adaptor.AddChild(root_0, LCURLY541_tree);
@@ -25610,7 +25612,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1002:9: expression
 				{
 				DebugLocation(1002, 9);
-				PushFollow(Follow._expression_in_setDeclaration14564);
+				PushFollow(Follow._expression_in_setDeclaration14566);
 				expression542=expression();
 				PopFollow();
 				if (state.failed) return retval;
@@ -25645,13 +25647,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1002:22: COMMA expression
 					{
 					DebugLocation(1002, 22);
-					COMMA543=(IToken)Match(input,COMMA,Follow._COMMA_in_setDeclaration14568); if (state.failed) return retval;
+					COMMA543=(IToken)Match(input,COMMA,Follow._COMMA_in_setDeclaration14570); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					COMMA543_tree = (CommonTree)adaptor.Create(COMMA543);
 					adaptor.AddChild(root_0, COMMA543_tree);
 					}
 					DebugLocation(1002, 29);
-					PushFollow(Follow._expression_in_setDeclaration14571);
+					PushFollow(Follow._expression_in_setDeclaration14573);
 					expression544=expression();
 					PopFollow();
 					if (state.failed) return retval;
@@ -25671,7 +25673,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(152); }
 
 			DebugLocation(1002, 43);
-			RCURLY545=(IToken)Match(input,RCURLY,Follow._RCURLY_in_setDeclaration14576); if (state.failed) return retval;
+			RCURLY545=(IToken)Match(input,RCURLY,Follow._RCURLY_in_setDeclaration14578); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			RCURLY545_tree = (CommonTree)adaptor.Create(RCURLY545);
 			adaptor.AddChild(root_0, RCURLY545_tree);
@@ -25756,7 +25758,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1005:9: NEW ( primitiveType newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] primitiveType newArrayConstruction ) | ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified ( mapDeclaration -> ^( MAP_INITIALIZER mapDeclaration ) | setDeclaration -> ^( SET_INITIALIZER setDeclaration ) | newArrayConstruction -> ^( STATIC_ARRAY_CREATOR[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified newArrayConstruction ) | arguments ( classBody )? -> ^( CLASS_CONSTRUCTOR_CALL[$NEW, \"STATIC_ARRAY_CREATOR\"] ( genericTypeArgumentListSimplified )? qualifiedTypeIdentSimplified arguments ( classBody )? ) ) )
 			{
 			DebugLocation(1005, 9);
-			NEW546=(IToken)Match(input,NEW,Follow._NEW_in_newExpression14590); if (state.failed) return retval; 
+			NEW546=(IToken)Match(input,NEW,Follow._NEW_in_newExpression14592); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_NEW.Add(NEW546);
 
 			DebugLocation(1006, 9);
@@ -25789,13 +25791,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1007:13: primitiveType newArrayConstruction
 				{
 				DebugLocation(1007, 13);
-				PushFollow(Follow._primitiveType_in_newExpression14619);
+				PushFollow(Follow._primitiveType_in_newExpression14621);
 				primitiveType547=primitiveType();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) stream_primitiveType.Add(primitiveType547.Tree);
 				DebugLocation(1007, 27);
-				PushFollow(Follow._newArrayConstruction_in_newExpression14621);
+				PushFollow(Follow._newArrayConstruction_in_newExpression14623);
 				newArrayConstruction548=newArrayConstruction();
 				PopFollow();
 				if (state.failed) return retval;
@@ -25863,7 +25865,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1009:13: genericTypeArgumentListSimplified
 					{
 					DebugLocation(1009, 13);
-					PushFollow(Follow._genericTypeArgumentListSimplified_in_newExpression14665);
+					PushFollow(Follow._genericTypeArgumentListSimplified_in_newExpression14667);
 					genericTypeArgumentListSimplified549=genericTypeArgumentListSimplified();
 					PopFollow();
 					if (state.failed) return retval;
@@ -25876,7 +25878,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(153); }
 
 				DebugLocation(1009, 48);
-				PushFollow(Follow._qualifiedTypeIdentSimplified_in_newExpression14668);
+				PushFollow(Follow._qualifiedTypeIdentSimplified_in_newExpression14670);
 				qualifiedTypeIdentSimplified550=qualifiedTypeIdentSimplified();
 				PopFollow();
 				if (state.failed) return retval;
@@ -25936,7 +25938,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1012:10: mapDeclaration
 					{
 					DebugLocation(1012, 10);
-					PushFollow(Follow._mapDeclaration_in_newExpression14706);
+					PushFollow(Follow._mapDeclaration_in_newExpression14708);
 					mapDeclaration551=mapDeclaration();
 					PopFollow();
 					if (state.failed) return retval;
@@ -25984,7 +25986,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1013:10: setDeclaration
 					{
 					DebugLocation(1013, 10);
-					PushFollow(Follow._setDeclaration_in_newExpression14725);
+					PushFollow(Follow._setDeclaration_in_newExpression14727);
 					setDeclaration552=setDeclaration();
 					PopFollow();
 					if (state.failed) return retval;
@@ -26032,7 +26034,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1014:15: newArrayConstruction
 					{
 					DebugLocation(1014, 15);
-					PushFollow(Follow._newArrayConstruction_in_newExpression14749);
+					PushFollow(Follow._newArrayConstruction_in_newExpression14751);
 					newArrayConstruction553=newArrayConstruction();
 					PopFollow();
 					if (state.failed) return retval;
@@ -26041,7 +26043,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: qualifiedTypeIdentSimplified, newArrayConstruction, genericTypeArgumentListSimplified
+					// elements: newArrayConstruction, qualifiedTypeIdentSimplified, genericTypeArgumentListSimplified
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -26091,7 +26093,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1016:17: arguments ( classBody )?
 					{
 					DebugLocation(1016, 17);
-					PushFollow(Follow._arguments_in_newExpression14814);
+					PushFollow(Follow._arguments_in_newExpression14816);
 					arguments554=arguments();
 					PopFollow();
 					if (state.failed) return retval;
@@ -26118,7 +26120,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1016:27: classBody
 						{
 						DebugLocation(1016, 27);
-						PushFollow(Follow._classBody_in_newExpression14816);
+						PushFollow(Follow._classBody_in_newExpression14818);
 						classBody555=classBody();
 						PopFollow();
 						if (state.failed) return retval;
@@ -26134,7 +26136,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 					{
 					// AST REWRITE
-					// elements: qualifiedTypeIdentSimplified, arguments, classBody, genericTypeArgumentListSimplified
+					// elements: genericTypeArgumentListSimplified, classBody, arguments, qualifiedTypeIdentSimplified
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -26271,7 +26273,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1023:9: NEW ( genericTypeArgumentListSimplified )? IDENT arguments ( classBody )?
 			{
 			DebugLocation(1023, 9);
-			NEW556=(IToken)Match(input,NEW,Follow._NEW_in_innerNewExpression14913); if (state.failed) return retval; 
+			NEW556=(IToken)Match(input,NEW,Follow._NEW_in_innerNewExpression14915); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_NEW.Add(NEW556);
 
 			DebugLocation(1023, 13);
@@ -26293,7 +26295,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1023:13: genericTypeArgumentListSimplified
 				{
 				DebugLocation(1023, 13);
-				PushFollow(Follow._genericTypeArgumentListSimplified_in_innerNewExpression14915);
+				PushFollow(Follow._genericTypeArgumentListSimplified_in_innerNewExpression14917);
 				genericTypeArgumentListSimplified557=genericTypeArgumentListSimplified();
 				PopFollow();
 				if (state.failed) return retval;
@@ -26306,11 +26308,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(157); }
 
 			DebugLocation(1023, 48);
-			IDENT558=(IToken)Match(input,IDENT,Follow._IDENT_in_innerNewExpression14918); if (state.failed) return retval; 
+			IDENT558=(IToken)Match(input,IDENT,Follow._IDENT_in_innerNewExpression14920); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_IDENT.Add(IDENT558);
 
 			DebugLocation(1023, 54);
-			PushFollow(Follow._arguments_in_innerNewExpression14920);
+			PushFollow(Follow._arguments_in_innerNewExpression14922);
 			arguments559=arguments();
 			PopFollow();
 			if (state.failed) return retval;
@@ -26337,7 +26339,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1023:64: classBody
 				{
 				DebugLocation(1023, 64);
-				PushFollow(Follow._classBody_in_innerNewExpression14922);
+				PushFollow(Follow._classBody_in_innerNewExpression14924);
 				classBody560=classBody();
 				PopFollow();
 				if (state.failed) return retval;
@@ -26353,7 +26355,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: IDENT, genericTypeArgumentListSimplified, classBody, arguments
+			// elements: classBody, IDENT, arguments, genericTypeArgumentListSimplified
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -26514,13 +26516,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(1028, 9);
-				PushFollow(Follow._arrayDeclaratorList_in_newArrayConstruction14968);
+				PushFollow(Follow._arrayDeclaratorList_in_newArrayConstruction14970);
 				arrayDeclaratorList561=arrayDeclaratorList();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) adaptor.AddChild(root_0, arrayDeclaratorList561.Tree);
 				DebugLocation(1028, 29);
-				PushFollow(Follow._arrayInitializer_in_newArrayConstruction14970);
+				PushFollow(Follow._arrayInitializer_in_newArrayConstruction14972);
 				arrayInitializer562=arrayInitializer();
 				PopFollow();
 				if (state.failed) return retval;
@@ -26535,15 +26537,15 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(1029, 15);
-				LBRACK563=(IToken)Match(input,LBRACK,Follow._LBRACK_in_newArrayConstruction14980); if (state.failed) return retval;
+				LBRACK563=(IToken)Match(input,LBRACK,Follow._LBRACK_in_newArrayConstruction14982); if (state.failed) return retval;
 				DebugLocation(1029, 17);
-				PushFollow(Follow._expression_in_newArrayConstruction14983);
+				PushFollow(Follow._expression_in_newArrayConstruction14985);
 				expression564=expression();
 				PopFollow();
 				if (state.failed) return retval;
 				if (state.backtracking == 0) adaptor.AddChild(root_0, expression564.Tree);
 				DebugLocation(1029, 34);
-				RBRACK565=(IToken)Match(input,RBRACK,Follow._RBRACK_in_newArrayConstruction14985); if (state.failed) return retval;
+				RBRACK565=(IToken)Match(input,RBRACK,Follow._RBRACK_in_newArrayConstruction14987); if (state.failed) return retval;
 				DebugLocation(1029, 36);
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1029:36: ( LBRACK ! expression RBRACK !)*
 				try { DebugEnterSubRule(159);
@@ -26568,15 +26570,15 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1029:37: LBRACK ! expression RBRACK !
 						{
 						DebugLocation(1029, 43);
-						LBRACK566=(IToken)Match(input,LBRACK,Follow._LBRACK_in_newArrayConstruction14989); if (state.failed) return retval;
+						LBRACK566=(IToken)Match(input,LBRACK,Follow._LBRACK_in_newArrayConstruction14991); if (state.failed) return retval;
 						DebugLocation(1029, 45);
-						PushFollow(Follow._expression_in_newArrayConstruction14992);
+						PushFollow(Follow._expression_in_newArrayConstruction14994);
 						expression567=expression();
 						PopFollow();
 						if (state.failed) return retval;
 						if (state.backtracking == 0) adaptor.AddChild(root_0, expression567.Tree);
 						DebugLocation(1029, 62);
-						RBRACK568=(IToken)Match(input,RBRACK,Follow._RBRACK_in_newArrayConstruction14994); if (state.failed) return retval;
+						RBRACK568=(IToken)Match(input,RBRACK,Follow._RBRACK_in_newArrayConstruction14996); if (state.failed) return retval;
 
 						}
 						break;
@@ -26615,7 +26617,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1029:66: arrayDeclaratorList
 					{
 					DebugLocation(1029, 66);
-					PushFollow(Follow._arrayDeclaratorList_in_newArrayConstruction14999);
+					PushFollow(Follow._arrayDeclaratorList_in_newArrayConstruction15001);
 					arrayDeclaratorList569=arrayDeclaratorList();
 					PopFollow();
 					if (state.failed) return retval;
@@ -26697,7 +26699,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1033:9: LPAREN ( expressionList )? RPAREN
 			{
 			DebugLocation(1033, 9);
-			LPAREN570=(IToken)Match(input,LPAREN,Follow._LPAREN_in_arguments15019); if (state.failed) return retval; 
+			LPAREN570=(IToken)Match(input,LPAREN,Follow._LPAREN_in_arguments15021); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_LPAREN.Add(LPAREN570);
 
 			DebugLocation(1033, 16);
@@ -26719,7 +26721,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1033:16: expressionList
 				{
 				DebugLocation(1033, 16);
-				PushFollow(Follow._expressionList_in_arguments15021);
+				PushFollow(Follow._expressionList_in_arguments15023);
 				expressionList571=expressionList();
 				PopFollow();
 				if (state.failed) return retval;
@@ -26732,7 +26734,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(162); }
 
 			DebugLocation(1033, 32);
-			RPAREN572=(IToken)Match(input,RPAREN,Follow._RPAREN_in_arguments15024); if (state.failed) return retval; 
+			RPAREN572=(IToken)Match(input,RPAREN,Follow._RPAREN_in_arguments15026); if (state.failed) return retval; 
 			if (state.backtracking == 0) stream_RPAREN.Add(RPAREN572);
 
 
@@ -26987,7 +26989,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:3: '{' ( modifier )? getRule ( SEMI | block ) ( ( modifier )? setRule ( SEMI | block ) )? '}'
 				{
 				DebugLocation(1052, 3);
-				char_literal574=(IToken)Match(input,LCURLY,Follow._LCURLY_in_propertyDeclaration15168); if (state.failed) return retval;
+				char_literal574=(IToken)Match(input,LCURLY,Follow._LCURLY_in_propertyDeclaration15170); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				char_literal574_tree = (CommonTree)adaptor.Create(char_literal574);
 				adaptor.AddChild(root_0, char_literal574_tree);
@@ -27011,7 +27013,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:7: modifier
 					{
 					DebugLocation(1052, 7);
-					PushFollow(Follow._modifier_in_propertyDeclaration15170);
+					PushFollow(Follow._modifier_in_propertyDeclaration15172);
 					modifier575=modifier();
 					PopFollow();
 					if (state.failed) return retval;
@@ -27024,7 +27026,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(163); }
 
 				DebugLocation(1052, 17);
-				PushFollow(Follow._getRule_in_propertyDeclaration15173);
+				PushFollow(Follow._getRule_in_propertyDeclaration15175);
 				getRule576=getRule();
 				PopFollow();
 				if (state.failed) return retval;
@@ -27059,7 +27061,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:26: SEMI
 					{
 					DebugLocation(1052, 26);
-					SEMI577=(IToken)Match(input,SEMI,Follow._SEMI_in_propertyDeclaration15176); if (state.failed) return retval;
+					SEMI577=(IToken)Match(input,SEMI,Follow._SEMI_in_propertyDeclaration15178); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					SEMI577_tree = (CommonTree)adaptor.Create(SEMI577);
 					adaptor.AddChild(root_0, SEMI577_tree);
@@ -27072,7 +27074,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:31: block
 					{
 					DebugLocation(1052, 31);
-					PushFollow(Follow._block_in_propertyDeclaration15178);
+					PushFollow(Follow._block_in_propertyDeclaration15180);
 					block578=block();
 					PopFollow();
 					if (state.failed) return retval;
@@ -27121,7 +27123,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:39: modifier
 						{
 						DebugLocation(1052, 39);
-						PushFollow(Follow._modifier_in_propertyDeclaration15182);
+						PushFollow(Follow._modifier_in_propertyDeclaration15184);
 						modifier579=modifier();
 						PopFollow();
 						if (state.failed) return retval;
@@ -27134,7 +27136,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(165); }
 
 					DebugLocation(1052, 49);
-					PushFollow(Follow._setRule_in_propertyDeclaration15185);
+					PushFollow(Follow._setRule_in_propertyDeclaration15187);
 					setRule580=setRule();
 					PopFollow();
 					if (state.failed) return retval;
@@ -27169,7 +27171,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:58: SEMI
 						{
 						DebugLocation(1052, 58);
-						SEMI581=(IToken)Match(input,SEMI,Follow._SEMI_in_propertyDeclaration15188); if (state.failed) return retval;
+						SEMI581=(IToken)Match(input,SEMI,Follow._SEMI_in_propertyDeclaration15190); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						SEMI581_tree = (CommonTree)adaptor.Create(SEMI581);
 						adaptor.AddChild(root_0, SEMI581_tree);
@@ -27182,7 +27184,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:63: block
 						{
 						DebugLocation(1052, 63);
-						PushFollow(Follow._block_in_propertyDeclaration15190);
+						PushFollow(Follow._block_in_propertyDeclaration15192);
 						block582=block();
 						PopFollow();
 						if (state.failed) return retval;
@@ -27202,7 +27204,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(167); }
 
 				DebugLocation(1052, 72);
-				char_literal583=(IToken)Match(input,RCURLY,Follow._RCURLY_in_propertyDeclaration15195); if (state.failed) return retval;
+				char_literal583=(IToken)Match(input,RCURLY,Follow._RCURLY_in_propertyDeclaration15197); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				char_literal583_tree = (CommonTree)adaptor.Create(char_literal583);
 				adaptor.AddChild(root_0, char_literal583_tree);
@@ -27225,7 +27227,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1053:5: '{' ( modifier )? setRule ( SEMI | block ) ( ( modifier )? getRule ( SEMI | block ) )? '}'
 				{
 				DebugLocation(1053, 5);
-				char_literal584=(IToken)Match(input,LCURLY,Follow._LCURLY_in_propertyDeclaration15202); if (state.failed) return retval;
+				char_literal584=(IToken)Match(input,LCURLY,Follow._LCURLY_in_propertyDeclaration15204); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				char_literal584_tree = (CommonTree)adaptor.Create(char_literal584);
 				adaptor.AddChild(root_0, char_literal584_tree);
@@ -27249,7 +27251,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1053:9: modifier
 					{
 					DebugLocation(1053, 9);
-					PushFollow(Follow._modifier_in_propertyDeclaration15204);
+					PushFollow(Follow._modifier_in_propertyDeclaration15206);
 					modifier585=modifier();
 					PopFollow();
 					if (state.failed) return retval;
@@ -27262,7 +27264,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(168); }
 
 				DebugLocation(1053, 19);
-				PushFollow(Follow._setRule_in_propertyDeclaration15207);
+				PushFollow(Follow._setRule_in_propertyDeclaration15209);
 				setRule586=setRule();
 				PopFollow();
 				if (state.failed) return retval;
@@ -27297,7 +27299,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1053:28: SEMI
 					{
 					DebugLocation(1053, 28);
-					SEMI587=(IToken)Match(input,SEMI,Follow._SEMI_in_propertyDeclaration15210); if (state.failed) return retval;
+					SEMI587=(IToken)Match(input,SEMI,Follow._SEMI_in_propertyDeclaration15212); if (state.failed) return retval;
 					if (state.backtracking == 0) {
 					SEMI587_tree = (CommonTree)adaptor.Create(SEMI587);
 					adaptor.AddChild(root_0, SEMI587_tree);
@@ -27310,7 +27312,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1053:33: block
 					{
 					DebugLocation(1053, 33);
-					PushFollow(Follow._block_in_propertyDeclaration15212);
+					PushFollow(Follow._block_in_propertyDeclaration15214);
 					block588=block();
 					PopFollow();
 					if (state.failed) return retval;
@@ -27359,7 +27361,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1053:41: modifier
 						{
 						DebugLocation(1053, 41);
-						PushFollow(Follow._modifier_in_propertyDeclaration15216);
+						PushFollow(Follow._modifier_in_propertyDeclaration15218);
 						modifier589=modifier();
 						PopFollow();
 						if (state.failed) return retval;
@@ -27372,7 +27374,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(170); }
 
 					DebugLocation(1053, 51);
-					PushFollow(Follow._getRule_in_propertyDeclaration15219);
+					PushFollow(Follow._getRule_in_propertyDeclaration15221);
 					getRule590=getRule();
 					PopFollow();
 					if (state.failed) return retval;
@@ -27407,7 +27409,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1053:60: SEMI
 						{
 						DebugLocation(1053, 60);
-						SEMI591=(IToken)Match(input,SEMI,Follow._SEMI_in_propertyDeclaration15222); if (state.failed) return retval;
+						SEMI591=(IToken)Match(input,SEMI,Follow._SEMI_in_propertyDeclaration15224); if (state.failed) return retval;
 						if (state.backtracking == 0) {
 						SEMI591_tree = (CommonTree)adaptor.Create(SEMI591);
 						adaptor.AddChild(root_0, SEMI591_tree);
@@ -27420,7 +27422,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1053:65: block
 						{
 						DebugLocation(1053, 65);
-						PushFollow(Follow._block_in_propertyDeclaration15224);
+						PushFollow(Follow._block_in_propertyDeclaration15226);
 						block592=block();
 						PopFollow();
 						if (state.failed) return retval;
@@ -27440,7 +27442,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(172); }
 
 				DebugLocation(1053, 75);
-				char_literal593=(IToken)Match(input,RCURLY,Follow._RCURLY_in_propertyDeclaration15230); if (state.failed) return retval;
+				char_literal593=(IToken)Match(input,RCURLY,Follow._RCURLY_in_propertyDeclaration15232); if (state.failed) return retval;
 				if (state.backtracking == 0) {
 				char_literal593_tree = (CommonTree)adaptor.Create(char_literal593);
 				adaptor.AddChild(root_0, char_literal593_tree);
@@ -27520,7 +27522,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				throw new FailedPredicateException(input, "getRule", "input.LT(1).Text == \"get\"");
 			}
 			DebugLocation(1058, 34);
-			IDENT594=(IToken)Match(input,IDENT,Follow._IDENT_in_getRule15247); if (state.failed) return retval;
+			IDENT594=(IToken)Match(input,IDENT,Follow._IDENT_in_getRule15249); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			IDENT594_tree = (CommonTree)adaptor.Create(IDENT594);
 			adaptor.AddChild(root_0, IDENT594_tree);
@@ -27595,7 +27597,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				throw new FailedPredicateException(input, "setRule", "input.LT(1).Text== \"set\"");
 			}
 			DebugLocation(1062, 33);
-			IDENT595=(IToken)Match(input,IDENT,Follow._IDENT_in_setRule15261); if (state.failed) return retval;
+			IDENT595=(IToken)Match(input,IDENT,Follow._IDENT_in_setRule15263); if (state.failed) return retval;
 			if (state.backtracking == 0) {
 			IDENT595_tree = (CommonTree)adaptor.Create(IDENT595);
 			adaptor.AddChild(root_0, IDENT595_tree);
@@ -27866,7 +27868,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:377:7: genericTypeParameterList
 				{
 				DebugLocation(377, 7);
-				PushFollow(Follow._genericTypeParameterList_in_synpred43_Java5858);
+				PushFollow(Follow._genericTypeParameterList_in_synpred43_Java5860);
 				genericTypeParameterList();
 				PopFollow();
 				if (state.failed) return;
@@ -27939,14 +27941,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:14: type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI )
 				{
 				DebugLocation(379, 14);
-				PushFollow(Follow._type_in_synpred43_Java5891);
+				PushFollow(Follow._type_in_synpred43_Java5893);
 				type();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(379, 19);
-				Match(input,IDENT,Follow._IDENT_in_synpred43_Java5893); if (state.failed) return;
+				Match(input,IDENT,Follow._IDENT_in_synpred43_Java5895); if (state.failed) return;
 				DebugLocation(379, 25);
-				PushFollow(Follow._formalParameterList_in_synpred43_Java5895);
+				PushFollow(Follow._formalParameterList_in_synpred43_Java5897);
 				formalParameterList();
 				PopFollow();
 				if (state.failed) return;
@@ -27969,7 +27971,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:45: arrayDeclaratorList
 					{
 					DebugLocation(379, 45);
-					PushFollow(Follow._arrayDeclaratorList_in_synpred43_Java5897);
+					PushFollow(Follow._arrayDeclaratorList_in_synpred43_Java5899);
 					arrayDeclaratorList();
 					PopFollow();
 					if (state.failed) return;
@@ -27999,7 +28001,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:66: throwsClause
 					{
 					DebugLocation(379, 66);
-					PushFollow(Follow._throwsClause_in_synpred43_Java5900);
+					PushFollow(Follow._throwsClause_in_synpred43_Java5902);
 					throwsClause();
 					PopFollow();
 					if (state.failed) return;
@@ -28040,7 +28042,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:81: block
 					{
 					DebugLocation(379, 81);
-					PushFollow(Follow._block_in_synpred43_Java5904);
+					PushFollow(Follow._block_in_synpred43_Java5906);
 					block();
 					PopFollow();
 					if (state.failed) return;
@@ -28052,7 +28054,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:89: SEMI
 					{
 					DebugLocation(379, 89);
-					Match(input,SEMI,Follow._SEMI_in_synpred43_Java5908); if (state.failed) return;
+					Match(input,SEMI,Follow._SEMI_in_synpred43_Java5910); if (state.failed) return;
 
 					}
 					break;
@@ -28068,11 +28070,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:17: VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI )
 				{
 				DebugLocation(381, 17);
-				Match(input,VOID,Follow._VOID_in_synpred43_Java5970); if (state.failed) return;
+				Match(input,VOID,Follow._VOID_in_synpred43_Java5972); if (state.failed) return;
 				DebugLocation(381, 22);
-				Match(input,IDENT,Follow._IDENT_in_synpred43_Java5972); if (state.failed) return;
+				Match(input,IDENT,Follow._IDENT_in_synpred43_Java5974); if (state.failed) return;
 				DebugLocation(381, 28);
-				PushFollow(Follow._formalParameterList_in_synpred43_Java5974);
+				PushFollow(Follow._formalParameterList_in_synpred43_Java5976);
 				formalParameterList();
 				PopFollow();
 				if (state.failed) return;
@@ -28095,7 +28097,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:48: throwsClause
 					{
 					DebugLocation(381, 48);
-					PushFollow(Follow._throwsClause_in_synpred43_Java5976);
+					PushFollow(Follow._throwsClause_in_synpred43_Java5978);
 					throwsClause();
 					PopFollow();
 					if (state.failed) return;
@@ -28136,7 +28138,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:63: block
 					{
 					DebugLocation(381, 63);
-					PushFollow(Follow._block_in_synpred43_Java5980);
+					PushFollow(Follow._block_in_synpred43_Java5982);
 					block();
 					PopFollow();
 					if (state.failed) return;
@@ -28148,7 +28150,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:71: SEMI
 					{
 					DebugLocation(381, 71);
-					Match(input,SEMI,Follow._SEMI_in_synpred43_Java5984); if (state.failed) return;
+					Match(input,SEMI,Follow._SEMI_in_synpred43_Java5986); if (state.failed) return;
 
 					}
 					break;
@@ -28164,9 +28166,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:383:17: ident= IDENT formalParameterList ( throwsClause )? block
 				{
 				DebugLocation(383, 22);
-				ident=(IToken)Match(input,IDENT,Follow._IDENT_in_synpred43_Java6043); if (state.failed) return;
+				ident=(IToken)Match(input,IDENT,Follow._IDENT_in_synpred43_Java6045); if (state.failed) return;
 				DebugLocation(383, 29);
-				PushFollow(Follow._formalParameterList_in_synpred43_Java6045);
+				PushFollow(Follow._formalParameterList_in_synpred43_Java6047);
 				formalParameterList();
 				PopFollow();
 				if (state.failed) return;
@@ -28189,7 +28191,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:383:49: throwsClause
 					{
 					DebugLocation(383, 49);
-					PushFollow(Follow._throwsClause_in_synpred43_Java6047);
+					PushFollow(Follow._throwsClause_in_synpred43_Java6049);
 					throwsClause();
 					PopFollow();
 					if (state.failed) return;
@@ -28201,7 +28203,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(185); }
 
 				DebugLocation(383, 63);
-				PushFollow(Follow._block_in_synpred43_Java6050);
+				PushFollow(Follow._block_in_synpred43_Java6052);
 				block();
 				PopFollow();
 				if (state.failed) return;
@@ -28241,17 +28243,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:387:13: type classFieldDeclaratorList SEMI
 			{
 			DebugLocation(387, 13);
-			PushFollow(Follow._type_in_synpred44_Java6116);
+			PushFollow(Follow._type_in_synpred44_Java6118);
 			type();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(387, 18);
-			PushFollow(Follow._classFieldDeclaratorList_in_synpred44_Java6118);
+			PushFollow(Follow._classFieldDeclaratorList_in_synpred44_Java6120);
 			classFieldDeclaratorList();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(387, 43);
-			Match(input,SEMI,Follow._SEMI_in_synpred44_Java6120); if (state.failed) return;
+			Match(input,SEMI,Follow._SEMI_in_synpred44_Java6122); if (state.failed) return;
 
 			}
 
@@ -28281,7 +28283,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:389:48: SEMI
 			{
 			DebugLocation(389, 48);
-			Match(input,SEMI,Follow._SEMI_in_synpred46_Java6166); if (state.failed) return;
+			Match(input,SEMI,Follow._SEMI_in_synpred46_Java6168); if (state.failed) return;
 
 			}
 
@@ -28449,7 +28451,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:377:7: genericTypeParameterList
 					{
 					DebugLocation(377, 7);
-					PushFollow(Follow._genericTypeParameterList_in_synpred47_Java5858);
+					PushFollow(Follow._genericTypeParameterList_in_synpred47_Java5860);
 					genericTypeParameterList();
 					PopFollow();
 					if (state.failed) return;
@@ -28522,14 +28524,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:14: type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? ( block | SEMI )
 					{
 					DebugLocation(379, 14);
-					PushFollow(Follow._type_in_synpred47_Java5891);
+					PushFollow(Follow._type_in_synpred47_Java5893);
 					type();
 					PopFollow();
 					if (state.failed) return;
 					DebugLocation(379, 19);
-					Match(input,IDENT,Follow._IDENT_in_synpred47_Java5893); if (state.failed) return;
+					Match(input,IDENT,Follow._IDENT_in_synpred47_Java5895); if (state.failed) return;
 					DebugLocation(379, 25);
-					PushFollow(Follow._formalParameterList_in_synpred47_Java5895);
+					PushFollow(Follow._formalParameterList_in_synpred47_Java5897);
 					formalParameterList();
 					PopFollow();
 					if (state.failed) return;
@@ -28552,7 +28554,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:45: arrayDeclaratorList
 						{
 						DebugLocation(379, 45);
-						PushFollow(Follow._arrayDeclaratorList_in_synpred47_Java5897);
+						PushFollow(Follow._arrayDeclaratorList_in_synpred47_Java5899);
 						arrayDeclaratorList();
 						PopFollow();
 						if (state.failed) return;
@@ -28582,7 +28584,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:66: throwsClause
 						{
 						DebugLocation(379, 66);
-						PushFollow(Follow._throwsClause_in_synpred47_Java5900);
+						PushFollow(Follow._throwsClause_in_synpred47_Java5902);
 						throwsClause();
 						PopFollow();
 						if (state.failed) return;
@@ -28623,7 +28625,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:81: block
 						{
 						DebugLocation(379, 81);
-						PushFollow(Follow._block_in_synpred47_Java5904);
+						PushFollow(Follow._block_in_synpred47_Java5906);
 						block();
 						PopFollow();
 						if (state.failed) return;
@@ -28635,7 +28637,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:379:89: SEMI
 						{
 						DebugLocation(379, 89);
-						Match(input,SEMI,Follow._SEMI_in_synpred47_Java5908); if (state.failed) return;
+						Match(input,SEMI,Follow._SEMI_in_synpred47_Java5910); if (state.failed) return;
 
 						}
 						break;
@@ -28651,11 +28653,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:17: VOID IDENT formalParameterList ( throwsClause )? ( block | SEMI )
 					{
 					DebugLocation(381, 17);
-					Match(input,VOID,Follow._VOID_in_synpred47_Java5970); if (state.failed) return;
+					Match(input,VOID,Follow._VOID_in_synpred47_Java5972); if (state.failed) return;
 					DebugLocation(381, 22);
-					Match(input,IDENT,Follow._IDENT_in_synpred47_Java5972); if (state.failed) return;
+					Match(input,IDENT,Follow._IDENT_in_synpred47_Java5974); if (state.failed) return;
 					DebugLocation(381, 28);
-					PushFollow(Follow._formalParameterList_in_synpred47_Java5974);
+					PushFollow(Follow._formalParameterList_in_synpred47_Java5976);
 					formalParameterList();
 					PopFollow();
 					if (state.failed) return;
@@ -28678,7 +28680,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:48: throwsClause
 						{
 						DebugLocation(381, 48);
-						PushFollow(Follow._throwsClause_in_synpred47_Java5976);
+						PushFollow(Follow._throwsClause_in_synpred47_Java5978);
 						throwsClause();
 						PopFollow();
 						if (state.failed) return;
@@ -28719,7 +28721,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:63: block
 						{
 						DebugLocation(381, 63);
-						PushFollow(Follow._block_in_synpred47_Java5980);
+						PushFollow(Follow._block_in_synpred47_Java5982);
 						block();
 						PopFollow();
 						if (state.failed) return;
@@ -28731,7 +28733,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:381:71: SEMI
 						{
 						DebugLocation(381, 71);
-						Match(input,SEMI,Follow._SEMI_in_synpred47_Java5984); if (state.failed) return;
+						Match(input,SEMI,Follow._SEMI_in_synpred47_Java5986); if (state.failed) return;
 
 						}
 						break;
@@ -28747,9 +28749,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:383:17: ident= IDENT formalParameterList ( throwsClause )? block
 					{
 					DebugLocation(383, 22);
-					ident=(IToken)Match(input,IDENT,Follow._IDENT_in_synpred47_Java6043); if (state.failed) return;
+					ident=(IToken)Match(input,IDENT,Follow._IDENT_in_synpred47_Java6045); if (state.failed) return;
 					DebugLocation(383, 29);
-					PushFollow(Follow._formalParameterList_in_synpred47_Java6045);
+					PushFollow(Follow._formalParameterList_in_synpred47_Java6047);
 					formalParameterList();
 					PopFollow();
 					if (state.failed) return;
@@ -28772,7 +28774,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:383:49: throwsClause
 						{
 						DebugLocation(383, 49);
-						PushFollow(Follow._throwsClause_in_synpred47_Java6047);
+						PushFollow(Follow._throwsClause_in_synpred47_Java6049);
 						throwsClause();
 						PopFollow();
 						if (state.failed) return;
@@ -28784,7 +28786,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(193); }
 
 					DebugLocation(383, 63);
-					PushFollow(Follow._block_in_synpred47_Java6050);
+					PushFollow(Follow._block_in_synpred47_Java6052);
 					block();
 					PopFollow();
 					if (state.failed) return;
@@ -28803,17 +28805,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:387:13: type classFieldDeclaratorList SEMI
 				{
 				DebugLocation(387, 13);
-				PushFollow(Follow._type_in_synpred47_Java6116);
+				PushFollow(Follow._type_in_synpred47_Java6118);
 				type();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(387, 18);
-				PushFollow(Follow._classFieldDeclaratorList_in_synpred47_Java6118);
+				PushFollow(Follow._classFieldDeclaratorList_in_synpred47_Java6120);
 				classFieldDeclaratorList();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(387, 43);
-				Match(input,SEMI,Follow._SEMI_in_synpred47_Java6120); if (state.failed) return;
+				Match(input,SEMI,Follow._SEMI_in_synpred47_Java6122); if (state.failed) return;
 
 				}
 				break;
@@ -28822,12 +28824,12 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:389:13: type classFieldDeclaratorList ( DOT )? ( SEMI )?
 				{
 				DebugLocation(389, 13);
-				PushFollow(Follow._type_in_synpred47_Java6159);
+				PushFollow(Follow._type_in_synpred47_Java6161);
 				type();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(389, 18);
-				PushFollow(Follow._classFieldDeclaratorList_in_synpred47_Java6161);
+				PushFollow(Follow._classFieldDeclaratorList_in_synpred47_Java6163);
 				classFieldDeclaratorList();
 				PopFollow();
 				if (state.failed) return;
@@ -28850,7 +28852,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:389:43: DOT
 					{
 					DebugLocation(389, 43);
-					Match(input,DOT,Follow._DOT_in_synpred47_Java6163); if (state.failed) return;
+					Match(input,DOT,Follow._DOT_in_synpred47_Java6165); if (state.failed) return;
 
 					}
 					break;
@@ -28877,7 +28879,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:389:48: SEMI
 					{
 					DebugLocation(389, 48);
-					Match(input,SEMI,Follow._SEMI_in_synpred47_Java6166); if (state.failed) return;
+					Match(input,SEMI,Follow._SEMI_in_synpred47_Java6168); if (state.failed) return;
 
 					}
 					break;
@@ -28921,7 +28923,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:392:9: typeDeclaration
 			{
 			DebugLocation(392, 9);
-			PushFollow(Follow._typeDeclaration_in_synpred48_Java6212);
+			PushFollow(Follow._typeDeclaration_in_synpred48_Java6214);
 			typeDeclaration();
 			PopFollow();
 			if (state.failed) return;
@@ -28972,7 +28974,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:398:13: genericTypeParameterList
 				{
 				DebugLocation(398, 13);
-				PushFollow(Follow._genericTypeParameterList_in_synpred54_Java6256);
+				PushFollow(Follow._genericTypeParameterList_in_synpred54_Java6258);
 				genericTypeParameterList();
 				PopFollow();
 				if (state.failed) return;
@@ -29013,14 +29015,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:399:17: type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI
 				{
 				DebugLocation(399, 17);
-				PushFollow(Follow._type_in_synpred54_Java6275);
+				PushFollow(Follow._type_in_synpred54_Java6277);
 				type();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(399, 22);
-				Match(input,IDENT,Follow._IDENT_in_synpred54_Java6277); if (state.failed) return;
+				Match(input,IDENT,Follow._IDENT_in_synpred54_Java6279); if (state.failed) return;
 				DebugLocation(399, 28);
-				PushFollow(Follow._formalParameterList_in_synpred54_Java6279);
+				PushFollow(Follow._formalParameterList_in_synpred54_Java6281);
 				formalParameterList();
 				PopFollow();
 				if (state.failed) return;
@@ -29043,7 +29045,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:399:48: arrayDeclaratorList
 					{
 					DebugLocation(399, 48);
-					PushFollow(Follow._arrayDeclaratorList_in_synpred54_Java6281);
+					PushFollow(Follow._arrayDeclaratorList_in_synpred54_Java6283);
 					arrayDeclaratorList();
 					PopFollow();
 					if (state.failed) return;
@@ -29073,7 +29075,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:399:69: throwsClause
 					{
 					DebugLocation(399, 69);
-					PushFollow(Follow._throwsClause_in_synpred54_Java6284);
+					PushFollow(Follow._throwsClause_in_synpred54_Java6286);
 					throwsClause();
 					PopFollow();
 					if (state.failed) return;
@@ -29085,7 +29087,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(202); }
 
 				DebugLocation(399, 83);
-				Match(input,SEMI,Follow._SEMI_in_synpred54_Java6287); if (state.failed) return;
+				Match(input,SEMI,Follow._SEMI_in_synpred54_Java6289); if (state.failed) return;
 
 				}
 				break;
@@ -29094,11 +29096,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:401:17: VOID IDENT formalParameterList ( throwsClause )? SEMI
 				{
 				DebugLocation(401, 17);
-				Match(input,VOID,Follow._VOID_in_synpred54_Java6345); if (state.failed) return;
+				Match(input,VOID,Follow._VOID_in_synpred54_Java6347); if (state.failed) return;
 				DebugLocation(401, 22);
-				Match(input,IDENT,Follow._IDENT_in_synpred54_Java6347); if (state.failed) return;
+				Match(input,IDENT,Follow._IDENT_in_synpred54_Java6349); if (state.failed) return;
 				DebugLocation(401, 28);
-				PushFollow(Follow._formalParameterList_in_synpred54_Java6349);
+				PushFollow(Follow._formalParameterList_in_synpred54_Java6351);
 				formalParameterList();
 				PopFollow();
 				if (state.failed) return;
@@ -29121,7 +29123,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:401:48: throwsClause
 					{
 					DebugLocation(401, 48);
-					PushFollow(Follow._throwsClause_in_synpred54_Java6351);
+					PushFollow(Follow._throwsClause_in_synpred54_Java6353);
 					throwsClause();
 					PopFollow();
 					if (state.failed) return;
@@ -29133,7 +29135,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(203); }
 
 				DebugLocation(401, 62);
-				Match(input,SEMI,Follow._SEMI_in_synpred54_Java6354); if (state.failed) return;
+				Match(input,SEMI,Follow._SEMI_in_synpred54_Java6356); if (state.failed) return;
 
 				}
 				break;
@@ -29170,7 +29172,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:397:9: modifierList ( ( genericTypeParameterList )? ( type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI | VOID IDENT formalParameterList ( throwsClause )? SEMI ) | type interfaceFieldDeclaratorList SEMI )
 			{
 			DebugLocation(397, 9);
-			PushFollow(Follow._modifierList_in_synpred55_Java6242);
+			PushFollow(Follow._modifierList_in_synpred55_Java6244);
 			modifierList();
 			PopFollow();
 			if (state.failed) return;
@@ -29271,7 +29273,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:398:13: genericTypeParameterList
 					{
 					DebugLocation(398, 13);
-					PushFollow(Follow._genericTypeParameterList_in_synpred55_Java6256);
+					PushFollow(Follow._genericTypeParameterList_in_synpred55_Java6258);
 					genericTypeParameterList();
 					PopFollow();
 					if (state.failed) return;
@@ -29312,14 +29314,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:399:17: type IDENT formalParameterList ( arrayDeclaratorList )? ( throwsClause )? SEMI
 					{
 					DebugLocation(399, 17);
-					PushFollow(Follow._type_in_synpred55_Java6275);
+					PushFollow(Follow._type_in_synpred55_Java6277);
 					type();
 					PopFollow();
 					if (state.failed) return;
 					DebugLocation(399, 22);
-					Match(input,IDENT,Follow._IDENT_in_synpred55_Java6277); if (state.failed) return;
+					Match(input,IDENT,Follow._IDENT_in_synpred55_Java6279); if (state.failed) return;
 					DebugLocation(399, 28);
-					PushFollow(Follow._formalParameterList_in_synpred55_Java6279);
+					PushFollow(Follow._formalParameterList_in_synpred55_Java6281);
 					formalParameterList();
 					PopFollow();
 					if (state.failed) return;
@@ -29342,7 +29344,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:399:48: arrayDeclaratorList
 						{
 						DebugLocation(399, 48);
-						PushFollow(Follow._arrayDeclaratorList_in_synpred55_Java6281);
+						PushFollow(Follow._arrayDeclaratorList_in_synpred55_Java6283);
 						arrayDeclaratorList();
 						PopFollow();
 						if (state.failed) return;
@@ -29372,7 +29374,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:399:69: throwsClause
 						{
 						DebugLocation(399, 69);
-						PushFollow(Follow._throwsClause_in_synpred55_Java6284);
+						PushFollow(Follow._throwsClause_in_synpred55_Java6286);
 						throwsClause();
 						PopFollow();
 						if (state.failed) return;
@@ -29384,7 +29386,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(207); }
 
 					DebugLocation(399, 83);
-					Match(input,SEMI,Follow._SEMI_in_synpred55_Java6287); if (state.failed) return;
+					Match(input,SEMI,Follow._SEMI_in_synpred55_Java6289); if (state.failed) return;
 
 					}
 					break;
@@ -29393,11 +29395,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:401:17: VOID IDENT formalParameterList ( throwsClause )? SEMI
 					{
 					DebugLocation(401, 17);
-					Match(input,VOID,Follow._VOID_in_synpred55_Java6345); if (state.failed) return;
+					Match(input,VOID,Follow._VOID_in_synpred55_Java6347); if (state.failed) return;
 					DebugLocation(401, 22);
-					Match(input,IDENT,Follow._IDENT_in_synpred55_Java6347); if (state.failed) return;
+					Match(input,IDENT,Follow._IDENT_in_synpred55_Java6349); if (state.failed) return;
 					DebugLocation(401, 28);
-					PushFollow(Follow._formalParameterList_in_synpred55_Java6349);
+					PushFollow(Follow._formalParameterList_in_synpred55_Java6351);
 					formalParameterList();
 					PopFollow();
 					if (state.failed) return;
@@ -29420,7 +29422,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 						// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:401:48: throwsClause
 						{
 						DebugLocation(401, 48);
-						PushFollow(Follow._throwsClause_in_synpred55_Java6351);
+						PushFollow(Follow._throwsClause_in_synpred55_Java6353);
 						throwsClause();
 						PopFollow();
 						if (state.failed) return;
@@ -29432,7 +29434,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					} finally { DebugExitSubRule(208); }
 
 					DebugLocation(401, 62);
-					Match(input,SEMI,Follow._SEMI_in_synpred55_Java6354); if (state.failed) return;
+					Match(input,SEMI,Follow._SEMI_in_synpred55_Java6356); if (state.failed) return;
 
 					}
 					break;
@@ -29448,17 +29450,17 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:404:13: type interfaceFieldDeclaratorList SEMI
 				{
 				DebugLocation(404, 13);
-				PushFollow(Follow._type_in_synpred55_Java6417);
+				PushFollow(Follow._type_in_synpred55_Java6419);
 				type();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(404, 18);
-				PushFollow(Follow._interfaceFieldDeclaratorList_in_synpred55_Java6419);
+				PushFollow(Follow._interfaceFieldDeclaratorList_in_synpred55_Java6421);
 				interfaceFieldDeclaratorList();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(404, 47);
-				Match(input,SEMI,Follow._SEMI_in_synpred55_Java6421); if (state.failed) return;
+				Match(input,SEMI,Follow._SEMI_in_synpred55_Java6423); if (state.failed) return;
 
 				}
 				break;
@@ -29495,7 +29497,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:407:9: typeDeclaration
 			{
 			DebugLocation(407, 9);
-			PushFollow(Follow._typeDeclaration_in_synpred56_Java6466);
+			PushFollow(Follow._typeDeclaration_in_synpred56_Java6468);
 			typeDeclaration();
 			PopFollow();
 			if (state.failed) return;
@@ -29528,7 +29530,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:437:9: expression
 			{
 			DebugLocation(437, 9);
-			PushFollow(Follow._expression_in_synpred62_Java6713);
+			PushFollow(Follow._expression_in_synpred62_Java6715);
 			expression();
 			PopFollow();
 			if (state.failed) return;
@@ -29561,7 +29563,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:447:9: arrayDeclarator
 			{
 			DebugLocation(447, 9);
-			PushFollow(Follow._arrayDeclarator_in_synpred63_Java6790);
+			PushFollow(Follow._arrayDeclarator_in_synpred63_Java6792);
 			arrayDeclarator();
 			PopFollow();
 			if (state.failed) return;
@@ -29594,7 +29596,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:502:23: arrayDeclaratorList
 			{
 			DebugLocation(502, 23);
-			PushFollow(Follow._arrayDeclaratorList_in_synpred87_Java7251);
+			PushFollow(Follow._arrayDeclaratorList_in_synpred87_Java7253);
 			arrayDeclaratorList();
 			PopFollow();
 			if (state.failed) return;
@@ -29627,7 +29629,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:507:28: arrayDeclaratorList
 			{
 			DebugLocation(507, 28);
-			PushFollow(Follow._arrayDeclaratorList_in_synpred88_Java7300);
+			PushFollow(Follow._arrayDeclaratorList_in_synpred88_Java7302);
 			arrayDeclaratorList();
 			PopFollow();
 			if (state.failed) return;
@@ -29660,9 +29662,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:517:20: DOT typeIdent
 			{
 			DebugLocation(517, 20);
-			Match(input,DOT,Follow._DOT_in_synpred90_Java7385); if (state.failed) return;
+			Match(input,DOT,Follow._DOT_in_synpred90_Java7387); if (state.failed) return;
 			DebugLocation(517, 24);
-			PushFollow(Follow._typeIdent_in_synpred90_Java7387);
+			PushFollow(Follow._typeIdent_in_synpred90_Java7389);
 			typeIdent();
 			PopFollow();
 			if (state.failed) return;
@@ -29695,7 +29697,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:527:16: genericTypeArgumentList
 			{
 			DebugLocation(527, 16);
-			PushFollow(Follow._genericTypeArgumentList_in_synpred92_Java7475);
+			PushFollow(Follow._genericTypeArgumentList_in_synpred92_Java7477);
 			genericTypeArgumentList();
 			PopFollow();
 			if (state.failed) return;
@@ -29728,9 +29730,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:547:40: COMMA genericTypeArgument
 			{
 			DebugLocation(547, 40);
-			Match(input,COMMA,Follow._COMMA_in_synpred101_Java7618); if (state.failed) return;
+			Match(input,COMMA,Follow._COMMA_in_synpred101_Java7620); if (state.failed) return;
 			DebugLocation(547, 46);
-			PushFollow(Follow._genericTypeArgument_in_synpred101_Java7620);
+			PushFollow(Follow._genericTypeArgument_in_synpred101_Java7622);
 			genericTypeArgument();
 			PopFollow();
 			if (state.failed) return;
@@ -29763,7 +29765,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:553:18: genericWildcardBoundType
 			{
 			DebugLocation(553, 18);
-			PushFollow(Follow._genericWildcardBoundType_in_synpred103_Java7674);
+			PushFollow(Follow._genericWildcardBoundType_in_synpred103_Java7676);
 			genericWildcardBoundType();
 			PopFollow();
 			if (state.failed) return;
@@ -29796,9 +29798,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:578:42: COMMA formalParameterStandardDecl
 			{
 			DebugLocation(578, 42);
-			Match(input,COMMA,Follow._COMMA_in_synpred108_Java7892); if (state.failed) return;
+			Match(input,COMMA,Follow._COMMA_in_synpred108_Java7894); if (state.failed) return;
 			DebugLocation(578, 48);
-			PushFollow(Follow._formalParameterStandardDecl_in_synpred108_Java7894);
+			PushFollow(Follow._formalParameterStandardDecl_in_synpred108_Java7896);
 			formalParameterStandardDecl();
 			PopFollow();
 			if (state.failed) return;
@@ -29831,7 +29833,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:578:13: formalParameterStandardDecl ( COMMA formalParameterStandardDecl )* ( COMMA formalParameterVarArgDecl )?
 			{
 			DebugLocation(578, 13);
-			PushFollow(Follow._formalParameterStandardDecl_in_synpred110_Java7889);
+			PushFollow(Follow._formalParameterStandardDecl_in_synpred110_Java7891);
 			formalParameterStandardDecl();
 			PopFollow();
 			if (state.failed) return;
@@ -29865,9 +29867,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:578:42: COMMA formalParameterStandardDecl
 					{
 					DebugLocation(578, 42);
-					Match(input,COMMA,Follow._COMMA_in_synpred110_Java7892); if (state.failed) return;
+					Match(input,COMMA,Follow._COMMA_in_synpred110_Java7894); if (state.failed) return;
 					DebugLocation(578, 48);
-					PushFollow(Follow._formalParameterStandardDecl_in_synpred110_Java7894);
+					PushFollow(Follow._formalParameterStandardDecl_in_synpred110_Java7896);
 					formalParameterStandardDecl();
 					PopFollow();
 					if (state.failed) return;
@@ -29904,9 +29906,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:578:79: COMMA formalParameterVarArgDecl
 				{
 				DebugLocation(578, 79);
-				Match(input,COMMA,Follow._COMMA_in_synpred110_Java7899); if (state.failed) return;
+				Match(input,COMMA,Follow._COMMA_in_synpred110_Java7901); if (state.failed) return;
 				DebugLocation(578, 85);
-				PushFollow(Follow._formalParameterVarArgDecl_in_synpred110_Java7901);
+				PushFollow(Follow._formalParameterVarArgDecl_in_synpred110_Java7903);
 				formalParameterVarArgDecl();
 				PopFollow();
 				if (state.failed) return;
@@ -29946,7 +29948,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:581:13: formalParameterVarArgDecl
 			{
 			DebugLocation(581, 13);
-			PushFollow(Follow._formalParameterVarArgDecl_in_synpred111_Java7958);
+			PushFollow(Follow._formalParameterVarArgDecl_in_synpred111_Java7960);
 			formalParameterVarArgDecl();
 			PopFollow();
 			if (state.failed) return;
@@ -29981,9 +29983,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:602:13: DOT ident= IDENT
 			{
 			DebugLocation(602, 13);
-			Match(input,DOT,Follow._DOT_in_synpred112_Java8203); if (state.failed) return;
+			Match(input,DOT,Follow._DOT_in_synpred112_Java8205); if (state.failed) return;
 			DebugLocation(602, 22);
-			ident=(IToken)Match(input,IDENT,Follow._IDENT_in_synpred112_Java8207); if (state.failed) return;
+			ident=(IToken)Match(input,IDENT,Follow._IDENT_in_synpred112_Java8209); if (state.failed) return;
 
 			}
 
@@ -30013,7 +30015,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:609:9: annotation
 			{
 			DebugLocation(609, 9);
-			PushFollow(Follow._annotation_in_synpred113_Java8260);
+			PushFollow(Follow._annotation_in_synpred113_Java8262);
 			annotation();
 			PopFollow();
 			if (state.failed) return;
@@ -30046,12 +30048,12 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:660:9: modifierList type ( IDENT LPAREN RPAREN ( annotationDefaultValue )? SEMI | classFieldDeclaratorList SEMI )
 			{
 			DebugLocation(660, 9);
-			PushFollow(Follow._modifierList_in_synpred125_Java8714);
+			PushFollow(Follow._modifierList_in_synpred125_Java8716);
 			modifierList();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(660, 22);
-			PushFollow(Follow._type_in_synpred125_Java8716);
+			PushFollow(Follow._type_in_synpred125_Java8718);
 			type();
 			PopFollow();
 			if (state.failed) return;
@@ -30097,11 +30099,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:661:13: IDENT LPAREN RPAREN ( annotationDefaultValue )? SEMI
 				{
 				DebugLocation(661, 13);
-				Match(input,IDENT,Follow._IDENT_in_synpred125_Java8730); if (state.failed) return;
+				Match(input,IDENT,Follow._IDENT_in_synpred125_Java8732); if (state.failed) return;
 				DebugLocation(661, 19);
-				Match(input,LPAREN,Follow._LPAREN_in_synpred125_Java8732); if (state.failed) return;
+				Match(input,LPAREN,Follow._LPAREN_in_synpred125_Java8734); if (state.failed) return;
 				DebugLocation(661, 26);
-				Match(input,RPAREN,Follow._RPAREN_in_synpred125_Java8734); if (state.failed) return;
+				Match(input,RPAREN,Follow._RPAREN_in_synpred125_Java8736); if (state.failed) return;
 				DebugLocation(661, 33);
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:661:33: ( annotationDefaultValue )?
 				int alt218=2;
@@ -30121,7 +30123,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:661:33: annotationDefaultValue
 					{
 					DebugLocation(661, 33);
-					PushFollow(Follow._annotationDefaultValue_in_synpred125_Java8736);
+					PushFollow(Follow._annotationDefaultValue_in_synpred125_Java8738);
 					annotationDefaultValue();
 					PopFollow();
 					if (state.failed) return;
@@ -30133,7 +30135,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(218); }
 
 				DebugLocation(661, 57);
-				Match(input,SEMI,Follow._SEMI_in_synpred125_Java8739); if (state.failed) return;
+				Match(input,SEMI,Follow._SEMI_in_synpred125_Java8741); if (state.failed) return;
 
 				}
 				break;
@@ -30142,12 +30144,12 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:663:13: classFieldDeclaratorList SEMI
 				{
 				DebugLocation(663, 13);
-				PushFollow(Follow._classFieldDeclaratorList_in_synpred125_Java8781);
+				PushFollow(Follow._classFieldDeclaratorList_in_synpred125_Java8783);
 				classFieldDeclaratorList();
 				PopFollow();
 				if (state.failed) return;
 				DebugLocation(663, 38);
-				Match(input,SEMI,Follow._SEMI_in_synpred125_Java8783); if (state.failed) return;
+				Match(input,SEMI,Follow._SEMI_in_synpred125_Java8785); if (state.failed) return;
 
 				}
 				break;
@@ -30184,12 +30186,12 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:676:9: localVariableDeclaration SEMI
 			{
 			DebugLocation(676, 9);
-			PushFollow(Follow._localVariableDeclaration_in_synpred126_Java8875);
+			PushFollow(Follow._localVariableDeclaration_in_synpred126_Java8877);
 			localVariableDeclaration();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(676, 34);
-			Match(input,SEMI,Follow._SEMI_in_synpred126_Java8877); if (state.failed) return;
+			Match(input,SEMI,Follow._SEMI_in_synpred126_Java8879); if (state.failed) return;
 
 			}
 
@@ -30219,7 +30221,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:677:9: typeDeclaration
 			{
 			DebugLocation(677, 9);
-			PushFollow(Follow._typeDeclaration_in_synpred127_Java8888);
+			PushFollow(Follow._typeDeclaration_in_synpred127_Java8890);
 			typeDeclaration();
 			PopFollow();
 			if (state.failed) return;
@@ -30252,7 +30254,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:678:9: statement
 			{
 			DebugLocation(678, 9);
-			PushFollow(Follow._statement_in_synpred128_Java8898);
+			PushFollow(Follow._statement_in_synpred128_Java8900);
 			statement();
 			PopFollow();
 			if (state.failed) return;
@@ -30285,7 +30287,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:683:1: LPAREN
 			{
 			DebugLocation(683, 1);
-			Match(input,LPAREN,Follow._LPAREN_in_synpred129_Java8927); if (state.failed) return;
+			Match(input,LPAREN,Follow._LPAREN_in_synpred129_Java8929); if (state.failed) return;
 
 			}
 
@@ -30315,7 +30317,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:683:20: DOT
 			{
 			DebugLocation(683, 20);
-			Match(input,DOT,Follow._DOT_in_synpred130_Java8932); if (state.failed) return;
+			Match(input,DOT,Follow._DOT_in_synpred130_Java8934); if (state.failed) return;
 
 			}
 
@@ -30345,7 +30347,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:683:25: SEMI
 			{
 			DebugLocation(683, 25);
-			Match(input,SEMI,Follow._SEMI_in_synpred131_Java8935); if (state.failed) return;
+			Match(input,SEMI,Follow._SEMI_in_synpred131_Java8937); if (state.failed) return;
 
 			}
 
@@ -30386,7 +30388,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				throw new FailedPredicateException(input, "synpred132_Java", "input.LT(1).Text == \"insert\"");
 			}
 			DebugLocation(691, 40);
-			Match(input,IDENT,Follow._IDENT_in_synpred132_Java8970); if (state.failed) return;
+			Match(input,IDENT,Follow._IDENT_in_synpred132_Java8972); if (state.failed) return;
 
 			}
 
@@ -30430,7 +30432,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				throw new FailedPredicateException(input, "synpred133_Java", "input.LT(1).Text == \"update\"");
 			}
 			DebugLocation(692, 40);
-			Match(input,IDENT,Follow._IDENT_in_synpred133_Java8983); if (state.failed) return;
+			Match(input,IDENT,Follow._IDENT_in_synpred133_Java8985); if (state.failed) return;
 
 			}
 
@@ -30474,7 +30476,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				throw new FailedPredicateException(input, "synpred134_Java", "input.LT(1).Text == \"delete\"");
 			}
 			DebugLocation(693, 40);
-			Match(input,IDENT,Follow._IDENT_in_synpred134_Java8996); if (state.failed) return;
+			Match(input,IDENT,Follow._IDENT_in_synpred134_Java8998); if (state.failed) return;
 
 			}
 
@@ -30509,9 +30511,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:717:13: ELSE elseStat= statement
 			{
 			DebugLocation(717, 13);
-			Match(input,ELSE,Follow._ELSE_in_synpred137_Java9182); if (state.failed) return;
+			Match(input,ELSE,Follow._ELSE_in_synpred137_Java9184); if (state.failed) return;
 			DebugLocation(717, 26);
-			PushFollow(Follow._statement_in_synpred137_Java9186);
+			PushFollow(Follow._statement_in_synpred137_Java9188);
 			elseStat=statement();
 			PopFollow();
 			if (state.failed) return;
@@ -30544,28 +30546,28 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:721:13: forInit SEMI forCondition SEMI forUpdater RPAREN statement
 			{
 			DebugLocation(721, 13);
-			PushFollow(Follow._forInit_in_synpred139_Java9369);
+			PushFollow(Follow._forInit_in_synpred139_Java9371);
 			forInit();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(721, 21);
-			Match(input,SEMI,Follow._SEMI_in_synpred139_Java9371); if (state.failed) return;
+			Match(input,SEMI,Follow._SEMI_in_synpred139_Java9373); if (state.failed) return;
 			DebugLocation(721, 26);
-			PushFollow(Follow._forCondition_in_synpred139_Java9373);
+			PushFollow(Follow._forCondition_in_synpred139_Java9375);
 			forCondition();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(721, 39);
-			Match(input,SEMI,Follow._SEMI_in_synpred139_Java9375); if (state.failed) return;
+			Match(input,SEMI,Follow._SEMI_in_synpred139_Java9377); if (state.failed) return;
 			DebugLocation(721, 44);
-			PushFollow(Follow._forUpdater_in_synpred139_Java9377);
+			PushFollow(Follow._forUpdater_in_synpred139_Java9379);
 			forUpdater();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(721, 55);
-			Match(input,RPAREN,Follow._RPAREN_in_synpred139_Java9379); if (state.failed) return;
+			Match(input,RPAREN,Follow._RPAREN_in_synpred139_Java9381); if (state.failed) return;
 			DebugLocation(721, 62);
-			PushFollow(Follow._statement_in_synpred139_Java9381);
+			PushFollow(Follow._statement_in_synpred139_Java9383);
 			statement();
 			PopFollow();
 			if (state.failed) return;
@@ -30598,11 +30600,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:733:9: IDENT COLON statement
 			{
 			DebugLocation(733, 9);
-			Match(input,IDENT,Follow._IDENT_in_synpred155_Java9994); if (state.failed) return;
+			Match(input,IDENT,Follow._IDENT_in_synpred155_Java9996); if (state.failed) return;
 			DebugLocation(733, 15);
-			Match(input,COLON,Follow._COLON_in_synpred155_Java9996); if (state.failed) return;
+			Match(input,COLON,Follow._COLON_in_synpred155_Java9998); if (state.failed) return;
 			DebugLocation(733, 21);
-			PushFollow(Follow._statement_in_synpred155_Java9998);
+			PushFollow(Follow._statement_in_synpred155_Java10000);
 			statement();
 			PopFollow();
 			if (state.failed) return;
@@ -30635,7 +30637,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:734:9: dmlOperation
 			{
 			DebugLocation(734, 9);
-			PushFollow(Follow._dmlOperation_in_synpred156_Java10065);
+			PushFollow(Follow._dmlOperation_in_synpred156_Java10067);
 			dmlOperation();
 			PopFollow();
 			if (state.failed) return;
@@ -30668,12 +30670,12 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:735:9: expression SEMI
 			{
 			DebugLocation(735, 9);
-			PushFollow(Follow._expression_in_synpred157_Java10075);
+			PushFollow(Follow._expression_in_synpred157_Java10077);
 			expression();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(735, 20);
-			Match(input,SEMI,Follow._SEMI_in_synpred157_Java10077); if (state.failed) return;
+			Match(input,SEMI,Follow._SEMI_in_synpred157_Java10079); if (state.failed) return;
 
 			}
 
@@ -30709,7 +30711,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				throw new FailedPredicateException(input, "synpred158_Java", "input.LT(1).Text == \"system\" && input.LT(2).Text == \".\" && input.LT(3).Text == \"runas\"");
 			}
 			DebugLocation(736, 99);
-			PushFollow(Follow._expression_in_synpred158_Java10090);
+			PushFollow(Follow._expression_in_synpred158_Java10092);
 			expression();
 			PopFollow();
 			if (state.failed) return;
@@ -30742,7 +30744,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:760:9: switchCaseLabel
 			{
 			DebugLocation(760, 9);
-			PushFollow(Follow._switchCaseLabel_in_synpred161_Java10295);
+			PushFollow(Follow._switchCaseLabel_in_synpred161_Java10297);
 			switchCaseLabel();
 			PopFollow();
 			if (state.failed) return;
@@ -30775,7 +30777,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:772:9: localVariableDeclaration
 			{
 			DebugLocation(772, 9);
-			PushFollow(Follow._localVariableDeclaration_in_synpred164_Java10385);
+			PushFollow(Follow._localVariableDeclaration_in_synpred164_Java10387);
 			localVariableDeclaration();
 			PopFollow();
 			if (state.failed) return;
@@ -30808,7 +30810,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:773:9: expressionList
 			{
 			DebugLocation(773, 9);
-			PushFollow(Follow._expressionList_in_synpred165_Java10407);
+			PushFollow(Follow._expressionList_in_synpred165_Java10409);
 			expressionList();
 			PopFollow();
 			if (state.failed) return;
@@ -30855,7 +30857,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			}
 
 			DebugLocation(865, 13);
-			PushFollow(Follow._shiftExpression_in_synpred193_Java11354);
+			PushFollow(Follow._shiftExpression_in_synpred193_Java11356);
 			shiftExpression();
 			PopFollow();
 			if (state.failed) return;
@@ -30902,7 +30904,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			}
 
 			DebugLocation(884, 13);
-			PushFollow(Follow._multiplicativeExpression_in_synpred198_Java11569);
+			PushFollow(Follow._multiplicativeExpression_in_synpred198_Java11571);
 			multiplicativeExpression();
 			PopFollow();
 			if (state.failed) return;
@@ -30935,16 +30937,16 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:909:9: LPAREN type RPAREN unaryExpression
 			{
 			DebugLocation(909, 9);
-			Match(input,LPAREN,Follow._LPAREN_in_synpred208_Java11937); if (state.failed) return;
+			Match(input,LPAREN,Follow._LPAREN_in_synpred208_Java11939); if (state.failed) return;
 			DebugLocation(909, 16);
-			PushFollow(Follow._type_in_synpred208_Java11939);
+			PushFollow(Follow._type_in_synpred208_Java11941);
 			type();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(909, 21);
-			Match(input,RPAREN,Follow._RPAREN_in_synpred208_Java11941); if (state.failed) return;
+			Match(input,RPAREN,Follow._RPAREN_in_synpred208_Java11943); if (state.failed) return;
 			DebugLocation(909, 28);
-			PushFollow(Follow._unaryExpression_in_synpred208_Java11943);
+			PushFollow(Follow._unaryExpression_in_synpred208_Java11945);
 			unaryExpression();
 			PopFollow();
 			if (state.failed) return;
@@ -30977,7 +30979,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:923:21: arguments
 			{
 			DebugLocation(923, 21);
-			PushFollow(Follow._arguments_in_synpred210_Java12287);
+			PushFollow(Follow._arguments_in_synpred210_Java12289);
 			arguments();
 			PopFollow();
 			if (state.failed) return;
@@ -31010,7 +31012,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:929:21: arguments
 			{
 			DebugLocation(929, 21);
-			PushFollow(Follow._arguments_in_synpred214_Java12551);
+			PushFollow(Follow._arguments_in_synpred214_Java12553);
 			arguments();
 			PopFollow();
 			if (state.failed) return;
@@ -31047,7 +31049,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:918:13: outerDot= DOT ( ( ( genericTypeArgumentListSimplified )? IDENT ) ( arguments )? | THIS |Super= SUPER arguments | ( SUPER innerDot= DOT IDENT ) ( arguments )? | innerNewExpression )
 			{
 			DebugLocation(918, 21);
-			outerDot=(IToken)Match(input,DOT,Follow._DOT_in_synpred216_Java12076); if (state.failed) return;
+			outerDot=(IToken)Match(input,DOT,Follow._DOT_in_synpred216_Java12078); if (state.failed) return;
 			DebugLocation(919, 13);
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:919:13: ( ( ( genericTypeArgumentListSimplified )? IDENT ) ( arguments )? | THIS |Super= SUPER arguments | ( SUPER innerDot= DOT IDENT ) ( arguments )? | innerNewExpression )
 			int alt234=5;
@@ -31132,7 +31134,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:919:21: genericTypeArgumentListSimplified
 					{
 					DebugLocation(919, 21);
-					PushFollow(Follow._genericTypeArgumentListSimplified_in_synpred216_Java12126);
+					PushFollow(Follow._genericTypeArgumentListSimplified_in_synpred216_Java12128);
 					genericTypeArgumentListSimplified();
 					PopFollow();
 					if (state.failed) return;
@@ -31144,7 +31146,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(231); }
 
 				DebugLocation(921, 21);
-				Match(input,IDENT,Follow._IDENT_in_synpred216_Java12208); if (state.failed) return;
+				Match(input,IDENT,Follow._IDENT_in_synpred216_Java12210); if (state.failed) return;
 
 				}
 
@@ -31167,7 +31169,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:923:21: arguments
 					{
 					DebugLocation(923, 21);
-					PushFollow(Follow._arguments_in_synpred216_Java12287);
+					PushFollow(Follow._arguments_in_synpred216_Java12289);
 					arguments();
 					PopFollow();
 					if (state.failed) return;
@@ -31186,7 +31188,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:925:17: THIS
 				{
 				DebugLocation(925, 17);
-				Match(input,THIS,Follow._THIS_in_synpred216_Java12360); if (state.failed) return;
+				Match(input,THIS,Follow._THIS_in_synpred216_Java12362); if (state.failed) return;
 
 				}
 				break;
@@ -31195,9 +31197,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:926:17: Super= SUPER arguments
 				{
 				DebugLocation(926, 22);
-				Super=(IToken)Match(input,SUPER,Follow._SUPER_in_synpred216_Java12423); if (state.failed) return;
+				Super=(IToken)Match(input,SUPER,Follow._SUPER_in_synpred216_Java12425); if (state.failed) return;
 				DebugLocation(926, 29);
-				PushFollow(Follow._arguments_in_synpred216_Java12425);
+				PushFollow(Follow._arguments_in_synpred216_Java12427);
 				arguments();
 				PopFollow();
 				if (state.failed) return;
@@ -31214,11 +31216,11 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:927:21: SUPER innerDot= DOT IDENT
 				{
 				DebugLocation(927, 21);
-				Match(input,SUPER,Follow._SUPER_in_synpred216_Java12478); if (state.failed) return;
+				Match(input,SUPER,Follow._SUPER_in_synpred216_Java12480); if (state.failed) return;
 				DebugLocation(927, 35);
-				innerDot=(IToken)Match(input,DOT,Follow._DOT_in_synpred216_Java12482); if (state.failed) return;
+				innerDot=(IToken)Match(input,DOT,Follow._DOT_in_synpred216_Java12484); if (state.failed) return;
 				DebugLocation(927, 40);
-				Match(input,IDENT,Follow._IDENT_in_synpred216_Java12484); if (state.failed) return;
+				Match(input,IDENT,Follow._IDENT_in_synpred216_Java12486); if (state.failed) return;
 
 				}
 
@@ -31241,7 +31243,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:929:21: arguments
 					{
 					DebugLocation(929, 21);
-					PushFollow(Follow._arguments_in_synpred216_Java12551);
+					PushFollow(Follow._arguments_in_synpred216_Java12553);
 					arguments();
 					PopFollow();
 					if (state.failed) return;
@@ -31260,7 +31262,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:931:17: innerNewExpression
 				{
 				DebugLocation(931, 17);
-				PushFollow(Follow._innerNewExpression_in_synpred216_Java12622);
+				PushFollow(Follow._innerNewExpression_in_synpred216_Java12624);
 				innerNewExpression();
 				PopFollow();
 				if (state.failed) return;
@@ -31300,7 +31302,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:936:13: INC
 			{
 			DebugLocation(936, 13);
-			Match(input,INC,Follow._INC_in_synpred218_Java12744); if (state.failed) return;
+			Match(input,INC,Follow._INC_in_synpred218_Java12746); if (state.failed) return;
 
 			}
 
@@ -31330,7 +31332,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:937:13: DEC
 			{
 			DebugLocation(937, 13);
-			Match(input,DEC,Follow._DEC_in_synpred219_Java12768); if (state.failed) return;
+			Match(input,DEC,Follow._DEC_in_synpred219_Java12770); if (state.failed) return;
 
 			}
 
@@ -31360,7 +31362,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:957:13: arguments
 			{
 			DebugLocation(957, 13);
-			PushFollow(Follow._arguments_in_synpred228_Java13218);
+			PushFollow(Follow._arguments_in_synpred228_Java13220);
 			arguments();
 			PopFollow();
 			if (state.failed) return;
@@ -31393,7 +31395,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:962:13: arguments
 			{
 			DebugLocation(962, 13);
-			PushFollow(Follow._arguments_in_synpred231_Java13369);
+			PushFollow(Follow._arguments_in_synpred231_Java13371);
 			arguments();
 			PopFollow();
 			if (state.failed) return;
@@ -31449,7 +31451,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:978:17: arrayDeclarator
 					{
 					DebugLocation(978, 17);
-					PushFollow(Follow._arrayDeclarator_in_synpred236_Java13849);
+					PushFollow(Follow._arrayDeclarator_in_synpred236_Java13851);
 					arrayDeclarator();
 					PopFollow();
 					if (state.failed) return;
@@ -31479,9 +31481,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:980:17: DOT CLASS
 			{
 			DebugLocation(980, 17);
-			Match(input,DOT,Follow._DOT_in_synpred236_Java13917); if (state.failed) return;
+			Match(input,DOT,Follow._DOT_in_synpred236_Java13919); if (state.failed) return;
 			DebugLocation(980, 21);
-			Match(input,CLASS,Follow._CLASS_in_synpred236_Java13919); if (state.failed) return;
+			Match(input,CLASS,Follow._CLASS_in_synpred236_Java13921); if (state.failed) return;
 
 			}
 
@@ -31514,7 +31516,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:982:23: block
 			{
 			DebugLocation(982, 23);
-			PushFollow(Follow._block_in_synpred237_Java13991);
+			PushFollow(Follow._block_in_synpred237_Java13993);
 			block();
 			PopFollow();
 			if (state.failed) return;
@@ -31547,7 +31549,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:982:13: arguments ( block )?
 			{
 			DebugLocation(982, 13);
-			PushFollow(Follow._arguments_in_synpred238_Java13989);
+			PushFollow(Follow._arguments_in_synpred238_Java13991);
 			arguments();
 			PopFollow();
 			if (state.failed) return;
@@ -31570,7 +31572,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:982:23: block
 				{
 				DebugLocation(982, 23);
-				PushFollow(Follow._block_in_synpred238_Java13991);
+				PushFollow(Follow._block_in_synpred238_Java13993);
 				block();
 				PopFollow();
 				if (state.failed) return;
@@ -31614,7 +31616,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:983:13: outerDot= DOT ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression )
 			{
 			DebugLocation(983, 21);
-			outerDot=(IToken)Match(input,DOT,Follow._DOT_in_synpred245_Java14052); if (state.failed) return;
+			outerDot=(IToken)Match(input,DOT,Follow._DOT_in_synpred245_Java14054); if (state.failed) return;
 			DebugLocation(984, 13);
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:984:13: ( CLASS | genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments ) | THIS |Super= SUPER arguments | innerNewExpression )
 			int alt245=5;
@@ -31664,7 +31666,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:984:17: CLASS
 				{
 				DebugLocation(984, 17);
-				Match(input,CLASS,Follow._CLASS_in_synpred245_Java14070); if (state.failed) return;
+				Match(input,CLASS,Follow._CLASS_in_synpred245_Java14072); if (state.failed) return;
 
 				}
 				break;
@@ -31673,7 +31675,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:985:17: genericTypeArgumentListSimplified (Super= SUPER arguments | SUPER innerDot= DOT IDENT arguments | IDENT arguments )
 				{
 				DebugLocation(985, 17);
-				PushFollow(Follow._genericTypeArgumentListSimplified_in_synpred245_Java14133);
+				PushFollow(Follow._genericTypeArgumentListSimplified_in_synpred245_Java14135);
 				genericTypeArgumentListSimplified();
 				PopFollow();
 				if (state.failed) return;
@@ -31723,9 +31725,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:986:21: Super= SUPER arguments
 					{
 					DebugLocation(986, 26);
-					Super=(IToken)Match(input,SUPER,Follow._SUPER_in_synpred245_Java14158); if (state.failed) return;
+					Super=(IToken)Match(input,SUPER,Follow._SUPER_in_synpred245_Java14160); if (state.failed) return;
 					DebugLocation(986, 33);
-					PushFollow(Follow._arguments_in_synpred245_Java14160);
+					PushFollow(Follow._arguments_in_synpred245_Java14162);
 					arguments();
 					PopFollow();
 					if (state.failed) return;
@@ -31737,13 +31739,13 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:987:21: SUPER innerDot= DOT IDENT arguments
 					{
 					DebugLocation(987, 21);
-					Match(input,SUPER,Follow._SUPER_in_synpred245_Java14210); if (state.failed) return;
+					Match(input,SUPER,Follow._SUPER_in_synpred245_Java14212); if (state.failed) return;
 					DebugLocation(987, 35);
-					innerDot=(IToken)Match(input,DOT,Follow._DOT_in_synpred245_Java14214); if (state.failed) return;
+					innerDot=(IToken)Match(input,DOT,Follow._DOT_in_synpred245_Java14216); if (state.failed) return;
 					DebugLocation(987, 40);
-					Match(input,IDENT,Follow._IDENT_in_synpred245_Java14216); if (state.failed) return;
+					Match(input,IDENT,Follow._IDENT_in_synpred245_Java14218); if (state.failed) return;
 					DebugLocation(987, 46);
-					PushFollow(Follow._arguments_in_synpred245_Java14218);
+					PushFollow(Follow._arguments_in_synpred245_Java14220);
 					arguments();
 					PopFollow();
 					if (state.failed) return;
@@ -31755,9 +31757,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:988:21: IDENT arguments
 					{
 					DebugLocation(988, 21);
-					Match(input,IDENT,Follow._IDENT_in_synpred245_Java14268); if (state.failed) return;
+					Match(input,IDENT,Follow._IDENT_in_synpred245_Java14270); if (state.failed) return;
 					DebugLocation(988, 27);
-					PushFollow(Follow._arguments_in_synpred245_Java14270);
+					PushFollow(Follow._arguments_in_synpred245_Java14272);
 					arguments();
 					PopFollow();
 					if (state.failed) return;
@@ -31776,7 +31778,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:990:17: THIS
 				{
 				DebugLocation(990, 17);
-				Match(input,THIS,Follow._THIS_in_synpred245_Java14345); if (state.failed) return;
+				Match(input,THIS,Follow._THIS_in_synpred245_Java14347); if (state.failed) return;
 
 				}
 				break;
@@ -31785,9 +31787,9 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:991:17: Super= SUPER arguments
 				{
 				DebugLocation(991, 22);
-				Super=(IToken)Match(input,SUPER,Follow._SUPER_in_synpred245_Java14411); if (state.failed) return;
+				Super=(IToken)Match(input,SUPER,Follow._SUPER_in_synpred245_Java14413); if (state.failed) return;
 				DebugLocation(991, 29);
-				PushFollow(Follow._arguments_in_synpred245_Java14413);
+				PushFollow(Follow._arguments_in_synpred245_Java14415);
 				arguments();
 				PopFollow();
 				if (state.failed) return;
@@ -31799,7 +31801,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:992:17: innerNewExpression
 				{
 				DebugLocation(992, 17);
-				PushFollow(Follow._innerNewExpression_in_synpred245_Java14461);
+				PushFollow(Follow._innerNewExpression_in_synpred245_Java14463);
 				innerNewExpression();
 				PopFollow();
 				if (state.failed) return;
@@ -31839,7 +31841,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1012:10: mapDeclaration
 			{
 			DebugLocation(1012, 10);
-			PushFollow(Follow._mapDeclaration_in_synpred251_Java14706);
+			PushFollow(Follow._mapDeclaration_in_synpred251_Java14708);
 			mapDeclaration();
 			PopFollow();
 			if (state.failed) return;
@@ -31872,7 +31874,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1013:10: setDeclaration
 			{
 			DebugLocation(1013, 10);
-			PushFollow(Follow._setDeclaration_in_synpred252_Java14725);
+			PushFollow(Follow._setDeclaration_in_synpred252_Java14727);
 			setDeclaration();
 			PopFollow();
 			if (state.failed) return;
@@ -31905,7 +31907,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1016:27: classBody
 			{
 			DebugLocation(1016, 27);
-			PushFollow(Follow._classBody_in_synpred254_Java14816);
+			PushFollow(Follow._classBody_in_synpred254_Java14818);
 			classBody();
 			PopFollow();
 			if (state.failed) return;
@@ -31938,7 +31940,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1023:64: classBody
 			{
 			DebugLocation(1023, 64);
-			PushFollow(Follow._classBody_in_synpred256_Java14922);
+			PushFollow(Follow._classBody_in_synpred256_Java14924);
 			classBody();
 			PopFollow();
 			if (state.failed) return;
@@ -31971,14 +31973,14 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1029:37: LBRACK expression RBRACK
 			{
 			DebugLocation(1029, 37);
-			Match(input,LBRACK,Follow._LBRACK_in_synpred258_Java14989); if (state.failed) return;
+			Match(input,LBRACK,Follow._LBRACK_in_synpred258_Java14991); if (state.failed) return;
 			DebugLocation(1029, 45);
-			PushFollow(Follow._expression_in_synpred258_Java14992);
+			PushFollow(Follow._expression_in_synpred258_Java14994);
 			expression();
 			PopFollow();
 			if (state.failed) return;
 			DebugLocation(1029, 56);
-			Match(input,RBRACK,Follow._RBRACK_in_synpred258_Java14994); if (state.failed) return;
+			Match(input,RBRACK,Follow._RBRACK_in_synpred258_Java14996); if (state.failed) return;
 
 			}
 
@@ -32013,7 +32015,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:3: '{' ( modifier )? getRule ( SEMI | block ) ( ( modifier )? setRule ( SEMI | block ) )? '}'
 			{
 			DebugLocation(1052, 3);
-			Match(input,LCURLY,Follow._LCURLY_in_synpred275_Java15168); if (state.failed) return;
+			Match(input,LCURLY,Follow._LCURLY_in_synpred275_Java15170); if (state.failed) return;
 			DebugLocation(1052, 7);
 			// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:7: ( modifier )?
 			int alt248=2;
@@ -32033,7 +32035,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:7: modifier
 				{
 				DebugLocation(1052, 7);
-				PushFollow(Follow._modifier_in_synpred275_Java15170);
+				PushFollow(Follow._modifier_in_synpred275_Java15172);
 				modifier();
 				PopFollow();
 				if (state.failed) return;
@@ -32045,7 +32047,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(248); }
 
 			DebugLocation(1052, 17);
-			PushFollow(Follow._getRule_in_synpred275_Java15173);
+			PushFollow(Follow._getRule_in_synpred275_Java15175);
 			getRule();
 			PopFollow();
 			if (state.failed) return;
@@ -32079,7 +32081,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:26: SEMI
 				{
 				DebugLocation(1052, 26);
-				Match(input,SEMI,Follow._SEMI_in_synpred275_Java15176); if (state.failed) return;
+				Match(input,SEMI,Follow._SEMI_in_synpred275_Java15178); if (state.failed) return;
 
 				}
 				break;
@@ -32088,7 +32090,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:31: block
 				{
 				DebugLocation(1052, 31);
-				PushFollow(Follow._block_in_synpred275_Java15178);
+				PushFollow(Follow._block_in_synpred275_Java15180);
 				block();
 				PopFollow();
 				if (state.failed) return;
@@ -32136,7 +32138,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:39: modifier
 					{
 					DebugLocation(1052, 39);
-					PushFollow(Follow._modifier_in_synpred275_Java15182);
+					PushFollow(Follow._modifier_in_synpred275_Java15184);
 					modifier();
 					PopFollow();
 					if (state.failed) return;
@@ -32148,7 +32150,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 				} finally { DebugExitSubRule(250); }
 
 				DebugLocation(1052, 49);
-				PushFollow(Follow._setRule_in_synpred275_Java15185);
+				PushFollow(Follow._setRule_in_synpred275_Java15187);
 				setRule();
 				PopFollow();
 				if (state.failed) return;
@@ -32182,7 +32184,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:58: SEMI
 					{
 					DebugLocation(1052, 58);
-					Match(input,SEMI,Follow._SEMI_in_synpred275_Java15188); if (state.failed) return;
+					Match(input,SEMI,Follow._SEMI_in_synpred275_Java15190); if (state.failed) return;
 
 					}
 					break;
@@ -32191,7 +32193,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 					// C:\\Users\\Maxim\\Desktop\\documents-export-2014-06-09 (1)\\ApexParser\\Java.g:1052:63: block
 					{
 					DebugLocation(1052, 63);
-					PushFollow(Follow._block_in_synpred275_Java15190);
+					PushFollow(Follow._block_in_synpred275_Java15192);
 					block();
 					PopFollow();
 					if (state.failed) return;
@@ -32210,7 +32212,7 @@ public partial class JavaParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(252); }
 
 			DebugLocation(1052, 72);
-			Match(input,RCURLY,Follow._RCURLY_in_synpred275_Java15195); if (state.failed) return;
+			Match(input,RCURLY,Follow._RCURLY_in_synpred275_Java15197); if (state.failed) return;
 
 			}
 
@@ -34798,524 +34800,524 @@ public partial class JavaParser : Antlr.Runtime.Parser
 		public static readonly BitSet _type_in_classScopeDeclarations5834 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
 		public static readonly BitSet _IDENT_in_classScopeDeclarations5836 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
 		public static readonly BitSet _propertyDeclaration_in_classScopeDeclarations5838 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericTypeParameterList_in_classScopeDeclarations5858 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
-		public static readonly BitSet _type_in_classScopeDeclarations5891 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_classScopeDeclarations5893 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_classScopeDeclarations5895 = new BitSet(new ulong[]{0x0UL,0x18000000000UL,0x100000200000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_classScopeDeclarations5897 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_classScopeDeclarations5900 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _block_in_classScopeDeclarations5904 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_classScopeDeclarations5908 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VOID_in_classScopeDeclarations5970 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_classScopeDeclarations5972 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_classScopeDeclarations5974 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_classScopeDeclarations5976 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _block_in_classScopeDeclarations5980 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_classScopeDeclarations5984 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_classScopeDeclarations6043 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_classScopeDeclarations6045 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000000000UL});
-		public static readonly BitSet _throwsClause_in_classScopeDeclarations6047 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _block_in_classScopeDeclarations6050 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_in_classScopeDeclarations6116 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _classFieldDeclaratorList_in_classScopeDeclarations6118 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_classScopeDeclarations6120 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_in_classScopeDeclarations6159 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _classFieldDeclaratorList_in_classScopeDeclarations6161 = new BitSet(new ulong[]{0x10000000000002UL,0x0UL,0x200000UL});
-		public static readonly BitSet _DOT_in_classScopeDeclarations6163 = new BitSet(new ulong[]{0x2UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_classScopeDeclarations6166 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _typeDeclaration_in_classScopeDeclarations6212 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_classScopeDeclarations6222 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _modifierList_in_interfaceScopeDeclarations6242 = new BitSet(new ulong[]{0x40000422000000UL,0x1040081000020UL,0x200000008000000UL});
-		public static readonly BitSet _genericTypeParameterList_in_interfaceScopeDeclarations6256 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
-		public static readonly BitSet _type_in_interfaceScopeDeclarations6275 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_interfaceScopeDeclarations6277 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_interfaceScopeDeclarations6279 = new BitSet(new ulong[]{0x0UL,0x8000000000UL,0x100000200000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_interfaceScopeDeclarations6281 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_interfaceScopeDeclarations6284 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_interfaceScopeDeclarations6287 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VOID_in_interfaceScopeDeclarations6345 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_interfaceScopeDeclarations6347 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_interfaceScopeDeclarations6349 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_interfaceScopeDeclarations6351 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_interfaceScopeDeclarations6354 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_in_interfaceScopeDeclarations6417 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _interfaceFieldDeclaratorList_in_interfaceScopeDeclarations6419 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_interfaceScopeDeclarations6421 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _typeDeclaration_in_interfaceScopeDeclarations6466 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_interfaceScopeDeclarations6476 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _classFieldDeclarator_in_classFieldDeclaratorList6496 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _COMMA_in_classFieldDeclaratorList6499 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _classFieldDeclarator_in_classFieldDeclaratorList6501 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _variableDeclaratorId_in_classFieldDeclarator6540 = new BitSet(new ulong[]{0x100002UL});
-		public static readonly BitSet _ASSIGN_in_classFieldDeclarator6543 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134500A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _variableInitializer_in_classFieldDeclarator6545 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _interfaceFieldDeclarator_in_interfaceFieldDeclaratorList6590 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _COMMA_in_interfaceFieldDeclaratorList6593 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _interfaceFieldDeclarator_in_interfaceFieldDeclaratorList6595 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _variableDeclaratorId_in_interfaceFieldDeclarator6634 = new BitSet(new ulong[]{0x100000UL});
-		public static readonly BitSet _ASSIGN_in_interfaceFieldDeclarator6636 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134500A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _variableInitializer_in_interfaceFieldDeclarator6638 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_variableDeclaratorId6680 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_variableDeclaratorId6683 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arrayInitializer_in_variableInitializer6703 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_variableInitializer6713 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _brokenExpression_in_variableInitializer6723 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LBRACK_in_arrayDeclarator6754 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
-		public static readonly BitSet _RBRACK_in_arrayDeclarator6756 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arrayDeclarator_in_arrayDeclaratorList6790 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
-		public static readonly BitSet _LCURLY_in_arrayInitializer6835 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134500A1800064UL,0x200820C18040020UL});
-		public static readonly BitSet _variableInitializer_in_arrayInitializer6838 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
-		public static readonly BitSet _COMMA_in_arrayInitializer6841 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134500A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _variableInitializer_in_arrayInitializer6843 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
-		public static readonly BitSet _COMMA_in_arrayInitializer6847 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_arrayInitializer6852 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _THROWS_in_throwsClause6894 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _qualifiedIdentList_in_throwsClause6896 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _modifier_in_modifierList6933 = new BitSet(new ulong[]{0x200012UL,0x200000000080008UL,0x6900418280006804UL});
-		public static readonly BitSet _PUBLIC_in_modifier6974 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _OVERRIDE_in_modifier6984 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VIRTUAL_in_modifier6994 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _WITH_SHARING_in_modifier7004 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _WITHOUT_SHARING_in_modifier7012 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _PROTECTED_in_modifier7022 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _PRIVATE_in_modifier7032 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _STATIC_in_modifier7042 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ABSTRACT_in_modifier7052 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _NATIVE_in_modifier7062 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SYNCHRONIZED_in_modifier7072 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TRANSIENT_in_modifier7082 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VOLATILE_in_modifier7092 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _STRICTFP_in_modifier7102 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _GLOBAL_in_modifier7110 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TEST_METHOD_in_modifier7120 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localModifier_in_modifier7130 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localModifier_in_localModifierList7149 = new BitSet(new ulong[]{0x200002UL,0x8UL});
-		public static readonly BitSet _FINAL_in_localModifier7190 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _annotation_in_localModifier7200 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _simpleType_in_type7219 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _objectType_in_type7229 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _primitiveType_in_simpleType7249 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_simpleType7251 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _qualifiedTypeIdent_in_objectType7298 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_objectType7300 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _qualifiedTypeIdentSimplified_in_objectTypeSimplified7340 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_objectTypeSimplified7342 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _typeIdent_in_qualifiedTypeIdent7382 = new BitSet(new ulong[]{0x10000000000002UL});
-		public static readonly BitSet _DOT_in_qualifiedTypeIdent7385 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _typeIdent_in_qualifiedTypeIdent7387 = new BitSet(new ulong[]{0x10000000000002UL});
-		public static readonly BitSet _typeIdentSimplified_in_qualifiedTypeIdentSimplified7427 = new BitSet(new ulong[]{0x10000000000002UL});
-		public static readonly BitSet _DOT_in_qualifiedTypeIdentSimplified7430 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _typeIdentSimplified_in_qualifiedTypeIdentSimplified7432 = new BitSet(new ulong[]{0x10000000000002UL});
-		public static readonly BitSet _IDENT_in_typeIdent7472 = new BitSet(new ulong[]{0x2UL,0x40000000000UL});
-		public static readonly BitSet _genericTypeArgumentList_in_typeIdent7475 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_typeIdentSimplified7495 = new BitSet(new ulong[]{0x2UL,0x40000000000UL});
-		public static readonly BitSet _genericTypeArgumentListSimplified_in_typeIdentSimplified7498 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LESS_THAN_in_genericTypeArgumentList7613 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
-		public static readonly BitSet _genericTypeArgument_in_genericTypeArgumentList7615 = new BitSet(new ulong[]{0x40000400000UL,0x200000UL,0x2000000UL});
-		public static readonly BitSet _COMMA_in_genericTypeArgumentList7618 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
-		public static readonly BitSet _genericTypeArgument_in_genericTypeArgumentList7620 = new BitSet(new ulong[]{0x40000400000UL,0x200000UL,0x2000000UL});
-		public static readonly BitSet _genericTypeListClosing_in_genericTypeArgumentList7624 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_in_genericTypeArgument7662 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _QUESTION_in_genericTypeArgument7672 = new BitSet(new ulong[]{0x8000000000000002UL,0x0UL,0x800000000UL});
-		public static readonly BitSet _genericWildcardBoundType_in_genericTypeArgument7674 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _set_in_genericWildcardBoundType7716 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_genericWildcardBoundType7725 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LESS_THAN_in_genericTypeArgumentListSimplified7744 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
-		public static readonly BitSet _genericTypeArgumentSimplified_in_genericTypeArgumentListSimplified7746 = new BitSet(new ulong[]{0x40000400000UL,0x200000UL,0x2000000UL});
-		public static readonly BitSet _COMMA_in_genericTypeArgumentListSimplified7749 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
-		public static readonly BitSet _genericTypeArgumentSimplified_in_genericTypeArgumentListSimplified7751 = new BitSet(new ulong[]{0x40000400000UL,0x200000UL,0x2000000UL});
-		public static readonly BitSet _genericTypeListClosing_in_genericTypeArgumentListSimplified7755 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_in_genericTypeArgumentSimplified7797 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _QUESTION_in_genericTypeArgumentSimplified7807 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _qualifiedIdentifier_in_qualifiedIdentList7830 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _COMMA_in_qualifiedIdentList7833 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _qualifiedIdentifier_in_qualifiedIdentList7836 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _LPAREN_in_formalParameterList7861 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8100000UL});
-		public static readonly BitSet _formalParameterStandardDecl_in_formalParameterList7889 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x100000UL});
-		public static readonly BitSet _COMMA_in_formalParameterList7892 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
-		public static readonly BitSet _formalParameterStandardDecl_in_formalParameterList7894 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x100000UL});
-		public static readonly BitSet _COMMA_in_formalParameterList7899 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
-		public static readonly BitSet _formalParameterVarArgDecl_in_formalParameterList7901 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _formalParameterVarArgDecl_in_formalParameterList7958 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_formalParameterList8035 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localModifierList_in_formalParameterStandardDecl8058 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_formalParameterStandardDecl8060 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _variableDeclaratorId_in_formalParameterStandardDecl8062 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localModifierList_in_formalParameterVarArgDecl8106 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_formalParameterVarArgDecl8108 = new BitSet(new ulong[]{0x80000000000000UL});
-		public static readonly BitSet _ELLIPSIS_in_formalParameterVarArgDecl8110 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _variableDeclaratorId_in_formalParameterVarArgDecl8112 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_qualifiedIdentifier8160 = new BitSet(new ulong[]{0x10000000000002UL});
-		public static readonly BitSet _DOT_in_qualifiedIdentifier8203 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_qualifiedIdentifier8207 = new BitSet(new ulong[]{0x10000000000002UL});
-		public static readonly BitSet _annotation_in_annotationList8260 = new BitSet(new ulong[]{0x200002UL});
-		public static readonly BitSet _AT_in_annotation8298 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _qualifiedIdentifier_in_annotation8301 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
-		public static readonly BitSet _annotationInit_in_annotation8303 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LPAREN_in_annotationInit8327 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134500A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _annotationInitializers_in_annotationInit8329 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_annotationInit8331 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _annotationInitializer_in_annotationInitializers8368 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _COMMA_in_annotationInitializers8371 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _annotationInitializer_in_annotationInitializers8373 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _annotationElementValue_in_annotationInitializers8403 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_annotationInitializer8444 = new BitSet(new ulong[]{0x100000UL});
-		public static readonly BitSet _ASSIGN_in_annotationInitializer8447 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134500A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _annotationElementValue_in_annotationInitializer8450 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _annotationElementValueExpression_in_annotationElementValue8473 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _annotation_in_annotationElementValue8483 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _annotationElementValueArrayInitializer_in_annotationElementValue8493 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _conditionalExpression_in_annotationElementValueExpression8516 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_annotationElementValueArrayInitializer8556 = new BitSet(new ulong[]{0x40C40C22200000UL,0xAC134500A1800064UL,0x200820C18040020UL});
-		public static readonly BitSet _annotationElementValue_in_annotationElementValueArrayInitializer8559 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
-		public static readonly BitSet _COMMA_in_annotationElementValueArrayInitializer8562 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134500A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _annotationElementValue_in_annotationElementValueArrayInitializer8564 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
-		public static readonly BitSet _COMMA_in_annotationElementValueArrayInitializer8571 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_annotationElementValueArrayInitializer8575 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _AT_in_annotationTypeDeclaration8618 = new BitSet(new ulong[]{0x0UL,0x200000000UL});
-		public static readonly BitSet _INTERFACE_in_annotationTypeDeclaration8620 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_annotationTypeDeclaration8622 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _annotationBody_in_annotationTypeDeclaration8624 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_annotationBody8667 = new BitSet(new ulong[]{0x240001422200010UL,0x201000281080028UL,0x6900418288046804UL});
-		public static readonly BitSet _annotationScopeDeclarations_in_annotationBody8669 = new BitSet(new ulong[]{0x240001422200010UL,0x201000281080028UL,0x6900418288046804UL});
-		public static readonly BitSet _RCURLY_in_annotationBody8672 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _modifierList_in_annotationScopeDeclarations8714 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_annotationScopeDeclarations8716 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_annotationScopeDeclarations8730 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _LPAREN_in_annotationScopeDeclarations8732 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_annotationScopeDeclarations8734 = new BitSet(new ulong[]{0x1000000000000UL,0x0UL,0x200000UL});
-		public static readonly BitSet _annotationDefaultValue_in_annotationScopeDeclarations8736 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_annotationScopeDeclarations8739 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _classFieldDeclaratorList_in_annotationScopeDeclarations8781 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_annotationScopeDeclarations8783 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _typeDeclaration_in_annotationScopeDeclarations8828 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEFAULT_in_annotationDefaultValue8851 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134500A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _annotationElementValue_in_annotationDefaultValue8854 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localVariableDeclaration_in_blockStatement8875 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_blockStatement8877 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _typeDeclaration_in_blockStatement8888 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _statement_in_blockStatement8898 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _brokenExpression_in_blockStatement8907 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LPAREN_in_brokenExpression8927 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_brokenExpression8930 = new BitSet(new ulong[]{0x10000000000002UL,0x0UL,0x200000UL});
-		public static readonly BitSet _DOT_in_brokenExpression8932 = new BitSet(new ulong[]{0x2UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_brokenExpression8935 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _dmlOperator_in_dmlOperation8947 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_dmlOperation8949 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_dmlOperation8951 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_dmlOperator8970 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_dmlOperator8983 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_dmlOperator8996 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_dmlOperator9009 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_block9030 = new BitSet(new ulong[]{0x248E01C26200010UL,0xAE134502A388016CUL,0x7B01CBAE982C6824UL});
-		public static readonly BitSet _blockStatement_in_block9040 = new BitSet(new ulong[]{0x248E01C26200010UL,0xAE134502A388016CUL,0x7B01CBAE982C6824UL});
-		public static readonly BitSet _RCURLY_in_block9064 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localModifierList_in_localVariableDeclaration9094 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_localVariableDeclaration9096 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _classFieldDeclaratorList_in_localVariableDeclaration9098 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _block_in_statement9151 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IF_in_statement9161 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement9163 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_statement9167 = new BitSet(new ulong[]{0x100000000000002UL});
-		public static readonly BitSet _ELSE_in_statement9182 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_statement9186 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _FOR_in_statement9352 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _LPAREN_in_statement9354 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134400A180006CUL,0x200820C18200020UL});
-		public static readonly BitSet _forInit_in_statement9369 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_statement9371 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18200020UL});
-		public static readonly BitSet _forCondition_in_statement9373 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_statement9375 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18100020UL});
-		public static readonly BitSet _forUpdater_in_statement9377 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_statement9379 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_statement9381 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localModifierList_in_statement9416 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_statement9418 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_statement9420 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _COLON_in_statement9422 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_statement9424 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_statement9426 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_statement9428 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _WHILE_in_statement9468 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement9470 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_statement9472 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DO_in_statement9521 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_statement9523 = new BitSet(new ulong[]{0x0UL,0x0UL,0x1000000000000000UL});
-		public static readonly BitSet _WHILE_in_statement9525 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement9527 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_statement9529 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TRY_in_statement9570 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _block_in_statement9572 = new BitSet(new ulong[]{0x100000000UL,0x10UL});
-		public static readonly BitSet _catches_in_statement9575 = new BitSet(new ulong[]{0x2UL,0x10UL});
-		public static readonly BitSet _finallyClause_in_statement9577 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _finallyClause_in_statement9582 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SWITCH_in_statement9625 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement9627 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _LCURLY_in_statement9629 = new BitSet(new ulong[]{0x1000040000000UL});
-		public static readonly BitSet _switchBlockLabels_in_statement9631 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_statement9633 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SYNCHRONIZED_in_statement9659 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _parenthesizedExpression_in_statement9661 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _block_in_statement9663 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _RETURN_in_statement9709 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18200020UL});
-		public static readonly BitSet _expression_in_statement9711 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_statement9714 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _THROW_in_statement9778 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_statement9780 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_statement9782 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _BREAK_in_statement9847 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x200000UL});
-		public static readonly BitSet _IDENT_in_statement9849 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_statement9852 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _CONTINUE_in_statement9922 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x200000UL});
-		public static readonly BitSet _IDENT_in_statement9924 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_statement9927 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_statement9994 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _COLON_in_statement9996 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_statement9998 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _dmlOperation_in_statement10065 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_statement10075 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_statement10077 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_statement10090 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_statement10100 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _catchClause_in_catches10139 = new BitSet(new ulong[]{0x100000002UL});
-		public static readonly BitSet _CATCH_in_catchClause10181 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _LPAREN_in_catchClause10184 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
-		public static readonly BitSet _formalParameterStandardDecl_in_catchClause10187 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_catchClause10189 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _block_in_catchClause10192 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _FINALLY_in_finallyClause10211 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _block_in_finallyClause10213 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _switchCaseLabels_in_switchBlockLabels10245 = new BitSet(new ulong[]{0x1000040000000UL});
-		public static readonly BitSet _switchDefaultLabel_in_switchBlockLabels10247 = new BitSet(new ulong[]{0x40000000UL});
-		public static readonly BitSet _switchCaseLabels_in_switchBlockLabels10250 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _switchCaseLabel_in_switchCaseLabels10295 = new BitSet(new ulong[]{0x40000002UL});
-		public static readonly BitSet _CASE_in_switchCaseLabel10323 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_switchCaseLabel10326 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _COLON_in_switchCaseLabel10328 = new BitSet(new ulong[]{0x248E01C26200012UL,0xAE134502A388016CUL,0x7B01CBAE98286824UL});
-		public static readonly BitSet _blockStatement_in_switchCaseLabel10331 = new BitSet(new ulong[]{0x248E01C26200012UL,0xAE134502A388016CUL,0x7B01CBAE98286824UL});
-		public static readonly BitSet _DEFAULT_in_switchDefaultLabel10355 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _COLON_in_switchDefaultLabel10358 = new BitSet(new ulong[]{0x248E01C26200012UL,0xAE134502A388016CUL,0x7B01CBAE98286824UL});
-		public static readonly BitSet _blockStatement_in_switchDefaultLabel10361 = new BitSet(new ulong[]{0x248E01C26200012UL,0xAE134502A388016CUL,0x7B01CBAE98286824UL});
-		public static readonly BitSet _localVariableDeclaration_in_forInit10385 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expressionList_in_forInit10407 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_forCondition10495 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expressionList_in_forUpdater10537 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LPAREN_in_parenthesizedExpression10577 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_parenthesizedExpression10579 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_parenthesizedExpression10581 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_expressionList10622 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _COMMA_in_expressionList10625 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_expressionList10628 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _assignmentExpression_in_expression10652 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _conditionalExpression_in_assignmentExpression10682 = new BitSet(new ulong[]{0x4000000900042UL,0x120000000000000UL,0x45000042UL,0x2UL});
-		public static readonly BitSet _ASSIGN_in_assignmentExpression10701 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _PLUS_ASSIGN_in_assignmentExpression10720 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _MINUS_ASSIGN_in_assignmentExpression10739 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _STAR_ASSIGN_in_assignmentExpression10758 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _DIV_ASSIGN_in_assignmentExpression10777 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _AND_ASSIGN_in_assignmentExpression10796 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _OR_ASSIGN_in_assignmentExpression10815 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _XOR_ASSIGN_in_assignmentExpression10834 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _MOD_ASSIGN_in_assignmentExpression10853 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _SHIFT_LEFT_ASSIGN_in_assignmentExpression10872 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _SHIFT_RIGHT_ASSIGN_in_assignmentExpression10891 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _BIT_SHIFT_RIGHT_ASSIGN_in_assignmentExpression10910 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _assignmentExpression_in_assignmentExpression10932 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _logicalOrExpression_in_conditionalExpression10957 = new BitSet(new ulong[]{0x2UL,0x0UL,0x10000UL});
-		public static readonly BitSet _QUESTION_in_conditionalExpression10960 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _assignmentExpression_in_conditionalExpression10963 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _COLON_in_conditionalExpression10965 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _conditionalExpression_in_conditionalExpression10968 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _logicalAndExpression_in_logicalOrExpression10989 = new BitSet(new ulong[]{0x2UL,0x800000000000UL});
-		public static readonly BitSet _LOGICAL_OR_in_logicalOrExpression10992 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _logicalAndExpression_in_logicalOrExpression10995 = new BitSet(new ulong[]{0x2UL,0x800000000000UL});
-		public static readonly BitSet _inclusiveOrExpression_in_logicalAndExpression11016 = new BitSet(new ulong[]{0x2UL,0x200000000000UL});
-		public static readonly BitSet _LOGICAL_AND_in_logicalAndExpression11019 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _inclusiveOrExpression_in_logicalAndExpression11022 = new BitSet(new ulong[]{0x2UL,0x200000000000UL});
-		public static readonly BitSet _exclusiveOrExpression_in_inclusiveOrExpression11043 = new BitSet(new ulong[]{0x2UL,0x0UL,0x1UL});
-		public static readonly BitSet _OR_in_inclusiveOrExpression11046 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _exclusiveOrExpression_in_inclusiveOrExpression11049 = new BitSet(new ulong[]{0x2UL,0x0UL,0x1UL});
-		public static readonly BitSet _andExpression_in_exclusiveOrExpression11070 = new BitSet(new ulong[]{0x2UL,0x0UL,0x0UL,0x1UL});
-		public static readonly BitSet _XOR_in_exclusiveOrExpression11073 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _andExpression_in_exclusiveOrExpression11076 = new BitSet(new ulong[]{0x2UL,0x0UL,0x0UL,0x1UL});
-		public static readonly BitSet _equalityExpression_in_andExpression11097 = new BitSet(new ulong[]{0x22UL});
-		public static readonly BitSet _AND_in_andExpression11100 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _equalityExpression_in_andExpression11103 = new BitSet(new ulong[]{0x22UL});
-		public static readonly BitSet _instanceOfExpression_in_equalityExpression11124 = new BitSet(new ulong[]{0x800000000000002UL,0x1000000000000000UL});
-		public static readonly BitSet _EQUAL_in_equalityExpression11143 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _NOT_EQUAL_in_equalityExpression11162 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _instanceOfExpression_in_equalityExpression11192 = new BitSet(new ulong[]{0x800000000000002UL,0x1000000000000000UL});
-		public static readonly BitSet _relationalExpression_in_instanceOfExpression11222 = new BitSet(new ulong[]{0x2UL,0x40000000UL});
-		public static readonly BitSet _INSTANCEOF_in_instanceOfExpression11225 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_instanceOfExpression11228 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _shiftExpression_in_relationalExpression11249 = new BitSet(new ulong[]{0x2UL,0x60000300000UL});
-		public static readonly BitSet _LESS_OR_EQUAL_in_relationalExpression11268 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _GREATER_OR_EQUAL_in_relationalExpression11287 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _LESS_THAN_in_relationalExpression11306 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _GREATER_THAN_in_relationalExpression11325 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _shiftExpression_in_relationalExpression11354 = new BitSet(new ulong[]{0x2UL,0x60000300000UL});
-		public static readonly BitSet _additiveExpression_in_shiftExpression11388 = new BitSet(new ulong[]{0x400002UL,0x0UL,0x2800000UL});
-		public static readonly BitSet _BIT_SHIFT_RIGHT_in_shiftExpression11406 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _SHIFT_RIGHT_in_shiftExpression11425 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _SHIFT_LEFT_in_shiftExpression11444 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _additiveExpression_in_shiftExpression11473 = new BitSet(new ulong[]{0x400002UL,0x0UL,0x2800000UL});
-		public static readonly BitSet _multiplicativeExpression_in_additiveExpression11503 = new BitSet(new ulong[]{0x2UL,0x10000000000000UL,0x20UL});
-		public static readonly BitSet _PLUS_in_additiveExpression11521 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _MINUS_in_additiveExpression11540 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _multiplicativeExpression_in_additiveExpression11569 = new BitSet(new ulong[]{0x2UL,0x10000000000000UL,0x20UL});
-		public static readonly BitSet _unaryExpression_in_multiplicativeExpression11599 = new BitSet(new ulong[]{0x2000000000002UL,0x40000000000000UL,0x20000000UL});
-		public static readonly BitSet _STAR_in_multiplicativeExpression11618 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _DIV_in_multiplicativeExpression11637 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _MOD_in_multiplicativeExpression11656 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _unaryExpression_in_multiplicativeExpression11685 = new BitSet(new ulong[]{0x2000000000002UL,0x40000000000000UL,0x20000000UL});
-		public static readonly BitSet _PLUS_in_unaryExpression11719 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _unaryExpression_in_unaryExpression11721 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MINUS_in_unaryExpression11748 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _unaryExpression_in_unaryExpression11750 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _INC_in_unaryExpression11776 = new BitSet(new ulong[]{0x40800C22000000UL,0xA403040081800064UL,0x200820C18000000UL});
-		public static readonly BitSet _postfixedExpression_in_unaryExpression11778 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEC_in_unaryExpression11802 = new BitSet(new ulong[]{0x40800C22000000UL,0xA403040081800064UL,0x200820C18000000UL});
-		public static readonly BitSet _postfixedExpression_in_unaryExpression11804 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _unaryExpressionNotPlusMinus_in_unaryExpression11828 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _NOT_in_unaryExpressionNotPlusMinus11847 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _unaryExpression_in_unaryExpressionNotPlusMinus11849 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LOGICAL_NOT_in_unaryExpressionNotPlusMinus11896 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _unaryExpression_in_unaryExpressionNotPlusMinus11898 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LPAREN_in_unaryExpressionNotPlusMinus11937 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_unaryExpressionNotPlusMinus11939 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_unaryExpressionNotPlusMinus11941 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _unaryExpression_in_unaryExpressionNotPlusMinus11943 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _postfixedExpression_in_unaryExpressionNotPlusMinus11978 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _primaryExpression_in_postfixedExpression12014 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
-		public static readonly BitSet _DOT_in_postfixedExpression12076 = new BitSet(new ulong[]{0x0UL,0x400040001000000UL,0x20800000000UL});
-		public static readonly BitSet _genericTypeArgumentListSimplified_in_postfixedExpression12126 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_postfixedExpression12208 = new BitSet(new ulong[]{0x10400000000002UL,0x2008020000000UL});
-		public static readonly BitSet _arguments_in_postfixedExpression12287 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
-		public static readonly BitSet _THIS_in_postfixedExpression12360 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
-		public static readonly BitSet _SUPER_in_postfixedExpression12423 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_postfixedExpression12425 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
-		public static readonly BitSet _SUPER_in_postfixedExpression12478 = new BitSet(new ulong[]{0x10000000000000UL});
-		public static readonly BitSet _DOT_in_postfixedExpression12482 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_postfixedExpression12484 = new BitSet(new ulong[]{0x10400000000002UL,0x2008020000000UL});
-		public static readonly BitSet _arguments_in_postfixedExpression12551 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
-		public static readonly BitSet _innerNewExpression_in_postfixedExpression12622 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
-		public static readonly BitSet _LBRACK_in_postfixedExpression12679 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_postfixedExpression12681 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
-		public static readonly BitSet _RBRACK_in_postfixedExpression12683 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
-		public static readonly BitSet _INC_in_postfixedExpression12744 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEC_in_postfixedExpression12768 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _parenthesizedExpression_in_primaryExpression12816 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _literal_in_primaryExpression12826 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _newExpression_in_primaryExpression12836 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _qualifiedIdentExpression_in_primaryExpression12846 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericTypeArgumentListSimplified_in_primaryExpression12856 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x20800000000UL});
-		public static readonly BitSet _SUPER_in_primaryExpression12871 = new BitSet(new ulong[]{0x10000000000000UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_primaryExpression12889 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_primaryExpression12949 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_primaryExpression12951 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_primaryExpression12953 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_primaryExpression13020 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_primaryExpression13022 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _THIS_in_primaryExpression13075 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_primaryExpression13077 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _THIS_in_primaryExpression13150 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_primaryExpression13218 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SUPER_in_primaryExpression13283 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_primaryExpression13285 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SUPER_in_primaryExpression13341 = new BitSet(new ulong[]{0x10000000000000UL});
-		public static readonly BitSet _DOT_in_primaryExpression13343 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_primaryExpression13345 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_primaryExpression13369 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _primitiveType_in_primaryExpression13511 = new BitSet(new ulong[]{0x10000000000000UL,0x8000000000UL});
-		public static readonly BitSet _arrayDeclarator_in_primaryExpression13570 = new BitSet(new ulong[]{0x10000000000000UL,0x8000000000UL});
-		public static readonly BitSet _DOT_in_primaryExpression13633 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _CLASS_in_primaryExpression13635 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VOID_in_primaryExpression13695 = new BitSet(new ulong[]{0x10000000000000UL});
-		public static readonly BitSet _DOT_in_primaryExpression13697 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _CLASS_in_primaryExpression13699 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _qualifiedIdentifier_in_qualifiedIdentExpression13779 = new BitSet(new ulong[]{0x10000000000002UL,0x2008000000000UL});
-		public static readonly BitSet _arrayDeclarator_in_qualifiedIdentExpression13849 = new BitSet(new ulong[]{0x10000000000000UL,0x8000000000UL});
-		public static readonly BitSet _DOT_in_qualifiedIdentExpression13917 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _CLASS_in_qualifiedIdentExpression13919 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arguments_in_qualifiedIdentExpression13989 = new BitSet(new ulong[]{0x2UL,0x10000000000UL});
-		public static readonly BitSet _block_in_qualifiedIdentExpression13991 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_qualifiedIdentExpression14052 = new BitSet(new ulong[]{0x1000000000UL,0x400040000000000UL,0x20800000000UL});
-		public static readonly BitSet _CLASS_in_qualifiedIdentExpression14070 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericTypeArgumentListSimplified_in_qualifiedIdentExpression14133 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x800000000UL});
-		public static readonly BitSet _SUPER_in_qualifiedIdentExpression14158 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_qualifiedIdentExpression14160 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SUPER_in_qualifiedIdentExpression14210 = new BitSet(new ulong[]{0x10000000000000UL});
-		public static readonly BitSet _DOT_in_qualifiedIdentExpression14214 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_qualifiedIdentExpression14216 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_qualifiedIdentExpression14218 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_qualifiedIdentExpression14268 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_qualifiedIdentExpression14270 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _THIS_in_qualifiedIdentExpression14345 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SUPER_in_qualifiedIdentExpression14411 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_qualifiedIdentExpression14413 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _innerNewExpression_in_qualifiedIdentExpression14461 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_mapDeclaration14531 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_mapDeclaration14533 = new BitSet(new ulong[]{0x0UL,0x0UL,0x0UL,0x4UL});
-		public static readonly BitSet _194_in_mapDeclaration14535 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_mapDeclaration14537 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
-		public static readonly BitSet _COMMA_in_mapDeclaration14540 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_mapDeclaration14543 = new BitSet(new ulong[]{0x0UL,0x0UL,0x0UL,0x4UL});
-		public static readonly BitSet _194_in_mapDeclaration14545 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_mapDeclaration14547 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_mapDeclaration14552 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_setDeclaration14562 = new BitSet(new ulong[]{0x40C40C22000000UL,0xAC134400A1800064UL,0x200820C18040020UL});
-		public static readonly BitSet _expression_in_setDeclaration14564 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
-		public static readonly BitSet _COMMA_in_setDeclaration14568 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_setDeclaration14571 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_setDeclaration14576 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _NEW_in_newExpression14590 = new BitSet(new ulong[]{0x40000422000000UL,0x1040081000020UL,0x8000000UL});
-		public static readonly BitSet _primitiveType_in_newExpression14619 = new BitSet(new ulong[]{0x0UL,0x8000000000UL});
-		public static readonly BitSet _newArrayConstruction_in_newExpression14621 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericTypeArgumentListSimplified_in_newExpression14665 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _qualifiedTypeIdentSimplified_in_newExpression14668 = new BitSet(new ulong[]{0x0UL,0x2018000000000UL});
-		public static readonly BitSet _mapDeclaration_in_newExpression14706 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _setDeclaration_in_newExpression14725 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _newArrayConstruction_in_newExpression14749 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arguments_in_newExpression14814 = new BitSet(new ulong[]{0x2UL,0x10000000000UL});
-		public static readonly BitSet _classBody_in_newExpression14816 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _NEW_in_innerNewExpression14913 = new BitSet(new ulong[]{0x0UL,0x40001000000UL});
-		public static readonly BitSet _genericTypeArgumentListSimplified_in_innerNewExpression14915 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_innerNewExpression14918 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_innerNewExpression14920 = new BitSet(new ulong[]{0x2UL,0x10000000000UL});
-		public static readonly BitSet _classBody_in_innerNewExpression14922 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arrayDeclaratorList_in_newArrayConstruction14968 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _arrayInitializer_in_newArrayConstruction14970 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LBRACK_in_newArrayConstruction14980 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_newArrayConstruction14983 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
-		public static readonly BitSet _RBRACK_in_newArrayConstruction14985 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
-		public static readonly BitSet _LBRACK_in_newArrayConstruction14989 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_newArrayConstruction14992 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
-		public static readonly BitSet _RBRACK_in_newArrayConstruction14994 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_newArrayConstruction14999 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LPAREN_in_arguments15019 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18100020UL});
-		public static readonly BitSet _expressionList_in_arguments15021 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_arguments15024 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_propertyDeclaration15168 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
-		public static readonly BitSet _modifier_in_propertyDeclaration15170 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _getRule_in_propertyDeclaration15173 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_propertyDeclaration15176 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _block_in_propertyDeclaration15178 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _modifier_in_propertyDeclaration15182 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _setRule_in_propertyDeclaration15185 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_propertyDeclaration15188 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _block_in_propertyDeclaration15190 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_propertyDeclaration15195 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_propertyDeclaration15202 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
-		public static readonly BitSet _modifier_in_propertyDeclaration15204 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _setRule_in_propertyDeclaration15207 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_propertyDeclaration15210 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _block_in_propertyDeclaration15212 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _modifier_in_propertyDeclaration15216 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _getRule_in_propertyDeclaration15219 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_propertyDeclaration15222 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _block_in_propertyDeclaration15224 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_propertyDeclaration15230 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_getRule15247 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_setRule15261 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericTypeParameterList_in_classScopeDeclarations5860 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
+		public static readonly BitSet _type_in_classScopeDeclarations5893 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_classScopeDeclarations5895 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_classScopeDeclarations5897 = new BitSet(new ulong[]{0x0UL,0x18000000000UL,0x100000200000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_classScopeDeclarations5899 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_classScopeDeclarations5902 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _block_in_classScopeDeclarations5906 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_classScopeDeclarations5910 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VOID_in_classScopeDeclarations5972 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_classScopeDeclarations5974 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_classScopeDeclarations5976 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_classScopeDeclarations5978 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _block_in_classScopeDeclarations5982 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_classScopeDeclarations5986 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_classScopeDeclarations6045 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_classScopeDeclarations6047 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000000000UL});
+		public static readonly BitSet _throwsClause_in_classScopeDeclarations6049 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _block_in_classScopeDeclarations6052 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_in_classScopeDeclarations6118 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _classFieldDeclaratorList_in_classScopeDeclarations6120 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_classScopeDeclarations6122 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_in_classScopeDeclarations6161 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _classFieldDeclaratorList_in_classScopeDeclarations6163 = new BitSet(new ulong[]{0x10000000000002UL,0x0UL,0x200000UL});
+		public static readonly BitSet _DOT_in_classScopeDeclarations6165 = new BitSet(new ulong[]{0x2UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_classScopeDeclarations6168 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _typeDeclaration_in_classScopeDeclarations6214 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_classScopeDeclarations6224 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _modifierList_in_interfaceScopeDeclarations6244 = new BitSet(new ulong[]{0x40000422000000UL,0x1040081000020UL,0x200000008000000UL});
+		public static readonly BitSet _genericTypeParameterList_in_interfaceScopeDeclarations6258 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
+		public static readonly BitSet _type_in_interfaceScopeDeclarations6277 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_interfaceScopeDeclarations6279 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_interfaceScopeDeclarations6281 = new BitSet(new ulong[]{0x0UL,0x8000000000UL,0x100000200000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_interfaceScopeDeclarations6283 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_interfaceScopeDeclarations6286 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_interfaceScopeDeclarations6289 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VOID_in_interfaceScopeDeclarations6347 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_interfaceScopeDeclarations6349 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_interfaceScopeDeclarations6351 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_interfaceScopeDeclarations6353 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_interfaceScopeDeclarations6356 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_in_interfaceScopeDeclarations6419 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _interfaceFieldDeclaratorList_in_interfaceScopeDeclarations6421 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_interfaceScopeDeclarations6423 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _typeDeclaration_in_interfaceScopeDeclarations6468 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_interfaceScopeDeclarations6478 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _classFieldDeclarator_in_classFieldDeclaratorList6498 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _COMMA_in_classFieldDeclaratorList6501 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _classFieldDeclarator_in_classFieldDeclaratorList6503 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _variableDeclaratorId_in_classFieldDeclarator6542 = new BitSet(new ulong[]{0x100002UL});
+		public static readonly BitSet _ASSIGN_in_classFieldDeclarator6545 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134500A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _variableInitializer_in_classFieldDeclarator6547 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _interfaceFieldDeclarator_in_interfaceFieldDeclaratorList6592 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _COMMA_in_interfaceFieldDeclaratorList6595 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _interfaceFieldDeclarator_in_interfaceFieldDeclaratorList6597 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _variableDeclaratorId_in_interfaceFieldDeclarator6636 = new BitSet(new ulong[]{0x100000UL});
+		public static readonly BitSet _ASSIGN_in_interfaceFieldDeclarator6638 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134500A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _variableInitializer_in_interfaceFieldDeclarator6640 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_variableDeclaratorId6682 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_variableDeclaratorId6685 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arrayInitializer_in_variableInitializer6705 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_variableInitializer6715 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _brokenExpression_in_variableInitializer6725 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LBRACK_in_arrayDeclarator6756 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
+		public static readonly BitSet _RBRACK_in_arrayDeclarator6758 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arrayDeclarator_in_arrayDeclaratorList6792 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
+		public static readonly BitSet _LCURLY_in_arrayInitializer6837 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134500A1800064UL,0x200820C18040020UL});
+		public static readonly BitSet _variableInitializer_in_arrayInitializer6840 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
+		public static readonly BitSet _COMMA_in_arrayInitializer6843 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134500A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _variableInitializer_in_arrayInitializer6845 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
+		public static readonly BitSet _COMMA_in_arrayInitializer6849 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_arrayInitializer6854 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _THROWS_in_throwsClause6896 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _qualifiedIdentList_in_throwsClause6898 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _modifier_in_modifierList6935 = new BitSet(new ulong[]{0x200012UL,0x200000000080008UL,0x6900418280006804UL});
+		public static readonly BitSet _PUBLIC_in_modifier6976 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _OVERRIDE_in_modifier6986 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VIRTUAL_in_modifier6996 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _WITH_SHARING_in_modifier7006 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _WITHOUT_SHARING_in_modifier7014 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _PROTECTED_in_modifier7024 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _PRIVATE_in_modifier7034 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _STATIC_in_modifier7044 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ABSTRACT_in_modifier7054 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _NATIVE_in_modifier7064 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SYNCHRONIZED_in_modifier7074 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TRANSIENT_in_modifier7084 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VOLATILE_in_modifier7094 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _STRICTFP_in_modifier7104 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _GLOBAL_in_modifier7112 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TEST_METHOD_in_modifier7122 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localModifier_in_modifier7132 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localModifier_in_localModifierList7151 = new BitSet(new ulong[]{0x200002UL,0x8UL});
+		public static readonly BitSet _FINAL_in_localModifier7192 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _annotation_in_localModifier7202 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _simpleType_in_type7221 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _objectType_in_type7231 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _primitiveType_in_simpleType7251 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_simpleType7253 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _qualifiedTypeIdent_in_objectType7300 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_objectType7302 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _qualifiedTypeIdentSimplified_in_objectTypeSimplified7342 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_objectTypeSimplified7344 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _typeIdent_in_qualifiedTypeIdent7384 = new BitSet(new ulong[]{0x10000000000002UL});
+		public static readonly BitSet _DOT_in_qualifiedTypeIdent7387 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _typeIdent_in_qualifiedTypeIdent7389 = new BitSet(new ulong[]{0x10000000000002UL});
+		public static readonly BitSet _typeIdentSimplified_in_qualifiedTypeIdentSimplified7429 = new BitSet(new ulong[]{0x10000000000002UL});
+		public static readonly BitSet _DOT_in_qualifiedTypeIdentSimplified7432 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _typeIdentSimplified_in_qualifiedTypeIdentSimplified7434 = new BitSet(new ulong[]{0x10000000000002UL});
+		public static readonly BitSet _IDENT_in_typeIdent7474 = new BitSet(new ulong[]{0x2UL,0x40000000000UL});
+		public static readonly BitSet _genericTypeArgumentList_in_typeIdent7477 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_typeIdentSimplified7497 = new BitSet(new ulong[]{0x2UL,0x40000000000UL});
+		public static readonly BitSet _genericTypeArgumentListSimplified_in_typeIdentSimplified7500 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LESS_THAN_in_genericTypeArgumentList7615 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
+		public static readonly BitSet _genericTypeArgument_in_genericTypeArgumentList7617 = new BitSet(new ulong[]{0x40000400000UL,0x200000UL,0x2000000UL});
+		public static readonly BitSet _COMMA_in_genericTypeArgumentList7620 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
+		public static readonly BitSet _genericTypeArgument_in_genericTypeArgumentList7622 = new BitSet(new ulong[]{0x40000400000UL,0x200000UL,0x2000000UL});
+		public static readonly BitSet _genericTypeListClosing_in_genericTypeArgumentList7626 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_in_genericTypeArgument7664 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _QUESTION_in_genericTypeArgument7674 = new BitSet(new ulong[]{0x8000000000000002UL,0x0UL,0x800000000UL});
+		public static readonly BitSet _genericWildcardBoundType_in_genericTypeArgument7676 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _set_in_genericWildcardBoundType7718 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_genericWildcardBoundType7727 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LESS_THAN_in_genericTypeArgumentListSimplified7746 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
+		public static readonly BitSet _genericTypeArgumentSimplified_in_genericTypeArgumentListSimplified7748 = new BitSet(new ulong[]{0x40000400000UL,0x200000UL,0x2000000UL});
+		public static readonly BitSet _COMMA_in_genericTypeArgumentListSimplified7751 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
+		public static readonly BitSet _genericTypeArgumentSimplified_in_genericTypeArgumentListSimplified7753 = new BitSet(new ulong[]{0x40000400000UL,0x200000UL,0x2000000UL});
+		public static readonly BitSet _genericTypeListClosing_in_genericTypeArgumentListSimplified7757 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_in_genericTypeArgumentSimplified7799 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _QUESTION_in_genericTypeArgumentSimplified7809 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _qualifiedIdentifier_in_qualifiedIdentList7832 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _COMMA_in_qualifiedIdentList7835 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _qualifiedIdentifier_in_qualifiedIdentList7838 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _LPAREN_in_formalParameterList7863 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8100000UL});
+		public static readonly BitSet _formalParameterStandardDecl_in_formalParameterList7891 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x100000UL});
+		public static readonly BitSet _COMMA_in_formalParameterList7894 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
+		public static readonly BitSet _formalParameterStandardDecl_in_formalParameterList7896 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x100000UL});
+		public static readonly BitSet _COMMA_in_formalParameterList7901 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
+		public static readonly BitSet _formalParameterVarArgDecl_in_formalParameterList7903 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _formalParameterVarArgDecl_in_formalParameterList7960 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_formalParameterList8037 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localModifierList_in_formalParameterStandardDecl8060 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_formalParameterStandardDecl8062 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _variableDeclaratorId_in_formalParameterStandardDecl8064 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localModifierList_in_formalParameterVarArgDecl8108 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_formalParameterVarArgDecl8110 = new BitSet(new ulong[]{0x80000000000000UL});
+		public static readonly BitSet _ELLIPSIS_in_formalParameterVarArgDecl8112 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _variableDeclaratorId_in_formalParameterVarArgDecl8114 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_qualifiedIdentifier8162 = new BitSet(new ulong[]{0x10000000000002UL});
+		public static readonly BitSet _DOT_in_qualifiedIdentifier8205 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_qualifiedIdentifier8209 = new BitSet(new ulong[]{0x10000000000002UL});
+		public static readonly BitSet _annotation_in_annotationList8262 = new BitSet(new ulong[]{0x200002UL});
+		public static readonly BitSet _AT_in_annotation8300 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _qualifiedIdentifier_in_annotation8303 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
+		public static readonly BitSet _annotationInit_in_annotation8305 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LPAREN_in_annotationInit8329 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134500A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _annotationInitializers_in_annotationInit8331 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_annotationInit8333 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _annotationInitializer_in_annotationInitializers8370 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _COMMA_in_annotationInitializers8373 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _annotationInitializer_in_annotationInitializers8375 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _annotationElementValue_in_annotationInitializers8405 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_annotationInitializer8446 = new BitSet(new ulong[]{0x100000UL});
+		public static readonly BitSet _ASSIGN_in_annotationInitializer8449 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134500A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _annotationElementValue_in_annotationInitializer8452 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _annotationElementValueExpression_in_annotationElementValue8475 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _annotation_in_annotationElementValue8485 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _annotationElementValueArrayInitializer_in_annotationElementValue8495 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _conditionalExpression_in_annotationElementValueExpression8518 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_annotationElementValueArrayInitializer8558 = new BitSet(new ulong[]{0x40C40C22200000UL,0xAC134500A1800064UL,0x200820C18040020UL});
+		public static readonly BitSet _annotationElementValue_in_annotationElementValueArrayInitializer8561 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
+		public static readonly BitSet _COMMA_in_annotationElementValueArrayInitializer8564 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134500A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _annotationElementValue_in_annotationElementValueArrayInitializer8566 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
+		public static readonly BitSet _COMMA_in_annotationElementValueArrayInitializer8573 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_annotationElementValueArrayInitializer8577 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _AT_in_annotationTypeDeclaration8620 = new BitSet(new ulong[]{0x0UL,0x200000000UL});
+		public static readonly BitSet _INTERFACE_in_annotationTypeDeclaration8622 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_annotationTypeDeclaration8624 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _annotationBody_in_annotationTypeDeclaration8626 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_annotationBody8669 = new BitSet(new ulong[]{0x240001422200010UL,0x201000281080028UL,0x6900418288046804UL});
+		public static readonly BitSet _annotationScopeDeclarations_in_annotationBody8671 = new BitSet(new ulong[]{0x240001422200010UL,0x201000281080028UL,0x6900418288046804UL});
+		public static readonly BitSet _RCURLY_in_annotationBody8674 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _modifierList_in_annotationScopeDeclarations8716 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_annotationScopeDeclarations8718 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_annotationScopeDeclarations8732 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _LPAREN_in_annotationScopeDeclarations8734 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_annotationScopeDeclarations8736 = new BitSet(new ulong[]{0x1000000000000UL,0x0UL,0x200000UL});
+		public static readonly BitSet _annotationDefaultValue_in_annotationScopeDeclarations8738 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_annotationScopeDeclarations8741 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _classFieldDeclaratorList_in_annotationScopeDeclarations8783 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_annotationScopeDeclarations8785 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _typeDeclaration_in_annotationScopeDeclarations8830 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEFAULT_in_annotationDefaultValue8853 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134500A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _annotationElementValue_in_annotationDefaultValue8856 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localVariableDeclaration_in_blockStatement8877 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_blockStatement8879 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _typeDeclaration_in_blockStatement8890 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _statement_in_blockStatement8900 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _brokenExpression_in_blockStatement8909 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LPAREN_in_brokenExpression8929 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_brokenExpression8932 = new BitSet(new ulong[]{0x10000000000002UL,0x0UL,0x200000UL});
+		public static readonly BitSet _DOT_in_brokenExpression8934 = new BitSet(new ulong[]{0x2UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_brokenExpression8937 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _dmlOperator_in_dmlOperation8949 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_dmlOperation8951 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_dmlOperation8953 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_dmlOperator8972 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_dmlOperator8985 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_dmlOperator8998 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_dmlOperator9011 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_block9032 = new BitSet(new ulong[]{0x248E01C26200010UL,0xAE134502A388016CUL,0x7B01CBAE982C6824UL});
+		public static readonly BitSet _blockStatement_in_block9042 = new BitSet(new ulong[]{0x248E01C26200010UL,0xAE134502A388016CUL,0x7B01CBAE982C6824UL});
+		public static readonly BitSet _RCURLY_in_block9066 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localModifierList_in_localVariableDeclaration9096 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_localVariableDeclaration9098 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _classFieldDeclaratorList_in_localVariableDeclaration9100 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _block_in_statement9153 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IF_in_statement9163 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement9165 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_statement9169 = new BitSet(new ulong[]{0x100000000000002UL});
+		public static readonly BitSet _ELSE_in_statement9184 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_statement9188 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _FOR_in_statement9354 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _LPAREN_in_statement9356 = new BitSet(new ulong[]{0x40C00C22200000UL,0xAC134400A180006CUL,0x200820C18200020UL});
+		public static readonly BitSet _forInit_in_statement9371 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_statement9373 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18200020UL});
+		public static readonly BitSet _forCondition_in_statement9375 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_statement9377 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18100020UL});
+		public static readonly BitSet _forUpdater_in_statement9379 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_statement9381 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_statement9383 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localModifierList_in_statement9418 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_statement9420 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_statement9422 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _COLON_in_statement9424 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_statement9426 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_statement9428 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_statement9430 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _WHILE_in_statement9470 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement9472 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_statement9474 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DO_in_statement9523 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_statement9525 = new BitSet(new ulong[]{0x0UL,0x0UL,0x1000000000000000UL});
+		public static readonly BitSet _WHILE_in_statement9527 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement9529 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_statement9531 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TRY_in_statement9572 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _block_in_statement9574 = new BitSet(new ulong[]{0x100000000UL,0x10UL});
+		public static readonly BitSet _catches_in_statement9577 = new BitSet(new ulong[]{0x2UL,0x10UL});
+		public static readonly BitSet _finallyClause_in_statement9579 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _finallyClause_in_statement9584 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SWITCH_in_statement9627 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement9629 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _LCURLY_in_statement9631 = new BitSet(new ulong[]{0x1000040000000UL});
+		public static readonly BitSet _switchBlockLabels_in_statement9633 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_statement9635 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SYNCHRONIZED_in_statement9661 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _parenthesizedExpression_in_statement9663 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _block_in_statement9665 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _RETURN_in_statement9711 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18200020UL});
+		public static readonly BitSet _expression_in_statement9713 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_statement9716 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _THROW_in_statement9780 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_statement9782 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_statement9784 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _BREAK_in_statement9849 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x200000UL});
+		public static readonly BitSet _IDENT_in_statement9851 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_statement9854 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _CONTINUE_in_statement9924 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x200000UL});
+		public static readonly BitSet _IDENT_in_statement9926 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_statement9929 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_statement9996 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _COLON_in_statement9998 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_statement10000 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _dmlOperation_in_statement10067 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_statement10077 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_statement10079 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_statement10092 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_statement10102 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _catchClause_in_catches10141 = new BitSet(new ulong[]{0x100000002UL});
+		public static readonly BitSet _CATCH_in_catchClause10183 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _LPAREN_in_catchClause10186 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
+		public static readonly BitSet _formalParameterStandardDecl_in_catchClause10189 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_catchClause10191 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _block_in_catchClause10194 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _FINALLY_in_finallyClause10213 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _block_in_finallyClause10215 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _switchCaseLabels_in_switchBlockLabels10247 = new BitSet(new ulong[]{0x1000040000000UL});
+		public static readonly BitSet _switchDefaultLabel_in_switchBlockLabels10249 = new BitSet(new ulong[]{0x40000000UL});
+		public static readonly BitSet _switchCaseLabels_in_switchBlockLabels10252 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _switchCaseLabel_in_switchCaseLabels10297 = new BitSet(new ulong[]{0x40000002UL});
+		public static readonly BitSet _CASE_in_switchCaseLabel10325 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_switchCaseLabel10328 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _COLON_in_switchCaseLabel10330 = new BitSet(new ulong[]{0x248E01C26200012UL,0xAE134502A388016CUL,0x7B01CBAE98286824UL});
+		public static readonly BitSet _blockStatement_in_switchCaseLabel10333 = new BitSet(new ulong[]{0x248E01C26200012UL,0xAE134502A388016CUL,0x7B01CBAE98286824UL});
+		public static readonly BitSet _DEFAULT_in_switchDefaultLabel10357 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _COLON_in_switchDefaultLabel10360 = new BitSet(new ulong[]{0x248E01C26200012UL,0xAE134502A388016CUL,0x7B01CBAE98286824UL});
+		public static readonly BitSet _blockStatement_in_switchDefaultLabel10363 = new BitSet(new ulong[]{0x248E01C26200012UL,0xAE134502A388016CUL,0x7B01CBAE98286824UL});
+		public static readonly BitSet _localVariableDeclaration_in_forInit10387 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expressionList_in_forInit10409 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_forCondition10497 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expressionList_in_forUpdater10539 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LPAREN_in_parenthesizedExpression10579 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_parenthesizedExpression10581 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_parenthesizedExpression10583 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_expressionList10624 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _COMMA_in_expressionList10627 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_expressionList10630 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _assignmentExpression_in_expression10654 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _conditionalExpression_in_assignmentExpression10684 = new BitSet(new ulong[]{0x4000000900042UL,0x120000000000000UL,0x45000042UL,0x2UL});
+		public static readonly BitSet _ASSIGN_in_assignmentExpression10703 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _PLUS_ASSIGN_in_assignmentExpression10722 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _MINUS_ASSIGN_in_assignmentExpression10741 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _STAR_ASSIGN_in_assignmentExpression10760 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _DIV_ASSIGN_in_assignmentExpression10779 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _AND_ASSIGN_in_assignmentExpression10798 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _OR_ASSIGN_in_assignmentExpression10817 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _XOR_ASSIGN_in_assignmentExpression10836 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _MOD_ASSIGN_in_assignmentExpression10855 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _SHIFT_LEFT_ASSIGN_in_assignmentExpression10874 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _SHIFT_RIGHT_ASSIGN_in_assignmentExpression10893 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _BIT_SHIFT_RIGHT_ASSIGN_in_assignmentExpression10912 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _assignmentExpression_in_assignmentExpression10934 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _logicalOrExpression_in_conditionalExpression10959 = new BitSet(new ulong[]{0x2UL,0x0UL,0x10000UL});
+		public static readonly BitSet _QUESTION_in_conditionalExpression10962 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _assignmentExpression_in_conditionalExpression10965 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _COLON_in_conditionalExpression10967 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _conditionalExpression_in_conditionalExpression10970 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _logicalAndExpression_in_logicalOrExpression10991 = new BitSet(new ulong[]{0x2UL,0x800000000000UL});
+		public static readonly BitSet _LOGICAL_OR_in_logicalOrExpression10994 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _logicalAndExpression_in_logicalOrExpression10997 = new BitSet(new ulong[]{0x2UL,0x800000000000UL});
+		public static readonly BitSet _inclusiveOrExpression_in_logicalAndExpression11018 = new BitSet(new ulong[]{0x2UL,0x200000000000UL});
+		public static readonly BitSet _LOGICAL_AND_in_logicalAndExpression11021 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _inclusiveOrExpression_in_logicalAndExpression11024 = new BitSet(new ulong[]{0x2UL,0x200000000000UL});
+		public static readonly BitSet _exclusiveOrExpression_in_inclusiveOrExpression11045 = new BitSet(new ulong[]{0x2UL,0x0UL,0x1UL});
+		public static readonly BitSet _OR_in_inclusiveOrExpression11048 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _exclusiveOrExpression_in_inclusiveOrExpression11051 = new BitSet(new ulong[]{0x2UL,0x0UL,0x1UL});
+		public static readonly BitSet _andExpression_in_exclusiveOrExpression11072 = new BitSet(new ulong[]{0x2UL,0x0UL,0x0UL,0x1UL});
+		public static readonly BitSet _XOR_in_exclusiveOrExpression11075 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _andExpression_in_exclusiveOrExpression11078 = new BitSet(new ulong[]{0x2UL,0x0UL,0x0UL,0x1UL});
+		public static readonly BitSet _equalityExpression_in_andExpression11099 = new BitSet(new ulong[]{0x22UL});
+		public static readonly BitSet _AND_in_andExpression11102 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _equalityExpression_in_andExpression11105 = new BitSet(new ulong[]{0x22UL});
+		public static readonly BitSet _instanceOfExpression_in_equalityExpression11126 = new BitSet(new ulong[]{0x800000000000002UL,0x1000000000000000UL});
+		public static readonly BitSet _EQUAL_in_equalityExpression11145 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _NOT_EQUAL_in_equalityExpression11164 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _instanceOfExpression_in_equalityExpression11194 = new BitSet(new ulong[]{0x800000000000002UL,0x1000000000000000UL});
+		public static readonly BitSet _relationalExpression_in_instanceOfExpression11224 = new BitSet(new ulong[]{0x2UL,0x40000000UL});
+		public static readonly BitSet _INSTANCEOF_in_instanceOfExpression11227 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_instanceOfExpression11230 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _shiftExpression_in_relationalExpression11251 = new BitSet(new ulong[]{0x2UL,0x60000300000UL});
+		public static readonly BitSet _LESS_OR_EQUAL_in_relationalExpression11270 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _GREATER_OR_EQUAL_in_relationalExpression11289 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _LESS_THAN_in_relationalExpression11308 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _GREATER_THAN_in_relationalExpression11327 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _shiftExpression_in_relationalExpression11356 = new BitSet(new ulong[]{0x2UL,0x60000300000UL});
+		public static readonly BitSet _additiveExpression_in_shiftExpression11390 = new BitSet(new ulong[]{0x400002UL,0x0UL,0x2800000UL});
+		public static readonly BitSet _BIT_SHIFT_RIGHT_in_shiftExpression11408 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _SHIFT_RIGHT_in_shiftExpression11427 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _SHIFT_LEFT_in_shiftExpression11446 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _additiveExpression_in_shiftExpression11475 = new BitSet(new ulong[]{0x400002UL,0x0UL,0x2800000UL});
+		public static readonly BitSet _multiplicativeExpression_in_additiveExpression11505 = new BitSet(new ulong[]{0x2UL,0x10000000000000UL,0x20UL});
+		public static readonly BitSet _PLUS_in_additiveExpression11523 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _MINUS_in_additiveExpression11542 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _multiplicativeExpression_in_additiveExpression11571 = new BitSet(new ulong[]{0x2UL,0x10000000000000UL,0x20UL});
+		public static readonly BitSet _unaryExpression_in_multiplicativeExpression11601 = new BitSet(new ulong[]{0x2000000000002UL,0x40000000000000UL,0x20000000UL});
+		public static readonly BitSet _STAR_in_multiplicativeExpression11620 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _DIV_in_multiplicativeExpression11639 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _MOD_in_multiplicativeExpression11658 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _unaryExpression_in_multiplicativeExpression11687 = new BitSet(new ulong[]{0x2000000000002UL,0x40000000000000UL,0x20000000UL});
+		public static readonly BitSet _PLUS_in_unaryExpression11721 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _unaryExpression_in_unaryExpression11723 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MINUS_in_unaryExpression11750 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _unaryExpression_in_unaryExpression11752 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INC_in_unaryExpression11778 = new BitSet(new ulong[]{0x40800C22000000UL,0xA403040081800064UL,0x200820C18000000UL});
+		public static readonly BitSet _postfixedExpression_in_unaryExpression11780 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEC_in_unaryExpression11804 = new BitSet(new ulong[]{0x40800C22000000UL,0xA403040081800064UL,0x200820C18000000UL});
+		public static readonly BitSet _postfixedExpression_in_unaryExpression11806 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _unaryExpressionNotPlusMinus_in_unaryExpression11830 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _NOT_in_unaryExpressionNotPlusMinus11849 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _unaryExpression_in_unaryExpressionNotPlusMinus11851 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LOGICAL_NOT_in_unaryExpressionNotPlusMinus11898 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _unaryExpression_in_unaryExpressionNotPlusMinus11900 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LPAREN_in_unaryExpressionNotPlusMinus11939 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_unaryExpressionNotPlusMinus11941 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_unaryExpressionNotPlusMinus11943 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _unaryExpression_in_unaryExpressionNotPlusMinus11945 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _postfixedExpression_in_unaryExpressionNotPlusMinus11980 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _primaryExpression_in_postfixedExpression12016 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
+		public static readonly BitSet _DOT_in_postfixedExpression12078 = new BitSet(new ulong[]{0x0UL,0x400040001000000UL,0x20800000000UL});
+		public static readonly BitSet _genericTypeArgumentListSimplified_in_postfixedExpression12128 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_postfixedExpression12210 = new BitSet(new ulong[]{0x10400000000002UL,0x2008020000000UL});
+		public static readonly BitSet _arguments_in_postfixedExpression12289 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
+		public static readonly BitSet _THIS_in_postfixedExpression12362 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
+		public static readonly BitSet _SUPER_in_postfixedExpression12425 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_postfixedExpression12427 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
+		public static readonly BitSet _SUPER_in_postfixedExpression12480 = new BitSet(new ulong[]{0x10000000000000UL});
+		public static readonly BitSet _DOT_in_postfixedExpression12484 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_postfixedExpression12486 = new BitSet(new ulong[]{0x10400000000002UL,0x2008020000000UL});
+		public static readonly BitSet _arguments_in_postfixedExpression12553 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
+		public static readonly BitSet _innerNewExpression_in_postfixedExpression12624 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
+		public static readonly BitSet _LBRACK_in_postfixedExpression12681 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_postfixedExpression12683 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
+		public static readonly BitSet _RBRACK_in_postfixedExpression12685 = new BitSet(new ulong[]{0x10400000000002UL,0x8020000000UL});
+		public static readonly BitSet _INC_in_postfixedExpression12746 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEC_in_postfixedExpression12770 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _parenthesizedExpression_in_primaryExpression12818 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _literal_in_primaryExpression12828 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _newExpression_in_primaryExpression12838 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _qualifiedIdentExpression_in_primaryExpression12848 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericTypeArgumentListSimplified_in_primaryExpression12858 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x20800000000UL});
+		public static readonly BitSet _SUPER_in_primaryExpression12873 = new BitSet(new ulong[]{0x10000000000000UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_primaryExpression12891 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_primaryExpression12951 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_primaryExpression12953 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_primaryExpression12955 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_primaryExpression13022 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_primaryExpression13024 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _THIS_in_primaryExpression13077 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_primaryExpression13079 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _THIS_in_primaryExpression13152 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_primaryExpression13220 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SUPER_in_primaryExpression13285 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_primaryExpression13287 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SUPER_in_primaryExpression13343 = new BitSet(new ulong[]{0x10000000000000UL});
+		public static readonly BitSet _DOT_in_primaryExpression13345 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_primaryExpression13347 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_primaryExpression13371 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _primitiveType_in_primaryExpression13513 = new BitSet(new ulong[]{0x10000000000000UL,0x8000000000UL});
+		public static readonly BitSet _arrayDeclarator_in_primaryExpression13572 = new BitSet(new ulong[]{0x10000000000000UL,0x8000000000UL});
+		public static readonly BitSet _DOT_in_primaryExpression13635 = new BitSet(new ulong[]{0x1000000000UL});
+		public static readonly BitSet _CLASS_in_primaryExpression13637 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VOID_in_primaryExpression13697 = new BitSet(new ulong[]{0x10000000000000UL});
+		public static readonly BitSet _DOT_in_primaryExpression13699 = new BitSet(new ulong[]{0x1000000000UL});
+		public static readonly BitSet _CLASS_in_primaryExpression13701 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _qualifiedIdentifier_in_qualifiedIdentExpression13781 = new BitSet(new ulong[]{0x10000000000002UL,0x2008000000000UL});
+		public static readonly BitSet _arrayDeclarator_in_qualifiedIdentExpression13851 = new BitSet(new ulong[]{0x10000000000000UL,0x8000000000UL});
+		public static readonly BitSet _DOT_in_qualifiedIdentExpression13919 = new BitSet(new ulong[]{0x1000000000UL});
+		public static readonly BitSet _CLASS_in_qualifiedIdentExpression13921 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arguments_in_qualifiedIdentExpression13991 = new BitSet(new ulong[]{0x2UL,0x10000000000UL});
+		public static readonly BitSet _block_in_qualifiedIdentExpression13993 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_qualifiedIdentExpression14054 = new BitSet(new ulong[]{0x1000000000UL,0x400040000000000UL,0x20800000000UL});
+		public static readonly BitSet _CLASS_in_qualifiedIdentExpression14072 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericTypeArgumentListSimplified_in_qualifiedIdentExpression14135 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x800000000UL});
+		public static readonly BitSet _SUPER_in_qualifiedIdentExpression14160 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_qualifiedIdentExpression14162 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SUPER_in_qualifiedIdentExpression14212 = new BitSet(new ulong[]{0x10000000000000UL});
+		public static readonly BitSet _DOT_in_qualifiedIdentExpression14216 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_qualifiedIdentExpression14218 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_qualifiedIdentExpression14220 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_qualifiedIdentExpression14270 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_qualifiedIdentExpression14272 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _THIS_in_qualifiedIdentExpression14347 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SUPER_in_qualifiedIdentExpression14413 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_qualifiedIdentExpression14415 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _innerNewExpression_in_qualifiedIdentExpression14463 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_mapDeclaration14533 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_mapDeclaration14535 = new BitSet(new ulong[]{0x0UL,0x0UL,0x0UL,0x4UL});
+		public static readonly BitSet _194_in_mapDeclaration14537 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_mapDeclaration14539 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
+		public static readonly BitSet _COMMA_in_mapDeclaration14542 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_mapDeclaration14545 = new BitSet(new ulong[]{0x0UL,0x0UL,0x0UL,0x4UL});
+		public static readonly BitSet _194_in_mapDeclaration14547 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_mapDeclaration14549 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_mapDeclaration14554 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_setDeclaration14564 = new BitSet(new ulong[]{0x40C40C22000000UL,0xAC134400A1800064UL,0x200820C18040020UL});
+		public static readonly BitSet _expression_in_setDeclaration14566 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
+		public static readonly BitSet _COMMA_in_setDeclaration14570 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_setDeclaration14573 = new BitSet(new ulong[]{0x40000000000UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_setDeclaration14578 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _NEW_in_newExpression14592 = new BitSet(new ulong[]{0x40000422000000UL,0x1040081000020UL,0x8000000UL});
+		public static readonly BitSet _primitiveType_in_newExpression14621 = new BitSet(new ulong[]{0x0UL,0x8000000000UL});
+		public static readonly BitSet _newArrayConstruction_in_newExpression14623 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericTypeArgumentListSimplified_in_newExpression14667 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _qualifiedTypeIdentSimplified_in_newExpression14670 = new BitSet(new ulong[]{0x0UL,0x2018000000000UL});
+		public static readonly BitSet _mapDeclaration_in_newExpression14708 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _setDeclaration_in_newExpression14727 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _newArrayConstruction_in_newExpression14751 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arguments_in_newExpression14816 = new BitSet(new ulong[]{0x2UL,0x10000000000UL});
+		public static readonly BitSet _classBody_in_newExpression14818 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _NEW_in_innerNewExpression14915 = new BitSet(new ulong[]{0x0UL,0x40001000000UL});
+		public static readonly BitSet _genericTypeArgumentListSimplified_in_innerNewExpression14917 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_innerNewExpression14920 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_innerNewExpression14922 = new BitSet(new ulong[]{0x2UL,0x10000000000UL});
+		public static readonly BitSet _classBody_in_innerNewExpression14924 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arrayDeclaratorList_in_newArrayConstruction14970 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _arrayInitializer_in_newArrayConstruction14972 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LBRACK_in_newArrayConstruction14982 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_newArrayConstruction14985 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
+		public static readonly BitSet _RBRACK_in_newArrayConstruction14987 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
+		public static readonly BitSet _LBRACK_in_newArrayConstruction14991 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_newArrayConstruction14994 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
+		public static readonly BitSet _RBRACK_in_newArrayConstruction14996 = new BitSet(new ulong[]{0x2UL,0x8000000000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_newArrayConstruction15001 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LPAREN_in_arguments15021 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18100020UL});
+		public static readonly BitSet _expressionList_in_arguments15023 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_arguments15026 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_propertyDeclaration15170 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
+		public static readonly BitSet _modifier_in_propertyDeclaration15172 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _getRule_in_propertyDeclaration15175 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_propertyDeclaration15178 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _block_in_propertyDeclaration15180 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _modifier_in_propertyDeclaration15184 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _setRule_in_propertyDeclaration15187 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_propertyDeclaration15190 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _block_in_propertyDeclaration15192 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_propertyDeclaration15197 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_propertyDeclaration15204 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
+		public static readonly BitSet _modifier_in_propertyDeclaration15206 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _setRule_in_propertyDeclaration15209 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_propertyDeclaration15212 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _block_in_propertyDeclaration15214 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _modifier_in_propertyDeclaration15218 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _getRule_in_propertyDeclaration15221 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_propertyDeclaration15224 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _block_in_propertyDeclaration15226 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_propertyDeclaration15232 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_getRule15249 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_setRule15263 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _GREATER_THAN_in_synpred14_Java5205 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _SHIFT_RIGHT_in_synpred15_Java5215 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _BIT_SHIFT_RIGHT_in_synpred16_Java5225 = new BitSet(new ulong[]{0x2UL});
@@ -35325,210 +35327,210 @@ public partial class JavaParser : Antlr.Runtime.Parser
 		public static readonly BitSet _type_in_synpred33_Java5834 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
 		public static readonly BitSet _IDENT_in_synpred33_Java5836 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
 		public static readonly BitSet _propertyDeclaration_in_synpred33_Java5838 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericTypeParameterList_in_synpred43_Java5858 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
-		public static readonly BitSet _type_in_synpred43_Java5891 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred43_Java5893 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred43_Java5895 = new BitSet(new ulong[]{0x0UL,0x18000000000UL,0x100000200000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_synpred43_Java5897 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_synpred43_Java5900 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _block_in_synpred43_Java5904 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_synpred43_Java5908 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VOID_in_synpred43_Java5970 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred43_Java5972 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred43_Java5974 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_synpred43_Java5976 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _block_in_synpred43_Java5980 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_synpred43_Java5984 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_synpred43_Java6043 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred43_Java6045 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000000000UL});
-		public static readonly BitSet _throwsClause_in_synpred43_Java6047 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _block_in_synpred43_Java6050 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_in_synpred44_Java6116 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _classFieldDeclaratorList_in_synpred44_Java6118 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred44_Java6120 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_synpred46_Java6166 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericTypeParameterList_in_synpred43_Java5860 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
+		public static readonly BitSet _type_in_synpred43_Java5893 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred43_Java5895 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred43_Java5897 = new BitSet(new ulong[]{0x0UL,0x18000000000UL,0x100000200000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_synpred43_Java5899 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_synpred43_Java5902 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _block_in_synpred43_Java5906 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_synpred43_Java5910 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VOID_in_synpred43_Java5972 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred43_Java5974 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred43_Java5976 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_synpred43_Java5978 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _block_in_synpred43_Java5982 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_synpred43_Java5986 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_synpred43_Java6045 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred43_Java6047 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000000000UL});
+		public static readonly BitSet _throwsClause_in_synpred43_Java6049 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _block_in_synpred43_Java6052 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_in_synpred44_Java6118 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _classFieldDeclaratorList_in_synpred44_Java6120 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred44_Java6122 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_synpred46_Java6168 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _modifierList_in_synpred47_Java5812 = new BitSet(new ulong[]{0x40000422000000UL,0x1040081000020UL,0x200000008000000UL});
 		public static readonly BitSet _type_in_synpred47_Java5834 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
 		public static readonly BitSet _IDENT_in_synpred47_Java5836 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
 		public static readonly BitSet _propertyDeclaration_in_synpred47_Java5838 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericTypeParameterList_in_synpred47_Java5858 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
-		public static readonly BitSet _type_in_synpred47_Java5891 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred47_Java5893 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred47_Java5895 = new BitSet(new ulong[]{0x0UL,0x18000000000UL,0x100000200000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_synpred47_Java5897 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_synpred47_Java5900 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _block_in_synpred47_Java5904 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_synpred47_Java5908 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VOID_in_synpred47_Java5970 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred47_Java5972 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred47_Java5974 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_synpred47_Java5976 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _block_in_synpred47_Java5980 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_synpred47_Java5984 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_synpred47_Java6043 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred47_Java6045 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000000000UL});
-		public static readonly BitSet _throwsClause_in_synpred47_Java6047 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
-		public static readonly BitSet _block_in_synpred47_Java6050 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_in_synpred47_Java6116 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _classFieldDeclaratorList_in_synpred47_Java6118 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred47_Java6120 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_in_synpred47_Java6159 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _classFieldDeclaratorList_in_synpred47_Java6161 = new BitSet(new ulong[]{0x10000000000002UL,0x0UL,0x200000UL});
-		public static readonly BitSet _DOT_in_synpred47_Java6163 = new BitSet(new ulong[]{0x2UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred47_Java6166 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _typeDeclaration_in_synpred48_Java6212 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericTypeParameterList_in_synpred54_Java6256 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
-		public static readonly BitSet _type_in_synpred54_Java6275 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred54_Java6277 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred54_Java6279 = new BitSet(new ulong[]{0x0UL,0x8000000000UL,0x100000200000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_synpred54_Java6281 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_synpred54_Java6284 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred54_Java6287 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VOID_in_synpred54_Java6345 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred54_Java6347 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred54_Java6349 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_synpred54_Java6351 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred54_Java6354 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _modifierList_in_synpred55_Java6242 = new BitSet(new ulong[]{0x40000422000000UL,0x1040081000020UL,0x200000008000000UL});
-		public static readonly BitSet _genericTypeParameterList_in_synpred55_Java6256 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
-		public static readonly BitSet _type_in_synpred55_Java6275 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred55_Java6277 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred55_Java6279 = new BitSet(new ulong[]{0x0UL,0x8000000000UL,0x100000200000UL});
-		public static readonly BitSet _arrayDeclaratorList_in_synpred55_Java6281 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_synpred55_Java6284 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred55_Java6287 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _VOID_in_synpred55_Java6345 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred55_Java6347 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _formalParameterList_in_synpred55_Java6349 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
-		public static readonly BitSet _throwsClause_in_synpred55_Java6351 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred55_Java6354 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _type_in_synpred55_Java6417 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _interfaceFieldDeclaratorList_in_synpred55_Java6419 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred55_Java6421 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _typeDeclaration_in_synpred56_Java6466 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_synpred62_Java6713 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arrayDeclarator_in_synpred63_Java6790 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arrayDeclaratorList_in_synpred87_Java7251 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arrayDeclaratorList_in_synpred88_Java7300 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_synpred90_Java7385 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _typeIdent_in_synpred90_Java7387 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericTypeArgumentList_in_synpred92_Java7475 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _COMMA_in_synpred101_Java7618 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
-		public static readonly BitSet _genericTypeArgument_in_synpred101_Java7620 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericWildcardBoundType_in_synpred103_Java7674 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _COMMA_in_synpred108_Java7892 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
-		public static readonly BitSet _formalParameterStandardDecl_in_synpred108_Java7894 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _formalParameterStandardDecl_in_synpred110_Java7889 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _COMMA_in_synpred110_Java7892 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
-		public static readonly BitSet _formalParameterStandardDecl_in_synpred110_Java7894 = new BitSet(new ulong[]{0x40000000002UL});
-		public static readonly BitSet _COMMA_in_synpred110_Java7899 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
-		public static readonly BitSet _formalParameterVarArgDecl_in_synpred110_Java7901 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _formalParameterVarArgDecl_in_synpred111_Java7958 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_synpred112_Java8203 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred112_Java8207 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _annotation_in_synpred113_Java8260 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _modifierList_in_synpred125_Java8714 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_synpred125_Java8716 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred125_Java8730 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _LPAREN_in_synpred125_Java8732 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_synpred125_Java8734 = new BitSet(new ulong[]{0x1000000000000UL,0x0UL,0x200000UL});
-		public static readonly BitSet _annotationDefaultValue_in_synpred125_Java8736 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred125_Java8739 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _classFieldDeclaratorList_in_synpred125_Java8781 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred125_Java8783 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localVariableDeclaration_in_synpred126_Java8875 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred126_Java8877 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _typeDeclaration_in_synpred127_Java8888 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _statement_in_synpred128_Java8898 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LPAREN_in_synpred129_Java8927 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_synpred130_Java8932 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SEMI_in_synpred131_Java8935 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_synpred132_Java8970 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_synpred133_Java8983 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_synpred134_Java8996 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _ELSE_in_synpred137_Java9182 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_synpred137_Java9186 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _forInit_in_synpred139_Java9369 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred139_Java9371 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18200020UL});
-		public static readonly BitSet _forCondition_in_synpred139_Java9373 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred139_Java9375 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18100020UL});
-		public static readonly BitSet _forUpdater_in_synpred139_Java9377 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_synpred139_Java9379 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_synpred139_Java9381 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_synpred155_Java9994 = new BitSet(new ulong[]{0x20000000000UL});
-		public static readonly BitSet _COLON_in_synpred155_Java9996 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
-		public static readonly BitSet _statement_in_synpred155_Java9998 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _dmlOperation_in_synpred156_Java10065 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_synpred157_Java10075 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred157_Java10077 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expression_in_synpred158_Java10090 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _switchCaseLabel_in_synpred161_Java10295 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _localVariableDeclaration_in_synpred164_Java10385 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _expressionList_in_synpred165_Java10407 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _set_in_synpred193_Java11264 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _shiftExpression_in_synpred193_Java11354 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _set_in_synpred198_Java11517 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _multiplicativeExpression_in_synpred198_Java11569 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LPAREN_in_synpred208_Java11937 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
-		public static readonly BitSet _type_in_synpred208_Java11939 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
-		public static readonly BitSet _RPAREN_in_synpred208_Java11941 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _unaryExpression_in_synpred208_Java11943 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arguments_in_synpred210_Java12287 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arguments_in_synpred214_Java12551 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_synpred216_Java12076 = new BitSet(new ulong[]{0x0UL,0x400040001000000UL,0x20800000000UL});
-		public static readonly BitSet _genericTypeArgumentListSimplified_in_synpred216_Java12126 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred216_Java12208 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_synpred216_Java12287 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _THIS_in_synpred216_Java12360 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SUPER_in_synpred216_Java12423 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_synpred216_Java12425 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SUPER_in_synpred216_Java12478 = new BitSet(new ulong[]{0x10000000000000UL});
-		public static readonly BitSet _DOT_in_synpred216_Java12482 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred216_Java12484 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_synpred216_Java12551 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _innerNewExpression_in_synpred216_Java12622 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _INC_in_synpred218_Java12744 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DEC_in_synpred219_Java12768 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arguments_in_synpred228_Java13218 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arguments_in_synpred231_Java13369 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arrayDeclarator_in_synpred236_Java13849 = new BitSet(new ulong[]{0x10000000000000UL,0x8000000000UL});
-		public static readonly BitSet _DOT_in_synpred236_Java13917 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _CLASS_in_synpred236_Java13919 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _block_in_synpred237_Java13991 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _arguments_in_synpred238_Java13989 = new BitSet(new ulong[]{0x2UL,0x10000000000UL});
-		public static readonly BitSet _block_in_synpred238_Java13991 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DOT_in_synpred245_Java14052 = new BitSet(new ulong[]{0x1000000000UL,0x400040000000000UL,0x20800000000UL});
-		public static readonly BitSet _CLASS_in_synpred245_Java14070 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _genericTypeArgumentListSimplified_in_synpred245_Java14133 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x800000000UL});
-		public static readonly BitSet _SUPER_in_synpred245_Java14158 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_synpred245_Java14160 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SUPER_in_synpred245_Java14210 = new BitSet(new ulong[]{0x10000000000000UL});
-		public static readonly BitSet _DOT_in_synpred245_Java14214 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _IDENT_in_synpred245_Java14216 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_synpred245_Java14218 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _IDENT_in_synpred245_Java14268 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_synpred245_Java14270 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _THIS_in_synpred245_Java14345 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _SUPER_in_synpred245_Java14411 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
-		public static readonly BitSet _arguments_in_synpred245_Java14413 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _innerNewExpression_in_synpred245_Java14461 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _mapDeclaration_in_synpred251_Java14706 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _setDeclaration_in_synpred252_Java14725 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _classBody_in_synpred254_Java14816 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _classBody_in_synpred256_Java14922 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LBRACK_in_synpred258_Java14989 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
-		public static readonly BitSet _expression_in_synpred258_Java14992 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
-		public static readonly BitSet _RBRACK_in_synpred258_Java14994 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _LCURLY_in_synpred275_Java15168 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
-		public static readonly BitSet _modifier_in_synpred275_Java15170 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _getRule_in_synpred275_Java15173 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred275_Java15176 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _block_in_synpred275_Java15178 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
-		public static readonly BitSet _modifier_in_synpred275_Java15182 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
-		public static readonly BitSet _setRule_in_synpred275_Java15185 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
-		public static readonly BitSet _SEMI_in_synpred275_Java15188 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _block_in_synpred275_Java15190 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
-		public static readonly BitSet _RCURLY_in_synpred275_Java15195 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericTypeParameterList_in_synpred47_Java5860 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
+		public static readonly BitSet _type_in_synpred47_Java5893 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred47_Java5895 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred47_Java5897 = new BitSet(new ulong[]{0x0UL,0x18000000000UL,0x100000200000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_synpred47_Java5899 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_synpred47_Java5902 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _block_in_synpred47_Java5906 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_synpred47_Java5910 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VOID_in_synpred47_Java5972 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred47_Java5974 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred47_Java5976 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_synpred47_Java5978 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _block_in_synpred47_Java5982 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_synpred47_Java5986 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_synpred47_Java6045 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred47_Java6047 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x100000000000UL});
+		public static readonly BitSet _throwsClause_in_synpred47_Java6049 = new BitSet(new ulong[]{0x0UL,0x10000000000UL});
+		public static readonly BitSet _block_in_synpred47_Java6052 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_in_synpred47_Java6118 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _classFieldDeclaratorList_in_synpred47_Java6120 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred47_Java6122 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_in_synpred47_Java6161 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _classFieldDeclaratorList_in_synpred47_Java6163 = new BitSet(new ulong[]{0x10000000000002UL,0x0UL,0x200000UL});
+		public static readonly BitSet _DOT_in_synpred47_Java6165 = new BitSet(new ulong[]{0x2UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred47_Java6168 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _typeDeclaration_in_synpred48_Java6214 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericTypeParameterList_in_synpred54_Java6258 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
+		public static readonly BitSet _type_in_synpred54_Java6277 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred54_Java6279 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred54_Java6281 = new BitSet(new ulong[]{0x0UL,0x8000000000UL,0x100000200000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_synpred54_Java6283 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_synpred54_Java6286 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred54_Java6289 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VOID_in_synpred54_Java6347 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred54_Java6349 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred54_Java6351 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_synpred54_Java6353 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred54_Java6356 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _modifierList_in_synpred55_Java6244 = new BitSet(new ulong[]{0x40000422000000UL,0x1040081000020UL,0x200000008000000UL});
+		public static readonly BitSet _genericTypeParameterList_in_synpred55_Java6258 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x200000008000000UL});
+		public static readonly BitSet _type_in_synpred55_Java6277 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred55_Java6279 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred55_Java6281 = new BitSet(new ulong[]{0x0UL,0x8000000000UL,0x100000200000UL});
+		public static readonly BitSet _arrayDeclaratorList_in_synpred55_Java6283 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_synpred55_Java6286 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred55_Java6289 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _VOID_in_synpred55_Java6347 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred55_Java6349 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _formalParameterList_in_synpred55_Java6351 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000200000UL});
+		public static readonly BitSet _throwsClause_in_synpred55_Java6353 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred55_Java6356 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _type_in_synpred55_Java6419 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _interfaceFieldDeclaratorList_in_synpred55_Java6421 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred55_Java6423 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _typeDeclaration_in_synpred56_Java6468 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_synpred62_Java6715 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arrayDeclarator_in_synpred63_Java6792 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arrayDeclaratorList_in_synpred87_Java7253 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arrayDeclaratorList_in_synpred88_Java7302 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_synpred90_Java7387 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _typeIdent_in_synpred90_Java7389 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericTypeArgumentList_in_synpred92_Java7477 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _COMMA_in_synpred101_Java7620 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8010000UL});
+		public static readonly BitSet _genericTypeArgument_in_synpred101_Java7622 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericWildcardBoundType_in_synpred103_Java7676 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _COMMA_in_synpred108_Java7894 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
+		public static readonly BitSet _formalParameterStandardDecl_in_synpred108_Java7896 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _formalParameterStandardDecl_in_synpred110_Java7891 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _COMMA_in_synpred110_Java7894 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
+		public static readonly BitSet _formalParameterStandardDecl_in_synpred110_Java7896 = new BitSet(new ulong[]{0x40000000002UL});
+		public static readonly BitSet _COMMA_in_synpred110_Java7901 = new BitSet(new ulong[]{0x40000422200000UL,0x1000081000028UL,0x8000000UL});
+		public static readonly BitSet _formalParameterVarArgDecl_in_synpred110_Java7903 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _formalParameterVarArgDecl_in_synpred111_Java7960 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_synpred112_Java8205 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred112_Java8209 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _annotation_in_synpred113_Java8262 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _modifierList_in_synpred125_Java8716 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_synpred125_Java8718 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred125_Java8732 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _LPAREN_in_synpred125_Java8734 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_synpred125_Java8736 = new BitSet(new ulong[]{0x1000000000000UL,0x0UL,0x200000UL});
+		public static readonly BitSet _annotationDefaultValue_in_synpred125_Java8738 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred125_Java8741 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _classFieldDeclaratorList_in_synpred125_Java8783 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred125_Java8785 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localVariableDeclaration_in_synpred126_Java8877 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred126_Java8879 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _typeDeclaration_in_synpred127_Java8890 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _statement_in_synpred128_Java8900 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LPAREN_in_synpred129_Java8929 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_synpred130_Java8934 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SEMI_in_synpred131_Java8937 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_synpred132_Java8972 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_synpred133_Java8985 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_synpred134_Java8998 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _ELSE_in_synpred137_Java9184 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_synpred137_Java9188 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _forInit_in_synpred139_Java9371 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred139_Java9373 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18200020UL});
+		public static readonly BitSet _forCondition_in_synpred139_Java9375 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred139_Java9377 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18100020UL});
+		public static readonly BitSet _forUpdater_in_synpred139_Java9379 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_synpred139_Java9381 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_synpred139_Java9383 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_synpred155_Java9996 = new BitSet(new ulong[]{0x20000000000UL});
+		public static readonly BitSet _COLON_in_synpred155_Java9998 = new BitSet(new ulong[]{0x48E00C26000000UL,0xAC134500A3800164UL,0x12018AAC18280020UL});
+		public static readonly BitSet _statement_in_synpred155_Java10000 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _dmlOperation_in_synpred156_Java10067 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_synpred157_Java10077 = new BitSet(new ulong[]{0x0UL,0x0UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred157_Java10079 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expression_in_synpred158_Java10092 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _switchCaseLabel_in_synpred161_Java10297 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _localVariableDeclaration_in_synpred164_Java10387 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _expressionList_in_synpred165_Java10409 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _set_in_synpred193_Java11266 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _shiftExpression_in_synpred193_Java11356 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _set_in_synpred198_Java11519 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _multiplicativeExpression_in_synpred198_Java11571 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LPAREN_in_synpred208_Java11939 = new BitSet(new ulong[]{0x40000422000000UL,0x1000081000020UL,0x8000000UL});
+		public static readonly BitSet _type_in_synpred208_Java11941 = new BitSet(new ulong[]{0x0UL,0x0UL,0x100000UL});
+		public static readonly BitSet _RPAREN_in_synpred208_Java11943 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _unaryExpression_in_synpred208_Java11945 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arguments_in_synpred210_Java12289 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arguments_in_synpred214_Java12553 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_synpred216_Java12078 = new BitSet(new ulong[]{0x0UL,0x400040001000000UL,0x20800000000UL});
+		public static readonly BitSet _genericTypeArgumentListSimplified_in_synpred216_Java12128 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred216_Java12210 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_synpred216_Java12289 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _THIS_in_synpred216_Java12362 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SUPER_in_synpred216_Java12425 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_synpred216_Java12427 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SUPER_in_synpred216_Java12480 = new BitSet(new ulong[]{0x10000000000000UL});
+		public static readonly BitSet _DOT_in_synpred216_Java12484 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred216_Java12486 = new BitSet(new ulong[]{0x2UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_synpred216_Java12553 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _innerNewExpression_in_synpred216_Java12624 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INC_in_synpred218_Java12746 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DEC_in_synpred219_Java12770 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arguments_in_synpred228_Java13220 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arguments_in_synpred231_Java13371 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arrayDeclarator_in_synpred236_Java13851 = new BitSet(new ulong[]{0x10000000000000UL,0x8000000000UL});
+		public static readonly BitSet _DOT_in_synpred236_Java13919 = new BitSet(new ulong[]{0x1000000000UL});
+		public static readonly BitSet _CLASS_in_synpred236_Java13921 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _block_in_synpred237_Java13993 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _arguments_in_synpred238_Java13991 = new BitSet(new ulong[]{0x2UL,0x10000000000UL});
+		public static readonly BitSet _block_in_synpred238_Java13993 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DOT_in_synpred245_Java14054 = new BitSet(new ulong[]{0x1000000000UL,0x400040000000000UL,0x20800000000UL});
+		public static readonly BitSet _CLASS_in_synpred245_Java14072 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _genericTypeArgumentListSimplified_in_synpred245_Java14135 = new BitSet(new ulong[]{0x0UL,0x1000000UL,0x800000000UL});
+		public static readonly BitSet _SUPER_in_synpred245_Java14160 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_synpred245_Java14162 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SUPER_in_synpred245_Java14212 = new BitSet(new ulong[]{0x10000000000000UL});
+		public static readonly BitSet _DOT_in_synpred245_Java14216 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _IDENT_in_synpred245_Java14218 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_synpred245_Java14220 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _IDENT_in_synpred245_Java14270 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_synpred245_Java14272 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _THIS_in_synpred245_Java14347 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _SUPER_in_synpred245_Java14413 = new BitSet(new ulong[]{0x0UL,0x2000000000000UL});
+		public static readonly BitSet _arguments_in_synpred245_Java14415 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _innerNewExpression_in_synpred245_Java14463 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _mapDeclaration_in_synpred251_Java14708 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _setDeclaration_in_synpred252_Java14727 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _classBody_in_synpred254_Java14818 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _classBody_in_synpred256_Java14924 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LBRACK_in_synpred258_Java14991 = new BitSet(new ulong[]{0x40C00C22000000UL,0xAC134400A1800064UL,0x200820C18000020UL});
+		public static readonly BitSet _expression_in_synpred258_Java14994 = new BitSet(new ulong[]{0x0UL,0x0UL,0x20000UL});
+		public static readonly BitSet _RBRACK_in_synpred258_Java14996 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _LCURLY_in_synpred275_Java15170 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280006804UL});
+		public static readonly BitSet _modifier_in_synpred275_Java15172 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _getRule_in_synpred275_Java15175 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred275_Java15178 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _block_in_synpred275_Java15180 = new BitSet(new ulong[]{0x200010UL,0x200000001080008UL,0x6900418280046804UL});
+		public static readonly BitSet _modifier_in_synpred275_Java15184 = new BitSet(new ulong[]{0x0UL,0x1000000UL});
+		public static readonly BitSet _setRule_in_synpred275_Java15187 = new BitSet(new ulong[]{0x0UL,0x10000000000UL,0x200000UL});
+		public static readonly BitSet _SEMI_in_synpred275_Java15190 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _block_in_synpred275_Java15192 = new BitSet(new ulong[]{0x0UL,0x0UL,0x40000UL});
+		public static readonly BitSet _RCURLY_in_synpred275_Java15197 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }

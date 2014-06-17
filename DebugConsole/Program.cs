@@ -63,13 +63,8 @@ namespace DebugConsole
         {
             var parser = new ApaexParser();
             ////parser.Load(@"Examples\ActualsReportingBatch.cls");
-            parser.Load(@"java.test");
+            parser.Load(@"Examples\types.test");
             //return;
-            foreach (var file in Directory.GetFiles("MEP"))
-            {
-                Console.WriteLine(file);
-                parser.Load(file);
-            }
         }
       
     }

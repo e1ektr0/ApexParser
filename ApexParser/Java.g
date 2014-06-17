@@ -373,7 +373,7 @@ classScopeDeclarations
     |   STATIC block    ->  ^(CLASS_STATIC_INITIALIZER[$STATIC, "CLASS_STATIC_INITIALIZER"] block)
     |   modifierList
         ( 
-        	type IDENT propertyDeclaration -> ^(PROPERTY_DECL type IDENT propertyDeclaration)
+        	type IDENT propertyDeclaration -> ^(PROPERTY_DECL modifierList type IDENT propertyDeclaration)
 	|    genericTypeParameterList?
             (   
             	type IDENT formalParameterList arrayDeclaratorList? throwsClause? (block | SEMI)

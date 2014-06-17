@@ -1,0 +1,7 @@
+﻿public class H_C_CustomSettings
+{
+	public String Name {get;set;}
+	public Map<String> Name {get;set;}
+	public Map<String, Integer> Name {get;set;}
+	public Map<Map<String,Integer>,string> Name {get;set;}
+}
