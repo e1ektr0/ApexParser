@@ -396,8 +396,8 @@ forUpdater
     
 // EXPRESSIONS
 
-parenthesizedExpression
-    :   ^(PARENTESIZED_EXPR expression)
+parenthesizedExpression returns [IApexNode node]
+    :   ^(PARENTESIZED_EXPR expression) {node = $expr.node;}
     ;
     
 expression returns [IApexNode node]
@@ -456,10 +456,10 @@ expr returns [IApexNode node]
     |   ^(LOGICAL_NOT a=expr){node = $a.node;}
     
     |   ^(CAST_EXPR type a=expr){node = new CastExpression($type.type, $a.node);}
-    |   primaryExpression
+    |   primaryExpression {node = $primaryExpression.node;}
     ;
     
-primaryExpression
+primaryExpression returns [IApexNode node]
     :   ^(  DOT
             (   primaryExpression
                 (   IDENT
@@ -472,7 +472,7 @@ primaryExpression
             |   VOID CLASS
             )
         )
-    |   parenthesizedExpression
+    |   parenthesizedExpression {node = $parenthesizedExpression.node;}
     |   IDENT
     |   ^(METHOD_CALL primaryExpression genericTypeArgumentList? arguments)
     |   explicitConstructorCall
