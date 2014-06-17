@@ -332,11 +332,11 @@ blockStatement returns [IApexNode node]
     	localVariableDeclaration {node= new LocalVariableDeclaration();}
     |   typeDeclaration {node= $typeDeclaration.node;}
     |   statement {node= new Statement();}
-    | 	brokenExpression 
+    | 	brokenExpression  {node = new BrokenExpression();}
     ;
-brokenExpression
+brokenExpression  returns [IApexNode node] 
 :
-   ^(BROKEN_EXPRESSION expression DOT? SEMI?)
+   ^(BROKEN_EXPRESSION expression {node = $expression.node;} DOT? SEMI?)
 ;
 localVariableDeclaration returns [LocalVariableDeclaration varDeclaration]
     :   ^(VAR_DECLARATION localModifierList type variableDeclaratorList) {varDeclaration = new LocalVariableDeclaration($type.type, $variableDeclaratorList.fields);}
@@ -401,52 +401,61 @@ parenthesizedExpression
     ;
     
 expression returns [IApexNode node]
-    :   ^(EXPR expr)
+    :   ^(EXPR expr) {node = $expr.node;}
     ;
 
 expr returns [IApexNode node]
-    :   ^(ASSIGN  a=expr b=expr)
-    |   ^(PLUS_ASSIGN expr expr)
-    |   ^(MINUS_ASSIGN expr expr)
-    |   ^(STAR_ASSIGN expr expr)
-    |   ^(DIV_ASSIGN expr expr)
-    |   ^(AND_ASSIGN expr expr)
-    |   ^(OR_ASSIGN expr expr)
-    |   ^(XOR_ASSIGN expr expr)
-    |   ^(MOD_ASSIGN expr expr)
-    |   ^(BIT_SHIFT_RIGHT_ASSIGN expr expr)
-    |   ^(SHIFT_RIGHT_ASSIGN expr expr)
-    |   ^(SHIFT_LEFT_ASSIGN expr expr)
-    |   ^(QUESTION expr expr expr)
-    |   ^(LOGICAL_OR expr expr)
-    |   ^(LOGICAL_AND expr expr)
-    |   ^(OR expr expr)
-    |   ^(XOR expr expr)
-    |   ^(AND expr expr)
-    |   ^(EQUAL expr expr)
-    |   ^(NOT_EQUAL expr expr)
-    |   ^(INSTANCEOF expr type)
-    |   ^(LESS_OR_EQUAL expr expr)
-    |   ^(GREATER_OR_EQUAL expr expr)
-    |   ^(BIT_SHIFT_RIGHT expr expr)
-    |   ^(SHIFT_RIGHT expr expr)
-    |   ^(GREATER_THAN expr expr)
-    |   ^(SHIFT_LEFT expr expr)
-    |   ^(LESS_THAN expr expr)
-    |   ^(PLUS expr expr)
-    |   ^(MINUS expr expr)
-    |   ^(STAR expr expr)
-    |   ^(DIV expr expr)
-    |   ^(MOD expr expr)
-    |   ^(UNARY_PLUS expr)
-    |   ^(UNARY_MINUS expr)
-    |   ^(PRE_INC expr)
-    |   ^(PRE_DEC expr)
-    |   ^(POST_INC expr)
-    |   ^(POST_DEC expr)
-    |   ^(NOT expr)
-    |   ^(LOGICAL_NOT expr)
-    |   ^(CAST_EXPR type expr)
+    :   ^(ASSIGN  a=expr b=expr) {node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(PLUS_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(MINUS_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(STAR_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(DIV_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(AND_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(OR_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(XOR_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(MOD_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(BIT_SHIFT_RIGHT_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(SHIFT_RIGHT_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    |   ^(SHIFT_LEFT_ASSIGN a=expr b=expr){node = new AssigmentExpression($a.node, $b.node);}
+    
+    |   ^(QUESTION ifexpression=expr a=expr b=expr){node = new TernarIfExpression($ifexpression.node, $a.node, $b.node);}
+    
+    |   ^(LOGICAL_OR a=expr b=expr){node = new LogicalDoubleExpression($a.node, $b.node);}
+    |   ^(LOGICAL_AND a=expr b=expr){node = new LogicalDoubleExpression($a.node, $b.node);}
+    
+    |   ^(OR a=expr b=expr){node = new BitOperationExpression($a.node, $b.node);}
+    |   ^(XOR a=expr b=expr){node = new BitOperationExpression($a.node, $b.node);}
+    |   ^(AND a=expr b=expr){node = new BitOperationExpression($a.node, $b.node);}
+    |   ^(EQUAL a=expr b=expr) {node = new BynaryOperationWithBooleanResultExpression($a.node, $b.node);}
+    |   ^(NOT_EQUAL a=expr b=expr){node = new BynaryOperationWithBooleanResultExpression($a.node, $b.node);}
+    
+    |   ^(INSTANCEOF a=expr type){node = new InstanceOf($type.type, $a.node);}
+    
+    |   ^(LESS_OR_EQUAL a=expr b=expr){node = new BynaryOperationWithBooleanResultExpression($a.node, $b.node);}
+    |   ^(GREATER_OR_EQUAL a=expr b=expr){node = new BynaryOperationWithBooleanResultExpression($a.node, $b.node);}
+    |   ^(GREATER_THAN a=expr b=expr){node = new BynaryOperationWithBooleanResultExpression($a.node, $b.node);}
+    |   ^(LESS_THAN a=expr b=expr){node = new BynaryOperationWithBooleanResultExpression($a.node, $b.node);}
+    
+    |   ^(BIT_SHIFT_RIGHT a=expr b=expr){node = new BitOperationExpression($a.node, $b.node);}
+    |   ^(SHIFT_RIGHT a=expr b=expr){node = new BitOperationExpression($a.node, $b.node);}
+    |   ^(SHIFT_LEFT a=expr b=expr){node = new BitOperationExpression($a.node, $b.node);}
+        
+    |   ^(PLUS a=expr b=expr){node = new MathExpression($a.node, $b.node);}
+    |   ^(MINUS a=expr b=expr){node = new MathExpression($a.node, $b.node);}
+    |   ^(STAR a=expr b=expr){node = new MathExpression($a.node, $b.node);}
+    |   ^(DIV a=expr b=expr){node = new MathExpression($a.node, $b.node);}
+    |   ^(MOD a=expr b=expr){node = new MathExpression($a.node, $b.node);}
+    
+    |   ^(UNARY_PLUS a=expr)//todo:???
+    |   ^(UNARY_MINUS a=expr)//todo:???
+    |   ^(PRE_INC a=expr) {node = $a.node;}
+    |   ^(PRE_DEC a=expr){node = $a.node;}
+    |   ^(POST_INC a=expr){node = $a.node;}
+    |   ^(POST_DEC a=expr){node = $a.node;}
+    |   ^(NOT a=expr){node = $a.node;}
+    |   ^(LOGICAL_NOT a=expr){node = $a.node;}
+    
+    |   ^(CAST_EXPR type a=expr){node = new CastExpression($type.type, $a.node);}
     |   primaryExpression
     ;
     

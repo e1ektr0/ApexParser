@@ -49,6 +49,7 @@
     <Compile Include="ApexNodes\ApexProperty.cs" />
     <Compile Include="ApexNodes\ApexType.cs" />
     <Compile Include="ApexNodes\BaseApexNode.cs" />
+    <Compile Include="ApexNodes\Expression.cs" />
     <Compile Include="ApexNodes\IApexNode.cs" />
     <Compile Include="ApexNodes\Modifier.cs" />
     <Compile Include="output\JavaLexer.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Java.g" />
     <Antlr3 Include="JavaTreeParser.g">
       <Generator>MSBuild:Compile</Generator>

@@ -61,12 +61,15 @@ namespace DebugConsole
     {
         static void Main()
         {
+            var i = 1 / 2;
+            double d = 5.4 / 2;
+            var i2 = 1 / 2.5;
             var parser = new ApaexParser();
             ////parser.Load(@"Examples\ActualsReportingBatch.cls");
-           // parser.Load(@"Examples\types.test");
+            // parser.Load(@"Examples\types.test");
             parser.Load(@"Examples\block.test");
             //return;
         }
-      
+
     }
 }

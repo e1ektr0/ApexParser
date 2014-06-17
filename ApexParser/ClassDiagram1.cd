@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ApexParser.ApexNodes.Expression" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.DoubleExpression" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.BynaryOperationExpression" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.BynaryOperationWithBooleanResultExpression" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.BitOperationExpression" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.MathExpression" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.TernarIfExpression" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.LogicalDoubleExpression" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.AssigmentExpression" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.CastExpression" Collapsed="true">
+    <Position X="11.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApexParser.ApexNodes.InstanceOf" Collapsed="true">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApexNodes\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

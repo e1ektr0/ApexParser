@@ -36,9 +36,8 @@ namespace ApexParser.ApexNodes
         }
     }
 
-    public class Expression : BaseApexNode
+    public class BrokenExpression : BaseApexNode
     {
-
     }
 
     public enum AcessorType
@@ -66,5 +65,7 @@ namespace ApexParser.ApexNodes
             _getRule17 = getRule17;
         }
     }
+
+
 
 }
