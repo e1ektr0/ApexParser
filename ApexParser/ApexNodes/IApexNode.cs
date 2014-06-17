@@ -50,16 +50,20 @@ namespace ApexParser.ApexNodes
     {
         private readonly AcessorType _get;
         private readonly IApexNode _getBlock;
+        private readonly string _getRule17;
 
-        public Acessor(AcessorType get, IApexNode getBlock)
+
+        public Acessor(AcessorType get, IApexNode getBlock, string getRule17)
         {
             _get = get;
             _getBlock = getBlock;
+            _getRule17 = getRule17;
         }
 
-        public Acessor(AcessorType get)
+        public Acessor(AcessorType get, string getRule17)
         {
             _get = get;
+            _getRule17 = getRule17;
         }
     }
 

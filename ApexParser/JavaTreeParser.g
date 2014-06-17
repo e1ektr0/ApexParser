@@ -116,18 +116,18 @@ classScopeDeclarations returns [IApexNode node]
 propertyDeclaration returns [List<IApexNode> nodes]
 :
  {nodes = new List<IApexNode>();}
- ('{' modifier? getRule (SEMI{nodes.Add(new Acessor(AcessorType.Get));}|getBlock = block {nodes.Add(new Acessor(AcessorType.Get, $getBlock.node));})
-  (modifier? setRule (SEMI{nodes.Add(new Acessor(AcessorType.Set));}|setBlock = block {nodes.Add(new Acessor(AcessorType.Set, $setBlock.node));}) )? '}')
- | ('{' modifier? setRule (SEMI{nodes.Add(new Acessor(AcessorType.Set));}|setBlock = block {nodes.Add(new Acessor(AcessorType.Set, $setBlock.node));})
-  (modifier? getRule (SEMI{nodes.Add(new Acessor(AcessorType.Get));}|getBlock = block {nodes.Add(new Acessor(AcessorType.Get, $getBlock.node));}) )?  '}')
+ ('{' modifier? getRule (SEMI{nodes.Add(new Acessor(AcessorType.Get, $getRule.Name));}|getBlock = block {nodes.Add(new Acessor(AcessorType.Get, $getBlock.node, $getRule.Name));})
+  (modifier? setRule (SEMI{nodes.Add(new Acessor(AcessorType.Set, $setRule.Name));}|setBlock = block {nodes.Add(new Acessor(AcessorType.Set, $setBlock.node, $setRule.Name));}) )? '}')
+ | ('{' modifier? setRule (SEMI{nodes.Add(new Acessor(AcessorType.Set, $setRule.Name));}|setBlock = block {nodes.Add(new Acessor(AcessorType.Set, $setBlock.node, $setRule.Name));})
+  (modifier? getRule (SEMI{nodes.Add(new Acessor(AcessorType.Get, $getRule.Name));}|getBlock = block {nodes.Add(new Acessor(AcessorType.Get, $getBlock.node, $getRule.Name));}) )?  '}')
 ;
-getRule
+getRule returns [string Name]
 :
-    {((input.LT(1)as CommonTree)!=null&& (input.LT(1)as CommonTree).Text == "get")}? IDENT
+    {((input.LT(1)as CommonTree)!=null&& (input.LT(1)as CommonTree).Text == "get")}? IDENT {Name = $IDENT.Text;}
 ;
-setRule
+setRule returns [string Name]
 :
-    {(input.LT(1)as CommonTree)!=null&& (input.LT(1)as CommonTree).Text== "set"}? IDENT
+    {(input.LT(1)as CommonTree)!=null&& (input.LT(1)as CommonTree).Text== "set"}? IDENT {Name = $IDENT.Text;}
 ;   
 
 interfaceTopLevelScope
