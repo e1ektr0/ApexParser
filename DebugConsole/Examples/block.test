@@ -1,0 +1,27 @@
+﻿public class H_C_CustomSettings
+{
+	public static String PropertyName
+	{
+		get
+		{ 
+			var x = 1+1;
+			x.Add(x);
+			ClassName.Function();
+		}
+		set
+		{
+			var x = 1+1;
+			x.Add(x);
+			ClassName.Function();
+		}
+	}
+
+	public static Boolean triggersEnabled()
+    {
+		var x = 1+1;
+		x.Add(x);
+		ClassName.Function();
+    }
+
+	public abstract Boolean Method();
+}

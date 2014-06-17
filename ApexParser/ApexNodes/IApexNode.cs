@@ -5,124 +5,15 @@ namespace ApexParser.ApexNodes
     public interface IApexNode
     {
         void Add(IApexNode node);
-        void AddRage(List<IApexNode> nodes);
-    }
-
-    public abstract class BaseApexNode : IApexNode
-    {
-        public readonly List<IApexNode> Nodes = new List<IApexNode>();
-
-        public virtual void Add(IApexNode node)
-        {
-            Nodes.Add(node);
-        }
-
-        public virtual void AddRage(List<IApexNode> nodes)
-        {
-            Nodes.AddRange(nodes);
-        }
-    }
-
-    public class ApexType : BaseApexNode
-    {
-        private readonly string _ident;
-        private readonly List<ApexType> _genericTypes = new List<ApexType>();
-        public ApexType(string ident)
-        {
-            _ident = ident;
-        }
-
-        public void AddTypes(List<ApexType> genericTypeArgumentList24)
-        {
-            _genericTypes.AddRange(genericTypeArgumentList24);
-        }
-    }
-
-    public class ApexFieldList : BaseApexNode
-    {
-        public ApexFieldList(ApexType type9, List<Modifier> modifierList10, List<ApexField> variableDeclaratorList11)
-        {
-                
-        }
-
-        public List<ApexField> ApexFields { get; set; }
-     
-    }
-
-    public class ApexProperty : BaseApexNode
-    {
-        private readonly string _text;
-        private readonly ApexType _type13;
-        private readonly List<Modifier> _modifierList14;
-
-        public ApexProperty(string text, ApexType type13, List<Modifier> modifierList14)
-        {
-            _text = text;
-            _type13 = type13;
-            _modifierList14 = modifierList14;
-        }
-    }
-
-    public class ApexConstructor : BaseApexNode
-    {
-        private readonly List<Modifier> _modifierList12;
-
-        public ApexConstructor(List<Modifier> modifierList12)
-        {
-            _modifierList12 = modifierList12;
-        }
-    }
-
-    public class ApexField
-    {
-        public ApexField(string text)
-        {
-            
-        }
-
-        public bool IsArray { get; set; }
-    }
-
-    public class ApexMethod : BaseApexNode
-    {
-        private readonly List<Modifier> _modifierList8;
-        private readonly string _text;
-        private readonly List<Modifier> _modifierList5;
-        private readonly ApexType _type6;
-
-        public ApexMethod(string text, List<Modifier> modifierList5, ApexType type6)
-        {
-            _text = text;
-            _modifierList5 = modifierList5;
-            _type6 = type6;
-        }
-
-        public ApexMethod(string text, List<Modifier> modifierList8)
-        {
-            _text = text;
-            _modifierList8 = modifierList8;
-        }
-    }
-
-    public enum Modifier
-    {
-        Public,
-        Protected,
-        Private,
-        Static,
-        Abstract,
-        Override,
-        Virtual,
-        Global,
-        TestMethod
+        void AddRage<T>(List<T> nodes) where T : IApexNode;
     }
 
     public class ApexClassNode : BaseApexNode
     {
-        
+
     }
 
-   
+
     public class Statement : BaseApexNode
     {
 
@@ -133,18 +24,43 @@ namespace ApexParser.ApexNodes
 
     }
 
+    public class LocalVariableDeclaration : BaseApexNode
+    {
+        public LocalVariableDeclaration()
+        {
+        }
+
+        public LocalVariableDeclaration(ApexType type30, List<ApexField> variableDeclaratorList31)
+        {
+
+        }
+    }
+
     public class Expression : BaseApexNode
     {
-        
+
     }
 
-    enum AcessorType
+    public enum AcessorType
     {
-        
+        Get, Set
     }
-    public class Acessor
-    {
 
+    public class Acessor : BaseApexNode
+    {
+        private readonly AcessorType _get;
+        private readonly IApexNode _getBlock;
+
+        public Acessor(AcessorType get, IApexNode getBlock)
+        {
+            _get = get;
+            _getBlock = getBlock;
+        }
+
+        public Acessor(AcessorType get)
+        {
+            _get = get;
+        }
     }
 
 }

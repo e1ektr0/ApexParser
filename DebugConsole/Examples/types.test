@@ -4,4 +4,5 @@
 	public Map<String> Name {get;set;}
 	public Map<String, Integer> Name {get;set;}
 	public Map<Map<String,Integer>,string> Name {get;set;}
+	public String[] Array{get;set;}
 }

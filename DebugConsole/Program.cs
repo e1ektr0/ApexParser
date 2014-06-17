@@ -63,7 +63,8 @@ namespace DebugConsole
         {
             var parser = new ApaexParser();
             ////parser.Load(@"Examples\ActualsReportingBatch.cls");
-            parser.Load(@"Examples\types.test");
+           // parser.Load(@"Examples\types.test");
+            parser.Load(@"Examples\block.test");
             //return;
         }
       

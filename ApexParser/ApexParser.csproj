@@ -42,7 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApexNodes\ApexConstructor.cs" />
+    <Compile Include="ApexNodes\ApexField.cs" />
+    <Compile Include="ApexNodes\ApexFieldList.cs" />
+    <Compile Include="ApexNodes\ApexMethod.cs" />
+    <Compile Include="ApexNodes\ApexProperty.cs" />
+    <Compile Include="ApexNodes\ApexType.cs" />
+    <Compile Include="ApexNodes\BaseApexNode.cs" />
     <Compile Include="ApexNodes\IApexNode.cs" />
+    <Compile Include="ApexNodes\Modifier.cs" />
     <Compile Include="output\JavaLexer.cs" />
     <Compile Include="output\JavaParser.cs" />
     <Compile Include="output\JavaTreeParser.cs" />

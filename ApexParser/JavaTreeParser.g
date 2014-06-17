@@ -103,8 +103,10 @@ classTopLevelScope returns [IApexNode node]
 classScopeDeclarations returns [IApexNode node]
     :   ^(CLASS_INSTANCE_INITIALIZER block) {node = null;}
     |   ^(CLASS_STATIC_INITIALIZER block){node = null;}
-    |   ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? block?){node = new ApexMethod($IDENT.Text, $modifierList.modifierList,$type.type);}
-    |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?){node = new ApexMethod($IDENT.Text, $modifierList.modifierList);}
+    |   {node = new ApexMethod();}
+    	^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? (block {(node as ApexMethod).Block = $block.node;})?)
+    	{var method = node as ApexMethod;method.Ident = $IDENT.Text;method.ModifierList = $modifierList.modifierList; method.Type = $type.type;}
+    |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?)
     |   ^(VAR_DECLARATION modifierList type variableDeclaratorList){node = new ApexFieldList($type.type, $modifierList.modifierList, $variableDeclaratorList.fields);}
     |   ^(CONSTRUCTOR_DECL modifierList genericTypeParameterList? formalParameterList throwsClause? block){node = new ApexConstructor($modifierList.modifierList);}
     |   ^(PROPERTY_DECL modifierList type IDENT propertyDeclaration ){node = new ApexProperty($IDENT.Text, $type.type, $modifierList.modifierList, $propertyDeclaration.nodes);}
@@ -114,8 +116,10 @@ classScopeDeclarations returns [IApexNode node]
 propertyDeclaration returns [List<IApexNode> nodes]
 :
  {nodes = new List<IApexNode>();}
- ('{' modifier? getRule (SEMI|block) (modifier? setRule (SEMI|block))? '}')
- | ('{' modifier? setRule (SEMI|block) (modifier? getRule (SEMI|block))?  '}')
+ ('{' modifier? getRule (SEMI{nodes.Add(new Acessor(AcessorType.Get));}|getBlock = block {nodes.Add(new Acessor(AcessorType.Get, $getBlock.node));})
+  (modifier? setRule (SEMI{nodes.Add(new Acessor(AcessorType.Set));}|setBlock = block {nodes.Add(new Acessor(AcessorType.Set, $setBlock.node));}) )? '}')
+ | ('{' modifier? setRule (SEMI{nodes.Add(new Acessor(AcessorType.Set));}|setBlock = block {nodes.Add(new Acessor(AcessorType.Set, $setBlock.node));})
+  (modifier? getRule (SEMI{nodes.Add(new Acessor(AcessorType.Get));}|getBlock = block {nodes.Add(new Acessor(AcessorType.Get, $getBlock.node));}) )?  '}')
 ;
 getRule
 :
@@ -216,7 +220,7 @@ localModifier
 
 type returns [ApexType type]
     :   
-    	^(TYPE (primitiveType | qualifiedTypeIdent {type = $qualifiedTypeIdent.type;}) arrayDeclaratorList?)
+    	^(TYPE (primitiveType | qualifiedTypeIdent {type = $qualifiedTypeIdent.type;}) (arrayDeclaratorList {type.IsArray = true;})?)
     ;
 
 qualifiedTypeIdent  returns [ApexType type]
@@ -317,21 +321,25 @@ annotationDefaultValue
 // STATEMENTS / BLOCKS
 
 block returns [IApexNode node]
-    :   ^(BLOCK_SCOPE blockStatement*)
+    :   
+    	{node = new Block();}
+    	^(BLOCK_SCOPE (blockStatement {node.Add($blockStatement.node);})*)
     ;
     
 blockStatement returns [IApexNode node]
-    :   localVariableDeclaration
-    |   typeDeclaration
-    |   statement
+    :   
+    	
+    	localVariableDeclaration {node= new LocalVariableDeclaration();}
+    |   typeDeclaration {node= $typeDeclaration.node;}
+    |   statement {node= new Statement();}
     | 	brokenExpression 
     ;
 brokenExpression
 :
    ^(BROKEN_EXPRESSION expression DOT? SEMI?)
 ;
-localVariableDeclaration
-    :   ^(VAR_DECLARATION localModifierList type variableDeclaratorList)
+localVariableDeclaration returns [LocalVariableDeclaration varDeclaration]
+    :   ^(VAR_DECLARATION localModifierList type variableDeclaratorList) {varDeclaration = new LocalVariableDeclaration($type.type, $variableDeclaratorList.fields);}
     ;
     
         
