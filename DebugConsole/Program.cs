@@ -61,7 +61,6 @@ namespace DebugConsole
     {
         static void Main()
         {
-            Console.WriteLine((char)(UInt16.MaxValue));
             var parser = new ApaexParser();
             ////parser.Load(@"Examples\ActualsReportingBatch.cls");
             // parser.Load(@"Examples\types.test");

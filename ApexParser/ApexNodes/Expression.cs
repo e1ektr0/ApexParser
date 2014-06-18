@@ -93,4 +93,42 @@
             _sourExpression = sourExpression as Expression;
         }
     }
+    //primory expression:
+
+    public class ContantExpression : Expression
+    {
+        private readonly string _typeIdent;
+        private readonly string _value;
+
+        public ContantExpression(string typeIdent, string value)
+        {
+            _typeIdent = typeIdent;
+            _value = value;
+        }
+    }
+
+    public class ThisExpression : Expression
+    {
+
+    }
+
+    public class SuperExpression : Expression
+    {
+
+    }
+
+    public class IdentExpression : Expression
+    {
+        private readonly string _ident;
+
+        public IdentExpression(string ident)
+        {
+            _ident = ident;
+        }
+    }
+
+    public class MethodCallExpression
+    {
+
+    }
 }

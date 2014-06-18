@@ -912,8 +912,7 @@ unaryExpressionNotPlusMinus
     
 postfixedExpression
         // At first resolve the primary expression ...
-    :   (   primaryExpression                       ->  primaryExpression
-        )
+    :   (   primaryExpression                       ->  primaryExpression )
         // ... and than the optional things that may follow a primary expression 0 or more times.
         (   outerDot=DOT                            
             (   (   genericTypeArgumentListSimplified?  // Note: generic type arguments are only valid for method calls, i.e. if there

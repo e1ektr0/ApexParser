@@ -59,7 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="Expression.cd" />
     <None Include="Java.g" />
     <Antlr3 Include="JavaTreeParser.g">
       <Generator>MSBuild:Compile</Generator>

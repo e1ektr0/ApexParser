@@ -477,15 +477,15 @@ primaryExpression returns [IApexNode node]
             )
         )
     |   parenthesizedExpression {node = $parenthesizedExpression.node;}
-    |   IDENT
+    |   IDENT {node = new IdentExpression($IDENT.Text); }
     |   ^(METHOD_CALL primaryExpression genericTypeArgumentList? arguments)
     |   explicitConstructorCall
     |   ^(ARRAY_ELEMENT_ACCESS primaryExpression expression)
-    |   literal
+    |   literal {node = $literal.vale;}
     |   newExpression
-    |   THIS
+    |   THIS {node = new ThisExpression();}
     |   arrayTypeDeclarator
-    |   SUPER
+    |   SUPER {node = new SuperExpression();}
     ;
     
 explicitConstructorCall
@@ -519,14 +519,14 @@ arguments
     :   ^(ARGUMENT_LIST expression*)
     ;
 
-literal 
-    :   HEX_LITERAL
-    |   OCTAL_LITERAL
-    |   DECIMAL_LITERAL
-    |   FLOATING_POINT_LITERAL
-    |   CHARACTER_LITERAL
-    |   STRING_LITERAL
-    |   TRUE
-    |   FALSE
-    |   NULL
+literal returns [ContantExpression vale]
+    :   HEX_LITERAL {vale = new ContantExpression("integer", $HEX_LITERAL.Text);}
+    |   OCTAL_LITERAL {vale = new ContantExpression("integer", $OCTAL_LITERAL.Text);}
+    |   DECIMAL_LITERAL {vale = new ContantExpression("integer", $DECIMAL_LITERAL.Text);}
+    |   FLOATING_POINT_LITERAL {vale = new ContantExpression("double", $FLOATING_POINT_LITERAL.Text);}
+    |   CHARACTER_LITERAL {vale = new ContantExpression("char", $CHARACTER_LITERAL.Text);}
+    |   STRING_LITERAL {vale = new ContantExpression("string", $STRING_LITERAL.Text);}
+    |   TRUE {vale = new ContantExpression("boolean", $TRUE.Text);}
+    |   FALSE {vale = new ContantExpression("boolean", $FALSE.Text);}
+    |   NULL {vale = new ContantExpression("null", $NULL.Text);}
     ;
