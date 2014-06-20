@@ -20,13 +20,17 @@ namespace ApexParser.ApexNodes
 
     public class LocalVariableDeclaration : BaseApexNode
     {
+        private readonly ApexType _type30;
+        private readonly List<ApexField> _variableDeclaratorList31;
+
         public LocalVariableDeclaration()
         {
         }
 
         public LocalVariableDeclaration(ApexType type30, List<ApexField> variableDeclaratorList31)
         {
-
+            _type30 = type30;
+            _variableDeclaratorList31 = variableDeclaratorList31;
         }
     }
 

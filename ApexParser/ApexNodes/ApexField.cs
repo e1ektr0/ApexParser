@@ -8,5 +8,7 @@
         }
 
         public bool IsArray { get; set; }
+
+        public IApexNode Initializer { get; set; }
     }
 }

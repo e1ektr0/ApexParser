@@ -42,6 +42,10 @@ namespace DebugConsole
             if (!parser.hasErrors() && !xs.hasErrors())
                 return;
 
+            foreach (var message in parser.getMessages())
+            {
+                Console.WriteLine(message);
+            }
             foreach (var message in xs.getMessages())
             {
                 Console.WriteLine(message);
@@ -62,10 +66,11 @@ namespace DebugConsole
         static void Main()
         {
             var parser = new ApaexParser();
-            ////parser.Load(@"Examples\ActualsReportingBatch.cls");
+            parser.Load(@"java.test");
+
             // parser.Load(@"Examples\types.test");
             //parser.Load(@"Examples\block.test");
-            parser.Load(@"Examples\statements.test");
+            //parser.Load(@"Examples\statements.test");
             //return;
         }
 

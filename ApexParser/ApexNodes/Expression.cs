@@ -127,8 +127,51 @@
         }
     }
 
-    public class MethodCallExpression
+    public class MethodCallExpression:Expression
     {
+        private readonly IApexNode _methodPrimoryExpression;
+
+        public MethodCallExpression(IApexNode methodPrimoryExpression)
+        {
+            _methodPrimoryExpression = methodPrimoryExpression;
+        }
+
+        public System.Collections.Generic.List<IApexNode> Arguments { get; set; }
+
+        public System.Collections.Generic.List<ApexType> Generic { get; set; }
+    }
+
+    public enum DotScope
+    {
+        Ident,
+        This, Super, Class
+    }
+
+    public class DotExpression : Expression
+    {
+        private string _methodName;
+        private IApexNode _leftExpression;
+        private DotScope dotScope;
+        private IApexNode innerNewExpression52;
+
+        public DotExpression(string methodName, IApexNode leftExpression)
+        {
+            this._methodName = methodName;
+            this.dotScope = DotScope.Ident;
+            this._leftExpression = leftExpression;
+        }
+
+        public DotExpression(DotScope dotScope, IApexNode leftExpression)
+        {
+            this.dotScope = dotScope;
+            this._leftExpression = leftExpression;
+        }
+
+        public DotExpression(IApexNode innerNewExpression52, IApexNode leftExpression)
+        {
+            this.innerNewExpression52 = innerNewExpression52;
+            this._leftExpression = leftExpression;
+        }
 
     }
 }

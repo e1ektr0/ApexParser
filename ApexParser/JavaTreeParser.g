@@ -152,17 +152,17 @@ variableDeclaratorList returns [List<ApexField> fields]
 
 variableDeclarator returns [ApexField field]
 //todo: add initializer to field
-    :   ^(VAR_DECLARATOR variableDeclaratorId {field = $variableDeclaratorId.fieldId;} variableInitializer?)
+    :   ^(VAR_DECLARATOR variableDeclaratorId {field = $variableDeclaratorId.fieldId;} (variableInitializer { field.Initializer = $variableInitializer.initializer;})?)
     ;
     
 variableDeclaratorId returns [ApexField fieldId]
     :   ^(IDENT {fieldId = new ApexField($IDENT.Text);} (arrayDeclaratorList {fieldId.IsArray = true;})?)
     ;
 
-variableInitializer
-    :   arrayInitializer
-    |   expression
-    |   brokenExpression 
+variableInitializer returns[IApexNode initializer]
+    :   arrayInitializer //todo:
+    |   expression {initializer = $expression.node;}
+    |   brokenExpression {initializer = $brokenExpression.node;}
     ;
 
 arrayDeclarator
@@ -329,7 +329,7 @@ block returns [IApexNode node]
 blockStatement returns [IApexNode node]
     :   
     	
-    	localVariableDeclaration {node= new LocalVariableDeclaration();}
+    	localVariableDeclaration {node= $localVariableDeclaration.varDeclaration;}
     |   typeDeclaration {node= $typeDeclaration.node;}
     |   statement { node = $statement.node; }
     | 	brokenExpression  {node = new BrokenExpression();}
@@ -462,23 +462,26 @@ expr returns [IApexNode node]
     |   ^(CAST_EXPR type a=expr){node = new CastExpression($type.type, $a.node);}
     |   primaryExpression {node = $primaryExpression.node;}
     ;
-    
+        
 primaryExpression returns [IApexNode node]
     :   ^(  DOT
-            (   primaryExpression
-                (   IDENT
-                |   THIS
-                |   SUPER
-                |   innerNewExpression
-                |   CLASS
+            (   dotPrimaryExpression =primaryExpression
+                (   
+                    IDENT {node = new DotExpression($IDENT.Text,$dotPrimaryExpression.node);}
+                |   THIS  {node = new DotExpression(DotScope.This,$dotPrimaryExpression.node);}
+                |   SUPER {node = new DotExpression(DotScope.Super,$dotPrimaryExpression.node);}
+                |   innerNewExpression {node = new DotExpression($innerNewExpression.node, $dotPrimaryExpression.node);}
+                |   CLASS {node = new DotExpression(DotScope.Class,$dotPrimaryExpression.node);}
                 )
-            |   primitiveType CLASS
-            |   VOID CLASS
+	    |   primitiveType CLASS//deprecate
+            |   VOID CLASS//todo:????
             )
         )
     |   parenthesizedExpression {node = $parenthesizedExpression.node;}
     |   IDENT {node = new IdentExpression($IDENT.Text); }
-    |   ^(METHOD_CALL primaryExpression genericTypeArgumentList? arguments)
+    |   ^(METHOD_CALL methodPrimoryExpression = primaryExpression {node = new MethodCallExpression($methodPrimoryExpression.node);}
+     	(genericTypeArgumentList {var method = node as MethodCallExpression; method.Generic = $genericTypeArgumentList.types;})? arguments) 
+     	{var method = node as MethodCallExpression; method.Arguments = $arguments.nodes;}
     |   explicitConstructorCall
     |   ^(ARRAY_ELEMENT_ACCESS primaryExpression expression)
     |   literal {node = $literal.vale;}
@@ -506,8 +509,8 @@ newExpression
     |   ^(CLASS_CONSTRUCTOR_CALL genericTypeArgumentList? qualifiedTypeIdent arguments classTopLevelScope?)
     ;
 
-innerNewExpression // something like 'InnerType innerType = outer.new InnerType();'
-    :   ^(CLASS_CONSTRUCTOR_CALL genericTypeArgumentList? IDENT arguments classTopLevelScope?)
+innerNewExpression  returns [IApexNode node]// something like 'InnerType innerType = outer.new InnerType();'
+    :   ^(CLASS_CONSTRUCTOR_CALL genericTypeArgumentList? IDENT arguments classTopLevelScope?)//todo:
     ;
     
 newArrayConstruction
@@ -515,8 +518,10 @@ newArrayConstruction
     |   expression+ arrayDeclaratorList?
     ;
 
-arguments
-    :   ^(ARGUMENT_LIST expression*)
+arguments returns [List<IApexNode> nodes]
+    :   
+    {nodes = new List<IApexNode>();}
+    ^(ARGUMENT_LIST (expression {nodes.Add($expression.node);})*)
     ;
 
 literal returns [ContantExpression vale]

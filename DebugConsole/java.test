@@ -2,11 +2,7 @@
 {
 	public static Boolean triggersEnabled()
     {
-		//var x = Ident().
-		var z = 1+1;
-		//var x = Ident().d
-		var z = 1+1;
-		//var x = (1+Ident()).d
+		var x = this.class;
     }
 	public String Name {get;set;}
 }
