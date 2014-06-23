@@ -370,15 +370,16 @@ statement returns [IApexNode node]
     	^(TRY tryBlock = block{var tryStatemnt = node as TryStatemnt;tryStatemnt.Try = $tryBlock.node;} 
     	(catches{var tryStatemnt = node as TryStatemnt;tryStatemnt.Catches = $catches.catches;})? 
     	(finalyBlock = block{var tryStatemnt = node as TryStatemnt;tryStatemnt.Finaly = $finalyBlock.node;})?)
-    |   ^(SWITCH parenthesizedExpression switchBlockLabels)
-    |   ^(SYNCHRONIZED parenthesizedExpression block)
-    |   ^(RETURN expression?)
-    |   ^(THROW expression)
-    |   ^(BREAK IDENT?)
-    |   ^(CONTINUE IDENT?)
-    |   ^(LABELED_STATEMENT IDENT statement)
+    |   ^(SWITCH parenthesizedExpression switchBlockLabels) 
+    	{node = new SwitchStatement($parenthesizedExpression.node, $switchBlockLabels.sBlock);}
+    |   ^(SYNCHRONIZED parenthesizedExpression block) //todo????
+    |  	{node = new ReturnStatement();}  ^(RETURN (expression {(node as ReturnStatement).Expression = $expression.node;})?)
+    | 	{node = new ThrowStatement();}   ^(THROW expression  {(node as ThrowStatement).Expression = $expression.node;})
+    |   ^(BREAK IDENT?) {node = new BreakStatement();}
+    |   ^(CONTINUE IDENT?){node = new ContinueStatement();}
+    |   ^(LABELED_STATEMENT IDENT labelStatement = statement){node = new LabelStatement($IDENT.Text, $labelStatement.node);}
     |   expression { node = $expression.node; }
-    |   SEMI // Empty statement.
+    |   SEMI {node = new EmptyStatement();}
     ;
         
     
@@ -386,16 +387,22 @@ catchClause returns [CatchBlock catchResult]
     :   ^(CATCH formalParameterStandardDecl block){catchResult = new CatchBlock($block.node);}
     ;
 
-switchBlockLabels
-    :   ^(SWITCH_BLOCK_LABEL_LIST switchCaseLabel* switchDefaultLabel? switchCaseLabel*)
+switchBlockLabels returns[SwitchBlock sBlock]
+    :   
+    {sBlock = new SwitchBlock();}
+    	^(SWITCH_BLOCK_LABEL_LIST (beforeDefaultCase = switchCaseLabel {sBlock.Add($beforeDefaultCase.caseB);})*
+    	 (switchDefaultLabel {sBlock.Add($switchDefaultLabel.caseB);})? ( aftereDefaultCase = switchCaseLabel {sBlock.Add($aftereDefaultCase.caseB);})*)
     ;
         
-switchCaseLabel
-    :   ^(CASE expression blockStatement*)
+switchCaseLabel returns[SwitchCaseBlock caseB]
+    :   
+    	^(CASE expression {caseB = new SwitchCaseBlock($expression.node);} (blockStatement {caseB.Add($blockStatement.node);})*)
     ;
     
-switchDefaultLabel
-    :   ^(DEFAULT blockStatement*)
+switchDefaultLabel returns [SwitchCaseBlock caseB]
+    :   
+    	{caseB = new SwitchCaseBlock();}
+    	^(DEFAULT (blockStatement {caseB.Add($blockStatement.node);})*)
     ;
     
 forInit returns [ForInit init]
