@@ -160,7 +160,7 @@ variableDeclaratorId returns [ApexField fieldId]
     ;
 
 variableInitializer returns[IApexNode initializer]
-    :   arrayInitializer //todo:
+    :   arrayInitializer {initializer = $arrayInitializer.initializer; }
     |   expression {initializer = $expression.node;}
     |   brokenExpression {initializer = $brokenExpression.node;}
     ;
@@ -173,8 +173,10 @@ arrayDeclaratorList
     :   ^(ARRAY_DECLARATOR_LIST ARRAY_DECLARATOR*)  
     ;
     
-arrayInitializer
-    :   ^(ARRAY_INITIALIZER variableInitializer*)
+arrayInitializer returns [ArrayInitializer initializer]
+    :  
+    	{initializer = new ArrayInitializer();}
+     	^(ARRAY_INITIALIZER (variableInitializer {initializer.Add($variableInitializer.initializer);})*)
     ;
 
 throwsClause
@@ -270,9 +272,10 @@ formalParameterVarargDecl
     :   ^(FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId)
     ;
     
-qualifiedIdentifier 
-    :   IDENT
-    |   ^(DOT qualifiedIdentifier IDENT)
+qualifiedIdentifier returns [Identifier ident]
+    :  
+    	outerIdent = IDENT {ident = new Identifier($outerIdent.Text); }
+    |   ^(DOT innerQual = qualifiedIdentifier innerIdent = IDENT){ident = new Identifier($innerIdent.Text);ident.SubIdent = $innerQual.ident; }
     ;
     
 // ANNOTATIONS
@@ -350,7 +353,8 @@ statement returns [IApexNode node]
     		ifStatement.BoolExpression = $parenthesizedExpression.node; 
     		ifStatement.TrueStatement = $trueStatement.node; } 
     	( elseStatement = statement { (node as IfStatement).ElseStatement = $elseStatement.node; })?)
-    |   ^(FOR forInit forCondition forUpdater statement)
+    |   ^(FOR forInit forCondition forUpdater forStatementInner = statement)
+    	{var forStatement  = new ForStatement(); forStatement.Init = $forInit.init; forStatement.Condition = $forCondition.condition;forStatement.Update = $forUpdater.updates;forStatement.Statement = $forStatementInner.node; }
     |   ^(FOR_EACH localModifierList type IDENT expression statement) 
     |   ^(WHILE parenthesizedExpression statement)
     |   ^(DO statement parenthesizedExpression)
@@ -386,16 +390,18 @@ switchDefaultLabel
     :   ^(DEFAULT blockStatement*)
     ;
     
-forInit
-    :   ^(FOR_INIT (localVariableDeclaration | expression*)?)
+forInit returns [ForInit init]
+    :   ^(FOR_INIT (localVariableDeclaration {init = new ForInit($localVariableDeclaration.varDeclaration);} |  {init = new ForInit();} (expression {init.Add($expression.node);})*)?)
     ;
     
-forCondition
-    :   ^(FOR_CONDITION expression?)
+forCondition returns [IApexNode condition]
+    :   ^(FOR_CONDITION (expression {condition = $expression.node;})?)
     ;
     
-forUpdater
-    :   ^(FOR_UPDATE expression*)
+forUpdater returns [List<IApexNode> updates]
+    :
+    {updates = new List<IApexNode>();}   
+    ^(FOR_UPDATE (expression {updates.Add($expression.node);})*)
     ;
     
 // EXPRESSIONS
@@ -482,46 +488,61 @@ primaryExpression returns [IApexNode node]
     |   ^(METHOD_CALL methodPrimoryExpression = primaryExpression {node = new MethodCallExpression($methodPrimoryExpression.node);}
      	(genericTypeArgumentList {var method = node as MethodCallExpression; method.Generic = $genericTypeArgumentList.types;})? arguments) 
      	{var method = node as MethodCallExpression; method.Arguments = $arguments.nodes;}
-    |   explicitConstructorCall
+    |   explicitConstructorCall {node = $explicitConstructorCall.call;}
     |   ^(ARRAY_ELEMENT_ACCESS primaryExpression expression)
     |   literal {node = $literal.vale;}
-    |   newExpression
+    |   newExpression {node = $newExpression.node;}
     |   THIS {node = new ThisExpression();}
-    |   arrayTypeDeclarator
+    |   arrayTypeDeclarator {node = $arrayTypeDeclarator.declarator;}
     |   SUPER {node = new SuperExpression();}
     ;
     
-explicitConstructorCall
-    :   ^(THIS_CONSTRUCTOR_CALL genericTypeArgumentList? arguments)
-    |   ^(SUPER_CONSTRUCTOR_CALL primaryExpression? genericTypeArgumentList? arguments)
+
+arrayTypeDeclarator returns [ArrayDeclarator declarator]
+    :  
+    	{declarator = new ArrayDeclarator();}
+     	^(ARRAY_DECLARATOR (innerArrDec = arrayTypeDeclarator {declarator.SubDeclarator =$innerArrDec.declarator; } | qualifiedIdentifier {declarator.Type = $qualifiedIdentifier.ident;} | primitiveType))
+    ;
+explicitConstructorCall returns[ExplicitContructorCall call]
+    :   
+	{call = new ExplicitContructorCall();}
+        ^(THIS_CONSTRUCTOR_CALL (genericTypeArgumentList {call.Gerics = $genericTypeArgumentList.types;})? arguments {call.Arguments = $arguments.nodes; call.Scope = DotScope.This;}) 
+    |   ^(SUPER_CONSTRUCTOR_CALL (primaryExpression {call.PrimoryExpression = $primaryExpression.node;})?  (genericTypeArgumentList {call.Gerics = $genericTypeArgumentList.types;})?
+     	arguments {call.Arguments = $arguments.nodes; call.Scope = DotScope.This;})
     ;
 
-arrayTypeDeclarator
-    :   ^(ARRAY_DECLARATOR (arrayTypeDeclarator | qualifiedIdentifier | primitiveType))
-    ;
 
-newExpression
-    :   ^(  STATIC_ARRAY_CREATOR
-            (   primitiveType newArrayConstruction
-            |   genericTypeArgumentList? qualifiedTypeIdent newArrayConstruction
-            )
-        )
-    |   ^(CLASS_CONSTRUCTOR_CALL genericTypeArgumentList? qualifiedTypeIdent arguments classTopLevelScope?)
-    ;
 
 innerNewExpression  returns [IApexNode node]// something like 'InnerType innerType = outer.new InnerType();'
     :   ^(CLASS_CONSTRUCTOR_CALL genericTypeArgumentList? IDENT arguments classTopLevelScope?)//todo:
     ;
+newExpression returns [IApexNode node]
+    :  
+    	{node = new StaticArrayCreator();}
+    	^(  STATIC_ARRAY_CREATOR
+            (   primitiveType newArrayConstruction
+            |  ( genericTypeArgumentList {var arrayCreator = node as StaticArrayCreator;arrayCreator.GenericsArguments = $genericTypeArgumentList.types; })?
+            	 qualifiedTypeIdent innerNewArrayConst = newArrayConstruction 
+            	 {var arrayCreator = node as StaticArrayCreator;arrayCreator.Type = $qualifiedTypeIdent.type;arrayCreator.ArrayConstructor = $innerNewArrayConst.node;  }
+            )
+        )
+    |  
+    	{node = new ClassConstructorCall();}
+     ^(CLASS_CONSTRUCTOR_CALL (genericTypeArgumentList {var classConstructroCall = node as ClassConstructorCall; classConstructroCall.GenericsArguments = $genericTypeArgumentList.types;})? 
+     qualifiedTypeIdent arguments  {var classConstructroCall = node as ClassConstructorCall; classConstructroCall.Type = $qualifiedTypeIdent.type; classConstructroCall.arguments = $arguments.nodes;}
+      (classTopLevelScope)?)
+    ;
+
     
-newArrayConstruction
-    :   arrayDeclaratorList arrayInitializer
-    |   expression+ arrayDeclaratorList?
+newArrayConstruction returns [NewArray node]
+    :   {node= new NewArray();}
+    	arrayDeclaratorList arrayInitializer {node.ArrayInitializer = $arrayInitializer.initializer; }
+    |   (expression {node.Add($expression.node);})+ arrayDeclaratorList?
     ;
 
 arguments returns [List<IApexNode> nodes]
     :   
-    {nodes = new List<IApexNode>();}
-    ^(ARGUMENT_LIST (expression {nodes.Add($expression.node);})*)
+	    {nodes = new List<IApexNode>();} ^(ARGUMENT_LIST (expression {nodes.Add($expression.node);})*)
     ;
 
 literal returns [ContantExpression vale]

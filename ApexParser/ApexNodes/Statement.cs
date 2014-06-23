@@ -20,4 +20,31 @@ namespace ApexParser.ApexNodes
 
         public IApexNode ElseStatement { get; set; }
     }
+
+    public class ForInit : Statement
+    {
+        private LocalVariableDeclaration localVariableDeclaration51;
+
+        public ForInit(LocalVariableDeclaration localVariableDeclaration51)
+        {
+            // TODO: Complete member initialization
+            this.localVariableDeclaration51 = localVariableDeclaration51;
+        }
+
+        public ForInit()
+        {
+            // TODO: Complete member initialization
+        }
+
+    }
+    public class ForStatement : Statement
+    {
+
+        public ForInit Init { get; set; }
+
+        public IApexNode Condition { get; set; }
+
+        public List<IApexNode> Update { get; set; }
+        public IApexNode Statement { get; set; }
+    }
 }

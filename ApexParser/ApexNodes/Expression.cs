@@ -174,4 +174,65 @@
         }
 
     }
+
+    public class NewArray : Expression
+    {
+
+        public ArrayInitializer ArrayInitializer { get; set; }
+    }
+    public class ArrayInitializer : Expression
+    {
+
+    }
+
+    public class Identifier : Expression
+    {
+        private string p;
+
+        public Identifier(string p)
+        {
+            // TODO: Complete member initialization
+            this.p = p;
+        }
+
+
+        public Identifier SubIdent { get; set; }
+    }
+    public class ExplicitContructorCall : Expression
+    {
+
+        public IApexNode PrimoryExpression { get; set; }
+
+        public System.Collections.Generic.List<ApexType> Gerics { get; set; }
+
+        public DotScope Scope { get; set; }
+
+        public System.Collections.Generic.List<IApexNode> Arguments { get; set; }
+    }
+    public class ArrayDeclarator : Expression
+    {
+
+        public Identifier Type { get; set; }
+
+        public ArrayDeclarator SubDeclarator { get; set; }
+    }
+    public class StaticArrayCreator : Expression
+    {
+
+        public ApexType Type { get; set; }
+
+        public NewArray ArrayConstructor { get; set; }
+
+        public System.Collections.Generic.List<ApexType> GenericsArguments { get; set; }
+    }
+    public class ClassConstructorCall : Expression
+    {
+
+        public System.Collections.Generic.List<ApexType> GenericsArguments { get; set; }
+
+        public ApexType Type { get; set; }
+
+        public System.Collections.Generic.List<IApexNode> arguments { get; set; }
+    }
 }
+
