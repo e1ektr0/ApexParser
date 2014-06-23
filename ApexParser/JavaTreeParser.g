@@ -346,6 +346,10 @@ localVariableDeclaration returns [LocalVariableDeclaration varDeclaration]
     ;
     
         
+
+catches returns [List<CatchBlock> catches]
+    :   ^(CATCH_CLAUSE_LIST catchClause+)
+    ;
 statement returns [IApexNode node]
     :   block { node = $block.node; }
     |   { node = new IfStatement(); } ^(IF parenthesizedExpression 
@@ -354,11 +358,18 @@ statement returns [IApexNode node]
     		ifStatement.TrueStatement = $trueStatement.node; } 
     	( elseStatement = statement { (node as IfStatement).ElseStatement = $elseStatement.node; })?)
     |   ^(FOR forInit forCondition forUpdater forStatementInner = statement)
-    	{var forStatement  = new ForStatement(); forStatement.Init = $forInit.init; forStatement.Condition = $forCondition.condition;forStatement.Update = $forUpdater.updates;forStatement.Statement = $forStatementInner.node; }
-    |   ^(FOR_EACH localModifierList type IDENT expression statement) 
-    |   ^(WHILE parenthesizedExpression statement)
-    |   ^(DO statement parenthesizedExpression)
-    |   ^(TRY block catches? block?)  // The second optional block is the optional finally block.
+    	{var forStatement  = new ForStatement(); forStatement.Init = $forInit.init; forStatement.Condition = $forCondition.condition;forStatement.Update = $forUpdater.updates;forStatement.Statement = $forStatementInner.node; node = forStatement; }
+    |   ^(FOR_EACH localModifierList type IDENT expression foreachStatementInner = statement) 
+    	{node = new ForEachStatement($type.type, $IDENT.Text, $expression.node, $foreachStatementInner.node); }
+    |   ^(WHILE parenthesizedExpression whileInnerStatement = statement)
+	{node = new WhileStatement($parenthesizedExpression.node, $whileInnerStatement.node);}
+    |   ^(DO doInnerStatemnt = statement parenthesizedExpression) 
+    	{node = new DoStatement($parenthesizedExpression.node, $doInnerStatemnt.node);}
+    |   
+    	{node = new TryStatemnt();}
+    	^(TRY tryBlock = block{var tryStatemnt = node as TryStatemnt;tryStatemnt.Try = $tryBlock.node;} 
+    	(catches{var tryStatemnt = node as TryStatemnt;tryStatemnt.Catches = $catches.catches;})? 
+    	(finalyBlock = block{var tryStatemnt = node as TryStatemnt;tryStatemnt.Finaly = $finalyBlock.node;})?)
     |   ^(SWITCH parenthesizedExpression switchBlockLabels)
     |   ^(SYNCHRONIZED parenthesizedExpression block)
     |   ^(RETURN expression?)
@@ -370,12 +381,9 @@ statement returns [IApexNode node]
     |   SEMI // Empty statement.
     ;
         
-catches
-    :   ^(CATCH_CLAUSE_LIST catchClause+)
-    ;
     
-catchClause
-    :   ^(CATCH formalParameterStandardDecl block)
+catchClause returns [CatchBlock catchResult]
+    :   ^(CATCH formalParameterStandardDecl block){catchResult = new CatchBlock($block.node);}
     ;
 
 switchBlockLabels
