@@ -29,5 +29,7 @@ namespace ApexParser.ApexNodes
         public List<Modifier> ModifierList { get; set; }
         public ApexType Type { get; set; }
         public IApexNode Block { get; set; }
+
+        public List<SignatureParam> parameters { get; set; }
     }
 }

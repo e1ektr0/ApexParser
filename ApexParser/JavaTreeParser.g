@@ -50,17 +50,17 @@ javaSource returns [IApexNode node]
     :   ^(JAVA_SOURCE annotationList packageDeclaration? importDeclaration* typeDeclaration?) {node = $typeDeclaration.node;}
     ;
 
-packageDeclaration 
+packageDeclaration //deprecate
     :   ^(PACKAGE qualifiedIdentifier)  
     ;
     
-importDeclaration
+importDeclaration//deprecate
     :   ^(IMPORT STATIC? qualifiedIdentifier DOTSTAR?)
     ;
     
 typeDeclaration returns [IApexNode node]
     :   ^(CLASS modifierList IDENT genericTypeParameterList? extendsClause? implementsClause? classTopLevelScope) {node = $classTopLevelScope.node;}
-    |   ^(INTERFACE modifierList IDENT genericTypeParameterList? extendsClause? interfaceTopLevelScope)
+    |   ^(INTERFACE modifierList IDENT genericTypeParameterList? extendsClause? interfaceTopLevelScope) {node = $interfaceTopLevelScope.node;}
     |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope)
     |   ^(AT modifierList IDENT annotationTopLevelScope)
     ;
@@ -105,8 +105,10 @@ classScopeDeclarations returns [IApexNode node]
     |   ^(CLASS_STATIC_INITIALIZER block){node = null;}
     |   {node = new ApexMethod();}
     	^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? (block {(node as ApexMethod).Block = $block.node;})?)
-    	{var method = node as ApexMethod;method.Ident = $IDENT.Text;method.ModifierList = $modifierList.modifierList; method.Type = $type.type;}
-    |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? block?)
+    	{var method = node as ApexMethod;method.Ident = $IDENT.Text;method.ModifierList = $modifierList.modifierList; method.Type = $type.type; method.parameters = $formalParameterList.parameters;}
+    | {node = new ApexMethod();}
+      ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause? (block {(node as ApexMethod).Block = $block.node;})?)
+      {var method = node as ApexMethod;method.Ident = $IDENT.Text;method.ModifierList = $modifierList.modifierList;  method.parameters = $formalParameterList.parameters;}
     |   ^(VAR_DECLARATION modifierList type variableDeclaratorList){node = new ApexFieldList($type.type, $modifierList.modifierList, $variableDeclaratorList.fields);}
     |   ^(CONSTRUCTOR_DECL modifierList genericTypeParameterList? formalParameterList throwsClause? block){node = new ApexConstructor($modifierList.modifierList);}
     |   ^(PROPERTY_DECL modifierList type IDENT propertyDeclaration ){node = new ApexProperty($IDENT.Text, $type.type, $modifierList.modifierList, $propertyDeclaration.nodes);}
@@ -134,14 +136,21 @@ interfaceTopLevelScope
     :   ^(INTERFACE_TOP_LEVEL_SCOPE interfaceScopeDeclarations*)
     ;
     
-interfaceScopeDeclarations
-    :   ^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause?)
-    |   ^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause?)
+interfaceScopeDeclarations returns[IApexNode node]
+    :  
+      	{node = new ApexMethod();}
+    	^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause?)
+	{var method = node as ApexMethod;method.Ident = $IDENT.Text;method.ModifierList = $modifierList.modifierList; method.Type = $type.type;method.parameters = $formalParameterList.parameters;}    	
+    |   
+	{node = new ApexMethod();}
+    	^(VOID_METHOD_DECL modifierList genericTypeParameterList? IDENT formalParameterList throwsClause?)
+    	{var method = node as ApexMethod;method.Ident = $IDENT.Text;method.ModifierList = $modifierList.modifierList; method.parameters = $formalParameterList.parameters;}  
                          // Interface constant declarations have been switched to variable
                          // declarations by 'java.g'; the parser has already checked that
                          // there's an obligatory initializer.
     |   ^(VAR_DECLARATION modifierList type variableDeclaratorList)
-    |   typeDeclaration
+    	{node = new ApexFieldList($modifierList.modifierList, $variableDeclaratorList.fields);}
+    |   typeDeclaration {node = $typeDeclaration.node;}
     ;
 
 variableDeclaratorList returns [List<ApexField> fields]
@@ -260,16 +269,21 @@ genericWildcardBoundType
     |   ^(SUPER type)
     ;
 
-formalParameterList
-    :   ^(FORMAL_PARAM_LIST formalParameterStandardDecl* formalParameterVarargDecl?) 
+
+formalParameterStandardDecl  returns [SignatureParam parameter]
+    :   ^(FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId) {parameter = new SignatureParam($type.type, $variableDeclaratorId.fieldId);}
     ;
     
-formalParameterStandardDecl
-    :   ^(FORMAL_PARAM_STD_DECL localModifierList type variableDeclaratorId)
+formalParameterList returns [List<SignatureParam> parameters]
+    :   
+    {parameters = new List<SignatureParam>();}
+    	^(FORMAL_PARAM_LIST (formalParameterStandardDecl {parameters.Add($formalParameterStandardDecl.parameter);})* 
+    	(formalParameterVarargDecl {parameters.Add($formalParameterVarargDecl.parameter);})?) 
     ;
     
-formalParameterVarargDecl
-    :   ^(FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId)
+    
+formalParameterVarargDecl returns [SignatureParam parameter]
+    :   ^(FORMAL_PARAM_VARARG_DECL localModifierList type variableDeclaratorId) {parameter = new SignatureParam($type.type, $variableDeclaratorId.fieldId);}
     ;
     
 qualifiedIdentifier returns [Identifier ident]

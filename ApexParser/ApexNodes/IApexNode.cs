@@ -18,6 +18,19 @@ namespace ApexParser.ApexNodes
 
     }
 
+    public class SignatureParam : BaseApexNode
+    {
+        private ApexType type53;
+        private ApexField variableDeclaratorId54;
+
+        public SignatureParam(ApexType type53, ApexField variableDeclaratorId54)
+        {
+            // TODO: Complete member initialization
+            this.type53 = type53;
+            this.variableDeclaratorId54 = variableDeclaratorId54;
+        }
+    }
+
     public class LocalVariableDeclaration : BaseApexNode
     {
         private readonly ApexType _type30;
