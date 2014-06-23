@@ -59,45 +59,59 @@ importDeclaration//deprecate
     ;
     
 typeDeclaration returns [IApexNode node]
-    :   ^(CLASS modifierList IDENT genericTypeParameterList? extendsClause? implementsClause? classTopLevelScope) {node = $classTopLevelScope.node;}
-    |   ^(INTERFACE modifierList IDENT genericTypeParameterList? extendsClause? interfaceTopLevelScope) {node = $interfaceTopLevelScope.node;}
-    |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope)
+    :   ^(CLASS modifierList IDENT {node = new ApexClassNode($IDENT.Text);} 
+    (genericTypeParameterList {(node as ApexClassNode).Generics = $genericTypeParameterList.types;})?
+     (extendsClause {(node as ApexClassNode).Extends = $extendsClause.types;})? implementsClause? classTopLevelScope) {node.AddRage($classTopLevelScope.nodes);} 
+     
+    |   ^(INTERFACE modifierList IDENT  {node = new ApexInterfaceNode($IDENT.Text);} 
+    (genericTypeParameterList {(node as ApexInterfaceNode).Generics = $genericTypeParameterList.types;})? 
+    (extendsClause {(node as ApexInterfaceNode).Extends = $extendsClause.types;})? interfaceTopLevelScope) {node.AddRage($interfaceTopLevelScope.nodes);}
+    
+    |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope) {node = new ApexEnum($IDENT.Text, $enumTopLevelScope.enumBlock);}
     |   ^(AT modifierList IDENT annotationTopLevelScope)
     ;
 
-extendsClause // actually 'type' for classes and 'type+' for interfaces, but this has 
-              // been resolved by the parser grammar.
-    :   ^(EXTENDS_CLAUSE type+)
+extendsClause returns [List<ApexType> types]
+    :
+    	{types = new List<ApexType>();}
+       ^(EXTENDS_CLAUSE (type {types.Add($type.type);})+)
     ;   
     
-implementsClause
-    :   ^(IMPLEMENTS_CLAUSE type+)
+implementsClause returns [List<ApexType> types]
+    :   ^(IMPLEMENTS_CLAUSE (type {types.Add($type.type);})+)
     ;
         
-genericTypeParameterList
-    :   ^(GENERIC_TYPE_PARAM_LIST genericTypeParameter+)
+genericTypeParameterList returns[List<ApexType> types]
+    :  
+    	{types = new List<ApexType>();}
+     ^(GENERIC_TYPE_PARAM_LIST (genericTypeParameter {types.Add($genericTypeParameter.type);})+)
     ;
 
-genericTypeParameter
-    :   ^(IDENT bound?)
+genericTypeParameter returns [ApexType type]
+    :   
+    	^(IDENT {type = new ApexType($IDENT.Text);} (bound {type.AddTypes($bound.types);})?)
     ;
         
-bound
-    :   ^(EXTENDS_BOUND_LIST type+)
+bound returns [IList<ApexType> types]
+    :  
+	{ types = new List<ApexType>();}
+	^(EXTENDS_BOUND_LIST (type {types.Add($type.type);})+)
     ;
 
-enumTopLevelScope
-    :   ^(ENUM_TOP_LEVEL_SCOPE enumConstant+ classTopLevelScope?)
-    ;
-    
-enumConstant
-    :   ^(IDENT annotationList arguments? classTopLevelScope?)
-    ;
-    
-    
-classTopLevelScope returns [IApexNode node]
+enumTopLevelScope  returns[EnumBlock enumBlock]
     :
-       ^(CLASS_TOP_LEVEL_SCOPE {node = new ApexClassNode();} (classScopeDeclarations {((ApexClassNode)node).Add($classScopeDeclarations.node);})*)  
+    	{enumBlock = new EnumBlock();}
+       ^(ENUM_TOP_LEVEL_SCOPE (enumConstant {enumBlock.AddName($enumConstant.name);})+ classTopLevelScope?)
+    ;
+    
+enumConstant returns[string name]
+    :   ^(IDENT annotationList arguments? classTopLevelScope?) {name = $IDENT.Text;}
+    ;
+    
+    
+classTopLevelScope returns [List<IApexNode> nodes]
+    :
+       ^(CLASS_TOP_LEVEL_SCOPE {nodes = new List<IApexNode>();} (classScopeDeclarations {nodes.Add($classScopeDeclarations.node);})*)  
     ;
     
 classScopeDeclarations returns [IApexNode node]
@@ -132,8 +146,10 @@ setRule returns [string Name]
     {(input.LT(1)as CommonTree)!=null&& (input.LT(1)as CommonTree).Text== "set"}? IDENT {Name = $IDENT.Text;}
 ;   
 
-interfaceTopLevelScope
-    :   ^(INTERFACE_TOP_LEVEL_SCOPE interfaceScopeDeclarations*)
+interfaceTopLevelScope returns [List<IApexNode> nodes]
+    :
+     {nodes = new List<IApexNode>();}
+       ^(INTERFACE_TOP_LEVEL_SCOPE (interfaceScopeDeclarations {nodes.Add($interfaceScopeDeclarations.node);})*)
     ;
     
 interfaceScopeDeclarations returns[IApexNode node]

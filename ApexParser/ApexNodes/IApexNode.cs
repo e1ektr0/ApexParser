@@ -6,15 +6,62 @@ namespace ApexParser.ApexNodes
     {
         void Add(IApexNode node);
         void AddRage<T>(List<T> nodes) where T : IApexNode;
+
     }
 
     public class ApexClassNode : BaseApexNode
     {
+        private string p;
 
+        public ApexClassNode(string p)
+        {
+            // TODO: Complete member initialization
+            this.p = p;
+        }
+
+
+        public List<ApexType> Extends { get; set; }
+
+        public List<ApexType> Generics { get; set; }
+    }
+    public class ApexInterfaceNode : BaseApexNode
+    {
+        private string p;
+
+        public ApexInterfaceNode(string p)
+        {
+            // TODO: Complete member initialization
+            this.p = p;
+        }
+
+        public List<ApexType> Generics { get; set; }
+
+        public List<ApexType> Extends { get; set; }
+    }
+    public class EnumBlock : BaseApexNode
+    {
+
+        internal void AddName(string enumConstant18)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 
     public class Block : BaseApexNode
     {
+
+    }
+    public class ApexEnum : BaseApexNode
+    {
+        private string p;
+        private EnumBlock enumTopLevelScope11;
+
+        public ApexEnum(string p, EnumBlock enumTopLevelScope11)
+        {
+            // TODO: Complete member initialization
+            this.p = p;
+            this.enumTopLevelScope11 = enumTopLevelScope11;
+        }
 
     }
 
