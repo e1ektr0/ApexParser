@@ -12,7 +12,7 @@ namespace ApexParser.ApexNodes
             Nodes.Add(node);
         }
 
-        public virtual void AddRage<T>(List<T> nodes) where T : IApexNode
+        public virtual void AddRage<T>(IList<T> nodes) where T : IApexNode
         {
             Nodes.AddRange(nodes.Cast<IApexNode>());
         }

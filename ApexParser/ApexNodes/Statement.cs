@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using ApexParser.Scopes;
 
 namespace ApexParser.ApexNodes
 {
-    public class Statement : BaseApexNode
+    public class Statement : BaseApexNode,IScopedObject
     {
-
+        public Scope Scope { get; set; }
     }
 
     public class IfStatement : Statement

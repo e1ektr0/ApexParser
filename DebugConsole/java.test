@@ -2,7 +2,7 @@
 {
 	public static Boolean triggersEnabled()
     {
-		var x = this.class;
+		
     }
 	public String Name {get;set;}
 }

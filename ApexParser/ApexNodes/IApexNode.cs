@@ -1,68 +1,155 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using ApexParser.Scopes;
 
 namespace ApexParser.ApexNodes
 {
     public interface IApexNode
     {
         void Add(IApexNode node);
-        void AddRage<T>(List<T> nodes) where T : IApexNode;
-
+        void AddRage<T>(IList<T> nodes) where T : IApexNode;
     }
 
-    public class ApexClassNode : BaseApexNode
+    public interface IScopedObject
     {
-        private string p;
+        Scope Scope { get; set; }
+    }
 
-        public ApexClassNode(string p)
+    public interface IModifier
+    {
+        List<Modifier> Modifiers { get; set; }
+    }
+
+    public interface IIdent
+    {
+        string Ident { get; }
+    }
+
+    public class BaseScopedClass : BaseApexNode, IScopedObject
+    {
+        private Scope _scope;
+
+        public Scope Scope
         {
-            // TODO: Complete member initialization
-            this.p = p;
+            get
+            {
+                return _scope;
+            }
+            set
+            {
+                if(_scope!=null)
+                    throw new NotImplementedException();
+                _scope = value;
+                foreach (var apexNode in Nodes)
+                {
+                    FixScope(apexNode);
+                }
+            }
         }
 
+        public override void Add(IApexNode node)
+        {
+            base.Add(node);
+            FixScope(node);
+        }
+
+        public override void AddRage<T>(IList<T> nodes)
+        {
+            base.AddRage(nodes);
+            foreach (var apexNode in Nodes)
+                FixScope(apexNode);
+        }
+
+        private void FixScope(IApexNode node)
+        {
+            if (Scope == null)
+                return;
+            if (node is IScopedObject)
+            {
+                ScopeFactory.Instance.FixScope(node, Scope);
+            }
+            AddMembers(node);
+        }
+
+        private void AddMembers(IApexNode node)
+        {
+            var modifier = node as IModifier;
+            if (modifier == null)
+                return;
+            var ident = node as IIdent;
+            if (ident == null)
+                return;
+            Scope.AddMemeber(modifier.Modifiers, ident.Ident, node);
+        }
+    }
+
+    public class ApexClassNode : BaseScopedClass, IModifier, IIdent
+    {
+        public ApexClassNode(string ident, ClassScope classScope, List<Modifier> modifierList)
+        {
+            Ident = ident;
+            Scope = classScope;
+            Modifiers = modifierList;
+            var rootScope = classScope.ParentScope as RootScope;
+            if(rootScope!=null)
+                rootScope.AddMemeber(modifierList, ident, this);
+        }
+
+        public string Ident { get; private set; }
 
         public List<ApexType> Extends { get; set; }
 
         public List<ApexType> Generics { get; set; }
-    }
-    public class ApexInterfaceNode : BaseApexNode
-    {
-        private string p;
 
-        public ApexInterfaceNode(string p)
+        public List<Modifier> Modifiers { get; set; }
+    }
+    public class ApexInterfaceNode : BaseScopedClass, IModifier, IIdent
+    {
+
+        public ApexInterfaceNode(string ident, InterfaceScope interfaceScope, List<Modifier> modifierList)
         {
-            // TODO: Complete member initialization
-            this.p = p;
+            Ident = ident;
+            Scope = interfaceScope;
+            Modifiers = modifierList;
         }
 
         public List<ApexType> Generics { get; set; }
 
         public List<ApexType> Extends { get; set; }
+        public List<Modifier> Modifiers { get; set; }
+        public string Ident { get; private set; }
     }
     public class EnumBlock : BaseApexNode
     {
-
-        internal void AddName(string enumConstant18)
+        public readonly List<string> Idents = new List<string>();
+        internal void AddName(string enumValue)
         {
-            throw new System.NotImplementedException();
+            Idents.Add(enumValue);
         }
     }
 
-    public class Block : BaseApexNode
+    public class Block : BaseScopedClass
     {
 
     }
-    public class ApexEnum : BaseApexNode
-    {
-        private string p;
-        private EnumBlock enumTopLevelScope11;
 
-        public ApexEnum(string p, EnumBlock enumTopLevelScope11)
+    public class ApexEnum : BaseApexNode, IModifier, IScopedObject, IIdent
+    {
+        private EnumScope enumScope;
+        private EnumBlock enumTopLevelScope13;
+
+        public ApexEnum(string ident, EnumBlock enumTopLevelScope13, EnumScope enumScope, List<Modifier> modifierList)
         {
-            // TODO: Complete member initialization
-            this.p = p;
-            this.enumTopLevelScope11 = enumTopLevelScope11;
+            this.Ident = ident;
+            this.enumTopLevelScope13 = enumTopLevelScope13;
+            this.enumScope = enumScope;
+            enumScope.AddMembers(enumTopLevelScope13.Idents);
+            this.Modifiers = modifierList;
         }
 
+        public List<Modifier> Modifiers { get; set; }
+        public Scope Scope { get; set; }
+        public string Ident { get; private set; }
     }
 
     public class SignatureParam : BaseApexNode
@@ -103,7 +190,7 @@ namespace ApexParser.ApexNodes
         Get, Set
     }
 
-    public class Acessor : BaseApexNode
+    public class Acessor : BaseScopedClass
     {
         private readonly AcessorType _get;
         private readonly IApexNode _getBlock;
@@ -123,7 +210,4 @@ namespace ApexParser.ApexNodes
             _getRule17 = getRule17;
         }
     }
-
-
-
 }

@@ -11,10 +11,11 @@ options {
 
 @treeparser::header {
 using ApexParser.ApexNodes;
+using ApexParser.Scopes;
 }
 
 @treeparser::members {
-    
+ 
    private bool mMessageCollectionEnabled = true;
 		    private List<string> mMessages;
 
@@ -47,7 +48,8 @@ using ApexParser.ApexNodes;
 
 // Starting point for parsing a Java file.
 javaSource returns [IApexNode node]  
-    :   ^(JAVA_SOURCE annotationList packageDeclaration? importDeclaration* typeDeclaration?) {node = $typeDeclaration.node;}
+    :   
+    	^(JAVA_SOURCE annotationList packageDeclaration? importDeclaration* typeDeclaration?) {node = $typeDeclaration.node;}
     ;
 
 packageDeclaration //deprecate
@@ -59,15 +61,15 @@ importDeclaration//deprecate
     ;
     
 typeDeclaration returns [IApexNode node]
-    :   ^(CLASS modifierList IDENT {node = new ApexClassNode($IDENT.Text);} 
+    :   ^(CLASS modifierList IDENT {node = new ApexClassNode($IDENT.Text, ScopeFactory.Instance.CreateClassScope(),$modifierList.modifierList);} 
     (genericTypeParameterList {(node as ApexClassNode).Generics = $genericTypeParameterList.types;})?
      (extendsClause {(node as ApexClassNode).Extends = $extendsClause.types;})? implementsClause? classTopLevelScope) {node.AddRage($classTopLevelScope.nodes);} 
      
-    |   ^(INTERFACE modifierList IDENT  {node = new ApexInterfaceNode($IDENT.Text);} 
+    |   ^(INTERFACE modifierList IDENT  {node = new ApexInterfaceNode($IDENT.Text, ScopeFactory.Instance.CreateInterfaceScope(),$modifierList.modifierList);} 
     (genericTypeParameterList {(node as ApexInterfaceNode).Generics = $genericTypeParameterList.types;})? 
     (extendsClause {(node as ApexInterfaceNode).Extends = $extendsClause.types;})? interfaceTopLevelScope) {node.AddRage($interfaceTopLevelScope.nodes);}
     
-    |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope) {node = new ApexEnum($IDENT.Text, $enumTopLevelScope.enumBlock);}
+    |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope) {node = new ApexEnum($IDENT.Text, $enumTopLevelScope.enumBlock, ScopeFactory.Instance.CreateEnumScope(),$modifierList.modifierList);}
     |   ^(AT modifierList IDENT annotationTopLevelScope)
     ;
 
@@ -103,7 +105,6 @@ enumTopLevelScope  returns[EnumBlock enumBlock]
     	{enumBlock = new EnumBlock();}
        ^(ENUM_TOP_LEVEL_SCOPE (enumConstant {enumBlock.AddName($enumConstant.name);})+ classTopLevelScope?)
     ;
-    
 enumConstant returns[string name]
     :   ^(IDENT annotationList arguments? classTopLevelScope?) {name = $IDENT.Text;}
     ;
@@ -115,8 +116,8 @@ classTopLevelScope returns [List<IApexNode> nodes]
     ;
     
 classScopeDeclarations returns [IApexNode node]
-    :   ^(CLASS_INSTANCE_INITIALIZER block) {node = null;}
-    |   ^(CLASS_STATIC_INITIALIZER block){node = null;}
+    :   ^(CLASS_INSTANCE_INITIALIZER block) {node =  new ApexMethod($block.node);}//todo:
+    |   ^(CLASS_STATIC_INITIALIZER block){node =  new ApexMethod($block.node);}
     |   {node = new ApexMethod();}
     	^(FUNCTION_METHOD_DECL modifierList genericTypeParameterList? type IDENT formalParameterList arrayDeclaratorList? throwsClause? (block {(node as ApexMethod).Block = $block.node;})?)
     	{var method = node as ApexMethod;method.Ident = $IDENT.Text;method.ModifierList = $modifierList.modifierList; method.Type = $type.type; method.parameters = $formalParameterList.parameters;}

@@ -53,13 +53,14 @@
     <Compile Include="ApexNodes\IApexNode.cs" />
     <Compile Include="ApexNodes\Modifier.cs" />
     <Compile Include="ApexNodes\Statement.cs" />
-    <Compile Include="output\ApexEnum.cs" />
     <Compile Include="output\JavaLexer.cs" />
     <Compile Include="output\JavaParser.cs" />
     <Compile Include="output\JavaTreeParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scope\Scope.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Expression.cd" />
     <None Include="Java.g" />
     <Antlr3 Include="JavaTreeParser.g">

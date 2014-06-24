@@ -4,6 +4,7 @@ using System.Reflection;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using ApexParser.ApexNodes;
+using ApexParser.Scopes;
 
 namespace DebugConsole
 {
@@ -40,17 +41,22 @@ namespace DebugConsole
             xs.enableErrorMessageCollection(true);
             var rootNode = xs.JavaSource();
             if (!parser.hasErrors() && !xs.hasErrors())
-                return;
+            {
+                ScopeFactory.Instance.GetRootScope().LoadFile(path, rootNode);
+            }
+            else
+            {
+                foreach (var message in parser.getMessages())
+                {
+                    Console.WriteLine(message);
+                }
+                foreach (var message in xs.getMessages())
+                {
+                    Console.WriteLine(message);
+                }
+                throw new NotImplementedException();
+            }
 
-            foreach (var message in parser.getMessages())
-            {
-                Console.WriteLine(message);
-            }
-            foreach (var message in xs.getMessages())
-            {
-                Console.WriteLine(message);
-            }
-            Console.ReadKey();
         }
 
         private static JavaLexer GetLexer(string path)
@@ -68,10 +74,11 @@ namespace DebugConsole
             var parser = new ApaexParser();
             parser.Load(@"java.test");
 
-            // parser.Load(@"Examples\types.test");
-            //parser.Load(@"Examples\block.test");
-            //parser.Load(@"Examples\statements.test");
-            //return;
+            parser.Load(@"Examples\types.test");
+            parser.Load(@"Examples\block.test");
+            parser.Load(@"Examples\statements.test");
+            var rootScope = ScopeFactory.Instance.GetRootScope();
+
         }
 
     }
