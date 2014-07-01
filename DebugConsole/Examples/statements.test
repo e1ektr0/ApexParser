@@ -11,5 +11,13 @@
 		} else {
 			var x = 2;
 		}
+
+		for(Integer a = 0; a < accountList.size(); a++){
+		  accountList[a].Name = 'whatever';
+		}
+
+		for(Account a: accountList){
+		  a.Name = 'whatever';
+		}
     }
 }

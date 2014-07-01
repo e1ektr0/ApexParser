@@ -3,7 +3,7 @@ using ApexParser.Scopes;
 
 namespace ApexParser.ApexNodes
 {
-    public class ApexProperty : BaseApexNode, IScopedObject, IModifier,IIdent
+    public class ApexProperty : BaseApexNode, IModifier,IIdent
     {
         private readonly ApexType _type13;
         private readonly List<IApexNode> _propertyDeclaration16;
@@ -16,7 +16,6 @@ namespace ApexParser.ApexNodes
             _propertyDeclaration16 = propertyDeclaration16;
         }
 
-        public Scope Scope { get; set; }
         public List<Modifier> Modifiers { get; set; }
         public string Ident { get; private set; }
     }

@@ -10,10 +10,15 @@ namespace ApexParser.ApexNodes
         void AddRage<T>(IList<T> nodes) where T : IApexNode;
     }
 
-    public interface IScopedObject
-    {
-        Scope Scope { get; set; }
-    }
+    //public interface IScopedObject
+    //{
+    //    Scope Scope { get; set; }
+    //}
+
+    //public interface IMember:IIdent
+    //{
+
+    //}
 
     public interface IModifier
     {
@@ -25,74 +30,36 @@ namespace ApexParser.ApexNodes
         string Ident { get; }
     }
 
-    public class BaseScopedClass : BaseApexNode, IScopedObject
+    public class BaseScopedClass : BaseApexNode
     {
-        private Scope _scope;
+    //    private Scope _scope;
 
-        public Scope Scope
-        {
-            get
-            {
-                return _scope;
-            }
-            set
-            {
-                if(_scope!=null)
-                    throw new NotImplementedException();
-                _scope = value;
-                foreach (var apexNode in Nodes)
-                {
-                    FixScope(apexNode);
-                }
-            }
-        }
+    //    public Scope Scope
+    //    {
+    //        get
+    //        {
+    //            return _scope;
+    //        }
+    //        set
+    //        {
+    //            if(_scope!=null)
+    //                throw new NotImplementedException();
+    //            _scope = value;
+    //            foreach (var apexNode in Nodes)
+    //            {
+    //                FixScope(apexNode);
+    //            }
+    //        }
+    //    }
 
-        public override void Add(IApexNode node)
-        {
-            base.Add(node);
-            FixScope(node);
-        }
-
-        public override void AddRage<T>(IList<T> nodes)
-        {
-            base.AddRage(nodes);
-            foreach (var apexNode in Nodes)
-                FixScope(apexNode);
-        }
-
-        private void FixScope(IApexNode node)
-        {
-            if (Scope == null)
-                return;
-            if (node is IScopedObject)
-            {
-                ScopeFactory.Instance.FixScope(node, Scope);
-            }
-            AddMembers(node);
-        }
-
-        private void AddMembers(IApexNode node)
-        {
-            var modifier = node as IModifier;
-            if (modifier == null)
-                return;
-            var ident = node as IIdent;
-            if (ident == null)
-                return;
-            Scope.AddMemeber(modifier.Modifiers, ident.Ident, node);
-        }
     }
 
     public class ApexClassNode : BaseScopedClass, IModifier, IIdent
     {
-        public ApexClassNode(string ident, ClassScope classScope, List<Modifier> modifierList)
+        public ApexClassNode(string ident, List<Modifier> modifierList)
         {
             Ident = ident;
-            Scope = classScope;
             Modifiers = modifierList;
-            var rootScope = classScope.ParentScope as RootScope;
-            if(rootScope!=null)
-                rootScope.AddMemeber(modifierList, ident, this);
         }
 
         public string Ident { get; private set; }
@@ -106,10 +73,9 @@ namespace ApexParser.ApexNodes
     public class ApexInterfaceNode : BaseScopedClass, IModifier, IIdent
     {
 
-        public ApexInterfaceNode(string ident, InterfaceScope interfaceScope, List<Modifier> modifierList)
+        public ApexInterfaceNode(string ident, List<Modifier> modifierList)
         {
             Ident = ident;
-            Scope = interfaceScope;
             Modifiers = modifierList;
         }
 
@@ -133,22 +99,22 @@ namespace ApexParser.ApexNodes
 
     }
 
-    public class ApexEnum : BaseApexNode, IModifier, IScopedObject, IIdent
+    public class ApexEnum : BaseApexNode, IModifier, IIdent
     {
-        private EnumScope enumScope;
+        //private EnumScope enumScope;
         private EnumBlock enumTopLevelScope13;
 
-        public ApexEnum(string ident, EnumBlock enumTopLevelScope13, EnumScope enumScope, List<Modifier> modifierList)
+        public ApexEnum(string ident, EnumBlock enumTopLevelScope13,  List<Modifier> modifierList)
         {
             this.Ident = ident;
             this.enumTopLevelScope13 = enumTopLevelScope13;
-            this.enumScope = enumScope;
-            enumScope.AddMembers(enumTopLevelScope13.Idents);
+            //this.enumScope = enumScope;
+            //enumScope.AddMembers(enumTopLevelScope13.Idents);
             this.Modifiers = modifierList;
         }
 
         public List<Modifier> Modifiers { get; set; }
-        public Scope Scope { get; set; }
+        //public Scope Scope { get; set; }
         public string Ident { get; private set; }
     }
 
@@ -167,17 +133,27 @@ namespace ApexParser.ApexNodes
 
     public class LocalVariableDeclaration : BaseApexNode
     {
-        private readonly ApexType _type30;
-        private readonly List<ApexField> _variableDeclaratorList31;
+        private readonly ApexType _type;
+        private readonly List<ApexField> _variableDeclaratorList;
 
         public LocalVariableDeclaration()
         {
         }
 
-        public LocalVariableDeclaration(ApexType type30, List<ApexField> variableDeclaratorList31)
+        public LocalVariableDeclaration(ApexType type, List<ApexField> variableDeclaratorList)
         {
-            _type30 = type30;
-            _variableDeclaratorList31 = variableDeclaratorList31;
+            _type = type;
+            _variableDeclaratorList = variableDeclaratorList;
+        }
+
+        public ApexType Type
+        {
+            get { return _type; }
+        }
+
+        public List<ApexField> VariableDeclaratorList
+        {
+            get { return _variableDeclaratorList; }
         }
     }
 

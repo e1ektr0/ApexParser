@@ -3,9 +3,8 @@ using ApexParser.Scopes;
 
 namespace ApexParser.ApexNodes
 {
-    public class Statement : BaseApexNode,IScopedObject
+    public class Statement : BaseApexNode
     {
-        public Scope Scope { get; set; }
     }
 
     public class IfStatement : Statement
@@ -20,12 +19,12 @@ namespace ApexParser.ApexNodes
 
     public class ForInit : Statement
     {
-        private LocalVariableDeclaration localVariableDeclaration51;
+        private LocalVariableDeclaration _localVariableDeclaration51;
 
         public ForInit(LocalVariableDeclaration localVariableDeclaration51)
         {
             // TODO: Complete member initialization
-            this.localVariableDeclaration51 = localVariableDeclaration51;
+            this._localVariableDeclaration51 = localVariableDeclaration51;
         }
 
         public ForInit()

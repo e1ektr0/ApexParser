@@ -4,7 +4,6 @@ using System.Reflection;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using ApexParser.ApexNodes;
-using ApexParser.Scopes;
 
 namespace DebugConsole
 {
@@ -13,7 +12,6 @@ namespace DebugConsole
         public static AstParserRuleReturnScope<CommonTree, IToken> JavaSource(this JavaParser parser)
         {
             var type = parser.GetType();
-            //var x = parser.javaSource();
             var methodInfos = type.GetMethod("javaSource", BindingFlags.NonPublic | BindingFlags.Instance);
             var method = methodInfos;
             return (AstParserRuleReturnScope<CommonTree, IToken>)method.Invoke(parser, new object[0]);
@@ -21,7 +19,6 @@ namespace DebugConsole
         public static IApexNode JavaSource(this JavaTreeParser parser)
         {
             var type = parser.GetType();
-            //var x = parser.javaSource();
             var methodInfos = type.GetMethod("javaSource", BindingFlags.NonPublic | BindingFlags.Instance);
             var method = methodInfos;
             return (IApexNode)method.Invoke(parser, new object[0]);
@@ -42,7 +39,6 @@ namespace DebugConsole
             var rootNode = xs.JavaSource();
             if (!parser.hasErrors() && !xs.hasErrors())
             {
-                ScopeFactory.Instance.GetRootScope().LoadFile(path, rootNode);
             }
             else
             {
@@ -56,7 +52,6 @@ namespace DebugConsole
                 }
                 throw new NotImplementedException();
             }
-
         }
 
         private static JavaLexer GetLexer(string path)
@@ -73,13 +68,10 @@ namespace DebugConsole
         {
             var parser = new ApaexParser();
             parser.Load(@"java.test");
-
             parser.Load(@"Examples\types.test");
+            parser.Load(@"Examples\methods.test");
             parser.Load(@"Examples\block.test");
             parser.Load(@"Examples\statements.test");
-            var rootScope = ScopeFactory.Instance.GetRootScope();
-
         }
-
     }
 }

@@ -61,15 +61,15 @@ importDeclaration//deprecate
     ;
     
 typeDeclaration returns [IApexNode node]
-    :   ^(CLASS modifierList IDENT {node = new ApexClassNode($IDENT.Text, ScopeFactory.Instance.CreateClassScope(),$modifierList.modifierList);} 
+    :   ^(CLASS modifierList IDENT {node = new ApexClassNode($IDENT.Text, $modifierList.modifierList);} 
     (genericTypeParameterList {(node as ApexClassNode).Generics = $genericTypeParameterList.types;})?
      (extendsClause {(node as ApexClassNode).Extends = $extendsClause.types;})? implementsClause? classTopLevelScope) {node.AddRage($classTopLevelScope.nodes);} 
      
-    |   ^(INTERFACE modifierList IDENT  {node = new ApexInterfaceNode($IDENT.Text, ScopeFactory.Instance.CreateInterfaceScope(),$modifierList.modifierList);} 
+    |   ^(INTERFACE modifierList IDENT  {node = new ApexInterfaceNode($IDENT.Text, $modifierList.modifierList);} 
     (genericTypeParameterList {(node as ApexInterfaceNode).Generics = $genericTypeParameterList.types;})? 
     (extendsClause {(node as ApexInterfaceNode).Extends = $extendsClause.types;})? interfaceTopLevelScope) {node.AddRage($interfaceTopLevelScope.nodes);}
     
-    |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope) {node = new ApexEnum($IDENT.Text, $enumTopLevelScope.enumBlock, ScopeFactory.Instance.CreateEnumScope(),$modifierList.modifierList);}
+    |   ^(ENUM modifierList IDENT implementsClause? enumTopLevelScope) {node = new ApexEnum($IDENT.Text, $enumTopLevelScope.enumBlock, $modifierList.modifierList);}
     |   ^(AT modifierList IDENT annotationTopLevelScope)
     ;
 
@@ -362,7 +362,6 @@ block returns [IApexNode node]
     
 blockStatement returns [IApexNode node]
     :   
-    	
     	localVariableDeclaration {node= $localVariableDeclaration.varDeclaration;}
     |   typeDeclaration {node= $typeDeclaration.node;}
     |   statement { node = $statement.node; }
